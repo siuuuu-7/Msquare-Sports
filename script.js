@@ -33,8 +33,7 @@ function filterProducts(category) {
   toggleMenu(); // close sidebar after selection
 }
 // LOAD SAVED PRODUCTS
-window.addEventListener("load", loadSavedProducts);
-function loadSavedProducts() {
+ {
   const saved = JSON.parse(localStorage.getItem("products")) || [];
   const grid = document.querySelector(".grid");
 
