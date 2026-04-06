@@ -39,23 +39,28 @@ function loadSavedProducts() {
   const saved = JSON.parse(localStorage.getItem("products")) || [];
   const grid = document.querySelector(".grid");
 
-  saved.forEach(p => {
+  saved.forEach((p, index) => {
     const div = document.createElement("div");
     div.className = "product";
     div.setAttribute("data-category", "custom");
 
     div.innerHTML = `
-      ${p.offer ? `<div class="offer-badge">${p.offer}</div>` : ""}
-      <img src="${p.img}">
-      <div class="product-info">
-        <h3>${p.name}</h3>
-        <p class="price">${p.price}</p>
-        <p class="stock">${p.stock <= 5 ? "Only " + p.stock + " left" : ""}</p>
-        <a href="https://wa.me/9035202055?text=I want ${p.name}" target="_blank">
-          <button class="buy-btn">Order on WhatsApp</button>
-        </a>
-      </div>
-    `;
+  ${p.offer ? `<div class="offer-badge">${p.offer}</div>` : ""}
+  <img src="${p.img}">
+  <div class="product-info">
+    <h3>${p.name}</h3>
+    <p class="price">${p.price}</p>
+    <p class="stock">${p.stock <= 5 ? "Only " + p.stock + " left" : ""}</p>
+
+    <a href="https://wa.me/9035202055?text=I want ${p.name}" target="_blank">
+      <button class="buy-btn">Order on WhatsApp</button>
+    </a>
+
+    <button onclick="deleteProduct(${index})" style="background:red; margin-top:5px;">
+      Delete
+    </button>
+  </div>
+`;
 
     grid.appendChild(div);
   });
@@ -82,12 +87,27 @@ function addNewProduct() {
 let secret = "";
 
 document.addEventListener("keydown", (e) => {
-  secret += e.key;
+  secret += e.key.toLowerCase();
 
-  if (secret.includes("admin")) {
-    document.getElementById("adminPanel").style.display = "block";
+  if (secret.includes("Vishal")) 
+  {  document.getElementById("adminPanel").style.display = "block";
     alert("Admin Mode Activated");
+    secret = "";
+  }
+
+  // limit length to avoid bugs
+  if (secret.length > 20) {
     secret = "";
   }
 });
 console.log("JS LOADED");
+function deleteProduct(index) {
+  let products = JSON.parse(localStorage.getItem("products")) || [];
+
+  products.splice(index, 1); // remove item
+
+  localStorage.setItem("products", JSON.stringify(products));
+
+  alert("Product Deleted");
+  location.reload();
+}
