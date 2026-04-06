@@ -1,4 +1,4 @@
-// ✅ FIREBASE IMPORT (ONLY THESE)
+import { deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
@@ -61,7 +61,11 @@ window.addNewProduct = async function () {
   alert("Product Added Online!");
   location.reload();
 };
-
+window.deleteProduct = async function (id) {
+  await deleteDoc(doc(db, "products", id));
+  alert("Product Deleted");
+  location.reload();
+};
 
 // LOAD ON PAGE
 window.addEventListener("load", loadProducts);

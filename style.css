@@ -307,3 +307,8 @@ button:hover {
   color: red;
   font-size: 13px;
 }
+.delete-btn {
+  background: red;
+  margin-top: 8px;
+  width: 100%;
+}

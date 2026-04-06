@@ -52,20 +52,24 @@ function filterProducts(category) {
     }
 
     div.innerHTML = `
-      ${p.offer ? `<div class="offer-badge">${p.offer}</div>` : ""}
-      <img src="${p.img}">
-      <div class="product-info">
-        <h3>${p.name}</h3>
-        <p class="price">${p.price}</p>
-        <p class="stock">${p.stock <= 5 ? "Only " + p.stock + " left" : ""}</p>
+  ${p.offer ? `<div class="offer-badge">${p.offer}</div>` : ""}
+  <img src="${p.img}">
+  <div class="product-info">
+    <h3>${p.name}</h3>
+    <p class="price">${p.price}</p>
+    <p class="stock">${p.stock <= 5 ? "Only " + p.stock + " left" : ""}</p>
 
-        <a href="https://wa.me/9035202055?text=I want ${p.name}" target="_blank">
-          <button class="buy-btn">Order on WhatsApp</button>
-        </a>
+    <a href="https://wa.me/9035202055?text=I want ${p.name}" target="_blank">
+      <button class="buy-btn">Order on WhatsApp</button>
+    </a>
 
-        ${deleteBtn}
-      </div>
-    `;
+    ${window.isAdmin ? `
+  <button class="delete-btn" onclick="deleteProduct('${docItem.id}')">
+    Delete
+  </button>
+` : ""}
+  </div>
+`;
 
     grid.appendChild(div);
   });
