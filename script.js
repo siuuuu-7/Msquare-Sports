@@ -1,4 +1,4 @@
-let isAdmin = false;
+let isAdmin = true;
 function openInstagram() {
   window.open("https://www.instagram.com/msquare_05/", "_blank");
 }
@@ -34,33 +34,39 @@ function filterProducts(category) {
 }
 // LOAD SAVED PRODUCTS
 window.addEventListener("load", loadSavedProducts);
-
 function loadSavedProducts() {
   const saved = JSON.parse(localStorage.getItem("products")) || [];
   const grid = document.querySelector(".grid");
+
+  // 🔥 Remove ALL custom products before re-render
+  document.querySelectorAll(".product[data-category='custom']").forEach(el => el.remove());
 
   saved.forEach((p, index) => {
     const div = document.createElement("div");
     div.className = "product";
     div.setAttribute("data-category", "custom");
 
+    // ✅ DELETE BUTTON ONLY IF ADMIN
+    let deleteBtn = "";
+    if (isAdmin) {
+      deleteBtn = `<button onclick="deleteProduct(${index})" style="background:red; margin-top:5px;">Delete</button>`;
+    }
+
     div.innerHTML = `
-  ${p.offer ? `<div class="offer-badge">${p.offer}</div>` : ""}
-  <img src="${p.img}">
-  <div class="product-info">
-    <h3>${p.name}</h3>
-    <p class="price">${p.price}</p>
-    <p class="stock">${p.stock <= 5 ? "Only " + p.stock + " left" : ""}</p>
+      ${p.offer ? `<div class="offer-badge">${p.offer}</div>` : ""}
+      <img src="${p.img}">
+      <div class="product-info">
+        <h3>${p.name}</h3>
+        <p class="price">${p.price}</p>
+        <p class="stock">${p.stock <= 5 ? "Only " + p.stock + " left" : ""}</p>
 
-    <a href="https://wa.me/9035202055?text=I want ${p.name}" target="_blank">
-      <button class="buy-btn">Order on WhatsApp</button>
-    </a>
+        <a href="https://wa.me/9035202055?text=I want ${p.name}" target="_blank">
+          <button class="buy-btn">Order on WhatsApp</button>
+        </a>
 
-    <button onclick="deleteProduct(${index})" style="background:red; margin-top:5px;">
-      Delete
-    </button>
-  </div>
-`;
+        ${deleteBtn}
+      </div>
+    `;
 
     grid.appendChild(div);
   });
@@ -81,7 +87,7 @@ function addNewProduct() {
   localStorage.setItem("products", JSON.stringify(products));
 
   alert("Product Added!");
-  location.reload();
+loadSavedProducts();
 }
 // SECRET ADMIN ACCESS (type "admin" on keyboard)
 let secret = "";
@@ -89,13 +95,18 @@ let secret = "";
 document.addEventListener("keydown", (e) => {
   secret += e.key.toLowerCase();
 
-  if (secret.includes("vishal")) 
-  {  document.getElementById("adminPanel").style.display = "block";
+  if (secret.includes("vishal")) {
+
+    isAdmin = true; // 🔥 THIS WAS MISSING
+
+    document.getElementById("adminPanel").style.display = "block";
     alert("Admin Mode Activated");
+
+    loadSavedProducts(); // 🔥 re-render products properly
+
     secret = "";
   }
 
-  // limit length to avoid bugs
   if (secret.length > 20) {
     secret = "";
   }
@@ -109,5 +120,5 @@ function deleteProduct(index) {
   localStorage.setItem("products", JSON.stringify(products));
 
   alert("Product Deleted");
-  location.reload();
+  loadSavedProducts();
 }
