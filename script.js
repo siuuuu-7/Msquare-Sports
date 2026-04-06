@@ -85,14 +85,9 @@ document.addEventListener("keydown", (e) => {
   }
 
   if (secret.length > 20) {
-    secret = ""; refreshProducts();
+    secret = "";
   }
 });
 console.log("JS LOADED");
 }
-// 🔥 Reload Firebase products when admin mode is activated
-function refreshProducts() {
-  const grid = document.querySelector(".grid");
-  grid.innerHTML = ""; // clear old products
-  loadProducts(); // from firebase.js
-}
+
