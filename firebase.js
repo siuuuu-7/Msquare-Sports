@@ -69,3 +69,10 @@ window.deleteProduct = async function (id) {
 
 // LOAD ON PAGE
 window.addEventListener("load", loadProducts);
+// 🔥 Reload Firebase products when admin mode is activated
+function refreshProducts() {
+  const grid = document.querySelector(".grid");
+  grid.innerHTML = ""; // clear old products
+  loadProducts(); 
+  refreshProducts();// from firebase.js
+}
