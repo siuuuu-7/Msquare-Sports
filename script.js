@@ -1,4 +1,4 @@
-// SOCIAL LINKS
+let isAdmin = false;
 function openInstagram() {
   window.open("https://www.instagram.com/msquare_05/", "_blank");
 }
