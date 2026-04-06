@@ -65,8 +65,8 @@ function filterProducts(category) {
 
     ${window.isAdmin ? `
   <button class="delete-btn" onclick="deleteProduct('${docItem.id}')">
-    Delete
-  </button>
+  Delete
+</button>
 ` : ""}
   </div>
 `;
