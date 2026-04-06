@@ -89,7 +89,7 @@ let secret = "";
 document.addEventListener("keydown", (e) => {
   secret += e.key.toLowerCase();
 
-  if (secret.includes("Vishal")) 
+  if (secret.includes("vishal")) 
   {  document.getElementById("adminPanel").style.display = "block";
     alert("Admin Mode Activated");
     secret = "";
