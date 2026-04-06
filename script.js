@@ -1,4 +1,4 @@
-let isAdmin = true;
+let isAdmin = false;
 function openInstagram() {
   window.open("https://www.instagram.com/msquare_05/", "_blank");
 }
@@ -32,11 +32,6 @@ function filterProducts(category) {
 
   toggleMenu(); // close sidebar after selection
 }
-// LOAD SAVED PRODUCTS
- {
-  const saved = JSON.parse(localStorage.getItem("products")) || [];
-  const grid = document.querySelector(".grid");
-
   // 🔥 Remove ALL custom products before re-render
   document.querySelectorAll(".product[data-category='custom']").forEach(el => el.remove());
 
@@ -74,24 +69,6 @@ function filterProducts(category) {
     grid.appendChild(div);
   });
 }
-
-// ADD NEW PRODUCT
-function addNewProduct() {
-  const name = document.getElementById("pname").value;
-  const price = document.getElementById("pprice").value;
-  const img = document.getElementById("pimg").value;
-  const offer = document.getElementById("poffer").value;
-  const stock = document.getElementById("pstock").value;
-
-  const newProduct = { name, price, img, offer, stock };
-
-  let products = JSON.parse(localStorage.getItem("products")) || [];
-  products.push(newProduct);
-  localStorage.setItem("products", JSON.stringify(products));
-
-  alert("Product Added!");
-loadSavedProducts();
-}
 // SECRET ADMIN ACCESS (type "admin" on keyboard)
 let secret = "";
 
@@ -104,24 +81,18 @@ document.addEventListener("keydown", (e) => {
 
     document.getElementById("adminPanel").style.display = "block";
     alert("Admin Mode Activated");
-
-    loadSavedProducts(); // 🔥 re-render products properly
-
     secret = "";
   }
 
   if (secret.length > 20) {
-    secret = "";
+    secret = ""; refreshProducts();
   }
 });
 console.log("JS LOADED");
-function deleteProduct(index) {
-  let products = JSON.parse(localStorage.getItem("products")) || [];
-
-  products.splice(index, 1); // remove item
-
-  localStorage.setItem("products", JSON.stringify(products));
-
-  alert("Product Deleted");
-  loadSavedProducts();
+}
+// 🔥 Reload Firebase products when admin mode is activated
+function refreshProducts() {
+  const grid = document.querySelector(".grid");
+  grid.innerHTML = ""; // clear old products
+  loadProducts(); // from firebase.js
 }
