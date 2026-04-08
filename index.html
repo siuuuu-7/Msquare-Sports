@@ -7,159 +7,184 @@
   <title>M Square Sports & Menswear </title>
   <link rel="stylesheet" href="style.css">
   <meta name="keywords" content="sports shop Bangalore, cricket bat Bangalore, sports shoes near me">
-  <meta name="author" content="MSquare Sports">
+<meta name="author" content="MSquare Sports">
 </head>
 
-<body>
-  <a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank">💬</a>
+<body> <a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank">
+  💬
+</a>
 
-  <!-- SIDEBAR (ONLY ONE) -->
-  <div id="sidebar" class="sidebar">
-    <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">×</a>
-    <h3>Categories</h3>
-    <a href="#" onclick="filterProducts('all')">All Products</a>
-    <a href="#" onclick="filterProducts('cricket')">Cricket</a>
-    <a href="#" onclick="filterProducts('shoes')">Shoes</a>
-    <a href="#" onclick="filterProducts('tshirt')">T-Shirts</a>
+<!-- SIDEBAR (ONLY ONE) -->
+<div id="sidebar" class="sidebar">
+  <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">×</a>
+
+  <h3>Categories</h3>
+  <a href="#" onclick="filterProducts('all')">All Products</a>
+  <a href="#" onclick="filterProducts('cricket')">Cricket</a>
+  <a href="#" onclick="filterProducts('shoes')">Shoes</a>
+  <a href="#" onclick="filterProducts('tshirt')">T-Shirts</a>
+</div>
+
+<!-- NAVBAR -->
+  
+<nav class="navbar">
+  <div class="nav-left">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <img src="https://i.imgur.com/hMB662h.png" class="logo">
+    <h2>ONE STOP SPORT'S SOLUTION</h2>
   </div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-left">
-      <div class="menu-icon" onclick="toggleMenu()">☰</div>
-      <img src="https://i.imgur.com/hMB662h.png" class="logo">
-      <h2>ONE STOP SPORT'S SOLUTION</h2>
-    </div>
-
-    <div class="nav-right">
-      <a href="#">Home</a>
-      <a href="#services">Services</a>
-      <a href="#products">Products</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
+  <div class="nav-right">
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
   <!-- ADMIN LOGIN -->
-  <section id="loginPanel" style="padding:20px; background:#eee;">
-    <h3>Admin Login</h3>
-    <input id="adminUser" type="email" placeholder="Email">
-    <input id="adminPass" type="password" placeholder="Password">
-    <button onclick="loginAdmin()">Login</button>
-  </section>
+<section id="loginPanel" style="padding:20px; background:#eee;">
+  <h3>Admin Login</h3>
+  <input id="adminUser" type="email" placeholder="Email">
+  <input id="adminPass" type="password" placeholder="Password">
+  <button onclick="loginAdmin()">Login</button>
+</section>
+ <!-- ADMIN PANEL (HIDDEN) -->
+<section id="adminPanel" style="display:none; padding:20px; background:#f5f5f5;">
+  <h2>Admin Panel</h2>
 
-  <!-- ADMIN PANEL (HIDDEN) -->
-  <section id="adminPanel" style="display:none; padding:20px; background:#f5f5f5;">
-    <h2>Admin Panel</h2>
-    <button onclick="logoutAdmin()">Logout</button>
-    <input id="pname" placeholder="Product Name">
-    <input id="pprice" placeholder="Price">
-    <input id="pimg" placeholder="Image URL">
-    <input id="poffer" placeholder="Offer (20% OFF)">
-    <input id="pstock" placeholder="Stock (5)">
-    <button onclick="addNewProduct()">Add Product</button>
-  </section>
+  <button onclick="logoutAdmin()">Logout</button>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-overlay">
-      <h1>MSquare Sports & Men's Wear</h1>
-      <p1>Gear Up Like a Pro - Sportswear, Equipment & Custom Kits</p1>
-      <a href="#products"><button>Shop Now</button></a>
+  <input id="pname" placeholder="Product Name">
+  <input id="pprice" placeholder="Price">
+  <input id="pimg" placeholder="Image URL">
+  <input id="poffer" placeholder="Offer (20% OFF)">
+  <input id="pstock" placeholder="Stock (5)">
+  <button onclick="addNewProduct()">Add Product</button>
+</section>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-overlay">
+    <h1>MSquare Sports & Men's Wear</h1>
+    <p1>Gear Up Like a Pro - Sportswear, Equipment & Custom Kits</p1>
+    <a href="#products">
+      <button>Shop Now</button>
+    </a>
+  </div>
+</section>
+
+<!-- SERVICES (UPGRADED PREMIUM SECTION) -->
+<section id="services" class="services">
+  <h2 class="section-title">Our Services</h2>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <h3>Customized Sportswear</h3>
+      <p>Team jerseys, uniforms, and custom designs tailored for your club or events.</p>
     </div>
-  </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="services">
-    <h2 class="section-title">Our Services</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Customized Sportswear</h3>
-        <p>Team jerseys, uniforms, and custom designs tailored for your club or events.</p>
-      </div>
-      <div class="service-card">
-        <h3>Casual Wear</h3>
-        <p>Comfortable and stylish daily wear with premium quality fabrics.</p>
-      </div>
-      <div class="service-card">
-        <h3>Printed T-Shirts</h3>
-        <p>High-quality custom prints for teams, events, and personal branding.</p>
-      </div>
-      <div class="service-card">
-        <h3>Trophies & Mementos</h3>
-        <p>Awards and recognition items for tournaments and special occasions.</p>
-      </div>
-      <div class="service-card">
-        <h3>Sports Equipment</h3>
-        <p>All essential gear for cricket, fitness, and other sports.</p>
-      </div>
+    <div class="service-card">
+      <h3>Casual Wear</h3>
+      <p>Comfortable and stylish daily wear with premium quality fabrics.</p>
     </div>
-  </section>
 
-  <!-- PRODUCTS -->
-  <section id="products">
-    <h2>Featured Products</h2>
-    <div class="grid">
-      <div class="product" data-category="cricket">
-        <img src="https://i.imgur.com/3b4hKSK.png" alt="Cricket Bat">
-        <div class="product-info">
-          <h3>Cricket Bat</h3>
-          <p class="price">₹1,599</p>
-          <a href="https://wa.me/9035202055?text=I want Cricket Bat" target="_blank">
-            <button class="buy-btn">Order on WhatsApp</button>
-          </a>
-        </div>
-      </div>
-
-      <div class="product" data-category="shoes">
-        <img src="https://i.imgur.com/zkUFY0Q.png" alt="Sports Shoes">
-        <div class="product-info">
-          <h3>Sports Shoes</h3>
-          <p class="price">₹1,499</p>
-          <a href="https://wa.me/9035202055?text=I want Sports Shoes" target="_blank">
-            <button class="buy-btn">Order on WhatsApp</button>
-          </a>
-        </div>
-      </div>
-
-      <div class="product" data-category="tshirt">
-        <img src="https://i.imgur.com/n0PylmQ.jpeg" alt="T-Shirt">
-        <div class="product-info">
-          <h3>Sports T-Shirt</h3>
-          <p class="price">₹599</p>
-          <a href="https://wa.me/9035202055?text=I want T-Shirt" target="_blank">
-            <button class="buy-btn">Order on WhatsApp</button>
-          </a>
-        </div>
-      </div>
+    <div class="service-card">
+      <h3>Printed T-Shirts</h3>
+      <p>High-quality custom prints for teams, events, and personal branding.</p>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Connect With Us</h2>
-    <a href="tel:+919035202055"><button>Call Now</button></a>
-    <button onclick="openInstagram()">Instagram</button>
-    <button onclick="openWhatsApp()">WhatsApp</button>
-  </section>
+    <div class="service-card">
+      <h3>Trophies & Mementos</h3>
+      <p>Awards and recognition items for tournaments and special occasions.</p>
+    </div>
 
-  <!-- LOCATION -->
-  <section id="location">
-    <h2>Find Us</h2>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.655598277846!2d77.57998669999999!3d12.865507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6ba5853fe9d7%3A0x2ae736a30b418ddb!2sM%20SQUARE%20SPORTS%20AND%20MENSWEAR!5e0!3m2!1sen!2sin!4v1774420183669!5m2!1sen!2sin"
-      width="100%" 
-      height="300"
-      style="border:0;"
-      loading="lazy">
-    </iframe>
-  </section>
+    <div class="service-card">
+      <h3>Sports Equipment</h3>
+      <p>All essential gear for cricket, fitness, and other sports.</p>
+    </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 MSquare Sports & Men's Wear</p>
-  </footer>
+  </div>
+</section>
 
-  <script type="module" src="firebase.js"></script>
-  <script src="script.js"></script>
+<!-- PRODUCTS -->
+<section id="products">
+  <h2>Featured Products</h2>
+
+  <div class="grid">
+
+    <div class="product" data-category="cricket">
+  <img src="https://i.imgur.com/3b4hKSK.png" alt="Cricket Bat">
+
+  <div class="product-info">
+    <h3>Cricket Bat</h3>
+    <p class="price">₹1,599</p>
+
+    <a href="https://wa.me/9035202055?text=I want Cricket Bat" target="_blank">
+      <button class="buy-btn">Order on WhatsApp</button>
+    </a>
+  </div>
+</div>
+<div class="product" data-category="shoes">
+  <img src="https://i.imgur.com/zkUFY0Q.png" alt="Sports Shoes">
+
+  <div class="product-info">
+    <h3>Sports Shoes</h3>
+    <p class="price">₹1,499</p>
+
+    <a href="https://wa.me/9035202055?text=I want Sports Shoes" target="_blank">
+      <button class="buy-btn">Order on WhatsApp</button>
+    </a>
+  </div>
+</div>
+<div class="product" data-category="tshirt">
+  <img src="https://i.imgur.com/n0PylmQ.jpeg" alt="T-Shirt">
+
+  <div class="product-info">
+    <h3>Sports T-Shirt</h3>
+    <p class="price">₹599</p>
+
+    <a href="https://wa.me/9035202055?text=I want T-Shirt" target="_blank">
+      <button class="buy-btn">Order on WhatsApp</button>
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Connect With Us</h2>
+
+  <a href="tel:+919035202055">
+    <button>Call Now</button>
+  </a>
+
+  <button onclick="openInstagram()">Instagram</button>
+  <button onclick="openWhatsApp()">WhatsApp</button>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <h2>Find Us</h2>
+
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.655598277846!2d77.57998669999999!3d12.865507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6ba5853fe9d7%3A0x2ae736a30b418ddb!2sM%20SQUARE%20SPORTS%20AND%20MENSWEAR!5e0!3m2!1sen!2sin!4v1774420183669!5m2!1sen!2sin"
+    width="100%" 
+    height="300"
+    style="border:0;"
+    loading="lazy">
+  </iframe>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 MSquare Sports & Men's Wear</p>
+</footer>
+
+<script type="module" src="firebase.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
