@@ -5,42 +5,27 @@ import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut }
 from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 // 🔥 FIREBASE CONFIG
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBdcTPbkGt1tYJ5ZyUU1Sg8h1DhNaafTj8",
   authDomain: "msquare-sports.firebaseapp.com",
   projectId: "msquare-sports",
   storageBucket: "msquare-sports.firebasestorage.app",
   messagingSenderId: "144814096708",
-  appId: "1:144814096708:web:8daff5c52f0c00d7a81711"
+  appId: "1:144814096708:web:8daff5c52f0c00d7a81711",
+  measurementId: "G-BFZNTJJEEH"
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-export const auth = getAuth(app);
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, updateDoc } 
-from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } 
-from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } 
-from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
-
-// 🔥 CONFIG
-const firebaseConfig = {
-  apiKey: "AIzaSyBR6kgN7j53B9Yo5B5ncTkIV9_xlVA3LCM",
-  authDomain: "msquare-sports.firebaseapp.com",
-  projectId: "msquare-sports",
-  storageBucket: "msquare-sports.firebasestorage.app",
-  messagingSenderId: "144814096708",
-  appId: "1:144814096708:web:8daff5c52f0c00d7a81711"
-};
-
-// 🔥 INIT
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
-const storage = getStorage(app);
+const analytics = getAnalytics(app);
 
 let isAdmin = false;
 
@@ -53,14 +38,15 @@ window.loginAdmin = async function () {
     await signInWithEmailAndPassword(auth, email, password);
     alert("Login Successful");
   } catch (err) {
-    console.log(err.code, err.message);
-    alert(err.code);
-  }
+  console.log(err.code);
+  console.log(err.message);
+  alert(err.code);
+}
 };
 
 // 🔐 AUTH STATE
 onAuthStateChanged(auth, (user) => {
-  if (user && user.email === "admin@msquare.com") { // replace with your admin email
+  if (user) {
     isAdmin = true;
     document.getElementById("adminPanel").style.display = "block";
     document.getElementById("loginPanel").style.display = "none";
@@ -73,7 +59,7 @@ onAuthStateChanged(auth, (user) => {
   loadProducts();
 });
 
-// 📦 LOAD PRODUCTS
+// 🔥 LOAD PRODUCTS FROM FIREBASE
 async function loadProducts() {
   const grid = document.querySelector(".grid");
   grid.querySelectorAll(".firebase-item").forEach(el => el.remove());
@@ -96,6 +82,7 @@ async function loadProducts() {
     div.className = "product firebase-item";
 
     div.innerHTML = `
+      ${p.offer ? `<div class="offer-badge">${p.offer}</div>` : ""}
       <img src="${p.img}">
       <div class="product-info">
         <h3>${p.name}</h3>
@@ -103,7 +90,7 @@ async function loadProducts() {
         <p class="stock">${p.stock <= 5 ? "Only " + p.stock + " left" : ""}</p>
 
         <a href="https://wa.me/9035202055?text=I want ${p.name}" target="_blank">
-          <button class="buy-btn">Order</button>
+          <button class="buy-btn">Order on WhatsApp</button>
         </a>
 
         ${adminBtns}
@@ -116,46 +103,31 @@ async function loadProducts() {
 
 // ➕ ADD PRODUCT
 window.addNewProduct = async function () {
-  if (!isAdmin) return alert("Not authorized");
+  if (!isAdmin) {
+    alert("Not authorized");
+    return;
+  }
 
   const name = document.getElementById("pname").value;
   const price = document.getElementById("pprice").value;
+  const img = document.getElementById("pimg").value;
   const offer = document.getElementById("poffer").value;
   const stock = document.getElementById("pstock").value;
-  const file = document.getElementById("pimg").files[0];
 
-  if (!name || !price || !file) return alert("Fill all fields and select an image");
-
-  // Upload image
-  const storageRef = ref(storage, 'products/' + file.name);
-  await uploadBytes(storageRef, file);
-  const imgURL = await getDownloadURL(storageRef);
-
-  // Save product
   await addDoc(collection(db, "products"), {
-    name,
-    price,
-    offer,
-    stock,
-    img: imgURL
+    name, price, img, offer, stock
   });
 
-  alert("Product added");
+  alert("Product Added");
   loadProducts();
-
-  // Reset form
-  document.getElementById("pname").value = "";
-  document.getElementById("pprice").value = "";
-  document.getElementById("poffer").value = "";
-  document.getElementById("pstock").value = "";
-  document.getElementById("pimg").value = "";
 };
 
 // ❌ DELETE PRODUCT
 window.deleteProduct = async function (id) {
-  if (!isAdmin) return;
-
-  if (!confirm("Delete this product?")) return;
+  if (!isAdmin) {
+    alert("Not authorized");
+    return;
+  }
 
   await deleteDoc(doc(db, "products", id));
   alert("Deleted");
@@ -164,16 +136,21 @@ window.deleteProduct = async function (id) {
 
 // ✏️ EDIT PRODUCT
 window.editProduct = async function (id) {
-  if (!isAdmin) return;
+  if (!isAdmin) {
+    alert("Not authorized");
+    return;
+  }
 
   const name = prompt("New name:");
   const price = prompt("New price:");
-  const offer = prompt("New offer:");
-  const stock = prompt("New stock:");
+  const img = prompt("New image URL:");
+  const offer = prompt("Offer:");
+  const stock = prompt("Stock:");
 
-  if (!name || !price) return alert("Name and price required");
+  await updateDoc(doc(db, "products", id), {
+    name, price, img, offer, stock
+  });
 
-  await updateDoc(doc(db, "products", id), { name, price, offer, stock });
   alert("Updated");
   loadProducts();
 };
@@ -181,4 +158,4 @@ window.editProduct = async function (id) {
 // 🚪 LOGOUT
 window.logoutAdmin = async function () {
   await signOut(auth);
-};
+}; 
