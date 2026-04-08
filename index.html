@@ -4,15 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="M Square Sports & Menswear - Sportswear, Shoes, Cricket Equipment in Bangalore">
-  <title>M Square Sports & Menswear</title>
+  <title>M Square Sports & Menswear </title>
   <link rel="stylesheet" href="style.css">
   <meta name="keywords" content="sports shop Bangalore, cricket bat Bangalore, sports shoes near me">
   <meta name="author" content="MSquare Sports">
 </head>
-<body> 
+
+<body>
   <a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank">💬</a>
 
-  <!-- SIDEBAR -->
+  <!-- SIDEBAR (ONLY ONE) -->
   <div id="sidebar" class="sidebar">
     <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">×</a>
     <h3>Categories</h3>
@@ -29,6 +30,7 @@
       <img src="https://i.imgur.com/hMB662h.png" class="logo">
       <h2>ONE STOP SPORT'S SOLUTION</h2>
     </div>
+
     <div class="nav-right">
       <a href="#">Home</a>
       <a href="#services">Services</a>
@@ -38,15 +40,15 @@
   </nav>
 
   <!-- ADMIN LOGIN -->
-  <section id="loginPanel">
+  <section id="loginPanel" style="padding:20px; background:#eee;">
     <h3>Admin Login</h3>
     <input id="adminUser" type="email" placeholder="Email">
     <input id="adminPass" type="password" placeholder="Password">
     <button onclick="loginAdmin()">Login</button>
   </section>
 
-  <!-- ADMIN PANEL -->
-  <section id="adminPanel">
+  <!-- ADMIN PANEL (HIDDEN) -->
+  <section id="adminPanel" style="display:none; padding:20px; background:#f5f5f5;">
     <h2>Admin Panel</h2>
     <button onclick="logoutAdmin()">Logout</button>
     <input id="pname" placeholder="Product Name">
@@ -61,7 +63,7 @@
   <section class="hero">
     <div class="hero-overlay">
       <h1>MSquare Sports & Men's Wear</h1>
-      <p>Gear Up Like a Pro - Sportswear, Equipment & Custom Kits</p>
+      <p1>Gear Up Like a Pro - Sportswear, Equipment & Custom Kits</p1>
       <a href="#products"><button>Shop Now</button></a>
     </div>
   </section>
@@ -70,18 +72,66 @@
   <section id="services" class="services">
     <h2 class="section-title">Our Services</h2>
     <div class="services-grid">
-      <div class="service-card"><h3>Customized Sportswear</h3><p>Team jerseys, uniforms, and custom designs.</p></div>
-      <div class="service-card"><h3>Casual Wear</h3><p>Comfortable and stylish daily wear.</p></div>
-      <div class="service-card"><h3>Printed T-Shirts</h3><p>High-quality custom prints.</p></div>
-      <div class="service-card"><h3>Trophies & Mementos</h3><p>Awards and recognition items.</p></div>
-      <div class="service-card"><h3>Sports Equipment</h3><p>Essential gear for cricket, fitness, and other sports.</p></div>
+      <div class="service-card">
+        <h3>Customized Sportswear</h3>
+        <p>Team jerseys, uniforms, and custom designs tailored for your club or events.</p>
+      </div>
+      <div class="service-card">
+        <h3>Casual Wear</h3>
+        <p>Comfortable and stylish daily wear with premium quality fabrics.</p>
+      </div>
+      <div class="service-card">
+        <h3>Printed T-Shirts</h3>
+        <p>High-quality custom prints for teams, events, and personal branding.</p>
+      </div>
+      <div class="service-card">
+        <h3>Trophies & Mementos</h3>
+        <p>Awards and recognition items for tournaments and special occasions.</p>
+      </div>
+      <div class="service-card">
+        <h3>Sports Equipment</h3>
+        <p>All essential gear for cricket, fitness, and other sports.</p>
+      </div>
     </div>
   </section>
 
   <!-- PRODUCTS -->
   <section id="products">
     <h2>Featured Products</h2>
-    <div class="grid"></div>
+    <div class="grid">
+      <div class="product" data-category="cricket">
+        <img src="https://i.imgur.com/3b4hKSK.png" alt="Cricket Bat">
+        <div class="product-info">
+          <h3>Cricket Bat</h3>
+          <p class="price">₹1,599</p>
+          <a href="https://wa.me/9035202055?text=I want Cricket Bat" target="_blank">
+            <button class="buy-btn">Order on WhatsApp</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="product" data-category="shoes">
+        <img src="https://i.imgur.com/zkUFY0Q.png" alt="Sports Shoes">
+        <div class="product-info">
+          <h3>Sports Shoes</h3>
+          <p class="price">₹1,499</p>
+          <a href="https://wa.me/9035202055?text=I want Sports Shoes" target="_blank">
+            <button class="buy-btn">Order on WhatsApp</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="product" data-category="tshirt">
+        <img src="https://i.imgur.com/n0PylmQ.jpeg" alt="T-Shirt">
+        <div class="product-info">
+          <h3>Sports T-Shirt</h3>
+          <p class="price">₹599</p>
+          <a href="https://wa.me/9035202055?text=I want T-Shirt" target="_blank">
+            <button class="buy-btn">Order on WhatsApp</button>
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- CONTACT -->
@@ -97,15 +147,19 @@
     <h2>Find Us</h2>
     <iframe 
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.655598277846!2d77.57998669999999!3d12.865507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6ba5853fe9d7%3A0x2ae736a30b418ddb!2sM%20SQUARE%20SPORTS%20AND%20MENSWEAR!5e0!3m2!1sen!2sin!4v1774420183669!5m2!1sen!2sin"
-      width="100%" height="300" style="border:0;" loading="lazy">
+      width="100%" 
+      height="300"
+      style="border:0;"
+      loading="lazy">
     </iframe>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>© 2026 MSquare Sports & Men's Wear</p>
   </footer>
 
   <script type="module" src="firebase.js"></script>
-  <script type="module" src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
