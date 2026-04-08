@@ -1,57 +1,74 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, updateDoc } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+// 🔥 FIREBASE CONFIG
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_DOMAIN",
+  projectId: "YOUR_PROJECT",
+  storageBucket: "YOUR_BUCKET",
+  messagingSenderId: "YOUR_ID",
+  appId: "YOUR_APP_ID",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+
 let isAdmin = false;
 
-// SOCIAL LINKS
-function openInstagram() {
-  window.open("https://www.instagram.com/msquare_05/", "_blank");
-}
+// 🔐 LOGIN
+window.loginAdmin = async function () {
+  const email = document.getElementById("adminUser").value;
+  const password = document.getElementById("adminPass").value;
 
-function openWhatsApp() {
-  window.open("https://wa.me/9035202055", "_blank");
-}
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    alert("Login Successful");
+  } catch (err) {
+    alert("Wrong Credentials");
+  }
+};
 
-// SIDEBAR TOGGLE
-function toggleMenu() {
-  const sidebar = document.getElementById("sidebar");
-  if (sidebar) sidebar.classList.toggle("active");
-}
+// 🔐 AUTH STATE
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    isAdmin = true;
+    document.getElementById("adminPanel").style.display = "block";
+    document.getElementById("loginPanel").style.display = "none";
+  } else {
+    isAdmin = false;
+    document.getElementById("adminPanel").style.display = "none";
+    document.getElementById("loginPanel").style.display = "block";
+  }
 
-// PRODUCT FILTER
-function filterProducts(category) {
-  const products = document.querySelectorAll(".product");
+  loadProducts();
+});
 
-  products.forEach(product => {
-    const cat = product.dataset.category;
-
-    if (category === "all" || cat === category) {
-      product.style.display = "block";
-    } else {
-      product.style.display = "none";
-    }
-  });
-
-  toggleMenu();
-}
-
-// LOAD PRODUCTS
-window.addEventListener("load", loadSavedProducts);
-
-function loadSavedProducts() {
-  const saved = JSON.parse(localStorage.getItem("products")) || [];
+// 🔥 LOAD PRODUCTS FROM FIREBASE
+async function loadProducts() {
   const grid = document.querySelector(".grid");
+  grid.querySelectorAll(".firebase-item").forEach(el => el.remove());
 
-  // REMOVE OLD CUSTOM PRODUCTS
-  document.querySelectorAll(".product[data-category='custom']").forEach(el => el.remove());
+  const snapshot = await getDocs(collection(db, "products"));
 
-  saved.forEach((p, index) => {
-    const div = document.createElement("div");
-    div.className = "product";
-    div.setAttribute("data-category", "custom");
+  snapshot.forEach((docItem) => {
+    const p = docItem.data();
+    const id = docItem.id;
 
-    // DELETE BUTTON ONLY FOR ADMIN
-    let deleteBtn = "";
+    let adminBtns = "";
     if (isAdmin) {
-      deleteBtn = `<button onclick="deleteProduct(${index})" style="background:red; margin-top:5px;">Delete</button>`;
+      adminBtns = `
+        <button onclick="editProduct('${id}')" style="background:orange;margin-top:5px;">Edit</button>
+        <button onclick="deleteProduct('${id}')" style="background:red;margin-top:5px;">Delete</button>
+      `;
     }
+
+    const div = document.createElement("div");
+    div.className = "product firebase-item";
 
     div.innerHTML = `
       ${p.offer ? `<div class="offer-badge">${p.offer}</div>` : ""}
@@ -65,7 +82,7 @@ function loadSavedProducts() {
           <button class="buy-btn">Order on WhatsApp</button>
         </a>
 
-        ${deleteBtn}
+        ${adminBtns}
       </div>
     `;
 
@@ -73,55 +90,46 @@ function loadSavedProducts() {
   });
 }
 
-// ADD PRODUCT
-function addNewProduct() {
+// ➕ ADD PRODUCT
+window.addNewProduct = async function () {
   const name = document.getElementById("pname").value;
   const price = document.getElementById("pprice").value;
   const img = document.getElementById("pimg").value;
   const offer = document.getElementById("poffer").value;
   const stock = document.getElementById("pstock").value;
 
-  const newProduct = { name, price, img, offer, stock };
+  await addDoc(collection(db, "products"), {
+    name, price, img, offer, stock
+  });
 
-  let products = JSON.parse(localStorage.getItem("products")) || [];
-  products.push(newProduct);
-  localStorage.setItem("products", JSON.stringify(products));
+  alert("Product Added");
+  loadProducts();
+};
 
-  alert("Product Added!");
-  loadSavedProducts(); // ✅ no reload
-}
+// ❌ DELETE PRODUCT
+window.deleteProduct = async function (id) {
+  await deleteDoc(doc(db, "products", id));
+  alert("Deleted");
+  loadProducts();
+};
 
-// DELETE PRODUCT
-function deleteProduct(index) {
-  let products = JSON.parse(localStorage.getItem("products")) || [];
+// ✏️ EDIT PRODUCT
+window.editProduct = async function (id) {
+  const name = prompt("New name:");
+  const price = prompt("New price:");
+  const img = prompt("New image URL:");
+  const offer = prompt("Offer:");
+  const stock = prompt("Stock:");
 
-  products.splice(index, 1);
-  localStorage.setItem("products", JSON.stringify(products));
+  await updateDoc(doc(db, "products", id), {
+    name, price, img, offer, stock
+  });
 
-  alert("Product Deleted!");
-  loadSavedProducts(); // ✅ no reload
-}
+  alert("Updated");
+  loadProducts();
+};
 
-// SECRET ADMIN ACCESS
-let secret = "";
-
-document.addEventListener("keydown", (e) => {
-  secret += e.key.toLowerCase();
-
-  if (secret.includes("vishal")) { // 🔁 change to your name if needed
-    isAdmin = true;
-
-    document.getElementById("adminPanel").style.display = "block";
-    alert("Admin Mode Activated");
-
-    loadSavedProducts(); // 🔥 re-render with delete buttons
-
-    secret = "";
-  }
-
-  if (secret.length > 20) {
-    secret = "";
-  }
-});
-
-console.log("JS LOADED");
+// 🚪 LOGOUT
+window.logoutAdmin = async function () {
+  await signOut(auth);
+};
