@@ -6,12 +6,12 @@ from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 // 🔥 FIREBASE CONFIG
 const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_DOMAIN",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_BUCKET",
-  messagingSenderId: "YOUR_ID",
-  appId: "YOUR_APP_ID",
+  apiKey: "AIzaSyB9k-ns5ykMT9XroM9byq-rcIeCvEseRfY",
+  authDomain: "msquare-sports.firebaseapp.com",
+  projectId: "msquare-sports",
+  storageBucket: "msquare-sports.firebasestorage.app",
+  messagingSenderId: "144814096708",
+  appId: "1:144814096708:web:8daff5c52f0c00d7a81711"
 };
 
 const app = initializeApp(firebaseConfig);
