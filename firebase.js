@@ -6,7 +6,7 @@ from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 // 🔥 FIREBASE CONFIG
 const firebaseConfig = {
-  apiKey: "AIzaSyBdcTPbkGt1tYJ5ZyUU1Sg8h1DhNaafTj8",
+  apiKey: "AIzaSyBR6kgN7j53B9Yo5B5ncTkIV9_xlVA3LCM",
   authDomain: "msquare-sports.firebaseapp.com",
   projectId: "msquare-sports",
   storageBucket: "msquare-sports.firebasestorage.app",
