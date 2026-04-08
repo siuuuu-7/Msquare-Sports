@@ -1,8 +1,32 @@
-import { db, auth, collection, addDoc, getDocs, deleteDoc, doc, updateDoc, signInWithEmailAndPassword, onAuthStateChanged, signOut } from './firebase.js';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, updateDoc } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+// 🔥 FIREBASE CONFIG
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBdcTPbkGt1tYJ5ZyUU1Sg8h1DhNaafTj8",
+  authDomain: "msquare-sports.firebaseapp.com",
+  projectId: "msquare-sports",
+  storageBucket: "msquare-sports.firebasestorage.app",
+  messagingSenderId: "144814096708",
+  appId: "1:144814096708:web:8daff5c52f0c00d7a81711",
+  measurementId: "G-BFZNTJJEEH"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 let isAdmin = false;
 
-// LOGIN
+// 🔐 LOGIN
 window.loginAdmin = async function () {
   const email = document.getElementById("adminUser").value;
   const password = document.getElementById("adminPass").value;
@@ -11,12 +35,13 @@ window.loginAdmin = async function () {
     await signInWithEmailAndPassword(auth, email, password);
     alert("Login Successful");
   } catch (err) {
-    console.log(err);
-    alert("Wrong Credentials");
-  }
+  console.log(err.code);
+  console.log(err.message);
+  alert(err.code);
+}
 };
 
-// AUTH STATE
+// 🔐 AUTH STATE
 onAuthStateChanged(auth, (user) => {
   if (user) {
     isAdmin = true;
@@ -27,20 +52,22 @@ onAuthStateChanged(auth, (user) => {
     document.getElementById("adminPanel").style.display = "none";
     document.getElementById("loginPanel").style.display = "block";
   }
+
   loadProducts();
 });
 
-// LOAD PRODUCTS
+// 🔥 LOAD PRODUCTS FROM FIREBASE
 async function loadProducts() {
   const grid = document.querySelector(".grid");
-  grid.innerHTML = '';
+  grid.querySelectorAll(".firebase-item").forEach(el => el.remove());
 
   const snapshot = await getDocs(collection(db, "products"));
+
   snapshot.forEach((docItem) => {
     const p = docItem.data();
     const id = docItem.id;
 
-    let adminBtns = '';
+    let adminBtns = "";
     if (isAdmin) {
       adminBtns = `
         <button onclick="editProduct('${id}')" style="background:orange;margin-top:5px;">Edit</button>
@@ -50,26 +77,33 @@ async function loadProducts() {
 
     const div = document.createElement("div");
     div.className = "product firebase-item";
+
     div.innerHTML = `
-      ${p.offer ? `<div class="offer-badge">${p.offer}</div>` : ''}
+      ${p.offer ? `<div class="offer-badge">${p.offer}</div>` : ""}
       <img src="${p.img}">
       <div class="product-info">
         <h3>${p.name}</h3>
         <p class="price">${p.price}</p>
         <p class="stock">${p.stock <= 5 ? "Only " + p.stock + " left" : ""}</p>
+
         <a href="https://wa.me/9035202055?text=I want ${p.name}" target="_blank">
           <button class="buy-btn">Order on WhatsApp</button>
         </a>
+
         ${adminBtns}
       </div>
     `;
+
     grid.appendChild(div);
   });
 }
 
-// ADD PRODUCT
+// ➕ ADD PRODUCT
 window.addNewProduct = async function () {
-  if (!isAdmin) return alert("Not authorized");
+  if (!isAdmin) {
+    alert("Not authorized");
+    return;
+  }
 
   const name = document.getElementById("pname").value;
   const price = document.getElementById("pprice").value;
@@ -77,22 +111,32 @@ window.addNewProduct = async function () {
   const offer = document.getElementById("poffer").value;
   const stock = document.getElementById("pstock").value;
 
-  await addDoc(collection(db, "products"), { name, price, img, offer, stock });
+  await addDoc(collection(db, "products"), {
+    name, price, img, offer, stock
+  });
+
   alert("Product Added");
   loadProducts();
 };
 
-// DELETE PRODUCT
+// ❌ DELETE PRODUCT
 window.deleteProduct = async function (id) {
-  if (!isAdmin) return alert("Not authorized");
+  if (!isAdmin) {
+    alert("Not authorized");
+    return;
+  }
+
   await deleteDoc(doc(db, "products", id));
   alert("Deleted");
   loadProducts();
 };
 
-// EDIT PRODUCT
+// ✏️ EDIT PRODUCT
 window.editProduct = async function (id) {
-  if (!isAdmin) return alert("Not authorized");
+  if (!isAdmin) {
+    alert("Not authorized");
+    return;
+  }
 
   const name = prompt("New name:");
   const price = prompt("New price:");
@@ -100,12 +144,15 @@ window.editProduct = async function (id) {
   const offer = prompt("Offer:");
   const stock = prompt("Stock:");
 
-  await updateDoc(doc(db, "products", id), { name, price, img, offer, stock });
+  await updateDoc(doc(db, "products", id), {
+    name, price, img, offer, stock
+  });
+
   alert("Updated");
   loadProducts();
 };
 
-// LOGOUT
+// 🚪 LOGOUT
 window.logoutAdmin = async function () {
   await signOut(auth);
 };
