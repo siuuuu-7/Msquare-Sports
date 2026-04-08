@@ -92,6 +92,11 @@ async function loadProducts() {
 
 // ➕ ADD PRODUCT
 window.addNewProduct = async function () {
+  if (!isAdmin) {
+    alert("Not authorized");
+    return;
+  }
+
   const name = document.getElementById("pname").value;
   const price = document.getElementById("pprice").value;
   const img = document.getElementById("pimg").value;
@@ -108,6 +113,11 @@ window.addNewProduct = async function () {
 
 // ❌ DELETE PRODUCT
 window.deleteProduct = async function (id) {
+  if (!isAdmin) {
+    alert("Not authorized");
+    return;
+  }
+
   await deleteDoc(doc(db, "products", id));
   alert("Deleted");
   loadProducts();
@@ -115,6 +125,11 @@ window.deleteProduct = async function (id) {
 
 // ✏️ EDIT PRODUCT
 window.editProduct = async function (id) {
+  if (!isAdmin) {
+    alert("Not authorized");
+    return;
+  }
+
   const name = prompt("New name:");
   const price = prompt("New price:");
   const img = prompt("New image URL:");
