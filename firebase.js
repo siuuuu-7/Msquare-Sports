@@ -30,9 +30,9 @@ window.loginAdmin = async function () {
     await signInWithEmailAndPassword(auth, email, password);
     alert("Login Successful");
   } catch (err) {
-    console.log(err.code);
-    alert(err.code);
-  }
+  console.log(err.code);
+  alert(err.code);
+}
 };
 
 // ✅ AUTH STATE
