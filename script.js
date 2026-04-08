@@ -29,8 +29,9 @@ window.loginAdmin = async function () {
     await signInWithEmailAndPassword(auth, email, password);
     alert("Login Successful");
   } catch (err) {
-    alert("Wrong Credentials");
-  }
+  console.log(err);
+  alert(err.message);
+}
 };
 
 // 🔐 AUTH STATE
