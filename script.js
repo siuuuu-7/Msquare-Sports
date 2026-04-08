@@ -1,27 +1,19 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, updateDoc } 
-from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } 
-from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { db, auth } from './firebase.js';
+import { collection, getDocs, addDoc, deleteDoc, doc } 
+  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { signInWithEmailAndPassword, onAuthStateChanged, signOut } 
+  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-// ✅ CONFIG
-const firebaseConfig = {
-  apiKey: "AIzaSyBdcTPbkGt1tYJ5ZyUU1Sg8h1DhNaafTj8",
-  authDomain: "msquare-sports.firebaseapp.com",
-  projectId: "msquare-sports",
-  storageBucket: "msquare-sports.firebasestorage.app",
-  messagingSenderId: "144814096708",
-  appId: "1:144814096708:web:8daff5c52f0c00d7a81711"
-};
-
-// ✅ INIT
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
-
+// ===== Admin State =====
 let isAdmin = false;
 
-// ✅ LOGIN
+function setAdminState(user) {
+  isAdmin = !!user;
+  document.getElementById("adminPanel").style.display = isAdmin ? "block" : "none";
+  document.getElementById("loginPanel").style.display = isAdmin ? "none" : "block";
+}
+
+// ===== LOGIN =====
 window.loginAdmin = async function () {
   const email = document.getElementById("adminUser").value.trim();
   const password = document.getElementById("adminPass").value.trim();
@@ -30,66 +22,59 @@ window.loginAdmin = async function () {
     await signInWithEmailAndPassword(auth, email, password);
     alert("Login Successful");
   } catch (err) {
-    console.log(err.code);
-    alert(err.code);
+    console.error(err);
+    alert("Login Failed: " + err.code);
   }
 };
 
-// ✅ AUTH STATE
+// ===== AUTH STATE =====
 onAuthStateChanged(auth, (user) => {
-  if (user) {
-    isAdmin = true;
-    document.getElementById("adminPanel").style.display = "block";
-    document.getElementById("loginPanel").style.display = "none";
-  } else {
-    isAdmin = false;
-    document.getElementById("adminPanel").style.display = "none";
-    document.getElementById("loginPanel").style.display = "block";
-  }
-
+  setAdminState(user);
   loadProducts();
 });
 
-// ✅ LOAD PRODUCTS
+// ===== PRODUCT RENDERING =====
+function createProductDiv(p, id) {
+  const adminBtns = isAdmin
+    ? `<button class="delete-btn" data-id="${id}" style="background:red;margin-top:5px;">Delete</button>`
+    : "";
+
+  const div = document.createElement("div");
+  div.className = "product firebase-item";
+  div.innerHTML = `
+    <img src="${p.img}">
+    <div class="product-info">
+      <h3>${p.name}</h3>
+      <p class="price">${p.price}</p>
+      <a href="https://wa.me/9035202055?text=I want ${p.name}" target="_blank">
+        <button class="buy-btn">Order</button>
+      </a>
+      ${adminBtns}
+    </div>
+  `;
+  
+  // Attach delete listener if admin
+  if (isAdmin) {
+    div.querySelector(".delete-btn").addEventListener("click", () => deleteProduct(id));
+  }
+
+  return div;
+}
+
+// ===== LOAD PRODUCTS =====
 async function loadProducts() {
   const grid = document.querySelector(".grid");
   grid.querySelectorAll(".firebase-item").forEach(el => el.remove());
 
-  const snapshot = await getDocs(collection(db, "products"));
-
-  snapshot.forEach((docItem) => {
-    const p = docItem.data();
-    const id = docItem.id;
-
-    let adminBtns = "";
-    if (isAdmin) {
-      adminBtns = `
-        <button onclick="deleteProduct('${id}')" style="background:red;margin-top:5px;">Delete</button>
-      `;
-    }
-
-    const div = document.createElement("div");
-    div.className = "product firebase-item";
-
-    div.innerHTML = `
-      <img src="${p.img}">
-      <div class="product-info">
-        <h3>${p.name}</h3>
-        <p class="price">${p.price}</p>
-
-        <a href="https://wa.me/9035202055?text=I want ${p.name}" target="_blank">
-          <button class="buy-btn">Order</button>
-        </a>
-
-        ${adminBtns}
-      </div>
-    `;
-
-    grid.appendChild(div);
-  });
+  try {
+    const snapshot = await getDocs(collection(db, "products"));
+    snapshot.forEach(docItem => grid.appendChild(createProductDiv(docItem.data(), docItem.id)));
+  } catch (err) {
+    console.error("Failed to load products:", err);
+  }
 }
 
-// ✅ ADD PRODUCT
+// ===== ADD PRODUCT =====
 window.addNewProduct = async function () {
   if (!isAdmin) return alert("Not authorized");
 
@@ -99,24 +84,36 @@ window.addNewProduct = async function () {
   const offer = document.getElementById("poffer").value;
   const stock = document.getElementById("pstock").value;
 
-  await addDoc(collection(db, "products"), {
-    name, price, img, offer, stock
-  });
-
-  alert("Added");
-  loadProducts();
+  try {
+    await addDoc(collection(db, "products"), { name, price, img, offer, stock });
+    alert("Product added successfully");
+    loadProducts();
+  } catch (err) {
+    console.error(err);
+    alert("Failed to add product");
+  }
 };
 
-// ✅ DELETE
-window.deleteProduct = async function (id) {
+// ===== DELETE PRODUCT =====
+async function deleteProduct(id) {
   if (!isAdmin) return;
 
-  await deleteDoc(doc(db, "products", id));
-  alert("Deleted");
-  loadProducts();
-};
+  try {
+    await deleteDoc(doc(db, "products", id));
+    alert("Product deleted");
+    loadProducts();
+  } catch (err) {
+    console.error(err);
+    alert("Failed to delete product");
+  }
+}
 
-// ✅ LOGOUT
+// ===== LOGOUT =====
 window.logoutAdmin = async function () {
-  await signOut(auth);
+  try {
+    await signOut(auth);
+  } catch (err) {
+    console.error(err);
+    alert("Logout failed");
+  }
 };
