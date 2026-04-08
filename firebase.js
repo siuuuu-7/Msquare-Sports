@@ -1,10 +1,10 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"; 
-import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, updateDoc } 
 from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } 
 from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-// CONFIG
+// ✅ CONFIG
 const firebaseConfig = {
   apiKey: "AIzaSyB9k-ns5ykMT9XroM9byq-rcIeCvEseRfY",
   authDomain: "msquare-sports.firebaseapp.com",
@@ -13,27 +13,29 @@ const firebaseConfig = {
   messagingSenderId: "144814096708",
   appId: "1:144814096708:web:8daff5c52f0c00d7a81711"
 };
+
+// ✅ INIT
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
 let isAdmin = false;
 
-// LOGIN
+// ✅ LOGIN
 window.loginAdmin = async function () {
-  const email = document.getElementById("adminUser").value;
-  const password = document.getElementById("adminPass").value;
+  const email = document.getElementById("adminUser").value.trim();
+  const password = document.getElementById("adminPass").value.trim();
 
   try {
     await signInWithEmailAndPassword(auth, email, password);
     alert("Login Successful");
   } catch (err) {
-  console.log(err.code);
-  alert(err.code);
-}
+    console.log(err.code);
+    alert(err.code);
+  }
 };
 
-// AUTH STATE
+// ✅ AUTH STATE
 onAuthStateChanged(auth, (user) => {
   if (user) {
     isAdmin = true;
@@ -48,7 +50,7 @@ onAuthStateChanged(auth, (user) => {
   loadProducts();
 });
 
-// LOAD PRODUCTS
+// ✅ LOAD PRODUCTS
 async function loadProducts() {
   const grid = document.querySelector(".grid");
   grid.querySelectorAll(".firebase-item").forEach(el => el.remove());
@@ -87,23 +89,25 @@ async function loadProducts() {
   });
 }
 
-// ADD PRODUCT
+// ✅ ADD PRODUCT
 window.addNewProduct = async function () {
   if (!isAdmin) return alert("Not authorized");
 
+  const name = document.getElementById("pname").value;
+  const price = document.getElementById("pprice").value;
+  const img = document.getElementById("pimg").value;
+  const offer = document.getElementById("poffer").value;
+  const stock = document.getElementById("pstock").value;
+
   await addDoc(collection(db, "products"), {
-    name: pname.value,
-    price: pprice.value,
-    img: pimg.value,
-    offer: poffer.value,
-    stock: pstock.value
+    name, price, img, offer, stock
   });
 
   alert("Added");
   loadProducts();
 };
 
-// DELETE
+// ✅ DELETE
 window.deleteProduct = async function (id) {
   if (!isAdmin) return;
 
@@ -112,7 +116,7 @@ window.deleteProduct = async function (id) {
   loadProducts();
 };
 
-// LOGOUT
+// ✅ LOGOUT
 window.logoutAdmin = async function () {
   await signOut(auth);
 };
