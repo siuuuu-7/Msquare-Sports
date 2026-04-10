@@ -4,16 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="M Square Sports & Menswear - Sportswear, Shoes, Cricket Equipment in Bangalore">
-  <title>M Square Sports & Menswear </title>
+  <title>M Square Sports & Menswear</title>
+
   <link rel="stylesheet" href="style.css">
-  <meta name="keywords" content="sports shop Bangalore, cricket bat Bangalore, sports shoes near me">
-<meta name="author" content="MSquare Sports">
-  <meta property="og:title" content="MSquare Sports & Menswear">
-<meta property="og:description" content="Sportswear, Cricket Gear & Custom Jerseys">
-<meta property="og:image" content="https://i.imgur.com/opWqjIC.jpeg">
   <link rel="manifest" href="manifest.json">
- <button id="installBtn" style="
+
+  <meta name="keywords" content="sports shop Bangalore, cricket bat Bangalore, sports shoes near me">
+  <meta name="author" content="MSquare Sports">
+
+  <meta property="og:title" content="MSquare Sports & Menswear">
+  <meta property="og:description" content="Sportswear, Cricket Gear & Custom Jerseys">
+  <meta property="og:image" content="https://i.imgur.com/opWqjIC.jpeg">
+</head>
+
+<body>
+
+<!-- INSTALL APP BUTTON -->
+<button id="installBtn" style="
   display:none;
+  position:fixed;
+  bottom:20px;
+  right:20px;
   padding:12px 20px;
   background:#0a0a0a;
   color:#fff;
@@ -21,72 +32,54 @@
   border-radius:6px;
   font-size:16px;
   cursor:pointer;
+  z-index:9999;
 ">
-  Install MSquare App
-</button>
-</head>
-
-<body> <button id="installBtn" hidden>
   📲 Install MSquare App
-</button> <script>
+</button>
+
+<!-- SERVICE WORKER -->
+<script>
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
       navigator.serviceWorker
         .register("/Msquare-Sports/service-worker.js")
-        .then(reg => console.log("Service Worker registered", reg))
+        .then(() => console.log("Service Worker registered"))
         .catch(err => console.error("Service Worker failed", err));
     });
   }
-</script> <script>
+</script>
+
+<!-- INSTALL PROMPT LOGIC -->
+<script>
   let deferredPrompt;
   const installBtn = document.getElementById("installBtn");
 
   window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    installBtn.style.display = "inline-block";
+    installBtn.style.display = "block";
   });
 
   installBtn.addEventListener("click", async () => {
     if (!deferredPrompt) return;
     deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
+    await deferredPrompt.userChoice;
     deferredPrompt = null;
     installBtn.style.display = "none";
-    console.log("Install outcome:", outcome);
-  });
-</script> <script>
-  let deferredPrompt;
-
-  window.addEventListener("beforeinstallprompt", (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-
-    const installBtn = document.getElementById("installBtn");
-    installBtn.hidden = false;
-
-    installBtn.addEventListener("click", async () => {
-      installBtn.hidden = true;
-      deferredPrompt.prompt();
-      await deferredPrompt.userChoice;
-      deferredPrompt = null;
-    });
   });
 
-  // Optional: hide button if already installed
   window.addEventListener("appinstalled", () => {
-    const installBtn = document.getElementById("installBtn");
-    installBtn.hidden = true;
+    installBtn.style.display = "none";
     console.log("PWA installed");
   });
-</script> </body><a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank">
-  💬
-</a>
+</script>
 
-<!-- SIDEBAR (ONLY ONE) -->
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank">💬</a>
+
+<!-- SIDEBAR -->
 <div id="sidebar" class="sidebar">
   <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">×</a>
-
   <h3>Categories</h3>
   <a href="#" onclick="filterProducts('all')">All Products</a>
   <a href="#" onclick="filterProducts('cricket')">Cricket</a>
@@ -95,14 +88,12 @@
 </div>
 
 <!-- NAVBAR -->
-  
 <nav class="navbar">
   <div class="nav-left">
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <img src="https://i.imgur.com/opWqjIC.jpeg" class="logo">
     <h2>ONE STOP SPORT'S SOLUTION</h2>
   </div>
-
   <div class="nav-right">
     <a href="#">Home</a>
     <a href="#services">Services</a>
@@ -110,146 +101,69 @@
     <a href="#contact">Contact</a>
   </div>
 </nav>
-  <!-- ADMIN LOGIN -->
-<section id="loginPanel" style="padding:20px; background:#eee;">
-  <h3>Admin Login</h3>
-  <input id="adminUser" type="email" placeholder="Email">
-  <input id="adminPass" type="password" placeholder="Password">
-  <button onclick="loginAdmin()">Login</button>
-</section>
- <!-- ADMIN PANEL (HIDDEN) -->
-<section id="adminPanel" style="display:none; padding:20px; background:#f5f5f5;">
-  <h2>Admin Panel</h2>
-
-  <button onclick="logoutAdmin()">Logout</button>
-
-  <input id="pname" placeholder="Product Name">
-  <input id="pprice" placeholder="Price">
-  <input id="pimg" placeholder="Image URL">
-  <input id="poffer" placeholder="Offer (20% OFF)">
-  <input id="pstock" placeholder="Stock (5)">
-  <button onclick="addNewProduct()">Add Product</button>
-</section>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-overlay">
     <h1>MSquare Sports & Men's Wear</h1>
-    <p1>Gear Up Like a Pro - Sportswear, Equipment & Custom Kits</p1>
-    <a href="#products">
-      <button>Shop Now</button>
-    </a>
+    <p>Gear Up Like a Pro - Sportswear, Equipment & Custom Kits</p>
+    <a href="#products"><button>Shop Now</button></a>
   </div>
 </section>
 
-<!-- SERVICES (UPGRADED PREMIUM SECTION) -->
+<!-- SERVICES -->
 <section id="services" class="services">
   <h2 class="section-title">Our Services</h2>
-
   <div class="services-grid">
-
-    <div class="service-card">
-      <h3>Customized Sportswear</h3>
-      <p>Team jerseys, uniforms, and custom designs tailored for your club or events.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>Casual Wear</h3>
-      <p>Comfortable and stylish daily wear with premium quality fabrics.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>Printed T-Shirts</h3>
-      <p>High-quality custom prints for teams, events, and personal branding.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>Trophies & Mementos</h3>
-      <p>Awards and recognition items for tournaments and special occasions.</p>
-    </div>
-
-    <div class="service-card">
-      <h3>Sports Equipment</h3>
-      <p>All essential gear for cricket, fitness, and other sports.</p>
-    </div>
-
+    <div class="service-card"><h3>Customized Sportswear</h3><p>Team jerseys and uniforms.</p></div>
+    <div class="service-card"><h3>Casual Wear</h3><p>Premium daily wear.</p></div>
+    <div class="service-card"><h3>Printed T-Shirts</h3><p>High-quality prints.</p></div>
+    <div class="service-card"><h3>Trophies & Mementos</h3><p>Awards and recognition.</p></div>
+    <div class="service-card"><h3>Sports Equipment</h3><p>Cricket & fitness gear.</p></div>
   </div>
 </section>
 
 <!-- PRODUCTS -->
 <section id="products">
   <h2>Featured Products</h2>
-
   <div class="grid">
 
     <div class="product" data-category="cricket">
-  <img src="https://i.imgur.com/3b4hKSK.png" alt="Cricket Bat">
+      <img src="https://i.imgur.com/3b4hKSK.png">
+      <h3>Cricket Bat</h3>
+      <p class="price">₹1,599</p>
+      <a href="https://wa.me/9035202055?text=I want Cricket Bat" target="_blank">
+        <button>Order on WhatsApp</button>
+      </a>
+    </div>
 
-  <div class="product-info">
-    <h3>Cricket Bat</h3>
-    <p class="price">₹1,599</p>
+    <div class="product" data-category="shoes">
+      <img src="https://i.imgur.com/zkUFY0Q.png">
+      <h3>Sports Shoes</h3>
+      <p class="price">₹1,499</p>
+      <a href="https://wa.me/9035202055?text=I want Sports Shoes" target="_blank">
+        <button>Order on WhatsApp</button>
+      </a>
+    </div>
 
-    <a href="https://wa.me/9035202055?text=I want Cricket Bat" target="_blank">
-      <button class="buy-btn">Order on WhatsApp</button>
-    </a>
-  </div>
-</div>
-<div class="product" data-category="shoes">
-  <img src="https://i.imgur.com/zkUFY0Q.png" alt="Sports Shoes">
+    <div class="product" data-category="tshirt">
+      <img src="https://i.imgur.com/n0PylmQ.jpeg">
+      <h3>Sports T-Shirt</h3>
+      <p class="price">₹599</p>
+      <a href="https://wa.me/9035202055?text=I want T-Shirt" target="_blank">
+        <button>Order on WhatsApp</button>
+      </a>
+    </div>
 
-  <div class="product-info">
-    <h3>Sports Shoes</h3>
-    <p class="price">₹1,499</p>
-
-    <a href="https://wa.me/9035202055?text=I want Sports Shoes" target="_blank">
-      <button class="buy-btn">Order on WhatsApp</button>
-    </a>
-  </div>
-</div>
-<div class="product" data-category="tshirt">
-  <img src="https://i.imgur.com/n0PylmQ.jpeg" alt="T-Shirt">
-
-  <div class="product-info">
-    <h3>Sports T-Shirt</h3>
-    <p class="price">₹599</p>
-
-    <a href="https://wa.me/9035202055?text=I want T-Shirt" target="_blank">
-      <button class="buy-btn">Order on WhatsApp</button>
-    </a>
-  </div>
-</div>
   </div>
 </section>
-  <section id="cart">
-  <h2>Your Cart</h2>
-  <div id="cartItems"></div>
-  <button onclick="checkout()">Checkout</button>
-</section>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 <!-- CONTACT -->
 <section id="contact">
   <h2>Connect With Us</h2>
-
-  <a href="tel:+919035202055">
-    <button>Call Now</button>
-  </a>
-
+  <a href="tel:+919035202055"><button>Call Now</button></a>
   <button onclick="openInstagram()">Instagram</button>
   <button onclick="openWhatsApp()">WhatsApp</button>
-</section>
-
-<!-- LOCATION -->
-<section id="location">
-  <h2>Find Us</h2>
-
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.655598277846!2d77.57998669999999!3d12.865507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6ba5853fe9d7%3A0x2ae736a30b418ddb!2sM%20SQUARE%20SPORTS%20AND%20MENSWEAR!5e0!3m2!1sen!2sin!4v1774420183669!5m2!1sen!2sin"
-    width="100%" 
-    height="300"
-    style="border:0;"
-    loading="lazy">
-  </iframe>
-
 </section>
 
 <!-- FOOTER -->
