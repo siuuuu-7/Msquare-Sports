@@ -1,7 +1,7 @@
 {
-  "name": "M Square Sports &amp; Menswear",
+  "name": "M Square Sports & Menswear",
   "short_name": "MSquare",
-  "description": "M Square Sports &amp; Menswear offers premium sportswear, shoes, cricket equipment, and menswear in Bangalore. Shop quality gear for every athlete.",
+  "description": "M Square Sports & Menswear offers premium sportswear, shoes, cricket equipment, and menswear in Bangalore. Shop quality gear for every athlete.",
   "start_url": "/Msquare-Sports/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -10,12 +10,14 @@
     {
       "src": "icons/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "icons/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
