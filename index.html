@@ -14,7 +14,16 @@
   <link rel="manifest" href="manifest.json">
 </head>
 
-<body> <a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank">
+<body> <script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/Msquare-Sports/service-worker.js")
+        .then(reg => console.log("Service Worker registered", reg))
+        .catch(err => console.error("Service Worker failed", err));
+    });
+  }
+</script> </body><a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank">
   💬
 </a>
 
