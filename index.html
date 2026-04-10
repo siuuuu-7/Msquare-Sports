@@ -37,6 +37,20 @@
 </button>
 
 <!-- INSTALL INFO POPUP (REPLACES ALERT ONLY) -->
+  <div id="pcStep" style="display:none;">
+  🖥 <b>Chrome / Edge (PC)</b><br>
+  Click the <b>➕ Install</b> icon in the address bar
+</div>
+
+<div id="androidStep" style="display:none;">
+  🤖 <b>Android</b><br>
+  Tap <b>Install</b> when prompted
+</div>
+
+<div id="iosStep" style="display:none;">
+  🍎 <b>iPhone</b><br>
+  Share → <b>Add to Home Screen</b>
+</div>
 <div id="installPopup" style="
   display:none;
   position:fixed;
@@ -79,7 +93,19 @@
     </button>
   </div>
 </div>
+<script>
+function detectDevice() {
+  const ua = navigator.userAgent.toLowerCase();
 
+  if (/iphone|ipad|ipod/.test(ua)) {
+    document.getElementById("iosStep").style.display = "block";
+  } else if (/android/.test(ua)) {
+    document.getElementById("androidStep").style.display = "block";
+  } else {
+    document.getElementById("pcStep").style.display = "block";
+  }
+}
+</script>
 <script>
 function installHelp() {
   document.getElementById("installPopup").style.display = "flex";
