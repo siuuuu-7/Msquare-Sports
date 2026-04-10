@@ -17,21 +17,32 @@
   <meta property="og:image" content="https://i.imgur.com/opWqjIC.jpeg">
 </head>
 
-<body> <script>
-  console.log("PWA debug loaded");
+<body> <button onclick="installHelp()" style="
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  padding:12px 20px;
+  background:#0a0a0a;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+  z-index:9999;
+">
+  📲 Install MSquare App
+</button>
 
-  window.addEventListener("beforeinstallprompt", () => {
-    console.log("✅ beforeinstallprompt FIRED");
-  });
-
-  window.addEventListener("appinstalled", () => {
-    console.log("✅ appinstalled event fired");
-  });
-
-  window.matchMedia('(display-mode: standalone)').addEventListener('change', e => {
-    console.log("Display mode:", e.matches ? "standalone" : "browser");
-  });
-</script> </body>
+<script>
+function installHelp() {
+  alert(
+    "Install MSquare Sports App:\n\n" +
+    "• Chrome / Edge (PC): Click the ➕ Install icon in the address bar\n" +
+    "• Android: Tap Install when prompted\n" +
+    "• iPhone: Share → Add to Home Screen"
+  );
+}
+</script>
 
 <!-- INSTALL APP BUTTON -->
 <button onclick="showInstallHelp()" style="
