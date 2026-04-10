@@ -206,3 +206,7 @@ window.checkout = function () {
   rzp.open();
 };
 self.addEventListener("fetch", () => {});
+function installHelp() {
+  detectDevice();
+  document.getElementById("installPopup").style.display = "flex";
+}
