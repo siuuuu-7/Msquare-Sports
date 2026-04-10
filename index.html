@@ -18,6 +18,12 @@
 </head>
 
 <body>
+  <script>
+window.addEventListener("appinstalled", () => {
+  const btn = document.querySelector("button[onclick='installHelp()']");
+  if (btn) btn.style.display = "none";
+});
+</script>
 
 <!-- INSTALL APP BUTTON (WORKING + SAFE) -->
 <button onclick="installHelp()" style="
