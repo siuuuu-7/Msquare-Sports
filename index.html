@@ -18,15 +18,17 @@
 </head>
 
 <body>
-  <script>
+
+<!-- HIDE INSTALL BUTTON AFTER INSTALL -->
+<script>
 window.addEventListener("appinstalled", () => {
-  const btn = document.querySelector("button[onclick='installHelp()']");
+  const btn = document.getElementById("installBtn");
   if (btn) btn.style.display = "none";
 });
 </script>
 
-<!-- INSTALL APP BUTTON (WORKING + SAFE) -->
-<button onclick="installHelp()" style="
+<!-- INSTALL APP BUTTON -->
+<button id="installBtn" onclick="installHelp()" style="
   position:fixed;
   bottom:20px;
   right:20px;
@@ -42,21 +44,7 @@ window.addEventListener("appinstalled", () => {
   📲 Install MSquare App
 </button>
 
-<!-- INSTALL INFO POPUP (REPLACES ALERT ONLY) -->
-  <div id="pcStep" style="display:none;">
-  🖥 <b>Chrome / Edge (PC)</b><br>
-  Click the <b>➕ Install</b> icon in the address bar
-</div>
-
-<div id="androidStep" style="display:none;">
-  🤖 <b>Android</b><br>
-  Tap <b>Install</b> when prompted
-</div>
-
-<div id="iosStep" style="display:none;">
-  🍎 <b>iPhone</b><br>
-  Share → <b>Add to Home Screen</b>
-</div>
+<!-- INSTALL POPUP -->
 <div id="installPopup" style="
   display:none;
   position:fixed;
@@ -76,14 +64,20 @@ window.addEventListener("appinstalled", () => {
   ">
     <h3 style="margin-top:0;">📲 Install MSquare Sports</h3>
 
-    <p>🖥 <b>Chrome / Edge (PC)</b><br>
-    Click the <b>➕ Install</b> icon in the address bar</p>
+    <div id="pcStep" style="display:none;margin-bottom:10px;">
+      🖥 <b>Chrome / Edge (PC)</b><br>
+      Click the <b>➕ Install</b> icon in the address bar
+    </div>
 
-    <p>🤖 <b>Android</b><br>
-    Tap <b>Install</b> when prompted</p>
+    <div id="androidStep" style="display:none;margin-bottom:10px;">
+      🤖 <b>Android</b><br>
+      Tap <b onclick="triggerInstall()" style="cursor:pointer;">Install</b> when prompted
+    </div>
 
-    <p>🍎 <b>iPhone</b><br>
-    Share → <b>Add to Home Screen</b></p>
+    <div id="iosStep" style="display:none;margin-bottom:10px;">
+      🍎 <b>iPhone</b><br>
+      Share → <b>Add to Home Screen</b>
+    </div>
 
     <button onclick="closeInstallPopup()" style="
       margin-top:10px;
@@ -99,9 +93,14 @@ window.addEventListener("appinstalled", () => {
     </button>
   </div>
 </div>
+
+<!-- DEVICE DETECTION -->
 <script>
 function detectDevice() {
   const ua = navigator.userAgent.toLowerCase();
+  document.getElementById("pcStep").style.display = "none";
+  document.getElementById("androidStep").style.display = "none";
+  document.getElementById("iosStep").style.display = "none";
 
   if (/iphone|ipad|ipod/.test(ua)) {
     document.getElementById("iosStep").style.display = "block";
@@ -112,16 +111,36 @@ function detectDevice() {
   }
 }
 </script>
+
+<!-- INSTALL HANDLERS -->
 <script>
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+});
+
+function triggerInstall() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(() => {
+      deferredPrompt = null;
+    });
+  }
+}
+
 function installHelp() {
+  detectDevice();
   document.getElementById("installPopup").style.display = "flex";
 }
+
 function closeInstallPopup() {
   document.getElementById("installPopup").style.display = "none";
 }
 </script>
 
-<!-- SERVICE WORKER (CORRECT) -->
+<!-- SERVICE WORKER -->
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
@@ -186,7 +205,6 @@ if ("serviceWorker" in navigator) {
 <section id="products">
   <h2>Featured Products</h2>
   <div class="grid">
-
     <div class="product">
       <img src="https://i.imgur.com/3b4hKSK.png">
       <h3>Cricket Bat</h3>
@@ -213,7 +231,6 @@ if ("serviceWorker" in navigator) {
         <button>Order on WhatsApp</button>
       </a>
     </div>
-
   </div>
 </section>
 
