@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="style.css">
   <meta name="keywords" content="sports shop Bangalore, cricket bat Bangalore, sports shoes near me">
 <meta name="author" content="MSquare Sports">
+  <meta property="og:title" content="MSquare Sports & Menswear">
+<meta property="og:description" content="Sportswear, Cricket Gear & Custom Jerseys">
+<meta property="og:image" content="https://i.imgur.com/opWqjIC.jpeg">
+  <link rel="manifest" href="manifest.json">
 </head>
 
 <body> <a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank">
@@ -151,7 +155,12 @@
 </div>
   </div>
 </section>
-
+  <section id="cart">
+  <h2>Your Cart</h2>
+  <div id="cartItems"></div>
+  <button onclick="checkout()">Checkout</button>
+</section>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <!-- CONTACT -->
 <section id="contact">
   <h2>Connect With Us</h2>
@@ -184,7 +193,7 @@
 </footer>
 
 <script type="module" src="firebase.js"></script>
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 
 </body>
 </html>
