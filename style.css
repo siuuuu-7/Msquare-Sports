@@ -312,3 +312,25 @@ button:hover {
   margin-top: 8px;
   width: 100%;
 }
+.product {
+  position: relative;
+}
+
+button {
+  transition: 0.3s ease;
+}
+
+.buy-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+.buy-btn:hover {
+  transform: scale(1.08);
+}
+
+.hero h1 {
+  letter-spacing: 1px;
+}
+.featured {
+  border: 2px solid gold;
+}
