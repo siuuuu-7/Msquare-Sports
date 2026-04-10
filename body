@@ -26,7 +26,9 @@
 </button>
 </head>
 
-<body> <script>
+<body> <button id="installBtn" hidden>
+  📲 Install MSquare App
+</button> <script>
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
       navigator.serviceWorker
@@ -52,6 +54,30 @@
     deferredPrompt = null;
     installBtn.style.display = "none";
     console.log("Install outcome:", outcome);
+  });
+</script> <script>
+  let deferredPrompt;
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+
+    const installBtn = document.getElementById("installBtn");
+    installBtn.hidden = false;
+
+    installBtn.addEventListener("click", async () => {
+      installBtn.hidden = true;
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+    });
+  });
+
+  // Optional: hide button if already installed
+  window.addEventListener("appinstalled", () => {
+    const installBtn = document.getElementById("installBtn");
+    installBtn.hidden = true;
+    console.log("PWA installed");
   });
 </script> </body><a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank">
   💬
