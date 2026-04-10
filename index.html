@@ -26,6 +26,24 @@
         .catch(err => console.error("Service Worker failed", err));
     });
   }
+</script> <script>
+  let deferredPrompt;
+  const installBtn = document.getElementById("installBtn");
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.style.display = "inline-block";
+  });
+
+  installBtn.addEventListener("click", async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    installBtn.style.display = "none";
+    console.log("Install outcome:", outcome);
+  });
 </script> </body><a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank">
   💬
 </a>
