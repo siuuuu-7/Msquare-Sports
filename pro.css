@@ -1,0 +1,93 @@
+/* =========================
+   PRO UI ENHANCEMENTS
+   ========================= */
+
+:root {
+  --primary: #0f172a;
+  --accent: #f97316;
+  --light: #f8fafc;
+  --text: #111827;
+}
+
+/* GLOBAL UPGRADE */
+body {
+  background: var(--light);
+}
+
+/* NAVBAR PRO FEEL */
+.navbar {
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* HERO PREMIUM */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.85)
+  );
+}
+
+.hero h1 {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.hero button {
+  background: linear-gradient(135deg, var(--accent), #fb923c);
+  box-shadow: 0 8px 25px rgba(249,115,22,0.4);
+}
+
+/* SECTION TITLES */
+section h2 {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* PRODUCT CARD PRO */
+.product {
+  border: 1px solid #eee;
+}
+
+.product h3 {
+  font-weight: 700;
+}
+
+.price {
+  color: var(--accent);
+}
+
+/* WHATSAPP FLOAT PULSE */
+.whatsapp-float {
+  animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,.7); }
+  70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* TRUST BADGES */
+.trust-bar {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 25px;
+  background: white;
+}
+
+.trust-item {
+  font-weight: 600;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* FOOTER PRO */
+footer {
+  background: var(--primary);
+  color: #cbd5f5;
+}
