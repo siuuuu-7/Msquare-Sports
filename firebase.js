@@ -120,3 +120,19 @@ window.deleteProduct = async function (id) {
 window.logoutAdmin = async function () {
   await signOut(auth);
 };
+{
+  "hosting": {
+    "public": "public",
+    "headers": [
+      {
+        "source": "**/*.@(js|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      }
+    ]
+  }
+}
