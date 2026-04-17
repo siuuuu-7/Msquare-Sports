@@ -209,4 +209,7 @@ function installHelp() {
   detectDevice();
   document.getElementById("installPopup").style.display = "flex";
 }
+navigator.serviceWorker.getRegistrations().then(regs => {
+  regs.forEach(reg => reg.unregister());
+});
  
