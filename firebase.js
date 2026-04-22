@@ -1,18 +1,43 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"; 
-import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, updateDoc } 
-from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } 
 from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// ✅ CONFIG
 const firebaseConfig = {
-  apiKey: "2kWnncPfjHahhMihsrsf6FxHsZE3",
+  apiKey: "AIzaSyBdcTPbkGt1tYJ5ZyUU1Sg8h1DhNaafTj8",
   authDomain: "msquare-sports.firebaseapp.com",
   projectId: "msquare-sports",
   storageBucket: "msquare-sports.firebasestorage.app",
   messagingSenderId: "144814096708",
-  appId: "1:144814096708:web:8daff5c52f0c00d7a81711",
-  measurementId: "G-BFZNTJJEEH"
+  appId: "1:144814096708:web:8daff5c52f0c00d7a81711"
+};
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+
+window.loginAdmin = async function () {
+  console.log("LOGIN CLICKED");
+
+  const email = document.getElementById("adminUser").value;
+  const password = document.getElementById("adminPass").value;
+
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    alert("Login Successful");
+  } catch (e) {
+    console.error(e);
+    alert(e.message);
+  }
+};
+
+onAuthStateChanged(auth, (user) => {
+  document.getElementById("adminPanel").style.display = user ? "block" : "none";
+  document.getElementById("loginPanel").style.display = user ? "none" : "block";
+});
+
+window.logoutAdmin = async () => {
+  await signOut(auth);
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
