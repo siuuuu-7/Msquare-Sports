@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout | MSquare Sports</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Checkout</h2>
+
+<input id="name" placeholder="Name"><br><br>
+<input id="phone" placeholder="Phone"><br><br>
+<textarea id="address" placeholder="Address"></textarea><br><br>
+
+<button onclick="placeOrder()">Place Order (WhatsApp)</button>
+
+<script>
+function placeOrder() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let msg = "Order Details:%0A";
+
+  cart.forEach(i => {
+    msg += `${i.name} - ${i.price}%0A`;
+  });
+
+  window.location.href =
+    "https://wa.me/9035202055?text=" + msg;
+}
+</script>
+
+</body>
+</html>
