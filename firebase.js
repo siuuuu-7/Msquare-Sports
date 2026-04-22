@@ -123,7 +123,3 @@ window.deleteProduct = async function (id) {
 window.logoutAdmin = async function () {
   await signOut(auth);
 };
-// INIT
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-export const auth = getAuth(app);
