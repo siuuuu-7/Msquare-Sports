@@ -15,31 +15,6 @@ import {
   signOut
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-let isAdmin = false;
-
-// 🔐 LOGIN
-window.loginAdmin = async function () {
-  const email = adminUser.value.trim();
-  const password = adminPass.value.trim();
-
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    alert("Login Successful");
-  } catch {
-    alert("Invalid credentials");
-  }
-};
-
-// 🔐 AUTH STATE
-onAuthStateChanged(auth, (user) => {
-  isAdmin = !!user;
-
-  adminPanel.style.display = isAdmin ? "block" : "none";
-  loginPanel.style.display = isAdmin ? "none" : "block";
-
-  loadProducts();
-});
-
 // 🔥 LOAD PRODUCTS
 async function loadProducts() {
   const grid = document.querySelector(".grid");
