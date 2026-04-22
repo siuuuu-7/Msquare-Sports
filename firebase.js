@@ -46,50 +46,7 @@ onAuthStateChanged(auth, (user) => {
     document.getElementById("adminPanel").style.display = "none";
     document.getElementById("loginPanel").style.display = "block";
   }
-
-  loadProducts();
 });
-
-// ✅ LOAD PRODUCTS
-async function loadProducts() {
-  const grid = document.querySelector(".grid");
-if (!grid) return;
-
-grid.querySelectorAll(".firebase-item").forEach(el => el.remove());
-  const snapshot = await getDocs(collection(db, "products"));
-
-  snapshot.forEach((docItem) => {
-    const p = docItem.data();
-    const id = docItem.id;
-
-    let adminBtns = "";
-    if (isAdmin) {
-      adminBtns = `
-        <button onclick="deleteProduct('${id}')" style="background:red;margin-top:5px;">Delete</button>
-      `;
-    }
-
-    const div = document.createElement("div");
-    div.className = "product firebase-item";
-
-    div.innerHTML = `
-      <img src="${p.img}">
-      <div class="product-info">
-        <h3>${p.name}</h3>
-        <p class="price">${p.price}</p>
-
-        <a href="https://wa.me/9035202055?text=I want ${p.name}" target="_blank">
-          <button class="buy-btn">Order</button>
-        </a>
-
-        ${adminBtns}
-      </div>
-    `;
-
-    grid.appendChild(div);
-  });
-}
-
 // ✅ ADD PRODUCT
 window.addNewProduct = async function () {
   if (!isAdmin) return alert("Not authorized");
@@ -105,7 +62,6 @@ window.addNewProduct = async function () {
   });
 
   alert("Added");
-  loadProducts();
 };
 
 // ✅ DELETE
@@ -114,14 +70,9 @@ window.deleteProduct = async function (id) {
 
   await deleteDoc(doc(db, "products", id));
   alert("Deleted");
-  loadProducts();
 };
 
 // ✅ LOGOUT
 window.logoutAdmin = async function () {
   await signOut(auth);
 };
-// INIT
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-export const auth = getAuth(app);
