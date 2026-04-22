@@ -102,6 +102,9 @@ window.addNewProduct = async function () {
   alert("Product Added");
   loadProducts();
 };
+<button onclick="addToCart('${p.name}','${p.price}','${p.img}')">
+  Add to Cart
+</button>
 
 // ❌ DELETE
 window.deleteProduct = async function (id) {
