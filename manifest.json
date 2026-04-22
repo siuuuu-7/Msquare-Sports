@@ -1,7 +1,7 @@
 {
   "name": "MSquare Sports",
   "short_name": "MSquare",
-  "start_url": "/index.html",
+  "start_url": "/Msquare-Sports/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
