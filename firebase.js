@@ -1,58 +1,43 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } 
-from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+console.log("🔥 firebase.js loaded");
 
+// Firebase imports
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { 
+  getAuth, 
+  signInWithEmailAndPassword, 
+  onAuthStateChanged, 
+  signOut 
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+import { 
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  deleteDoc,
+  doc
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+// Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyBdcTPbkGt1tYJ5ZyUU1Sg8h1DhNaafTj8",
   authDomain: "msquare-sports.firebaseapp.com",
   projectId: "msquare-sports",
-  storageBucket: "msquare-sports.firebasestorage.app",
+  storageBucket: "msquare-sports.appspot.com",
   messagingSenderId: "144814096708",
   appId: "1:144814096708:web:8daff5c52f0c00d7a81711"
 };
 
+// INIT (ONLY ONCE)
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-
-window.loginAdmin = async function () {
-  console.log("LOGIN CLICKED");
-
-  const email = document.getElementById("adminUser").value;
-  const password = document.getElementById("adminPass").value;
-
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    alert("Login Successful");
-  } catch (e) {
-    console.error(e);
-    alert(e.message);
-  }
-};
-
-onAuthStateChanged(auth, (user) => {
-  document.getElementById("adminPanel").style.display = user ? "block" : "none";
-  document.getElementById("loginPanel").style.display = user ? "none" : "block";
-});
-
-window.logoutAdmin = async () => {
-  await signOut(auth);
-};
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-// ✅ INIT
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-export const auth = getAuth(app);
 
 let isAdmin = false;
 
-// ✅ LOGIN
+/* ---------------- LOGIN ---------------- */
 window.loginAdmin = async function () {
-  console.log("LOGIN FUNCTION CALLED"); // ✅ ADD THIS
+  console.log("LOGIN CLICKED");
 
   const email = document.getElementById("adminUser").value.trim();
   const password = document.getElementById("adminPass").value.trim();
@@ -61,44 +46,42 @@ window.loginAdmin = async function () {
     await signInWithEmailAndPassword(auth, email, password);
     alert("Login Successful");
   } catch (err) {
-    console.error("LOGIN ERROR:", err); // ✅ ADD THIS
+    console.error("LOGIN ERROR:", err);
     alert(err.message);
   }
 };
 
-// ✅ AUTH STATE
+/* ---------------- AUTH STATE ---------------- */
 onAuthStateChanged(auth, (user) => {
-  if (user) {
-    isAdmin = true;
-    document.getElementById("adminPanel").style.display = "block";
-    document.getElementById("loginPanel").style.display = "none";
-  } else {
-    isAdmin = false;
-    document.getElementById("adminPanel").style.display = "none";
-    document.getElementById("loginPanel").style.display = "block";
+  isAdmin = !!user;
+
+  const adminPanel = document.getElementById("adminPanel");
+  const loginPanel = document.getElementById("loginPanel");
+
+  if (adminPanel && loginPanel) {
+    adminPanel.style.display = user ? "block" : "none";
+    loginPanel.style.display = user ? "none" : "block";
   }
 
   loadProducts();
 });
 
-// ✅ LOAD PRODUCTS
+/* ---------------- LOAD PRODUCTS ---------------- */
 async function loadProducts() {
   const grid = document.querySelector(".grid");
-if (!grid) return;
+  if (!grid) return;
 
-grid.querySelectorAll(".firebase-item").forEach(el => el.remove());
+  grid.querySelectorAll(".firebase-item").forEach(el => el.remove());
+
   const snapshot = await getDocs(collection(db, "products"));
 
   snapshot.forEach((docItem) => {
     const p = docItem.data();
     const id = docItem.id;
 
-    let adminBtns = "";
-    if (isAdmin) {
-      adminBtns = `
-        <button onclick="deleteProduct('${id}')" style="background:red;margin-top:5px;">Delete</button>
-      `;
-    }
+    const adminBtns = isAdmin
+      ? `<button onclick="deleteProduct('${id}')" style="background:red;margin-top:5px;">Delete</button>`
+      : "";
 
     const div = document.createElement("div");
     div.className = "product firebase-item";
@@ -121,7 +104,7 @@ grid.querySelectorAll(".firebase-item").forEach(el => el.remove());
   });
 }
 
-// ✅ ADD PRODUCT
+/* ---------------- ADD PRODUCT ---------------- */
 window.addNewProduct = async function () {
   if (!isAdmin) return alert("Not authorized");
 
@@ -132,23 +115,27 @@ window.addNewProduct = async function () {
   const stock = document.getElementById("pstock").value;
 
   await addDoc(collection(db, "products"), {
-    name, price, img, offer, stock
+    name,
+    price,
+    img,
+    offer,
+    stock
   });
 
-  alert("Added");
+  alert("Product Added");
   loadProducts();
 };
 
-// ✅ DELETE
+/* ---------------- DELETE PRODUCT ---------------- */
 window.deleteProduct = async function (id) {
   if (!isAdmin) return;
 
   await deleteDoc(doc(db, "products", id));
-  alert("Deleted");
+  alert("Product Deleted");
   loadProducts();
 };
 
-// ✅ LOGOUT
+/* ---------------- LOGOUT ---------------- */
 window.logoutAdmin = async function () {
   await signOut(auth);
 };
