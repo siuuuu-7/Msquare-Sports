@@ -68,11 +68,6 @@ async function loadProducts() {
           ? `<p class="stock">Only ${p.stock} left</p>`
           : ""
       }
-
-      <button onclick="addToCart('${p.name}','${p.price}','${p.img}')">
-        Add to Cart
-      </button>
-
       ${
         isAdmin
           ? `
