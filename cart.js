@@ -4,7 +4,7 @@ function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-window.addToCart = function (name, price, img) {
+window.addToCart = function (name, price, img = "") {
   cart.push({ name, price, img });
   saveCart();
   alert("Added to cart");
@@ -19,7 +19,7 @@ function renderCart() {
   cart.forEach((item, i) => {
     cartDiv.innerHTML += `
       <div>
-        <img src="${item.img}" width="50">
+        ${item.img ? `<img src="${item.img}" width="50">` : ""}
         ${item.name} - ${item.price}
         <button onclick="removeFromCart(${i})">X</button>
       </div>
