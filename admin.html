@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Login | MSquare Sports</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN PANEL -->
+<div id="loginPanel">
+  <h2>Admin Login</h2>
+  <input id="adminUser" placeholder="Email">
+  <input id="adminPass" type="password" placeholder="Password">
+  <br><br>
+  <button onclick="loginAdmin()">Login</button>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel" style="display:none;">
+  <h2>Admin Panel</h2>
+
+  <input id="pname" placeholder="Product Name">
+  <input id="pprice" placeholder="Price">
+  <input id="pimg" placeholder="Image URL">
+  <input id="poffer" placeholder="Offer">
+  <input id="pstock" placeholder="Stock">
+  <br><br>
+
+  <button onclick="addNewProduct()">Add Product</button>
+  <br><br>
+  <button onclick="logoutAdmin()">Logout</button>
+</div>
+
+<!-- 🔥 MOST IMPORTANT LINE -->
+<script type="module" src="firebase.js"></script>
+
+</body>
+</html>
