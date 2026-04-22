@@ -11,8 +11,12 @@ const firebaseConfig = {
   projectId: "msquare-sports",
   storageBucket: "msquare-sports.firebasestorage.app",
   messagingSenderId: "144814096708",
-  appId: "1:144814096708:web:8daff5c52f0c00d7a81711"
+  appId: "1:144814096708:web:8daff5c52f0c00d7a81711",
+  measurementId: "G-BFZNTJJEEH"
 };
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 // ✅ INIT
 const app = initializeApp(firebaseConfig);
