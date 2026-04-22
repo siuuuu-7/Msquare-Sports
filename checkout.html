@@ -16,12 +16,32 @@
 
 <script>
 function placeOrder() {
+  let name = document.getElementById("name").value.trim();
+  let phone = document.getElementById("phone").value.trim();
+  let address = document.getElementById("address").value.trim();
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let msg = "Order Details:%0A";
+
+  if (!name || !phone || !address) {
+    alert("Please fill all details");
+    return;
+  }
+
+  if (cart.length === 0) {
+    alert("Cart is empty");
+    return;
+  }
+
+  let msg = "🛒 *New Order* %0A%0A";
+  msg += `👤 Name: ${name}%0A`;
+  msg += `📞 Phone: ${phone}%0A`;
+  msg += `🏠 Address: ${address}%0A%0A`;
+  msg += "📦 Items:%0A";
 
   cart.forEach(i => {
-    msg += `${i.name} - ${i.price}%0A`;
+    msg += `• ${i.name} - ₹${i.price}%0A`;
   });
+
+  localStorage.removeItem("cart");
 
   window.location.href =
     "https://wa.me/9035202055?text=" + msg;
