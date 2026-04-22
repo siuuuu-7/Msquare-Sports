@@ -16,8 +16,8 @@ const firebaseConfig = {
 
 // ✅ INIT
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
+export const db = getFirestore(app);
+export const auth = getAuth(app);
 
 let isAdmin = false;
 
@@ -53,8 +53,9 @@ onAuthStateChanged(auth, (user) => {
 // ✅ LOAD PRODUCTS
 async function loadProducts() {
   const grid = document.querySelector(".grid");
-  grid.querySelectorAll(".firebase-item").forEach(el => el.remove());
+if (!grid) return;
 
+grid.querySelectorAll(".firebase-item").forEach(el => el.remove());
   const snapshot = await getDocs(collection(db, "products"));
 
   snapshot.forEach((docItem) => {
@@ -120,19 +121,7 @@ window.deleteProduct = async function (id) {
 window.logoutAdmin = async function () {
   await signOut(auth);
 };
-{
-  "hosting": {
-    "public": "public",
-    "headers": [
-      {
-        "source": "**/*.@(js|css)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache"
-          }
-        ]
-      }
-    ]
-  }
-}
+// INIT
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const auth = getAuth(app);

@@ -132,13 +132,14 @@
 <section id="contact">
   <h2>Connect With Us</h2>
   <a href="tel:+919035202055"><button>Call Now</button></a>
-  <button onclick="openInstagram(msquare_05)">Instagram</button>
-  <button onclick="openWhatsApp(9035202055)">WhatsApp</button>
-</section>
-<button class="buy-btn" onclick="addToCart('${p.name}','${p.price}','${p.img}')">
-  Add to Cart
+  <button onclick="window.open('https://instagram.com/msquare_05','_blank')">
+  Instagram
 </button>
 
+<button onclick="window.open('https://wa.me/9035202055','_blank')">
+  WhatsApp
+</button>
+</section>
 <!-- LOCATION -->
 <section id="location">
   <h2>Find Us</h2>
@@ -155,7 +156,6 @@
 </footer>
 
 <!-- SCRIPTS -->
-<script type="module" src="firebase.js"></script>
 <script type="module" src="script.js"></script>
 <script src="pro.js" defer></script>
 
@@ -189,7 +189,7 @@ function detectDevice() {
 }
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/Msquare-Sports/service-worker.js");
+  navigator.serviceWorker.register("service-worker.js");
 }
 </script>
 

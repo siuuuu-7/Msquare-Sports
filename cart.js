@@ -10,32 +10,27 @@ window.addToCart = function (name, price, img) {
   alert("Added to cart");
 };
 
-window.renderCart = function () {
+function renderCart() {
   const cartDiv = document.getElementById("cartItems");
   if (!cartDiv) return;
 
   cartDiv.innerHTML = "";
-  let total = 0;
 
   cart.forEach((item, i) => {
-    const p = parseInt(item.price.replace("₹", ""));
-    total += p;
-
     cartDiv.innerHTML += `
-      <div class="product">
-        <img src="${item.img}">
-        <h3>${item.name}</h3>
-        <p>${item.price}</p>
-        <button onclick="removeFromCart(${i})">Remove</button>
+      <div>
+        <img src="${item.img}" width="50">
+        ${item.name} - ${item.price}
+        <button onclick="removeFromCart(${i})">X</button>
       </div>
     `;
   });
-
-  document.getElementById("total").innerText = "₹" + total;
-};
+}
 
 window.removeFromCart = function (i) {
   cart.splice(i, 1);
   saveCart();
   renderCart();
 };
+
+renderCart();
