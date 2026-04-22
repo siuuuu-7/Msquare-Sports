@@ -16,6 +16,18 @@
   <button>Proceed to Checkout</button>
 </a>
 
-<script src="cart.js"></script>
+<script>
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const totalEl = document.getElementById("total");
+
+  let total = 0;
+  cart.forEach(item => {
+    total += Number(item.price);
+  });
+
+  if (totalEl) {
+    totalEl.innerText = "₹" + total;
+  }
+</script>
 </body>
 </html>
