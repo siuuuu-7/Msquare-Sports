@@ -1,9 +1,9 @@
- /* RESET */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background: #ffffff;
   color: #111;
+  letter-spacing: 0.2px;
 }
 
 html {
@@ -403,4 +403,22 @@ button {
   .hero p {
     font-size: 15px;
   }
+}
+h1, h2, h3, h4, h5, h6,
+.navbar h2,
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+button,
+.nav-right a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.price {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
