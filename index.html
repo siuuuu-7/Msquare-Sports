@@ -27,6 +27,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
+<div class="top-bar">
+  24-hour delivery available in select cities
+</div>
 <body>
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank" aria-label="WhatsApp Chat">
@@ -214,4 +217,20 @@ if ("serviceWorker" in navigator) {
     <button>Send Code</button>
   </div>
 </div>
+<script>
+function openClub() {
+  document.getElementById("clubModal").style.display = "flex";
+}
+
+function openLogin() {
+  document.getElementById("clubModal").style.display = "none";
+  document.getElementById("loginModal").style.display = "flex";
+}
+
+window.onclick = function(e) {
+  if (e.target.classList.contains("modal")) {
+    e.target.style.display = "none";
+  }
+}
+</script>
 </body>
