@@ -844,3 +844,28 @@ body {
   align-items: center;
   justify-content: center;
 }
+/* ===== LOGO BEHIND BRAND TEXT ===== */
+
+.brand-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.brand-bg-logo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.18; /* logo faintness */
+  z-index: 0;
+}
+
+.brand-text {
+  position: relative;
+  font-size: 20px; /* SAME size as before */
+  font-weight: 600;
+  color: #111; /* black text */
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
