@@ -1056,3 +1056,40 @@ body {
   background: #25d366;
   box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
+.product-detail {
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.product-full-img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.product-detail h1 {
+  margin: 15px 0 5px;
+}
+
+.product-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.add-cart {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #000;
+  background: #fff;
+  font-weight: 600;
+}
+
+.buy-now {
+  flex: 1;
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+}
