@@ -693,3 +693,10 @@ body {
   font-size: 13px;
   color: #777;
 }
+.top-bar {
+  background: #f7f7f7;
+  font-size: 13px;
+  text-align: center;
+  padding: 6px;
+  color: #333;
+}
