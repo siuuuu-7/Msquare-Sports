@@ -808,11 +808,13 @@ body {
   color: #777;
 }
 .trust {
-  text-align: center;
-  font-size: 14px;
-  color: #444;
-  line-height: 2;
-  padding-bottom: 60px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 13px;
+  color: #cfcfcf;
+  opacity: 0.85;
 }
 .mega-footer {
   display: grid;
