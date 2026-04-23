@@ -133,3 +133,39 @@ window.addEventListener("click", function (e) {
     e.target.style.display = "none";
   }
 });
+import { auth } from "./firebase.js";
+import { signInWithPhoneNumber, RecaptchaVerifier } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+let confirmationResult;
+
+// CREATE reCAPTCHA (runs once)
+window.recaptchaVerifier = new RecaptchaVerifier(
+  'recaptcha-container',
+  {
+    size: "invisible"
+  },
+  auth
+);
+
+// SEND OTP FUNCTION
+window.sendOTP = function () {
+  const phone = document.querySelector(".phone-row input").value;
+
+  if (!phone) {
+    alert("Enter phone number");
+    return;
+  }
+
+  const appVerifier = window.recaptchaVerifier;
+
+  signInWithPhoneNumber(auth, "+91" + phone, appVerifier)
+    .then((result) => {
+      confirmationResult = result;
+      alert("OTP Sent ✅");
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("OTP failed ❌ Check Firebase setup");
+    });
+};
