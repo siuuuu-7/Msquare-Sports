@@ -1,11 +1,10 @@
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   background: #ffffff;
-  color: #111;
+  color: #111111;
   letter-spacing: 0.2px;
 }
-
 html {
   scroll-behavior: smooth;
 }
