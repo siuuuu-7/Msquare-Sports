@@ -64,6 +64,13 @@ html {
   color: #f5c400;
   margin: 20px 0;
 }
+.hero .subtitle {
+  font-size: 14px;
+  color: #9a9a9a;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+}
 
 .hero p {
   color: #ddd;
@@ -276,8 +283,12 @@ footer {
   }
 
   .hero h1 {
-    font-size: 28px;
-  }
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 600;
+  color: #f5c400;
+  margin: 20px 0;
+}
 
   .product img {
     width: 90%;
@@ -331,7 +342,12 @@ button {
 }
 
 .hero h1 {
-  letter-spacing: 1px;
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 600;
+  color: #f5c400;
+  margin: 20px 0;
+}
 }
 .featured {
   border: 2px solid gold;
@@ -399,7 +415,12 @@ button {
   }
 
   .hero h1 {
-    font-size: 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 600;
+  color: #f5c400;
+  margin: 20px 0;
+}
   }
 
   .hero p {
