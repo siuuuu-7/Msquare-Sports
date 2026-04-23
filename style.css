@@ -900,3 +900,159 @@ body {
   color: #111;
   z-index: 1;
 }
+/* =====================================================
+   CLEAN INSTASPORT PREMIUM OVERRIDE (FINAL)
+   Paste at END of style.css
+===================================================== */
+
+:root {
+  --bg-main: #0b0b0b;
+  --bg-deep: #000000;
+  --glass: rgba(255,255,255,0.06);
+
+  --gold: #c9a44c;
+  --gold-soft: #e0c77a;
+
+  --text-main: #f2f2f2;
+  --text-muted: #9a9a9a;
+  --border-soft: rgba(255,255,255,0.12);
+}
+
+/* ===== GLOBAL RESET FIX ===== */
+body {
+  background:
+    radial-gradient(900px 450px at center top, #1a1a1a 0%, #0b0b0b 60%),
+    linear-gradient(to bottom, #0b0b0b, #000);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  background: linear-gradient(to right, #0f0f0f, #151515);
+  color: var(--gold-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* ===== NAVBAR ===== */
+.main-nav {
+  background: linear-gradient(to bottom, #111, #090909);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.brand-wrapper img {
+  height: 34px;
+  filter: brightness(1.15) contrast(1.15);
+}
+
+.brand-text {
+  color: var(--gold);
+  letter-spacing: 0.4px;
+}
+
+/* ===== NAV ACTIONS ===== */
+.nav-actions span {
+  color: #e0e0e0;
+}
+
+.nav-actions span:hover {
+  color: var(--gold);
+}
+
+/* ===== HERO ===== */
+.hero-text {
+  background:
+    radial-gradient(700px 350px at center top, rgba(255,255,255,0.07), transparent 60%);
+}
+
+.hero-text h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(34px, 5vw, 52px);
+  color: var(--gold);
+}
+
+.subtitle,
+.tagline {
+  color: var(--text-muted);
+}
+
+/* ===== SPORT TAGS ===== */
+.sports-grid span {
+  background: var(--glass);
+  border: 1px solid var(--border-soft);
+  color: #ededed;
+  backdrop-filter: blur(10px);
+}
+
+.sports-grid span:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(255,255,255,0.08);
+}
+
+/* ===== SEARCH ===== */
+.search {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--border-soft);
+  color: #fff;
+}
+
+.search::placeholder {
+  color: #b5b5b5;
+}
+
+.search:focus {
+  border-color: var(--gold);
+}
+
+/* ===== TRUST BAR ===== */
+.trust p {
+  color: #cfcfcf;
+}
+
+.trust p::before {
+  content: "✓ ";
+  color: var(--gold);
+}
+
+/* ===== PRODUCT & SERVICE CARDS ===== */
+.product,
+.service-card {
+  background: linear-gradient(180deg, #141414, #0d0d0d);
+  border: 1px solid var(--border-soft);
+  box-shadow: none;
+}
+
+.product h3,
+.service-card {
+  color: #f1f1f1;
+}
+
+.price {
+  color: var(--gold);
+}
+
+/* ===== FOOTER ===== */
+.mega-footer {
+  background: #080808;
+  border-top: 1px solid var(--border-soft);
+}
+
+.mega-footer h4 {
+  color: var(--gold);
+}
+
+.mega-footer p {
+  color: #b3b3b3;
+}
+
+.footer-bottom {
+  background: #050505;
+  color: #777;
+}
+
+/* ===== WHATSAPP FLOAT FIX ===== */
+.whatsapp-float {
+  background: #25d366;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
