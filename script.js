@@ -102,3 +102,20 @@ window.editProduct = async function (id) {
 window.logoutAdmin = async function () {
   await signOut(auth);
 };
+// ===== PREMIUM NAV MODALS =====
+
+function openClub() {
+  document.getElementById("clubModal").style.display = "flex";
+}
+
+function openLogin() {
+  document.getElementById("clubModal").style.display = "none";
+  document.getElementById("loginModal").style.display = "flex";
+}
+
+// Close modal when clicking outside
+window.addEventListener("click", function (e) {
+  if (e.target.classList.contains("modal")) {
+    e.target.style.display = "none";
+  }
+});
