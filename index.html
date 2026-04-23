@@ -28,6 +28,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<!-- INSTALL BUTTON -->
+<button id="installBtn" onclick="installHelp()" class="install-btn">
+  📲 Install MSquare App
+</button>
+
+<!-- INSTALL POPUP -->
+<div id="installPopup" class="install-overlay">
+  <div class="install-box">
+    <h3>📲 Install MSquare Sports</h3>
+
+    <div id="pcStep" class="install-step">🖥 <b>Chrome / Edge</b><br>Click ➕ Install</div>
+    <div id="androidStep" class="install-step">🤖 <b>Android</b><br>Tap <b onclick="triggerInstall()">Install</b></div>
+    <div id="iosStep" class="install-step">🍎 <b>iPhone</b><br>Share → Add to Home Screen</div>
+
+    <button onclick="closeInstallPopup()" class="btn-dark">OK</button>
+  </div>
+</div>
+
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank" aria-label="WhatsApp Chat">
   <i class="fa-brands fa-whatsapp"></i>
@@ -55,29 +74,12 @@
   </div>
 </nav>
 <!-- HERO -->
-<section class="hero instasport-hero">
-  <p class="micro">Browse Less, Play More.</p>
-
-  <h2>What's your sport?</h2>
-
-  <div class="sport-tags">
-    <span>Badminton</span>
-    <span>Padel</span>
-    <span>Swimming</span>
-    <span>Tennis</span>
-    <span>Eyewear</span>
-    <span>Fitness</span>
+<section class="hero">
+  <div class="hero-overlay">
+    <h1>MSquare Sports & Men's Wear</h1>
+    <p>Gear Up Like a Pro – Sportswear, Equipment & Custom Kits</p>
+    <a href="products.html"><button>Shop Now</button></a>
   </div>
-
-  <a class="more-sports">More Sports →</a>
-
-  <div class="search-bar">
-    <input type="text" placeholder="Search for shoes, rackets and more ..." />
-  </div>
-
-  <p class="helper">
-    you don't need to scroll for 20 minutes to buy a grip
-  </p>
 </section>
 <!-- SERVICES -->
 <section id="services" class="services">
@@ -214,21 +216,4 @@ if ("serviceWorker" in navigator) {
     <button>Send Code</button>
   </div>
 </div>
-<script>
-function openClub() {
-  document.getElementById("clubModal").style.display = "flex";
-}
-
-function openLogin() {
-  document.getElementById("clubModal").style.display = "none";
-  document.getElementById("loginModal").style.display = "flex";
-}
-
-window.onclick = function(e) {
-  if (e.target.classList.contains("modal")) {
-    e.target.style.display = "none";
-  }
-}
-</script>
-
 </body>
