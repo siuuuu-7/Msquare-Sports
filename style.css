@@ -422,3 +422,55 @@ button,
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
 }
+/* =========================
+   CULT.FIT STYLE NAVBAR
+========================= */
+
+.cult-navbar {
+  background: #ffffff;
+  padding: 14px 32px;
+  border-bottom: 1px solid #ededed;
+}
+
+.brand-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-left: 6px;
+}
+
+.nav-right a {
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #111;
+  padding-bottom: 4px;
+  position: relative;
+}
+
+.nav-right a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #000;
+  left: 0;
+  bottom: 0;
+  transition: 0.3s ease;
+}
+
+.nav-right a:hover::after {
+  width: 100%;
+}
+
+.menu-icon {
+  font-size: 22px;
+}
+
+/* MOBILE CLEANUP */
+@media (max-width: 768px) {
+  .brand-text {
+    font-size: 16px;
+  }
+}
