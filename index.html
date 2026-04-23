@@ -28,9 +28,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="top-bar">
-  24-hour delivery available in select cities
+
+<!-- INSTALL BUTTON -->
+<button id="installBtn" onclick="installHelp()" class="install-btn">
+  📲 Install MSquare App
+</button>
+
+<!-- INSTALL POPUP -->
+<div id="installPopup" class="install-overlay">
+  <div class="install-box">
+    <h3>📲 Install MSquare Sports</h3>
+
+    <div id="pcStep" class="install-step">🖥 <b>Chrome / Edge</b><br>Click ➕ Install</div>
+    <div id="androidStep" class="install-step">🤖 <b>Android</b><br>Tap <b onclick="triggerInstall()">Install</b></div>
+    <div id="iosStep" class="install-step">🍎 <b>iPhone</b><br>Share → Add to Home Screen</div>
+
+    <button onclick="closeInstallPopup()" class="btn-dark">OK</button>
+  </div>
 </div>
+
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank" aria-label="WhatsApp Chat">
   <i class="fa-brands fa-whatsapp"></i>
@@ -47,39 +63,23 @@
 </div>
 
 <!-- NAVBAR -->
-<nav class="main-nav">
-  <div class="brand">Msquare Sports</div>
-  <div class="nav-actions">
-    <span onclick="openClub()">Join the club</span>
-    <span onclick="openLogin()">Login</span>
+<nav class="premium-nav">
+  <div class="nav-left">
+    <span class="brand-name">Msquare Sports</span>
+  </div>
+
+  <div class="nav-right">
+    <span class="nav-link" onclick="openClub()">Join the club</span>
+    <span class="nav-link" onclick="openLogin()">Login</span>
   </div>
 </nav>
-<section class="hero-text">
-  <p class="tagline">Browse Less, Play More.</p>
-  <h1>What's your sport?</h1>
-
-  <div class="sports-grid">
-    <span>Badminton</span>
-    <span>Padel</span>
-    <span>Swimming</span>
-    <span>Tennis</span>
-    <span>Eyewear</span>
-    <span>Fitness</span>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-overlay">
+    <h1>MSquare Sports & Men's Wear</h1>
+    <p>Gear Up Like a Pro – Sportswear, Equipment & Custom Kits</p>
+    <a href="products.html"><button>Shop Now</button></a>
   </div>
-
-  <p class="more">More Sports</p>
-
-  <input class="search" placeholder="Search for shoes, rackets and more ..." />
-
-  <p class="hint">
-    you don't need to scroll for 20 minutes to buy a grip
-  </p>
-</section>
-<section class="trust">
-  <p>Free 24-hr delivery · on all prepaid orders</p>
-  <p>100% authentic · authorized dealers only</p>
-  <p>Easy & fast returns · 7 day replacement</p>
-  <p>Reach us on WhatsApp · one message away</p>
 </section>
 <!-- SERVICES -->
 <section id="services" class="services">
@@ -145,32 +145,7 @@
   </iframe>
 <!-- FOOTER -->
 <footer>
-  <footer class="mega-footer">
-  <div>
-    <h4>Shop by Sport</h4>
-    <p>Badminton</p><p>Cricket</p><p>Football</p><p>Swimming</p>
-    <p>Running</p><p>Cycling</p><p>Tennis</p><p>Fitness</p>
-  </div>
-
-  <div>
-    <h4>Help</h4>
-    <p>Track Order</p>
-    <p>Returns & Exchanges</p>
-    <p>Contact Us</p>
-  </div>
-
-  <div>
-    <h4>Company</h4>
-    <p>About Msquare</p>
-    <p>Membership</p>
-    <p>Careers</p>
-    <p>Blog</p>
-  </div>
-</footer>
-
-<div class="footer-bottom">
-  © 2026 Msquare Sports. All rights reserved.
-</div>
+  <p>© 2026 MSquare Sports & Men's Wear</p>
 </footer>
 
 <!-- SCRIPTS -->
@@ -241,21 +216,4 @@ if ("serviceWorker" in navigator) {
     <button>Send Code</button>
   </div>
 </div>
-<script>
-function openClub() {
-  document.getElementById("clubModal").style.display = "flex";
-}
-
-function openLogin() {
-  document.getElementById("clubModal").style.display = "none";
-  document.getElementById("loginModal").style.display = "flex";
-}
-
-window.onclick = function(e) {
-  if (e.target.classList.contains("modal")) {
-    e.target.style.display = "none";
-  }
-}
-</script>
 </body>
-</html>
