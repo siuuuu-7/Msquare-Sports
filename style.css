@@ -764,10 +764,23 @@ body {
 }
 
 .sports-grid span {
-  border: 1px solid #ddd;
-  padding: 8px 14px;
-  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 16px;
+  border-radius: 30px;
   font-size: 14px;
+  color: #eaeaea;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.sports-grid span:hover {
+  background: #0a5cff;
+  border-color: #0a5cff;
+  color: white;
 }
 
 .search {
