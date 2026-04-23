@@ -567,3 +567,129 @@ body {
   font-weight: 600;
   cursor: pointer;
 }
+/* ===== MODAL BASE ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  z-index: 5000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-box {
+  background: #111;
+  color: white;
+  width: 90%;
+  max-width: 420px;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.modal-box h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.modal-box .sub {
+  color: gold;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.modal-box p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.modal-box button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 30px;
+  background: gold;
+  color: black;
+  font-weight: bold;
+}
+
+.phone-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.phone-row span {
+  padding: 10px 14px;
+  background: #222;
+  border-radius: 8px;
+}
+
+.phone-row input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+/* ===== INSTASPORT STYLE HERO ===== */
+.instasport-hero {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.instasport-hero .micro {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.instasport-hero h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.sport-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sport-tags span {
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.more-sports {
+  display: inline-block;
+  margin: 20px 0;
+  font-size: 14px;
+  color: #111;
+  cursor: pointer;
+}
+
+.search-bar {
+  max-width: 520px;
+  margin: 20px auto;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.helper {
+  font-size: 13px;
+  color: #777;
+}
