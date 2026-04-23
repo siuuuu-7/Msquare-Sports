@@ -869,3 +869,34 @@ body {
   z-index: 1;
   letter-spacing: 0.5px;
 }
+/* ===== FORCE LOGO BEHIND BRAND TEXT ===== */
+
+.main-nav {
+  position: relative;
+}
+
+.brand-wrapper {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+}
+
+.brand-bg-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 1.2em;     /* SAME as text height */
+  width: auto;
+  opacity: 0.22;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.brand-text {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+  z-index: 1;
+}
