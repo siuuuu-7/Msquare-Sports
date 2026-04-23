@@ -186,25 +186,33 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js");
 }
 </script>
-<!-- JOIN THE CLUB -->
+<!-- ===== JOIN CLUB MODAL ===== -->
 <div id="clubModal" class="modal">
   <div class="modal-box">
     <h2>Msquare Sports</h2>
-    <p><b>Member</b></p>
-    <p>Members get exclusive pricing on every product.<br>
-       Sign in with phone number – takes 10 secs.</p>
+    <p class="sub">Member</p>
+
+    <p>
+      Members get exclusive pricing on every product.<br>
+      Sign in with phone number – takes 10 secs.
+    </p>
+
     <button onclick="openLogin()">Continue with Phone</button>
-    <p style="margin-top:10px;font-size:12px;">Free forever</p>
+    <p class="small">Free forever</p>
   </div>
 </div>
 
-<!-- LOGIN -->
+<!-- ===== LOGIN MODAL ===== -->
 <div id="loginModal" class="modal">
   <div class="modal-box">
-    <h2>Login</h2>
-    <p>Enter your WhatsApp number<br>
-    We'll send a one-time code to verify.</p>
-    <input placeholder="+91 Enter number">
+    <h2>Enter Your WhatsApp number</h2>
+    <p>We'll send a one-time code on WhatsApp to verify.</p>
+
+    <div class="phone-row">
+      <span>+91</span>
+      <input type="tel" placeholder="WhatsApp Number">
+    </div>
+
     <button>Send Code</button>
   </div>
 </div>
