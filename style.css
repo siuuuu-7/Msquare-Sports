@@ -700,3 +700,21 @@ body {
   padding: 6px;
   color: #333;
 }
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav-actions span {
+  margin-left: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
