@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cart | MSquare Sports</title>
+  <title>Your Cart | MSquare Sports</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body onload="renderCart()">
+<body>
 
-<h2>Your Cart</h2>
+<h1>Your Cart 🛒</h1>
 
-<div id="cartItems" class="grid"></div>
+<div id="cart-items"></div>
 
-<h3>Total: <span id="total">₹0</span></h3>
+<h3 id="total"></h3>
 
-<a href="checkout.html">
-  <button>Proceed to Checkout</button>
-</a>
+<a href="products.html">⬅ Back to Products</a>
 
 <script>
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const totalEl = document.getElementById("total");
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let container = document.getElementById("cart-items");
+let total = 0;
 
-  let total = 0;
-  cart.forEach(item => {
-    total += Number(item.price);
+if (cart.length === 0) {
+  container.innerHTML = "<p>Your cart is empty</p>";
+} else {
+  cart.forEach((item, index) => {
+    total += item.price * item.qty;
+    container.innerHTML += `
+      <p>${item.name} - ₹${item.price}</p>
+    `;
   });
+}
 
-  if (totalEl) {
-    totalEl.innerText = "₹" + total;
-  }
+document.getElementById("total").innerText = "Total: ₹" + total;
 </script>
+
 </body>
 </html>
