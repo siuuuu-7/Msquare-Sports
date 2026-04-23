@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   background: #ffffff;
-  color: #111;
+  color: #111111;
   letter-spacing: 0.2px;
 }
 
@@ -563,19 +563,31 @@ button,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 30px;
-  border-bottom: 1px solid #eee;
+  padding: 18px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .brand {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
+  color: #0a5cff;
 }
 
 .nav-actions span {
-  margin-left: 20px;
+  margin-left: 22px;
   font-size: 14px;
+  font-weight: 500;
+  color: #111;
   cursor: pointer;
+}
+
+.nav-actions span:first-child {
+  color: #0a5cff;
+}
+
+.nav-actions span:hover {
+  text-decoration: underline;
 }
 .hero-text {
   text-align: center;
