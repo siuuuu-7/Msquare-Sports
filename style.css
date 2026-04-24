@@ -1198,3 +1198,20 @@ body {
 .logo-text {
   transform: scaleX(1.05); /* makes letters wider like InstaSport */
 }
+/* FORCE INSTASPORT LOGO STYLE */
+.main-nav .logo-text {
+  font-family: 'Anton', sans-serif !important;
+  font-size: 24px !important;
+  letter-spacing: 1.5px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.main-nav .logo-white {
+  color: #ffffff !important;
+}
+
+.main-nav .logo-yellow {
+  color: #ffcc00 !important;
+}
