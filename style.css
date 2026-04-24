@@ -1414,3 +1414,32 @@ body {
 .wishlist-wrapper:hover i {
   color: #e5c56e;
 }
+/* NAVBAR RIGHT ACTIONS – PERFECT SPACING */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px; /* 👈 THIS is the key (same spacing everywhere) */
+  font-family: Inter, sans-serif;
+}
+
+/* ICONS (Heart & Bag) */
+.nav-icon {
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* TEXT LINKS (Join club, Login) */
+.nav-actions span:not(.nav-icon) {
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.nav-actions span:hover {
+  opacity: 1;
+}
+.nav-icon i {
+  line-height: 1;
+}
