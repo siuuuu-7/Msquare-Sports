@@ -220,7 +220,25 @@ window.onclick = function(e) {
   }
 }
 </script>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyBdcTPbkGt1tYJ5ZyUU1Sg8h1DhNaafTj8",
+  authDomain: "msquare-sports.firebaseapp.com",
+  projectId: "msquare-sports",
+  appId: "1:144814096708:web:8daff5c52f0c00d7a81711"
+};
 
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+
+window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+  'recaptcha-container',
+  {
+    size: 'normal',
+  }
+);
+recaptchaVerifier.render();
+</script>
 <!-- ===== JOIN CLUB MODAL ===== -->
 <div id="clubModal" class="modal">
   <div class="modal-box">
@@ -274,26 +292,33 @@ function sendOTP() {
   const phone = document.querySelector(".phone-row input").value;
 
   if (!phone || phone.length < 10) {
-    alert("Enter valid WhatsApp number");
+    alert("Enter valid number");
     return;
   }
 
-  // fake OTP generator
-  generatedOTP = "123456";
+  const fullPhone = "+91" + phone;
 
-  alert("OTP sent to +91 " + phone + " (Demo OTP: 123456)");
-
-  document.getElementById("otpSection").style.display = "block";
+  auth.signInWithPhoneNumber(fullPhone, window.recaptchaVerifier)
+    .then((confirmationResult) => {
+      window.confirmationResult = confirmationResult;
+      alert("OTP sent successfully 📲");
+      document.getElementById("otpSection").style.display = "block";
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
 }
-
 function verifyOTP() {
-  const entered = document.getElementById("otpInput").value;
+  const code = document.getElementById("otpInput").value;
 
-  if (entered === generatedOTP) {
-    alert("Login successful ✅");
-    document.getElementById("loginModal").style.display = "none";
-  } else {
-    alert("Wrong OTP ❌ (Try 123456)");
-  }
+  window.confirmationResult.confirm(code)
+    .then((result) => {
+      alert("Login successful ✅");
+      document.getElementById("loginModal").style.display = "none";
+    })
+    .catch((error) => {
+      alert("Invalid OTP ❌");
+    });
 }
 </script>
+</body>
