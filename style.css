@@ -1457,143 +1457,73 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-/* ================================
-   INSTASPORT-STYLE PREMIUM FOOTER
-================================ */
+/* ===== INSTASPORT STYLE FOOTER ===== */
 
 .insta-footer {
   background: #0b0b0b;
-  color: #9b9b9b;
-  padding: 80px 9vw 28px;
-  font-family: Inter, system-ui, sans-serif;
+  color: #b5b5b5;
+  padding: 60px 6vw 30px;
+  font-family: Inter, sans-serif;
 }
 
-/* ===== GRID LAYOUT ===== */
-.footer-main {
+.footer-top {
   display: grid;
-  grid-template-columns: 1.6fr repeat(4, 1fr);
-  gap: 72px;
-  align-items: start;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
 }
 
-/* ===== BRAND ===== */
+.footer-col h4 {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.footer-col p {
+  font-size: 13px;
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+.footer-col p:hover {
+  color: #f5c451;
+}
+
 .footer-logo {
-  font-family: Bebas Neue, sans-serif;
-  font-size: 30px;
-  letter-spacing: 2.4px;
-  color: #f4c430;
+  font-family: Anton, sans-serif;
+  font-size: 26px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.footer-logo span {
+  color: #f5c451;
 }
 
 .footer-tagline {
-  margin-top: 6px;
+  margin-top: 8px;
   font-size: 13px;
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
-/* ===== SOCIAL ICONS ===== */
-.footer-socials {
-  display: flex;
-  gap: 16px;
-  margin-top: 18px;
-}
-
-.footer-socials a {
-  font-size: 16px;
-  color: #9b9b9b;
-  transition: all 0.25s ease;
-}
-
-.footer-socials a:hover {
-  color: #f4c430;
-  transform: translateY(-2px);
-}
-
-/* ===== COLUMNS ===== */
-.footer-col h5 {
-  font-size: 13px;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 16px;
-  letter-spacing: 0.3px;
-}
-
-.footer-col a {
-  display: block;
-  font-size: 13px;
-  margin-bottom: 9px;
-  line-height: 1.45;
-  cursor: pointer;
-  color: #9b9b9b;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.footer-col a:hover {
-  color: #f4c430;
-}
-
-/* ===== BOTTOM BAR ===== */
 .footer-bottom {
-  margin-top: 70px;
-  padding-top: 22px;
+  margin-top: 50px;
+  padding-top: 20px;
   border-top: 1px solid #1e1e1e;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
-.bottom-links {
-  display: flex;
-  gap: 22px;
-}
-
-.bottom-links a {
-  font-size: 12px;
-  color: #9b9b9b;
+.footer-links a {
+  color: #b5b5b5;
+  margin-left: 16px;
   text-decoration: none;
 }
 
-.bottom-links a:hover {
-  color: #f4c430;
-}
-
-/* ================================
-   MOBILE VIEW (MATCHES INSTASPORT)
-================================ */
-
-@media (max-width: 900px) {
-
-  .insta-footer {
-    padding: 60px 6vw 30px;
-  }
-
-  .footer-main {
-    grid-template-columns: 1fr 1fr;
-    gap: 44px;
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
-
-  .footer-logo {
-    font-size: 26px;
-  }
-
-  .footer-socials {
-    margin-top: 14px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .bottom-links {
-    gap: 16px;
-  }
+.footer-links a:hover {
+  color: #f5c451;
 }
