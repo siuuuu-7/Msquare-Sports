@@ -1457,57 +1457,56 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-/* ===== INSTASPORT STYLE FOOTER ===== */
+/* ===== EXACT INSTASPORT FOOTER ===== */
 
 .insta-footer {
   background: #0b0b0b;
-  color: #b5b5b5;
-  padding: 60px 6vw 30px;
+  color: #9a9a9a;
+  padding: 70px 8vw 30px;
   font-family: Inter, sans-serif;
 }
 
-.footer-top {
+.footer-main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 40px;
-}
-
-.footer-col h4 {
-  color: #fff;
-  font-size: 14px;
-  margin-bottom: 14px;
-  font-weight: 600;
-}
-
-.footer-col p {
-  font-size: 13px;
-  margin: 6px 0;
-  cursor: pointer;
-}
-
-.footer-col p:hover {
-  color: #f5c451;
+  grid-template-columns: 1.4fr repeat(4, 1fr);
+  gap: 60px;
 }
 
 .footer-logo {
-  font-family: Anton, sans-serif;
-  font-size: 26px;
-  color: #fff;
-  letter-spacing: 1px;
-}
-
-.footer-logo span {
+  font-family: Bebas Neue, sans-serif;
+  font-size: 28px;
+  letter-spacing: 2px;
   color: #f5c451;
 }
 
 .footer-tagline {
-  margin-top: 8px;
+  margin-top: 6px;
   font-size: 13px;
   opacity: 0.8;
 }
 
+.footer-col h5 {
+  font-size: 13px;
+  color: #ffffff;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  color: #9a9a9a;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: #f5c451;
+}
+
 .footer-bottom {
-  margin-top: 50px;
+  margin-top: 60px;
   padding-top: 20px;
   border-top: 1px solid #1e1e1e;
   display: flex;
@@ -1518,12 +1517,21 @@ body {
   gap: 10px;
 }
 
-.footer-links a {
-  color: #b5b5b5;
-  margin-left: 16px;
+.bottom-links a {
+  margin-left: 18px;
+  color: #9a9a9a;
   text-decoration: none;
+  font-size: 12px;
 }
 
-.footer-links a:hover {
+.bottom-links a:hover {
   color: #f5c451;
+}
+
+/* MOBILE (matches InstaSport behavior) */
+@media (max-width: 900px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
 }
