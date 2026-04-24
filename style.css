@@ -1235,3 +1235,69 @@ body {
   color: #f5c400;          /* InstaSport-like gold */
   letter-spacing: 1.6px;  /* slightly wider for second word */
 }
+@media (max-width: 768px) {
+  .main-nav .logo-text {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  .main-nav .logo-yellow {
+    letter-spacing: 1.4px;
+  }
+}
+/* ===== LOGO SIZE SYSTEM ===== */
+.main-nav .logo-text {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+/* WORD COLORS */
+.main-nav .logo-white {
+  color: #ffffff;
+}
+
+.main-nav .logo-yellow {
+  color: #f5c400;
+}
+
+/* ===== DESKTOP (Default) ===== */
+@media (min-width: 1024px) {
+  .main-nav .logo-text {
+    font-size: 28px;          /* InstaSport desktop size */
+    letter-spacing: 1.3px;
+    gap: 7px;
+  }
+
+  .main-nav .logo-yellow {
+    letter-spacing: 1.7px;   /* Slightly wider second word */
+  }
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1023px) and (min-width: 769px) {
+  .main-nav .logo-text {
+    font-size: 25px;
+    letter-spacing: 1.2px;
+    gap: 6px;
+  }
+
+  .main-nav .logo-yellow {
+    letter-spacing: 1.6px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .main-nav .logo-text {
+    font-size: 21px;          /* Tight, premium mobile */
+    letter-spacing: 1px;
+    gap: 5px;
+  }
+
+  .main-nav .logo-yellow {
+    letter-spacing: 1.4px;
+  }
+}
