@@ -150,7 +150,26 @@
   © 2026 Msquare Sports. All rights reserved.
 </div>
 </footer>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    projectId: "YOUR_PROJECT_ID",
+    appId: "YOUR_APP_ID"
+  };
 
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+    'recaptcha-container',
+    { size: 'normal' }
+  );
+
+  recaptchaVerifier.render();
+</script>
 <!-- SCRIPTS -->
  <script src="cart.js"></script>
 <script src="pro.js" defer></script>
@@ -188,38 +207,6 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js");
 }
 </script>
-<!-- ===== JOIN CLUB MODAL ===== -->
-<div id="clubModal" class="modal">
-  <div class="modal-box">
-    <h2>Msquare Sports</h2>
-    <p class="sub">Member</p>
-
-    <p>
-      Members get exclusive pricing on every product.<br>
-      Sign in with phone number – takes 10 secs.
-    </p>
-
-    <button onclick="openLogin()">Continue with Phone</button>
-    <p class="small">Free forever</p>
-  </div>
-</div>
-<script>
-function openClub() {
-  document.getElementById("clubModal").style.display = "flex";
-}
-
-function openLogin() {
-  document.getElementById("clubModal").style.display = "none";
-  document.getElementById("loginModal").style.display = "flex";
-}
-
-window.onclick = function(e) {
-  if (e.target.classList.contains("modal")) {
-    e.target.style.display = "none";
-  }
-}
-</script>
-
 <!-- ===== JOIN CLUB MODAL ===== -->
 <div id="clubModal" class="modal">
   <div class="modal-box">
@@ -277,23 +264,28 @@ function sendOTP() {
     return;
   }
 
-  // fake OTP generator
-  generatedOTP = "123456";
+  const fullPhone = "+91" + phone;
 
-  alert("OTP sent to +91 " + phone + " (Demo OTP: 123456)");
-
-  document.getElementById("otpSection").style.display = "block";
+  auth.signInWithPhoneNumber(fullPhone, window.recaptchaVerifier)
+    .then((confirmationResult) => {
+      window.confirmationResult = confirmationResult;
+      alert("OTP sent successfully 📲");
+      document.getElementById("otpSection").style.display = "block";
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
 }
-
 function verifyOTP() {
-  const entered = document.getElementById("otpInput").value;
+  const code = document.getElementById("otpInput").value;
 
-  if (entered === generatedOTP) {
-    alert("Login successful ✅");
-    document.getElementById("loginModal").style.display = "none";
-  } else {
-    alert("Wrong OTP ❌ (Try 123456)");
-  }
+  window.confirmationResult.confirm(code)
+    .then(() => {
+      alert("Login successful ✅");
+      document.getElementById("loginModal").style.display = "none";
+    })
+    .catch(() => {
+      alert("Invalid OTP ❌");
+    });
 }
-</script>
 </body>
