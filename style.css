@@ -1648,36 +1648,41 @@ body {
   }
 }
 /* =========================
-   MY STORE ICON (NAVBAR)
+   MY STORE ICON (VERTICAL)
 ========================= */
 
 .store-wrapper {
   display: flex;
+  flex-direction: column;   /* 👈 THIS puts text below icon */
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 2px;
   cursor: pointer;
   color: #dcdcdc;
-  font-size: 14px;
   transition: color 0.2s ease;
 }
 
 .store-wrapper i {
-  font-size: 15px;
-}
-
-.store-wrapper:hover {
-  color: #e6c15a; /* InstaSport gold */
+  font-size: 18px;
 }
 
 .store-text {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.3px;
 }
 
-/* MOBILE: hide text, keep icon */
+.store-wrapper:hover {
+  color: #e6c15a; /* premium gold */
+}
+
+/* MOBILE: slightly smaller */
 @media (max-width: 768px) {
+  .store-wrapper i {
+    font-size: 16px;
+  }
+
   .store-text {
-    display: none;
+    font-size: 10px;
   }
 }
