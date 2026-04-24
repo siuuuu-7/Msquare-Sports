@@ -39,9 +39,13 @@ function renderBag() {
 document.addEventListener("click", function (e) {
   const bag = document.getElementById("bagDrawer");
   const icon = document.querySelector(".bag-wrapper");
+
+  if (!bag || !icon) return;
+
   if (!bag.contains(e.target) && !icon.contains(e.target)) {
     bag.style.display = "none";
   }
+});
 });
 function toggleWishlist() {
   const drawer = document.getElementById("wishlistDrawer");
