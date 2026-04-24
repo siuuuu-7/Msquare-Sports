@@ -1683,3 +1683,16 @@ body {
     font-size: 5px;
   }
 }
+/* My Store text ONLY */
+.store-text {
+  font-size: 6px;      /* smaller text */
+  font-weight: 500;
+  line-height: 1;
+  margin-top: 2px;
+  opacity: 0.85;
+}
+@media (max-width: 768px) {
+  .store-text {
+    font-size: 5px;
+  }
+}
