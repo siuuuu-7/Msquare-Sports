@@ -136,9 +136,13 @@ window.sendOTP = function () {
 
   signInWithPhoneNumber(auth, "+91" + phone, window.recaptchaVerifier)
     .then((result) => {
-      confirmationResult = result;
-      alert("OTP sent ✅");
-    })
+  confirmationResult = result;
+
+  alert("OTP sent ✅");
+
+  // SHOW OTP BOX
+  document.getElementById("otpSection").style.display = "block";
+})
     .catch((error) => {
       console.log(error);
       alert(error.message);
