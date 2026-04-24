@@ -1090,3 +1090,54 @@ body {
   font-weight: 600;
   border: none;
 }
+/* LOGIN SUCCESS ANIMATION */
+.success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.success-box {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  text-align: center;
+  animation: scaleIn 0.4s ease;
+}
+
+.checkmark {
+  width: 70px;
+  height: 70px;
+  background: #22c55e;
+  color: #fff;
+  font-size: 42px;
+  border-radius: 50%;
+  line-height: 70px;
+  margin: 0 auto 15px;
+  animation: pop 0.5s ease;
+}
+
+.success-box h2 {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+}
+
+.success-box p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

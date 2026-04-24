@@ -53,9 +53,16 @@
   <span class="brand-text">Msquare Sports</span>
 </div>
   <div class="nav-actions">
-    <span onclick="openClub()">Join the club</span>
-    <span onclick="openLogin()">Login</span>
-  </div>
+
+  <!-- BAG ICON -->
+  <span class="nav-icon" onclick="window.location.href='cart.html'" title="Bag">
+    <i class="fa-solid fa-bag-shopping"></i>
+  </span>
+
+  <span onclick="openClub()">Join the club</span>
+  <span onclick="openLogin()">Login</span>
+
+</div>
 </nav>
 <!-- HERO -->
 <section class="hero-text">
@@ -334,4 +341,12 @@ function verifyOTP() {
     });
 }
 </script>
+<!-- LOGIN SUCCESS ANIMATION -->
+<div id="loginSuccess" class="success-overlay">
+  <div class="success-box">
+    <div class="checkmark">✓</div>
+    <h2>Login Successful</h2>
+    <p>Welcome to Msquare Sports</p>
+  </div>
+</div>
 </body>
