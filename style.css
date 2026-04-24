@@ -1301,3 +1301,46 @@ body {
     letter-spacing: 1.4px;
   }
 }
+/* ===== INSTASPORT LOGO HOVER EFFECT ===== */
+.main-nav .logo-text {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Soft glow on hover */
+.main-nav .logo-text:hover {
+  filter: drop-shadow(0 0 8px rgba(245, 196, 0, 0.35));
+}
+
+/* Shine overlay */
+.main-nav .logo-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+}
+
+/* Trigger shine on hover */
+.main-nav .logo-text:hover::after {
+  opacity: 1;
+  animation: logoShine 0.9s ease-out forwards;
+}
+
+/* Shine animation */
+@keyframes logoShine {
+  from {
+    left: -120%;
+  }
+  to {
+    left: 120%;
+  }
+}
