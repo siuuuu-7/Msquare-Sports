@@ -1444,5 +1444,16 @@ body {
   line-height: 1;
 }
 .hint {
-  transition: opacity 1.0s ease;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: 
+    opacity 0.8s ease-in-out,
+    transform 0.8s ease-in-out;
+  color: #9ca3af; /* soft premium gray */
+  font-size: 14px;
+}
+
+.hint.show {
+  opacity: 1;
+  transform: translateY(0);
 }
