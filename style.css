@@ -1176,15 +1176,16 @@ body {
 .logo-yellow {
   color: #f5c542; /* premium yellow */
 }
-/* ===== BRAND LOGO (INSTASPORT STYLE) ===== */
+/* ===== INSTASPORT-STYLE LOGO ===== */
 
 .logo-text {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 26px;
-  letter-spacing: 2px;
+  font-family: 'Anton', sans-serif;
+  font-size: 24px;
+  letter-spacing: 1.5px;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  line-height: 1;
 }
 
 .logo-white {
@@ -1192,16 +1193,8 @@ body {
 }
 
 .logo-yellow {
-  color: #f5c542; /* InstaSport-like yellow */
+  color: #ffcc00; /* Exact sporty yellow */
 }
-
-/* Optional: Slight glow for premium look */
-.logo-yellow {
-  text-shadow: 0 0 10px rgba(245, 197, 66, 0.35);
-}
-
-/* Navbar alignment polish */
-.main-nav .brand-wrapper {
-  display: flex;
-  align-items: center;
+.logo-text {
+  transform: scaleX(1.05); /* makes letters wider like InstaSport */
 }
