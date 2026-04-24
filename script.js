@@ -173,3 +173,44 @@ window.verifyOTP = function () {
       alert("Wrong OTP ❌");
     });
 };
+// script.js
+
+function sendOTP() {
+  const phone = document.querySelector(".phone-row input").value;
+
+  if (!phone || phone.length < 10) {
+    alert("Enter valid number");
+    return;
+  }
+
+  const fullPhone = "+91" + phone;
+
+  auth.signInWithPhoneNumber(fullPhone, window.recaptchaVerifier)
+    .then((confirmationResult) => {
+      window.confirmationResult = confirmationResult;
+      alert("OTP sent 📲");
+      document.getElementById("otpSection").style.display = "block";
+    })
+    .catch((error) => {
+      console.error(error);
+      alert(error.message);
+    });
+}
+
+function verifyOTP() {
+  const code = document.getElementById("otpInput").value;
+
+  if (!window.confirmationResult) {
+    alert("OTP not sent yet");
+    return;
+  }
+
+  window.confirmationResult.confirm(code)
+    .then(() => {
+      alert("Login successful ✅");
+      document.getElementById("loginModal").style.display = "none";
+    })
+    .catch(() => {
+      alert("Wrong OTP ❌");
+    });
+}
