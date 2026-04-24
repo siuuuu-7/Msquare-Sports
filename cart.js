@@ -81,4 +81,3 @@ document.addEventListener("click", function (e) {
   if (!drawer.contains(e.target) && !icon.contains(e.target)) {
     drawer.style.display = "none";
   }
-});
