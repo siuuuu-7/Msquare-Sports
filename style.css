@@ -1344,3 +1344,19 @@ body {
     left: 120%;
   }
 }
+/* WISHLIST HEART */
+.wishlist-icon {
+  margin-right: 14px;
+  cursor: pointer;
+}
+
+.wishlist-icon i {
+  font-size: 18px;
+  color: #d4af37; /* premium gold */
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.wishlist-icon i.active {
+  color: #e11d48; /* premium red */
+  transform: scale(1.15);
+}

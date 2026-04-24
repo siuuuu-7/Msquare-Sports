@@ -214,3 +214,30 @@ function verifyOTP() {
       alert("Wrong OTP ❌");
     });
 }
+// WISHLIST TOGGLE
+function toggleWishlist() {
+  const heart = document.getElementById("wishlistHeart");
+
+  heart.classList.toggle("active");
+
+  if (heart.classList.contains("active")) {
+    heart.classList.remove("fa-regular");
+    heart.classList.add("fa-solid");
+    localStorage.setItem("wishlist", "true");
+  } else {
+    heart.classList.remove("fa-solid");
+    heart.classList.add("fa-regular");
+    localStorage.setItem("wishlist", "false");
+  }
+}
+
+// LOAD STATE ON PAGE LOAD
+document.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("wishlist");
+  const heart = document.getElementById("wishlistHeart");
+
+  if (saved === "true") {
+    heart.classList.add("active", "fa-solid");
+    heart.classList.remove("fa-regular");
+  }
+});
