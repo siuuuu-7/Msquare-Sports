@@ -60,7 +60,7 @@
 </span>
 </span>
   <!-- BAG ICON -->
-  <span class="nav-icon" onclick="window.location.href='cart.html'" title="Bag">
+ <span class="nav-icon bag-wrapper" onclick="toggleBag()" title="Bag">
     <i class="fa-solid fa-bag-shopping"></i>
   </span>
 
@@ -69,6 +69,19 @@
 
 </div>
 </nav>
+<!-- BAG DRAWER -->
+<div id="bagDrawer" class="bag-drawer">
+
+  <div class="bag-header">
+    <span>Your Bag</span>
+    <span class="close" onclick="toggleBag()">×</span>
+  </div>
+
+  <div id="bagContent" class="bag-content">
+    <!-- Filled by JS -->
+  </div>
+
+</div>
 <!-- HERO -->
 <section class="hero-text">
   <p class="subtitle">Browse Less, Play More.</p>
