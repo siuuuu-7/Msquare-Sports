@@ -241,3 +241,6 @@ document.addEventListener("DOMContentLoaded", () => {
     heart.classList.remove("fa-regular");
   }
 });
+function openWishlist() {
+  window.location.href = "wishlist.html";
+}
