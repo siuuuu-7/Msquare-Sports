@@ -72,10 +72,6 @@ window.addNewProduct = async function () {
   alert("Product Added");
   loadProducts();
 };
-<button onclick="addToCart('${p.name}','${p.price}','${p.img}')">
-  Add to Cart
-</button>
-
 // ❌ DELETE
 window.deleteProduct = async function (id) {
   if (!isAdmin) return;
@@ -103,22 +99,6 @@ window.logoutAdmin = async function () {
   await signOut(auth);
 };
 // ===== PREMIUM NAV MODALS =====
-
-function openClub() {
-  document.getElementById("clubModal").style.display = "flex";
-}
-
-function openLogin() {
-  document.getElementById("clubModal").style.display = "none";
-  document.getElementById("loginModal").style.display = "flex";
-}
-
-// Close modal when clicking outside
-window.addEventListener("click", function (e) {
-  if (e.target.classList.contains("modal")) {
-    e.target.style.display = "none";
-  }
-});
 function openClub() {
   document.getElementById("clubModal").style.display = "flex";
 }
@@ -133,7 +113,6 @@ window.addEventListener("click", function (e) {
     e.target.style.display = "none";
   }
 });
-import { auth } from "./firebase.js";
 import { signInWithPhoneNumber, RecaptchaVerifier } 
 from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
