@@ -1141,3 +1141,20 @@ body {
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-icon i {
+  font-size: 18px;
+  color: #d4af37; /* premium gold */
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-icon i:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
