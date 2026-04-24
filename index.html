@@ -415,14 +415,14 @@ let hintIndex = 0;
 const hintElement = document.getElementById("rotatingHint");
 
 setInterval(() => {
-  hintElement.style.opacity = 0;
+  hintElement.classList.remove("show");
 
   setTimeout(() => {
     hintIndex = (hintIndex + 1) % hints.length;
     hintElement.textContent = hints[hintIndex];
-    hintElement.style.opacity = 1;
-  }, 300);
+    hintElement.classList.add("show");
+  }, 600);
 
-}, 1500);
+}, 3000);
 </script>
 </body>
