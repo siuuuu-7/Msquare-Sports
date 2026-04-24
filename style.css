@@ -1360,3 +1360,54 @@ body {
   color: #e11d48; /* premium red */
   transform: scale(1.15);
 }
+/* BAG DRAWER */
+.bag-drawer {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  width: 320px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.6);
+  display: none;
+  z-index: 9999;
+  animation: slideDown .25s ease;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.bag-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 16px;
+  font-weight: 600;
+  border-bottom: 1px solid #222;
+}
+
+.bag-header .close {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.bag-content {
+  padding: 22px;
+  text-align: center;
+}
+
+.bag-content p {
+  color: #aaa;
+  margin-bottom: 16px;
+}
+
+.bag-content button {
+  background: #e5c56e;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
