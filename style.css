@@ -1667,9 +1667,10 @@ body {
 }
 
 .store-text {
-  font-size: 11px;
+  font-size: 5.5px;   /* 👈 HALF the size */
   font-weight: 500;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px; /* keeps it readable */
+  opacity: 0.9;
 }
 
 .store-wrapper:hover {
@@ -1678,11 +1679,7 @@ body {
 
 /* MOBILE: slightly smaller */
 @media (max-width: 768px) {
-  .store-wrapper i {
-    font-size: 16px;
-  }
-
   .store-text {
-    font-size: 10px;
+    font-size: 5px;
   }
 }
