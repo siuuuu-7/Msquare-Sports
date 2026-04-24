@@ -43,3 +43,38 @@ document.addEventListener("click", function (e) {
     bag.style.display = "none";
   }
 });
+function toggleWishlist() {
+  const drawer = document.getElementById("wishlistDrawer");
+  drawer.style.display = drawer.style.display === "block" ? "none" : "block";
+  renderWishlist();
+}
+
+function renderWishlist() {
+  const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+  const content = document.getElementById("wishlistContent");
+
+  if (wishlist.length === 0) {
+    content.innerHTML = `
+      <p>Your wishlist is empty</p>
+      <button onclick="window.location.href='index.html'">
+        Start exploring
+      </button>
+    `;
+  } else {
+    content.innerHTML = wishlist.map(item => `
+      <p>${item.name}</p>
+    `).join("");
+  }
+}
+
+/* Close wishlist when clicking outside */
+document.addEventListener("click", function (e) {
+  const drawer = document.getElementById("wishlistDrawer");
+  const icon = document.querySelector(".wishlist-wrapper");
+
+  if (!drawer || !icon) return;
+
+  if (!drawer.contains(e.target) && !icon.contains(e.target)) {
+    drawer.style.display = "none";
+  }
+});

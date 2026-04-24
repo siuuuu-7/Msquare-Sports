@@ -1411,3 +1411,6 @@ body {
   font-weight: 600;
   cursor: pointer;
 }
+.wishlist-wrapper:hover i {
+  color: #e5c56e;
+}

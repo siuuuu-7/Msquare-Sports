@@ -55,7 +55,7 @@
   <span class="logo-yellow">SPORTS</span>
 </div>
   <div class="nav-actions">
-<span class="nav-icon wishlist-icon" onclick="location.href='wishlist.html'" title="Wishlist">
+<span class="nav-icon wishlist-wrapper" onclick="toggleWishlist()" title="Wishlist">
   <i class="fa-regular fa-heart"></i>
 </span>
 </span>
@@ -78,6 +78,19 @@
   </div>
 
   <div id="bagContent" class="bag-content">
+    <!-- Filled by JS -->
+  </div>
+
+</div>
+<!-- WISHLIST DRAWER -->
+<div id="wishlistDrawer" class="bag-drawer">
+
+  <div class="bag-header">
+    <span>Your Wishlist</span>
+    <span class="close" onclick="toggleWishlist()">×</span>
+  </div>
+
+  <div id="wishlistContent" class="bag-content">
     <!-- Filled by JS -->
   </div>
 
