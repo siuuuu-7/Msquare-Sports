@@ -1535,3 +1535,106 @@ body {
     gap: 40px;
   }
 }
+/* =========================
+   INSTASPORT-STYLE FOOTER
+========================= */
+
+.insta-footer {
+  background: radial-gradient(1200px 500px at 50% -200px, #222 0%, #0b0b0b 55%, #000 100%);
+  color: #b5b5b5;
+  font-family: 'Inter', system-ui, sans-serif;
+  padding: 70px 80px 30px;
+}
+
+/* MAIN GRID */
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(4, 1fr);
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* BRAND */
+.footer-brand .footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: #e6c15a;
+}
+
+.footer-tagline {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #8a8a8a;
+}
+
+/* COLUMNS */
+.footer-col h5 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #eaeaea;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 13px;
+  line-height: 1.9;
+  color: #9a9a9a;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.footer-col a:hover {
+  color: #e6c15a;
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  max-width: 1400px;
+  margin: 40px auto 0;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #777;
+}
+
+/* BOTTOM LINKS */
+.bottom-links a {
+  margin-left: 22px;
+  color: #9a9a9a;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.bottom-links a:hover {
+  color: #e6c15a;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .insta-footer {
+    padding: 60px 30px 30px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .bottom-links a {
+    margin: 0 10px;
+  }
+}
