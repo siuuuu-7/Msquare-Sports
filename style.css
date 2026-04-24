@@ -1158,3 +1158,21 @@ body {
   transform: scale(1.1);
   opacity: 0.85;
 }
+/* PREMIUM TEXT LOGO (INSTASPORT STYLE) */
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.logo-white {
+  color: #ffffff;
+}
+
+.logo-yellow {
+  color: #f5c542; /* premium yellow */
+}
