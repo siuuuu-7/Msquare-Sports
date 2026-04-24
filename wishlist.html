@@ -1,64 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Wishlist | Msquare Sports</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Font Awesome -->
+  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 
-  <!-- Your CSS -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
 
   <style>
-    .wishlist-page {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
+    body {
+      background: #0b0b0b;
+      color: #fff;
+      font-family: Inter, sans-serif;
     }
 
-    .wishlist-page h1 {
-      margin-bottom: 20px;
+    .wishlist-wrapper {
+      max-width: 1100px;
+      margin: auto;
+      padding: 90px 20px;
+    }
+
+    .wishlist-title {
+      font-family: Poppins, sans-serif;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .wishlist-sub {
+      color: #aaa;
+      margin-bottom: 40px;
+    }
+
+    .wishlist-empty {
+      text-align: center;
+      padding: 80px 20px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #111, #0b0b0b);
+    }
+
+    .wishlist-empty h2 {
+      margin-top: 15px;
       font-family: Poppins, sans-serif;
     }
 
-    .empty-wishlist {
-      text-align: center;
-      color: #777;
-      margin-top: 80px;
+    .wishlist-empty p {
+      color: #888;
+      margin-top: 8px;
     }
 
-    .empty-wishlist i {
-      font-size: 50px;
-      color: #e11d48;
-      margin-bottom: 15px;
-    }
-
-    .back-btn {
+    .wishlist-empty a {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 25px;
+      padding: 12px 26px;
+      border-radius: 30px;
+      background: #d4af37;
+      color: #000;
       text-decoration: none;
-      color: #d4af37;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      margin-top: 100px;
+      font-size: 14px;
+    }
+
+    .footer-grid h4 {
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .footer-grid p {
+      color: #aaa;
+      margin: 6px 0;
+      cursor: pointer;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 50px;
+      color: #777;
+      font-size: 13px;
     }
   </style>
 </head>
+
 <body>
 
+<!-- NAVBAR -->
 <nav class="main-nav">
   <div class="brand-wrapper logo-text">
     <span class="logo-white">MSQUARE</span>
     <span class="logo-yellow">SPORTS</span>
   </div>
+
+  <div class="nav-actions">
+    <span onclick="location.href='index.html'">Home</span>
+    <span>Join the club</span>
+    <span>Login</span>
+  </div>
 </nav>
 
-<section class="wishlist-page">
-  <h1>Your Wishlist</h1>
+<!-- WISHLIST CONTENT -->
+<section class="wishlist-wrapper">
+  <h1 class="wishlist-title">Wishlist</h1>
+  <p class="wishlist-sub">Your wishlist is empty</p>
 
-  <div class="empty-wishlist">
-    <i class="fa-solid fa-heart"></i>
-    <p>Your wishlist is empty</p>
-    <a class="back-btn" href="index.html">← Continue shopping</a>
+  <div class="wishlist-empty">
+    <i class="fa-regular fa-heart" style="font-size:48px;color:#e11d48"></i>
+    <h2>Start exploring</h2>
+    <p>Browse less. Play more.</p>
+    <a href="index.html">Shop by Sport</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-grid">
+    <div>
+      <h4>Shop by Sport</h4>
+      <p>Badminton</p><p>Cricket</p><p>Football</p><p>Swimming</p>
+      <p>Running</p><p>Cycling</p><p>Eyewear</p><p>Tennis</p>
+      <p>Pickleball</p><p>Table Tennis</p><p>Padel</p><p>Fitness / Gym</p><p>Nutrition</p>
+    </div>
+
+    <div>
+      <h4>Help</h4>
+      <p>Track Order</p>
+      <p>Returns & Exchanges</p>
+      <p>Contact Us</p>
+    </div>
+
+    <div>
+      <h4>Company</h4>
+      <p>About Msquare</p>
+      <p>Membership</p>
+      <p>Careers</p>
+      <p>Blog</p>
+    </div>
+
+    <div>
+      <h4>Guides</h4>
+      <p>Badminton Guides</p>
+      <p>Gear Reviews</p>
+      <p>Training Tips</p>
+      <p>Player Spotlights</p>
+      <p>All Posts</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Msquare Sports. All rights reserved.<br>
+    Privacy · Terms · Shipping · Refund Policy
   </div>
 </section>
 
