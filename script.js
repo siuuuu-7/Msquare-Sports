@@ -139,33 +139,29 @@ from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 let confirmationResult;
 
-// CREATE reCAPTCHA (runs once)
+// 🔥 reCAPTCHA setup
 window.recaptchaVerifier = new RecaptchaVerifier(
-  'recaptcha-container',
-  {
-    size: "invisible"
-  },
+  "recaptcha-container",
+  { size: "invisible" },
   auth
 );
 
-// SEND OTP FUNCTION
+// 📲 SEND OTP
 window.sendOTP = function () {
   const phone = document.querySelector(".phone-row input").value;
 
   if (!phone) {
-    alert("Enter phone number");
+    alert("Enter number");
     return;
   }
 
-  const appVerifier = window.recaptchaVerifier;
-
-  signInWithPhoneNumber(auth, "+91" + phone, appVerifier)
+  signInWithPhoneNumber(auth, "+91" + phone, window.recaptchaVerifier)
     .then((result) => {
       confirmationResult = result;
-      alert("OTP Sent ✅");
+      alert("OTP sent ✅");
     })
     .catch((error) => {
       console.log(error);
-      alert("OTP failed ❌ Check Firebase setup");
+      alert(error.message);
     });
 };
