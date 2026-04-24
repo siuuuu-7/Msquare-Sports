@@ -1,4 +1,5 @@
 // script.js
+console.log("🔥 script.js loaded");
 import { db, auth } from "./firebase.js";
 import {
   collection,
