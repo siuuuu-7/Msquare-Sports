@@ -148,3 +148,27 @@ window.sendOTP = function () {
       alert(error.message);
     });
 };
+window.verifyOTP = function () {
+  const code = document.getElementById("otpInput").value;
+
+  if (!code) {
+    alert("Enter OTP");
+    return;
+  }
+
+  confirmationResult.confirm(code)
+    .then((result) => {
+      alert("Login Success 🎉");
+
+      // CLOSE MODAL
+      document.getElementById("loginModal").style.display = "none";
+
+      // RESET OTP UI
+      document.getElementById("otpSection").style.display = "none";
+
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("Wrong OTP ❌");
+    });
+};
