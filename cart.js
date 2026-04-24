@@ -8,9 +8,9 @@ function addToCart(name, price) {
   });
 
   localStorage.setItem("cart", JSON.stringify(cart));
-
   alert(name + " added to cart 🛒");
 }
+
 function toggleBag() {
   const bag = document.getElementById("bagDrawer");
   bag.style.display = bag.style.display === "block" ? "none" : "block";
@@ -46,7 +46,9 @@ document.addEventListener("click", function (e) {
     bag.style.display = "none";
   }
 });
-});
+
+/* ================= WISHLIST ================= */
+
 function toggleWishlist() {
   const drawer = document.getElementById("wishlistDrawer");
   drawer.style.display = drawer.style.display === "block" ? "none" : "block";
@@ -81,3 +83,4 @@ document.addEventListener("click", function (e) {
   if (!drawer.contains(e.target) && !icon.contains(e.target)) {
     drawer.style.display = "none";
   }
+});
