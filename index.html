@@ -266,3 +266,34 @@ window.onclick = function(e) {
 
   </div>
 </div>
+<script>
+let generatedOTP = "";
+
+function sendOTP() {
+  const phone = document.querySelector(".phone-row input").value;
+
+  if (!phone || phone.length < 10) {
+    alert("Enter valid WhatsApp number");
+    return;
+  }
+
+  // fake OTP generator
+  generatedOTP = "123456";
+
+  alert("OTP sent to +91 " + phone + " (Demo OTP: 123456)");
+
+  document.getElementById("otpSection").style.display = "block";
+}
+
+function verifyOTP() {
+  const entered = document.getElementById("otpInput").value;
+
+  if (entered === generatedOTP) {
+    alert("Login successful ✅");
+    document.getElementById("loginModal").style.display = "none";
+  } else {
+    alert("Wrong OTP ❌ (Try 123456)");
+  }
+}
+</script>
+</body>
