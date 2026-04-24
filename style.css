@@ -1692,3 +1692,20 @@ body {
     display: none;
   }
 }
+/* BRAND SOCIAL ICONS (INSTASPORT STYLE) */
+.brand-socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.brand-socials a {
+  color: rgba(255,255,255,0.65);
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+.brand-socials a:hover {
+  color: #f5c542; /* premium yellow */
+  transform: translateY(-1px);
+}
