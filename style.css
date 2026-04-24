@@ -1215,3 +1215,23 @@ body {
 .main-nav .logo-yellow {
   color: #ffcc00 !important;
 }
+/* ===== INSTASPORT-STYLE LOGO ===== */
+.main-nav .logo-text {
+  font-family: 'Anton', sans-serif;
+  font-size: 26px;
+  letter-spacing: 1.2px;   /* KEY: exact premium spacing */
+  display: flex;
+  align-items: center;
+  gap: 6px;                /* space between MSQUARE & SPORTS */
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.main-nav .logo-white {
+  color: #ffffff;
+}
+
+.main-nav .logo-yellow {
+  color: #f5c400;          /* InstaSport-like gold */
+  letter-spacing: 1.6px;  /* slightly wider for second word */
+}
