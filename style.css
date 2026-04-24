@@ -1669,10 +1669,21 @@ body {
   color: #e6c15a; /* InstaSport gold */
 }
 
-.store-text {
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.3px;
+/* STORE ICON */
+.store-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #dcdcdc;
+  font-size: 16px;
+  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.store-wrapper:hover {
+  color: #e6c15a; /* premium gold */
+  transform: scale(1.1);
 }
 
 /* MOBILE: hide text, keep icon */
