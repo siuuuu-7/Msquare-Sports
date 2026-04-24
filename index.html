@@ -252,6 +252,18 @@ window.onclick = function(e) {
     </div>
 
     <button onclick="sendOTP()">Send Code</button>
+    <div id="otpSection" style="display:none; margin-top:15px;">
+  
+  <p>Enter OTP</p>
+
+  <input id="otpInput" type="text" placeholder="6-digit OTP"
+    style="padding:10px;width:100%;margin-top:10px;">
+
+  <button onclick="verifyOTP()" style="margin-top:10px;">
+    Verify OTP
+  </button>
+
+</div>
 
   </div>
 </div>
