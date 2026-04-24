@@ -1535,57 +1535,65 @@ body {
     gap: 40px;
   }
 }
-/* =========================
-   INSTASPORT-STYLE FOOTER
-========================= */
+/* ==============================
+   INSTA-STYLE FOOTER (DESKTOP)
+================================ */
 
 .insta-footer {
-  background: radial-gradient(1200px 500px at 50% -200px, #222 0%, #0b0b0b 55%, #000 100%);
-  color: #b5b5b5;
-  font-family: 'Inter', system-ui, sans-serif;
-  padding: 70px 80px 30px;
+  background: radial-gradient(1200px 500px at 50% -200px, #1a1a1a 0%, #0b0b0b 60%, #000 100%);
+  padding: 70px 90px 30px;
+  color: #9b9b9b;
+  font-family: 'Inter', sans-serif;
 }
 
-/* MAIN GRID */
+/* GRID LAYOUT */
 .footer-main {
-  display: grid;
-  grid-template-columns: 1.4fr repeat(4, 1fr);
-  gap: 60px;
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: 70px;
+  text-align: left;
 }
 
-/* BRAND */
-.footer-brand .footer-logo {
+/* BRAND COLUMN */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-logo {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 28px;
+  font-size: 30px;
   letter-spacing: 2px;
   color: #e6c15a;
 }
 
 .footer-tagline {
-  margin-top: 8px;
   font-size: 14px;
-  color: #8a8a8a;
+  color: #7d7d7d;
 }
 
-/* COLUMNS */
+/* COLUMN HEADINGS */
 .footer-col h5 {
-  font-size: 13px;
-  font-weight: 500;
-  color: #eaeaea;
-  letter-spacing: 0.04em;
-  margin-bottom: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #cfcfcf;
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+  text-transform: uppercase;
 }
 
+/* LINKS */
 .footer-col a {
   display: block;
-  font-size: 13px;
-  line-height: 1.9;
+  font-size: 14px;
+  line-height: 2;
   color: #9a9a9a;
   text-decoration: none;
   cursor: pointer;
-  transition: color 0.25s ease;
+  transition: color 0.2s ease;
 }
 
 .footer-col a:hover {
@@ -1594,9 +1602,9 @@ body {
 
 /* BOTTOM BAR */
 .footer-bottom {
-  max-width: 1400px;
-  margin: 40px auto 0;
-  padding-top: 22px;
+  max-width: 1500px;
+  margin: 45px auto 0;
+  padding-top: 20px;
   border-top: 1px solid rgba(255,255,255,0.06);
   display: flex;
   justify-content: space-between;
@@ -1607,20 +1615,21 @@ body {
 
 /* BOTTOM LINKS */
 .bottom-links a {
-  margin-left: 22px;
-  color: #9a9a9a;
+  margin-left: 24px;
+  color: #8a8a8a;
   text-decoration: none;
-  transition: color 0.25s ease;
 }
 
 .bottom-links a:hover {
   color: #e6c15a;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1000px) {
+/* ==============================
+   MOBILE FOOTER
+================================ */
+@media (max-width: 900px) {
   .insta-footer {
-    padding: 60px 30px 30px;
+    padding: 50px 25px 30px;
   }
 
   .footer-main {
