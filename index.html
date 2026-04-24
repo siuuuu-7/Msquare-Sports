@@ -113,11 +113,14 @@
 
   <p class="more">More Sports</p>
 
-  <input class="search" placeholder="⚡Search for shoes, rackets and more ..." />
-
-  <p class="hint">
-    you don't need to scroll for 20 minutes to buy a grip
-  </p>
+  <input 
+  class="search" 
+  id="searchInput"
+  placeholder="⚡Search for shoes, rackets and more ..."
+/>
+<p class="hint" id="rotatingHint">
+  you don't need to scroll for 20 minutes to buy a grip
+</p>
 </section>
 <section class="trust">
   <p>🚚 Free 24-hr delivery · on all prepaid orders</p>
@@ -379,4 +382,47 @@ function verifyOTP() {
     <p>Welcome to Msquare Sports</p>
   </div>
 </div>
+<script>
+document.getElementById("searchInput").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    const query = this.value.toLowerCase().trim();
+
+    if (query.includes("cricket")) {
+      window.location.href = "cricket.html";
+    } 
+    else if (query.includes("shoe")) {
+      window.location.href = "shoes.html";
+    } 
+    else if (query.includes("tshirt") || query.includes("t-shirt")) {
+      window.location.href = "tshirts.html";
+    } 
+    else {
+      alert("Sorry, product not found yet 👀");
+    }
+  }
+});
+</script>
+<script>
+const hints = [
+  "you don't need to scroll for 20 minutes to buy a grip",
+  "you don't need to compare 1000 rackets to hit a smash",
+  "you don't need to browse 5000 shoes to run a mile",
+  "you don't need a PhD in reviews to pick a shoe",
+  "you don't need 47 open tabs to buy a shuttlecock"
+];
+
+let hintIndex = 0;
+const hintElement = document.getElementById("rotatingHint");
+
+setInterval(() => {
+  hintElement.style.opacity = 0;
+
+  setTimeout(() => {
+    hintIndex = (hintIndex + 1) % hints.length;
+    hintElement.textContent = hints[hintIndex];
+    hintElement.style.opacity = 1;
+  }, 300);
+
+}, 1500);
+</script>
 </body>

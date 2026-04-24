@@ -1443,3 +1443,6 @@ body {
 .nav-icon i {
   line-height: 1;
 }
+.hint {
+  transition: opacity 0.3s ease;
+}
