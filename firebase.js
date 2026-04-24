@@ -1,5 +1,6 @@
 console.log("🔥 firebase.js loaded");
-
+import { signInWithPhoneNumber, RecaptchaVerifier } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 // Firebase imports
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { 
