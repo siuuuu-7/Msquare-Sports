@@ -21,7 +21,7 @@ import {
 
 // Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyBdcTPbkGt1tYJ5ZyUU1Sg8h1DhNaafTj8",
+  apiKey: "AIzaSyD_H2N7M02PWZVlKAInpH9YwS8t5eOhMaI",
   authDomain: "msquare-sports.firebaseapp.com",
   projectId: "msquare-sports",
   storageBucket: "msquare-sports.appspot.com",
