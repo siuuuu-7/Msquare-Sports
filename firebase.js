@@ -3,6 +3,7 @@ import { signInWithPhoneNumber, RecaptchaVerifier }
 from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 // Firebase imports
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { 
   getAuth, 
   signInWithEmailAndPassword, 
@@ -107,7 +108,7 @@ async function loadProducts() {
 
 /* ---------------- ADD PRODUCT ---------------- */
 window.addNewProduct = async function () {
-  if (!isAdmin) return alert("Not authorized");
+  if (!isAdmin) return alert("Access denied");
 
   const name = document.getElementById("pname").value;
   const price = document.getElementById("pprice").value;
@@ -115,7 +116,7 @@ window.addNewProduct = async function () {
   const offer = document.getElementById("poffer").value;
   const stock = document.getElementById("pstock").value;
 
-  await addDoc(collection(db, "products"), {
+  const docRef = await addDoc(collection(db, "products"), {
     name,
     price,
     img,
@@ -123,20 +124,30 @@ window.addNewProduct = async function () {
     stock
   });
 
+  // 🔍 Audit log
+  await logAudit("ADD_PRODUCT", docRef.id, name);
+
   alert("Product Added");
   loadProducts();
 };
 
 /* ---------------- DELETE PRODUCT ---------------- */
 window.deleteProduct = async function (id) {
-  if (!isAdmin) return;
+  if (!isAdmin) return alert("Access denied");
+
+  // Get product name before delete
+  const productEl = document.querySelector(
+    `button[onclick="deleteProduct('${id}')"]`
+  )?.closest(".product");
+
+  const productName =
+    productEl?.querySelector("h3")?.innerText || "Unknown Product";
 
   await deleteDoc(doc(db, "products", id));
+
+  // 🔍 Audit log
+  await logAudit("DELETE_PRODUCT", id, productName);
+
   alert("Product Deleted");
   loadProducts();
-};
-
-/* ---------------- LOGOUT ---------------- */
-window.logoutAdmin = async function () {
-  await signOut(auth);
 };
