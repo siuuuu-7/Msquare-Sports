@@ -1761,3 +1761,14 @@ body {
     gap: 12px;
   }
 }
+.footer-col a {
+  display: block;
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
