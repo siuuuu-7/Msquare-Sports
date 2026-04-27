@@ -2,34 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cricket Bats | Msquare Sports</title>
+  <title>Cricket Equipment | Msquare Sports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SAME CSS -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pro.css">
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
+<!-- NAVBAR (reuse from index.html) -->
 <nav class="main-nav">
-  <span onclick="window.location.href='index.html'" style="cursor:pointer;">
-    ← Back to Home
-  </span>
+  <div class="brand-wrapper logo-text">
+    <span class="logo-white">MSQUARE</span>
+    <span class="logo-yellow">SPORTS</span>
+  </div>
 </nav>
 
-<section id="products">
-  <h2>Cricket Bats</h2>
-
-  <div class="grid">
-    <div class="product">
-  <a href="product.html" style="text-decoration:none; color:inherit;">
-    <img src="https://i.imgur.com/3b4hKSK.png">
-    <h3>English Willow Bat</h3>
-    <p class="price">₹3,999</p>
-  </a>
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html">Home</a> <span>›</span> Cricket
 </div>
 
-    <div class="product">
-      <img src="https://i.imgur.com/3b4hKSK.png">
-      <h3>Kashmir Willow Bat</h3>
-      <p class="price">₹1,599</p>
+<!-- PAGE HEADER -->
+<section class="category-header">
+  <h1>Cricket</h1>
+
+  <div class="help-box">
+    <div>
+      <strong>Not sure where to start?</strong>
+      <p>Answer 3 questions and we’ll pick the right gear for you.</p>
     </div>
+    <button>Guide me →</button>
+  </div>
+</section>
+
+<!-- PRODUCT GRID -->
+<section class="product-section">
+  <div class="product-grid">
+
+    <!-- PRODUCT CARD -->
+    <div class="product-card">
+      <img src="images/cricket-bat.jpg" alt="Cricket Bat">
+      <h3>English Willow Bat</h3>
+      <div class="rating">⭐⭐⭐⭐☆</div>
+      <p class="price">₹6,999</p>
+      <button>Add to Bag</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/cricket-shoes.jpg" alt="Cricket Shoes">
+      <h3>Cricket Shoes</h3>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <p class="price">₹3,499</p>
+      <button>Add to Bag</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/helmet.jpg" alt="Helmet">
+      <h3>Cricket Helmet</h3>
+      <div class="rating">⭐⭐⭐⭐☆</div>
+      <p class="price">₹1,899</p>
+      <button>Add to Bag</button>
+    </div>
+
   </div>
 </section>
 
