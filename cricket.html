@@ -42,10 +42,10 @@
 </section>
 <!-- FILTER BAR -->
 <div class="filter-bar">
-  <button class="filter-btn active" onclick="filterProducts('all')">All</button>
-  <button class="filter-btn" onclick="filterProducts('bat')">Bats</button>
-  <button class="filter-btn" onclick="filterProducts('shoes')">Shoes</button>
-  <button class="filter-btn" onclick="filterProducts('helmet')">Helmets</button>
+  <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
+<button class="filter-btn" onclick="filterProducts('bat', this)">Bats</button>
+<button class="filter-btn" onclick="filterProducts('shoes', this)">Shoes</button>
+<button class="filter-btn" onclick="filterProducts('helmet', this)">Helmets</button>
 </div>
 
 <!-- PRODUCT GRID -->
@@ -53,56 +53,38 @@
   <div class="product-grid">
 
     <!-- PRODUCT CARD -->
-    <div class="product-card">
-      <img src="images/cricket-bat.jpg" alt="Cricket Bat">
-      <h3>English Willow Bat</h3>
-      <div class="rating">⭐⭐⭐⭐☆</div>
-      <p class="price">₹6,999</p>
-      <button>Add to Bag</button>
-    </div>
     <div class="product-card" data-category="bat">
-  <img src="images/cricket-bat.jpg">
+  <img src="images/cricket-bat.jpg" alt="Cricket Bat">
   <h3>English Willow Bat</h3>
+  <div class="rating">⭐⭐⭐⭐☆</div>
   <p class="price">₹6,999</p>
+  <button>Add to Bag</button>
 </div>
 
-    <div class="product-card">
-      <img src="images/cricket-shoes.jpg" alt="Cricket Shoes">
-      <h3>Cricket Shoes</h3>
-      <div class="rating">⭐⭐⭐⭐⭐</div>
-      <p class="price">₹3,499</p>
-      <button>Add to Bag</button>
-    </div>
-    <div class="product-card" data-category="shoes">
-  <img src="images/cricket-shoes.jpg">
+   <div class="product-card" data-category="shoes">
+  <img src="images/cricket-shoes.jpg" alt="Cricket Shoes">
   <h3>Cricket Shoes</h3>
+  <div class="rating">⭐⭐⭐⭐⭐</div>
   <p class="price">₹3,499</p>
+  <button>Add to Bag</button>
 </div>
-
-    <div class="product-card">
-      <img src="images/helmet.jpg" alt="Helmet">
-      <h3>Cricket Helmet</h3>
-      <div class="rating">⭐⭐⭐⭐☆</div>
-      <p class="price">₹1,899</p>
-      <button>Add to Bag</button>
-    </div>
     <div class="product-card" data-category="helmet">
-  <img src="images/helmet.jpg">
+  <img src="images/helmet.jpg" alt="Helmet">
   <h3>Cricket Helmet</h3>
+  <div class="rating">⭐⭐⭐⭐☆</div>
   <p class="price">₹1,899</p>
+  <button>Add to Bag</button>
 </div>
 
   </div>
 </section>
-
 <script>
-function filterProducts(category) {
+function filterProducts(category, btn) {
   const cards = document.querySelectorAll(".product-card");
   const buttons = document.querySelectorAll(".filter-btn");
 
-  // Button active state
-  buttons.forEach(btn => btn.classList.remove("active"));
-  event.target.classList.add("active");
+  buttons.forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
 
   cards.forEach(card => {
     if (category === "all") {
