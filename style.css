@@ -2110,3 +2110,19 @@ body {
 .main-nav .brand-socials {
   display: none !important;
 }
+/* ===============================
+   BRAND LOGO = TEXT HEIGHT
+=============================== */
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  height: 1em;          /* SAME height as text */
+  width: auto;
+  object-fit: contain;
+  transform: translateY(2px); /* optical alignment */
+}
