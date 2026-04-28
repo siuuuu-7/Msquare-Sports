@@ -120,3 +120,21 @@
   color: #fff;
   border-color: #000;
 }
+/* ===============================
+   HEADER BRAND LOGO
+=============================== */
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+.brand-logo:hover {
+  filter: drop-shadow(0 0 6px rgba(245, 200, 76, 0.6));
+}
