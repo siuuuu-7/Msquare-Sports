@@ -2327,3 +2327,130 @@ body {
   height: 1em;
   transform: scale(1.25);
 }
+/* ===============================
+   PREMIUM MOBILE (INSTASPORT STYLE)
+================================ */
+@media (max-width: 768px) {
+
+  body {
+    background: radial-gradient(circle at top, #1a1a1a, #000) !important;
+  }
+
+  /* TOP BAR */
+  .top-bar {
+    font-size: 12px;
+    padding: 6px;
+    opacity: 0.85;
+  }
+
+  /* NAVBAR */
+  .main-nav {
+    flex-direction: row !important;
+    align-items: center;
+    padding: 10px 14px;
+  }
+
+  .brand-wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .brand-socials {
+    display: none !important;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  /* HERO */
+  .hero-text {
+    padding: 40px 18px 20px;
+    text-align: center;
+  }
+
+  .hero-text .subtitle {
+    font-size: 13px;
+    opacity: 0.6;
+    margin-bottom: 6px;
+  }
+
+  .hero-text h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #f5c400;
+    margin-bottom: 22px;
+  }
+
+  /* SPORTS GRID */
+  .sports-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .sports-grid span {
+    background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
+    padding: 12px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+  }
+
+  /* MORE SPORTS */
+  .more {
+    margin: 18px 0 24px;
+    font-size: 14px;
+    color: #f5c400;
+    font-weight: 500;
+  }
+
+  /* SEARCH */
+  .search {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    display: block;
+    background: #1b1b1b;
+    border-radius: 999px;
+    padding: 14px 18px;
+    font-size: 14px;
+    border: none;
+    color: #ccc;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  }
+
+  /* HINT TEXT */
+  .hint {
+    font-size: 12px;
+    opacity: 0.45;
+    margin-top: 12px;
+  }
+
+  /* TRUST SECTION */
+  .trust {
+    display: flex;
+    justify-content: space-around;
+    padding: 18px 10px;
+    font-size: 11px;
+    opacity: 0.55;
+  }
+
+  .trust p {
+    max-width: 70px;
+    line-height: 1.3;
+  }
+
+  /* FOOTER CLEANUP */
+  .footer-main {
+    padding-top: 30px;
+  }
+}
