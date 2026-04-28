@@ -2161,3 +2161,26 @@ body {
   width: auto;
   object-fit: contain;
 }
+/* ===============================
+   PERFECT LOGO ↔ TEXT MATCH
+=============================== */
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-white,
+.logo-yellow {
+  font-size: 26px;      /* keep your visual size */
+  line-height: 1;      /* 🔥 THIS IS THE KEY */
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-logo {
+  height: 26px;         /* EXACT SAME AS FONT SIZE */
+  width: auto;
+  object-fit: contain;
+}
