@@ -2184,3 +2184,11 @@ body {
   width: auto;
   object-fit: contain;
 }
+.logo-white,
+.logo-yellow {
+  font-size: 28px;
+}
+
+.brand-logo {
+  height: 28px;
+}
