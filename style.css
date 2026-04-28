@@ -2129,3 +2129,35 @@ body {
 .brand-logo {
   height: 2.05em;   /* slightly bigger */
 }
+/* ===============================
+   PERFECT BRAND ALIGNMENT
+=============================== */
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Force text to have predictable height */
+.logo-text {
+  display: flex;
+  align-items: center;
+  line-height: 1; /* IMPORTANT */
+}
+
+/* MSQUARE + SPORTS text */
+.logo-white,
+.logo-yellow {
+  font-size: 28px;      /* your visible text size */
+  line-height: 1;       /* remove extra font space */
+  display: inline-flex;
+  align-items: center;
+}
+
+/* LOGO IMAGE */
+.brand-logo {
+  height: 28px;         /* EXACT match to text size */
+  width: auto;
+  object-fit: contain;
+}
