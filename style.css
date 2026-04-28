@@ -2126,3 +2126,6 @@ body {
   object-fit: contain;
   transform: translateY(2px); /* optical alignment */
 }
+.brand-logo {
+  height: 1.05em;   /* slightly bigger */
+}
