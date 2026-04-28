@@ -2272,3 +2272,71 @@ body {
     font-size: 13px;
   }
 }
+/* ===== ULTRA TIGHT NAV ACTIONS ===== */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;              /* 👈 extremely tight */
+}
+
+/* ICON CONTAINER */
+.nav-icon {
+  width: 28px;           /* smaller hit box */
+  height: 28px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* ICON ITSELF */
+.nav-icon i {
+  font-size: 16px;
+  line-height: 1;
+  color: #111;
+}
+
+/* REMOVE HOVER BACKGROUND (clean premium) */
+.nav-icon:hover {
+  background: none;
+  transform: none;
+}
+
+/* ===== TEXT LINKS TIGHT ===== */
+.nav-link {
+  padding: 0 6px;        /* 👈 very tight */
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1;
+}
+
+/* LOGIN OUTLINE – SLIM */
+.nav-link.outline {
+  padding: 4px 8px;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+/* ===== MOBILE EVEN TIGHTER ===== */
+@media (max-width: 768px) {
+  .nav-actions {
+    gap: 3px;
+  }
+
+  .nav-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .nav-icon i {
+    font-size: 15px;
+  }
+
+  .nav-link {
+    padding: 0 4px;
+    font-size: 12px;
+  }
+}
