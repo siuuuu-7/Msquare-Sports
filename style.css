@@ -2289,3 +2289,37 @@ body {
   font-weight: 600;
   letter-spacing: 0.4px;
 }
+/* BRAND WRAPPER */
+.brand-wrapper {
+  display: flex;
+  align-items: center; /* vertical alignment */
+  gap: 10px; /* space between logo & text */
+}
+
+/* LOGO IMAGE — MATCH TEXT HEIGHT */
+.brand-logo {
+  height: 1em;              /* KEY: matches font height */
+  width: auto;
+  object-fit: contain;
+  transform: scale(1.15);   /* slightly bolder presence */
+}
+
+/* BRAND TEXT */
+.logo-text {
+  display: flex;
+  align-items: center;
+  font-family: 'Anton', sans-serif;
+  font-size: 28px;          /* adjust if needed */
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+/* COLORS */
+.logo-white {
+  color: #fff;
+}
+
+.logo-yellow {
+  color: #ffcc00;
+  margin-left: 4px;
+}
