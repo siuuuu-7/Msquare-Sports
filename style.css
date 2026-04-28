@@ -2103,3 +2103,10 @@ body {
 body {
   line-height: 1.45;
 }
+/* ===============================
+   REMOVE SOCIAL ICONS FROM HEADER
+=============================== */
+
+.main-nav .brand-socials {
+  display: none !important;
+}
