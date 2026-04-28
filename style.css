@@ -2343,39 +2343,3 @@ body {
 .main-nav * {
   margin: 0 !important;
 }
-/* ===== BRAND LOGO FONT ===== */
-.logo-text {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.logo-text .logo-white,
-.logo-text .logo-yellow {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 34px;        /* premium bold size */
-  letter-spacing: 2px;   /* luxury spacing */
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-/* COLOR CONTROL */
-.logo-white {
-  color: #ffffff;
-}
-
-.logo-yellow {
-  color: #facc15; /* premium sports yellow */
-}
-.logo-text .logo-white,
-.logo-text .logo-yellow {
-  font-size: 36px;
-  letter-spacing: 2.5px;
-}
-@media (max-width: 768px) {
-  .logo-text .logo-white,
-  .logo-text .logo-yellow {
-    font-size: 28px;
-    letter-spacing: 1.5px;
-  }
-}
