@@ -2340,3 +2340,6 @@ body {
     font-size: 12px;
   }
 }
+.main-nav * {
+  margin: 0 !important;
+}
