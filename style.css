@@ -2195,3 +2195,51 @@ body {
 .whatsapp-float {
   display: none !important;
 }
+/* ===============================
+   FORCE PREMIUM TIGHT NAV SPACING
+   =============================== */
+
+.main-nav .nav-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;              /* 👈 VERY TIGHT */
+}
+
+/* ICON WRAPPERS */
+.main-nav .nav-actions .nav-icon {
+  width: 30px !important;
+  height: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 50%;
+}
+
+/* ICON SIZE */
+.main-nav .nav-actions .nav-icon i {
+  font-size: 15px !important;
+  line-height: 1 !important;
+}
+
+/* JOIN CLUB */
+.main-nav .nav-actions .nav-link {
+  margin: 0 !important;
+  padding: 4px 8px !important;      /* 👈 MUCH SMALLER */
+  font-size: 13px !important;
+  font-weight: 500;
+}
+
+/* LOGIN BUTTON */
+.main-nav .nav-actions .nav-link.outline {
+  padding: 4px 10px !important;
+  border-width: 1px !important;
+}
+
+/* REMOVE ANY EXTRA SPACING */
+.main-nav .nav-actions span,
+.main-nav .nav-actions a {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
