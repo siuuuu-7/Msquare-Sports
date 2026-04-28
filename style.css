@@ -2323,3 +2323,7 @@ body {
   color: #ffcc00;
   margin-left: 4px;
 }
+.brand-logo {
+  height: 1em;
+  transform: scale(1.25);
+}
