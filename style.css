@@ -2192,3 +2192,6 @@ body {
 .brand-logo {
   height: 28px;
 }
+.whatsapp-float {
+  display: none !important;
+}
