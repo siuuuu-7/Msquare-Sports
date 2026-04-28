@@ -1,0 +1,24 @@
+/* ===============================
+   FORCE BLACK × WHITE THEME
+================================ */
+
+html, body {
+  background: #000 !important;
+  color: #fff !important;
+  font-family: Inter, sans-serif !important;
+}
+
+/* TEST STRIPE — YOU MUST SEE THIS */
+body::before {
+  content: "BLACK WHITE THEME ACTIVE";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  color: #000;
+  text-align: center;
+  font-size: 12px;
+  padding: 4px;
+  z-index: 999999;
+}
