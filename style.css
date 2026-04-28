@@ -2327,3 +2327,187 @@ body {
   height: 1em;
   transform: scale(1.25);
 }
+/* =========================
+   GLOBAL MOBILE FIXES
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR (MOBILE)
+========================= */
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    padding: 10px 14px;
+  }
+
+  .brand-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+  }
+
+  .brand-logo {
+    height: 42px;
+  }
+
+  .logo-text span {
+    font-size: 20px;
+  }
+
+  .brand-socials {
+    gap: 10px;
+    margin-top: 6px;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+/* =========================
+   HERO SECTION
+========================= */
+@media (max-width: 768px) {
+  .hero-text {
+    padding: 30px 16px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .search {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .hint {
+    font-size: 12px;
+  }
+}
+/* =========================
+   SPORTS GRID
+========================= */
+@media (max-width: 768px) {
+  .sports-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .sports-grid span {
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 12px;
+  }
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 480px) {
+  .sports-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* =========================
+   DRAWERS
+========================= */
+@media (max-width: 768px) {
+  .bag-drawer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .bag-header {
+    font-size: 16px;
+  }
+}
+/* =========================
+   TRUST BAR
+========================= */
+@media (max-width: 768px) {
+  .trust {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+  }
+}
+/* =========================
+   FOOTER
+========================= */
+@media (max-width: 768px) {
+  .footer-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .footer-col h5 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .footer-col a {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .footer-socials {
+    justify-content: center;
+    margin-top: 15px;
+  }
+}
+/* =========================
+   MODALS
+========================= */
+@media (max-width: 480px) {
+  .modal-box {
+    width: 92%;
+    padding: 20px;
+  }
+
+  .modal-box h2 {
+    font-size: 20px;
+  }
+
+  .phone-row input {
+    font-size: 14px;
+  }
+}
