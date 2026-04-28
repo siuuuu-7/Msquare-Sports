@@ -1,0 +1,38 @@
+/* FORCE MOBILE VISIBILITY TEST */
+@media (max-width: 768px) {
+
+  body {
+    background: #0e0e0e !important;
+  }
+
+  .hero-text {
+    padding: 20px !important;
+    text-align: center !important;
+  }
+
+  .hero-text h1 {
+    font-size: 28px !important;
+    color: #ffd400 !important;
+  }
+
+  .sports-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .sports-grid span {
+    font-size: 14px !important;
+    padding: 12px !important;
+    border-radius: 14px !important;
+  }
+
+  .footer-main {
+    display: block !important;
+    text-align: center !important;
+  }
+
+  .footer-col {
+    margin-bottom: 20px !important;
+  }
+}
