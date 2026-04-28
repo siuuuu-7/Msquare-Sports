@@ -2029,3 +2029,77 @@ body {
     text-align: center;
   }
 }
+/* ===============================
+   HERO SPACING COMPRESSION
+   (INSTASPORT STYLE)
+================================ */
+
+/* Reduce overall hero height */
+.hero-text {
+  min-height: auto !important;
+  padding-top: 90px !important;
+  padding-bottom: 70px !important;
+}
+
+/* Subtitle spacing */
+.hero-text .subtitle {
+  margin-bottom: 6px !important;
+  letter-spacing: 0.4px;
+}
+
+/* Main heading tighter */
+.hero-text h1 {
+  margin: 10px 0 24px !important;
+  line-height: 1.1;
+}
+
+/* Sports pills tighter like InstaSport */
+.sports-grid {
+  gap: 12px !important;
+  margin-bottom: 22px !important;
+}
+
+.sports-grid span {
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  border-radius: 999px;
+}
+
+/* "More sports" spacing */
+.hero-text .more {
+  margin: 8px 0 22px !important;
+  font-size: 13px;
+}
+
+/* Search bar closer to content */
+.hero-text .search {
+  margin-top: 14px !important;
+  margin-bottom: 8px !important;
+  height: 44px;
+}
+
+/* Rotating hint closer */
+.hero-text .hint {
+  margin-top: 6px !important;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+/* Trust row pulled upward */
+.trust {
+  margin-top: -10px !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  gap: 26px;
+}
+
+/* Trust text smaller like pro sites */
+.trust p {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* Global tightening (safe) */
+body {
+  line-height: 1.45;
+}
