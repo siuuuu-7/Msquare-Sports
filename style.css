@@ -2454,3 +2454,69 @@ body {
     padding-top: 30px;
   }
 }
+/* ===== MOBILE HERO FIX ===== */
+.mobile-hero {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-hero {
+    display: none !important;
+  }
+
+  .mobile-hero {
+    display: block;
+    text-align: center;
+    padding: 40px 18px;
+  }
+
+  .mobile-sub {
+    font-size: 13px;
+    opacity: 0.5;
+    margin-bottom: 6px;
+  }
+
+  .mobile-title {
+    font-size: 34px;
+    color: #f5c400;
+    margin-bottom: 24px;
+  }
+
+  .mobile-sports {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 360px;
+    margin: 0 auto 20px;
+  }
+
+  .mobile-sports div {
+    background: #1a1a1a;
+    padding: 12px;
+    border-radius: 999px;
+    font-size: 14px;
+  }
+
+  .mobile-more {
+    display: inline-block;
+    margin: 16px 0 24px;
+    color: #f5c400;
+    font-size: 14px;
+  }
+
+  .mobile-search {
+    width: 100%;
+    max-width: 360px;
+    padding: 14px 18px;
+    border-radius: 999px;
+    background: #1b1b1b;
+    border: none;
+    color: #ccc;
+  }
+
+  .mobile-hint {
+    font-size: 12px;
+    opacity: 0.4;
+    margin-top: 12px;
+  }
+}
