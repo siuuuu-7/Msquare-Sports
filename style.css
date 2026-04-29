@@ -2454,3 +2454,65 @@ body {
     padding-top: 30px;
   }
 }
+.hero-video {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.hero-overlay h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 2px;
+}
+
+.hero-overlay p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.hero-btn {
+  margin-top: 20px;
+  padding: 14px 32px;
+  background: #facc15;
+  color: #000;
+  font-weight: 700;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .hero-video {
+    height: 60vh;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+}
