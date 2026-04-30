@@ -603,14 +603,9 @@ window.toggleWishlist = function () {
 };
 </script>
 <script>
-/* ===== BAG TOGGLE (GLOBAL + SAFE) ===== */
-function toggleBag() {
-  const bag = document.getElementById("bagDrawer");
-
-  if (!bag) {
-    console.error("❌ bagDrawer not found");
-    return;
-  }
+window.toggleBag = function () {
+  const bag = document.getElementById("bagFull");
+  if (!bag) return;
 
   const isOpen = bag.classList.contains("active");
 
@@ -620,7 +615,7 @@ function toggleBag() {
 
     setTimeout(() => {
       bag.style.display = "none";
-    }, 400);
+    }, 450);
   } else {
     bag.style.display = "flex";
     document.body.style.overflow = "hidden";
@@ -629,6 +624,6 @@ function toggleBag() {
       bag.classList.add("active");
     });
   }
-}
+};
 </script>
 </body>
