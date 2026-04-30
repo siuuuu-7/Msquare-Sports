@@ -505,22 +505,6 @@ function openStoreLocation() {
   );
 }
 </script>
-<script>
-document.querySelectorAll(".sports-grid span").forEach(span => {
-  const text = span.textContent.toLowerCase();
-
-  span.style.cursor = "pointer";
-
-  span.onclick = () => {
-    if (text.includes("badminton")) location.href = "badminton.html";
-    else if (text.includes("padel")) location.href = "padel.html";
-    else if (text.includes("swimming")) location.href = "swimming.html";
-    else if (text.includes("tennis")) location.href = "tennis.html";
-    else if (text.includes("eyewear")) location.href = "eyewear.html";
-    else if (text.includes("fitness")) location.href = "fitness.html";
-  };
-});
-</script>
 <div id="sportPicker" class="modal">
   <div class="modal-box wide">
     <span class="back" onclick="closeSportPicker()">← Back</span>
@@ -544,20 +528,6 @@ document.querySelector(".more").onclick = () => {
 function closeSportPicker() {
   document.getElementById("sportPicker").style.display = "none";
 }
-</script>
-<script>
-document.querySelectorAll(".sports-grid span").forEach(span => {
-  span.addEventListener("click", () => {
-    const text = span.innerText.toLowerCase();
-
-    if (text.includes("badminton")) window.location.href = "badminton.html";
-    else if (text.includes("padel")) window.location.href = "padel.html";
-    else if (text.includes("swimming")) window.location.href = "swimming.html";
-    else if (text.includes("tennis")) window.location.href = "tennis.html";
-    else if (text.includes("eyewear")) window.location.href = "eyewear.html";
-    else if (text.includes("fitness")) window.location.href = "fitness.html";
-  });
-});
 </script>
 <script>
 const moreBtn = document.querySelector(".more");
