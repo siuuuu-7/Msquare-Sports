@@ -87,7 +87,7 @@
   <i class="fa-solid fa-store"></i>
 </span>
   <!-- BAG ICON -->
- <span class="nav-icon bag-wrapper" onclick="toggleBag()" title="Bag">
+ <span class="nav-icon bag-wrapper" onclick="toggleBagFull()" title="Bag">
     <i class="fa-solid fa-bag-shopping"></i>
   </span>
 
@@ -625,5 +625,32 @@ window.toggleBag = function () {
     });
   }
 };
+</script>
+<script>
+function toggleBagFull() {
+  const bag = document.getElementById("bagFull");
+  if (!bag) {
+    console.error("bagFull not found");
+    return;
+  }
+
+  const isOpen = bag.classList.contains("active");
+
+  if (isOpen) {
+    bag.classList.remove("active");
+    document.body.style.overflow = "auto";
+
+    setTimeout(() => {
+      bag.style.display = "none";
+    }, 450);
+  } else {
+    bag.style.display = "flex";
+    document.body.style.overflow = "hidden";
+
+    requestAnimationFrame(() => {
+      bag.classList.add("active");
+    });
+  }
+}
 </script>
 </body>
