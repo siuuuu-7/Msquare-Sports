@@ -55,26 +55,11 @@ document.addEventListener("click", function (e) {
 
 function toggleWishlist() {
   const drawer = document.getElementById("wishlistDrawer");
-  drawer.style.display = drawer.style.display === "block" ? "none" : "block";
-  renderWishlist();
-}
+  const heart = document.getElementById("wishlistHeart");
 
-function renderWishlist() {
-  const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-  const content = document.getElementById("wishlistContent");
-
-  if (wishlist.length === 0) {
-    content.innerHTML = `
-      <p>Your wishlist is empty</p>
-      <button onclick="window.location.href='index.html'">
-        Start exploring
-      </button>
-    `;
-  } else {
-    content.innerHTML = wishlist.map(item => `
-      <p>${item.name}</p>
-    `).join("");
-  }
+  drawer.classList.toggle("open");
+  heart.classList.toggle("fa-solid");
+  heart.classList.toggle("fa-regular");
 }
 
 /* Close wishlist when clicking outside */

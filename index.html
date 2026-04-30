@@ -87,9 +87,9 @@
   <i class="fa-solid fa-store"></i>
 </span>
   <!-- BAG ICON -->
- <span class="nav-icon bag-wrapper" onclick="toggleBag()" title="Bag">
-    <i class="fa-solid fa-bag-shopping"></i>
-  </span>
+ <span class="nav-icon wishlist-wrapper" onclick="toggleWishlist()">
+  <i id="wishlistHeart" class="fa-regular fa-heart"></i>
+</span>
 
   <span class="nav-link" onclick="openClub()">Join Club</span>
 <span class="nav-link outline" onclick="openLogin()">Login</span>
@@ -268,8 +268,9 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 
 <!-- Your JS files -->
-<script src="firebase.js"></script>
-<script src="script.js"></script>
+<script type="module" src="firebase.js"></script>
+<script type="module" src="script.js"></script>
+<script src="cart.js"></script>
 <!-- SCRIPTS -->
  <script src="cart.js"></script>
 <script src="pro.js" defer></script>

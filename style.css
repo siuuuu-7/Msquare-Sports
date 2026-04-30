@@ -2676,3 +2676,6 @@ footer.insta-footer .footer-main > div {
 .bag-drawer.open {
   transform: translateX(0);
 }
+.bag-drawer.open {
+  transform: translateX(0);
+}
