@@ -2826,3 +2826,73 @@ body.wishlist-open {
   color: #888;
   border-top: 1px solid #eee;
 }
+/* ===== FULLSCREEN BAG ===== */
+.bag-full {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 100000;
+  display: none;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+}
+
+.bag-full.active {
+  transform: translateY(0);
+}
+
+.bag-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+}
+
+.bag-brand {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.bag-auth span {
+  margin-left: 14px;
+  cursor: pointer;
+}
+
+.bag-body {
+  padding: 30px 20px;
+  flex: 1;
+}
+
+.bag-body h2 {
+  margin-bottom: 10px;
+}
+
+.bag-body .empty {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.explore-btn {
+  padding: 12px 18px;
+  background: #000;
+  color: #fff;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+.bag-links span {
+  display: inline-block;
+  margin: 6px 10px 6px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.bag-footer {
+  padding: 14px;
+  font-size: 12px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
