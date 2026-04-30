@@ -572,21 +572,20 @@ function openStoreLocation() {
 
 </div>
 <script>
-/* OVERRIDE wishlist toggle AFTER pro.js */
 window.toggleWishlist = function () {
   const panel = document.getElementById("wishlistFull");
 
-  if (!panel) {
-    console.error("wishlistFull not found");
-    return;
-  }
+  if (!panel) return;
 
-  if (panel.style.display === "flex") {
+  const isOpen = panel.style.display === "flex";
+
+  if (isOpen) {
     panel.style.display = "none";
-    document.body.style.overflow = "";
+    document.body.classList.remove("wishlist-open");
   } else {
     panel.style.display = "flex";
-    document.body.style.overflow = "hidden";
+    document.body.classList.add("wishlist-open");
   }
 };
 </script>
+</body>

@@ -2737,3 +2737,21 @@ section h4 {
 .wishlist-full {
   display: none;
 }
+/* FULLSCREEN WISHLIST OVERLAY */
+.wishlist-full {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: #fff;
+  z-index: 99999;
+
+  display: none;
+  flex-direction: column;
+
+  overflow-y: auto;
+}
+body.wishlist-open {
+  overflow: hidden;
+}
