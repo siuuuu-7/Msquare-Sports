@@ -338,6 +338,18 @@ window.onclick = function(e) {
   }
 }
 </script>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyBdcTPbkGt1tYJ5ZyUU1Sg8h1DhNaafTj8",
+  authDomain: "msquare-sports.firebaseapp.com",
+  projectId: "msquare-sports",
+  appId: "1:144814096708:web:8daff5c52f0c00d7a81711"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+
 // IMPORTANT: attach recaptcha AFTER DOM loads
 window.onload = function () {
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
@@ -493,6 +505,22 @@ function openStoreLocation() {
   );
 }
 </script>
+<script>
+document.querySelectorAll(".sports-grid span").forEach(span => {
+  const text = span.textContent.toLowerCase();
+
+  span.style.cursor = "pointer";
+
+  span.onclick = () => {
+    if (text.includes("badminton")) location.href = "badminton.html";
+    else if (text.includes("padel")) location.href = "padel.html";
+    else if (text.includes("swimming")) location.href = "swimming.html";
+    else if (text.includes("tennis")) location.href = "tennis.html";
+    else if (text.includes("eyewear")) location.href = "eyewear.html";
+    else if (text.includes("fitness")) location.href = "fitness.html";
+  };
+});
+</script>
 <div id="sportPicker" class="modal">
   <div class="modal-box wide">
     <span class="back" onclick="closeSportPicker()">← Back</span>
@@ -518,29 +546,28 @@ function closeSportPicker() {
 }
 </script>
 <script>
-/* SPORT GRID CLICK */
 document.querySelectorAll(".sports-grid span").forEach(span => {
-  span.style.cursor = "pointer";
-
   span.addEventListener("click", () => {
-    const text = span.textContent.toLowerCase();
+    const text = span.innerText.toLowerCase();
 
-    if (text.includes("cricket")) location.href = "cricket.html";
-    else if (text.includes("shoe")) location.href = "shoes.html";
-    else if (text.includes("t-shirt")) location.href = "tshirts.html";
-    else if (text.includes("badminton")) location.href = "badminton.html";
-    else if (text.includes("padel")) location.href = "padel.html";
-    else if (text.includes("swimming")) location.href = "swimming.html";
-    else if (text.includes("tennis")) location.href = "tennis.html";
-    else if (text.includes("eyewear")) location.href = "eyewear.html";
-    else if (text.includes("fitness")) location.href = "fitness.html";
+    if (text.includes("badminton")) window.location.href = "badminton.html";
+    else if (text.includes("padel")) window.location.href = "padel.html";
+    else if (text.includes("swimming")) window.location.href = "swimming.html";
+    else if (text.includes("tennis")) window.location.href = "tennis.html";
+    else if (text.includes("eyewear")) window.location.href = "eyewear.html";
+    else if (text.includes("fitness")) window.location.href = "fitness.html";
   });
 });
+</script>
+<script>
+const moreBtn = document.querySelector(".more");
+const picker = document.getElementById("sportPicker");
 
-/* MORE SPORTS MODAL */
-document.querySelector(".more").addEventListener("click", () => {
-  document.getElementById("sportPicker").style.display = "flex";
-});
+if (moreBtn && picker) {
+  moreBtn.addEventListener("click", () => {
+    picker.style.display = "flex";
+  });
+}
 
 function closeSportPicker() {
   document.getElementById("sportPicker").style.display = "none";
