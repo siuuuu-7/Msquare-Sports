@@ -13,7 +13,7 @@ function addToCart(name, price) {
 
 function toggleBag() {
   const bag = document.getElementById("bagDrawer");
-  bag.style.display = bag.style.display === "block" ? "none" : "block";
+  bag.classList.toggle("open");
   renderBag();
 }
 
@@ -42,8 +42,12 @@ document.addEventListener("click", function (e) {
 
   if (!bag || !icon) return;
 
-  if (!bag.contains(e.target) && !icon.contains(e.target)) {
-    bag.style.display = "none";
+  if (
+    bag.classList.contains("open") &&
+    !bag.contains(e.target) &&
+    !icon.contains(e.target)
+  ) {
+    bag.classList.remove("open");
   }
 });
 
