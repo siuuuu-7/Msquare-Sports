@@ -2755,3 +2755,74 @@ section h4 {
 body.wishlist-open {
   overflow: hidden;
 }
+/* Wishlist screen */
+.wishlist-full {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 100000;
+  display: none;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+}
+
+/* Header */
+.wishlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.wishlist-brand {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.wishlist-auth span {
+  margin-left: 16px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.wishlist-auth .close {
+  font-size: 22px;
+}
+
+/* Body */
+.wishlist-body {
+  padding: 40px 20px;
+  text-align: center;
+  flex: 1;
+}
+
+.wishlist-body h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.wishlist-body .empty {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.explore-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Footer */
+.wishlist-footer {
+  padding: 12px;
+  font-size: 12px;
+  text-align: center;
+  color: #888;
+  border-top: 1px solid #eee;
+}

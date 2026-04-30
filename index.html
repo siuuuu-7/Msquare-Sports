@@ -573,18 +573,21 @@ function openStoreLocation() {
 </div>
 <script>
 window.toggleWishlist = function () {
-  const panel = document.getElementById("wishlistFull");
+  const wishlist = document.getElementById("wishlistFull");
+  const main = document.getElementById("mainContent");
 
-  if (!panel) return;
+  if (!wishlist || !main) return;
 
-  const isOpen = panel.style.display === "flex";
+  const open = wishlist.style.display === "flex";
 
-  if (isOpen) {
-    panel.style.display = "none";
-    document.body.classList.remove("wishlist-open");
+  if (open) {
+    wishlist.style.display = "none";
+    main.style.display = "block";
+    document.body.style.overflow = "auto";
   } else {
-    panel.style.display = "flex";
-    document.body.classList.add("wishlist-open");
+    wishlist.style.display = "flex";
+    main.style.display = "none";
+    document.body.style.overflow = "hidden";
   }
 };
 </script>
