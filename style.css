@@ -2645,3 +2645,15 @@ footer.insta-footer .footer-main > div {
     grid-template-columns: 1fr !important;
   }
 }
+.brand-wrapper.logo-text {
+  gap: 4px !important;
+}
+
+.brand-logo {
+  margin-right: 2px !important;
+}
+
+.logo-white,
+.logo-yellow {
+  letter-spacing: 0.5px;
+}
