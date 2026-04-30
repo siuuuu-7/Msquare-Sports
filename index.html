@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>  
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -503,73 +503,3 @@ function openStoreLocation() {
   window.open(
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.655598277846!2d77.57998669999999!3d12.865507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6ba5853fe9d7%3A0x2ae736a30b418ddb!2sM%20SQUARE%20SPORTS%20AND%20MENSWEAR!5e0!3m2!1sen!2sin!4v1774420183669!5m2!1sen!2sin"
   );
-}
-</script>
-<script>
-document.querySelectorAll(".sports-grid span").forEach(span => {
-  const text = span.textContent.toLowerCase();
-
-  span.style.cursor = "pointer";
-
-  span.onclick = () => {
-    if (text.includes("badminton")) location.href = "badminton.html";
-    else if (text.includes("padel")) location.href = "padel.html";
-    else if (text.includes("swimming")) location.href = "swimming.html";
-    else if (text.includes("tennis")) location.href = "tennis.html";
-    else if (text.includes("eyewear")) location.href = "eyewear.html";
-    else if (text.includes("fitness")) location.href = "fitness.html";
-  };
-});
-</script>
-<div id="sportPicker" class="modal">
-  <div class="modal-box wide">
-    <span class="back" onclick="closeSportPicker()">← Back</span>
-    <h2>Pick your sport</h2>
-
-    <div class="sport-list">
-      <span>Badminton</span><span>Cricket</span><span>Football</span>
-      <span>Tennis</span><span>Pickleball</span><span>Swimming</span>
-      <span>Running</span><span>Cycling</span><span>Eyewear</span>
-      <span>Table Tennis</span><span>Padel</span>
-      <span>Fitness / Gym</span><span>Nutrition</span>
-    </div>
-
-    <button class="next-btn">Next</button>
-  </div>
-</div>
-<script>
-document.querySelector(".more").onclick = () => {
-  document.getElementById("sportPicker").style.display = "flex";
-};
-function closeSportPicker() {
-  document.getElementById("sportPicker").style.display = "none";
-}
-</script>
-<script>
-document.querySelectorAll(".sports-grid span").forEach(span => {
-  span.addEventListener("click", () => {
-    const text = span.innerText.toLowerCase();
-
-    if (text.includes("badminton")) window.location.href = "badminton.html";
-    else if (text.includes("padel")) window.location.href = "padel.html";
-    else if (text.includes("swimming")) window.location.href = "swimming.html";
-    else if (text.includes("tennis")) window.location.href = "tennis.html";
-    else if (text.includes("eyewear")) window.location.href = "eyewear.html";
-    else if (text.includes("fitness")) window.location.href = "fitness.html";
-  });
-});
-</script>
-<script>
-const moreBtn = document.querySelector(".more");
-const picker = document.getElementById("sportPicker");
-
-if (moreBtn && picker) {
-  moreBtn.addEventListener("click", () => {
-    picker.style.display = "flex";
-  });
-}
-
-function closeSportPicker() {
-  document.getElementById("sportPicker").style.display = "none";
-}
-</script>
