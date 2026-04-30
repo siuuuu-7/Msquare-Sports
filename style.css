@@ -2734,3 +2734,6 @@ section h4 {
   opacity: 0.6;
   border-top: 1px solid #222;
 }
+.wishlist-full {
+  display: none;
+}

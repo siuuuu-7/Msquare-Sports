@@ -571,3 +571,22 @@ function openStoreLocation() {
   </div>
 
 </div>
+<script>
+/* OVERRIDE wishlist toggle AFTER pro.js */
+window.toggleWishlist = function () {
+  const panel = document.getElementById("wishlistFull");
+
+  if (!panel) {
+    console.error("wishlistFull not found");
+    return;
+  }
+
+  if (panel.style.display === "flex") {
+    panel.style.display = "none";
+    document.body.style.overflow = "";
+  } else {
+    panel.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+};
+</script>
