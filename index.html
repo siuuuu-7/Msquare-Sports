@@ -626,13 +626,15 @@ window.toggleBag = function () {
       bag.style.display = "none";
     }, 450);
   } else {
-    bag.style.display = "flex";
-    document.body.style.overflow = "hidden";
+  bag.style.display = "flex";
+  document.body.style.overflow = "hidden";
 
-    requestAnimationFrame(() => {
-      bag.classList.add("active");
-    });
-  }
+  renderBag(); // 👈 ADD THIS LINE
+
+  requestAnimationFrame(() => {
+    bag.classList.add("active");
+  });
+}
 };
 </script>
 <script>

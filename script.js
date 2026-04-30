@@ -246,3 +246,65 @@ document.addEventListener("DOMContentLoaded", () => {
 function openWishlist() {
   window.location.href = "wishlist.html";
 }
+// =======================
+// 🛍️ BAG SYSTEM (GLOBAL)
+// =======================
+
+function getBag() {
+  return JSON.parse(localStorage.getItem("bag")) || [];
+}
+
+function saveBag(bag) {
+  localStorage.setItem("bag", JSON.stringify(bag));
+}
+
+window.addToBag = function (product) {
+  const bag = getBag();
+
+  const exists = bag.find(p => p.id === product.id);
+  if (exists) {
+    alert("Already in bag");
+    return;
+  }
+
+  bag.push(product);
+  saveBag(bag);
+  alert("Added to bag ✅");
+};
+
+window.removeFromBag = function (id) {
+  let bag = getBag();
+  bag = bag.filter(item => item.id !== id);
+  saveBag(bag);
+  renderBag();
+};
+
+window.renderBag = function () {
+  const bag = getBag();
+  const body = document.querySelector("#bagFull .wishlist-body");
+
+  if (!body) return;
+
+  if (bag.length === 0) {
+    body.innerHTML = `
+      <h2>Your bag is empty</h2>
+      <p class="empty">Add items to get started</p>
+      <button class="explore-btn" onclick="toggleBag()">Start shopping</button>
+    `;
+    return;
+  }
+
+  body.innerHTML = `
+    <h2>Your Bag</h2>
+    ${bag.map(item => `
+      <div class="bag-item">
+        <img src="${item.img}">
+        <div>
+          <h4>${item.name}</h4>
+          <p>₹${item.price}</p>
+          <button onclick="removeFromBag('${item.id}')">Remove</button>
+        </div>
+      </div>
+    `).join("")}
+  `;
+};
