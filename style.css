@@ -2896,3 +2896,23 @@ body.wishlist-open {
   text-align: center;
   border-top: 1px solid #eee;
 }
+.bag-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.bag-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.bag-item button {
+  margin-top: 6px;
+  background: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
