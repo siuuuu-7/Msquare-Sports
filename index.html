@@ -578,16 +578,27 @@ window.toggleWishlist = function () {
 
   if (!wishlist || !main) return;
 
-  const open = wishlist.style.display === "flex";
+  const isOpen = wishlist.classList.contains("active");
 
-  if (open) {
-    wishlist.style.display = "none";
-    main.style.display = "block";
+  if (isOpen) {
+    // CLOSE
+    wishlist.classList.remove("active");
     document.body.style.overflow = "auto";
+
+    setTimeout(() => {
+      wishlist.style.display = "none";
+      main.style.display = "block";
+    }, 450); // match CSS transition
   } else {
+    // OPEN
     wishlist.style.display = "flex";
     main.style.display = "none";
     document.body.style.overflow = "hidden";
+
+    // allow display to apply before animating
+    requestAnimationFrame(() => {
+      wishlist.classList.add("active");
+    });
   }
 };
 </script>
