@@ -2657,3 +2657,80 @@ footer.insta-footer .footer-main > div {
 .logo-yellow {
   letter-spacing: 0.5px;
 }
+/* FULLSCREEN WISHLIST */
+.wishlist-full {
+  position: fixed;
+  inset: 0;
+  background: #0b0b0b;
+  color: #fff;
+  display: none;
+  flex-direction: column;
+  z-index: 99999;
+  overflow-y: auto;
+}
+
+.wishlist-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid #222;
+}
+
+.wishlist-brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.wishlist-auth span {
+  margin-left: 16px;
+  cursor: pointer;
+  color: #d4af37;
+}
+
+.wishlist-body {
+  padding: 30px 24px;
+}
+
+.wishlist-body h2 {
+  font-size: 26px;
+}
+
+.empty {
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.explore-btn {
+  padding: 10px 18px;
+  background: #d4af37;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+section {
+  margin-top: 30px;
+}
+
+section h4 {
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.wishlist-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.wishlist-links span {
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.wishlist-footer {
+  padding: 20px;
+  font-size: 12px;
+  opacity: 0.6;
+  border-top: 1px solid #222;
+}

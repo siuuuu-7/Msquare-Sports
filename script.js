@@ -216,7 +216,9 @@ function verifyOTP() {
 }
 // WISHLIST TOGGLE
 function toggleWishlist() {
-  const heart = document.getElementById("wishlistHeart");
+  const panel = document.getElementById("wishlistFull");
+  panel.style.display = panel.style.display === "flex" ? "none" : "flex";
+}
 
   heart.classList.toggle("active");
 
