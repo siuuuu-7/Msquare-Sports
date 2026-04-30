@@ -574,9 +574,7 @@ function openStoreLocation() {
 <script>
 window.toggleWishlist = function () {
   const wishlist = document.getElementById("wishlistFull");
-  const main = document.getElementById("mainContent");
-
-  if (!wishlist || !main) return;
+  if (!wishlist) return;
 
   const isOpen = wishlist.classList.contains("active");
 
@@ -587,15 +585,12 @@ window.toggleWishlist = function () {
 
     setTimeout(() => {
       wishlist.style.display = "none";
-      main.style.display = "block";
-    }, 450); // match CSS transition
+    }, 450);
   } else {
     // OPEN
     wishlist.style.display = "flex";
-    main.style.display = "none";
     document.body.style.overflow = "hidden";
 
-    // allow display to apply before animating
     requestAnimationFrame(() => {
       wishlist.classList.add("active");
     });
