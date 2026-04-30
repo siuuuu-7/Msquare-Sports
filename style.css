@@ -2657,25 +2657,3 @@ footer.insta-footer .footer-main > div {
 .logo-yellow {
   letter-spacing: 0.5px;
 }
-.bag-drawer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 380px;
-  max-width: 90%;
-  height: 100vh;
-  background: #fff;
-  box-shadow: -10px 0 30px rgba(0,0,0,0.12);
-  transform: translateX(100%);
-  transition: transform 0.35s ease;
-  z-index: 9999;
-  overflow-y: auto;
-}
-
-/* OPEN STATE */
-.bag-drawer.open {
-  transform: translateX(0);
-}
-.bag-drawer.open {
-  transform: translateX(0);
-}
