@@ -545,3 +545,31 @@ function closeSportPicker() {
   document.getElementById("sportPicker").style.display = "none";
 }
 </script>
+<script>
+document.querySelectorAll(".sports-grid span").forEach(span => {
+  span.addEventListener("click", () => {
+    const text = span.innerText.toLowerCase();
+
+    if (text.includes("badminton")) window.location.href = "badminton.html";
+    else if (text.includes("padel")) window.location.href = "padel.html";
+    else if (text.includes("swimming")) window.location.href = "swimming.html";
+    else if (text.includes("tennis")) window.location.href = "tennis.html";
+    else if (text.includes("eyewear")) window.location.href = "eyewear.html";
+    else if (text.includes("fitness")) window.location.href = "fitness.html";
+  });
+});
+</script>
+<script>
+const moreBtn = document.querySelector(".more");
+const picker = document.getElementById("sportPicker");
+
+if (moreBtn && picker) {
+  moreBtn.addEventListener("click", () => {
+    picker.style.display = "flex";
+  });
+}
+
+function closeSportPicker() {
+  document.getElementById("sportPicker").style.display = "none";
+}
+</script>
