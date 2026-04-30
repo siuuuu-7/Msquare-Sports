@@ -87,7 +87,7 @@
   <i class="fa-solid fa-store"></i>
 </span>
   <!-- BAG ICON -->
- <span class="nav-icon bag-wrapper" onclick="toggleBagFull()" title="Bag">
+ <span class="nav-icon bag-wrapper" onclick="toggleBagDrawer()" title="Bag">
     <i class="fa-solid fa-bag-shopping"></i>
   </span>
 
@@ -651,6 +651,17 @@ function toggleBagFull() {
       bag.classList.add("active");
     });
   }
+}
+</script>
+<script>
+function toggleBagDrawer() {
+  const bag = document.getElementById("bagDrawer");
+  if (!bag) {
+    console.error("bagDrawer not found");
+    return;
+  }
+
+  bag.classList.toggle("active");
 }
 </script>
 </body>
