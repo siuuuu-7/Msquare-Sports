@@ -505,3 +505,43 @@ function openStoreLocation() {
   );
 }
 </script>
+<script>
+document.querySelectorAll(".sports-grid span").forEach(span => {
+  const text = span.textContent.toLowerCase();
+
+  span.style.cursor = "pointer";
+
+  span.onclick = () => {
+    if (text.includes("badminton")) location.href = "badminton.html";
+    else if (text.includes("padel")) location.href = "padel.html";
+    else if (text.includes("swimming")) location.href = "swimming.html";
+    else if (text.includes("tennis")) location.href = "tennis.html";
+    else if (text.includes("eyewear")) location.href = "eyewear.html";
+    else if (text.includes("fitness")) location.href = "fitness.html";
+  };
+});
+</script>
+<div id="sportPicker" class="modal">
+  <div class="modal-box wide">
+    <span class="back" onclick="closeSportPicker()">← Back</span>
+    <h2>Pick your sport</h2>
+
+    <div class="sport-list">
+      <span>Badminton</span><span>Cricket</span><span>Football</span>
+      <span>Tennis</span><span>Pickleball</span><span>Swimming</span>
+      <span>Running</span><span>Cycling</span><span>Eyewear</span>
+      <span>Table Tennis</span><span>Padel</span>
+      <span>Fitness / Gym</span><span>Nutrition</span>
+    </div>
+
+    <button class="next-btn">Next</button>
+  </div>
+</div>
+<script>
+document.querySelector(".more").onclick = () => {
+  document.getElementById("sportPicker").style.display = "flex";
+};
+function closeSportPicker() {
+  document.getElementById("sportPicker").style.display = "none";
+}
+</script>
