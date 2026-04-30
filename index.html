@@ -603,8 +603,32 @@ window.toggleWishlist = function () {
 };
 </script>
 <script>
+/* ===== BAG TOGGLE (GLOBAL + SAFE) ===== */
 function toggleBag() {
-  alert("Bag icon clicked ✅");
+  const bag = document.getElementById("bagDrawer");
+
+  if (!bag) {
+    console.error("❌ bagDrawer not found");
+    return;
+  }
+
+  const isOpen = bag.classList.contains("active");
+
+  if (isOpen) {
+    bag.classList.remove("active");
+    document.body.style.overflow = "auto";
+
+    setTimeout(() => {
+      bag.style.display = "none";
+    }, 400);
+  } else {
+    bag.style.display = "flex";
+    document.body.style.overflow = "hidden";
+
+    requestAnimationFrame(() => {
+      bag.classList.add("active");
+    });
+  }
 }
 </script>
 </body>
