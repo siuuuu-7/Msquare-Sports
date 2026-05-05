@@ -359,3 +359,26 @@
     font-size: 14px;
   }
 }
+/* ===============================
+   FORCE HERO SLIDER SIZE (PUMA)
+   =============================== */
+
+.hero-slider {
+  height: 560px !important;
+  min-height: 560px !important;
+  max-height: 560px !important;
+}
+
+.hero-slider .slide {
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 380px !important;
+    min-height: 380px !important;
+    max-height: 380px !important;
+  }
+}
