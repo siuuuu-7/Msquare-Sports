@@ -2965,3 +2965,11 @@ body.wishlist-open {
     gap: 10px;
   }
 }
+/* Make "Play Like You Mean It" match "What's your sport?" exactly */
+.match-sport-font {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
