@@ -269,68 +269,93 @@
   margin-right: 4px;
 }
 /* ================================
-   HERO SLIDER SIZE (PUMA STYLE)
+   HERO SLIDER — PREMIUM (PUMA STYLE)
 ================================ */
 
-/* Slider container */
 .hero-slider {
   position: relative;
   width: 100%;
-  height: 460px;              /* DESKTOP HEIGHT */
+  height: 560px;              /* Desktop size */
   overflow: hidden;
+  background: #000;
 }
 
-/* Individual slides */
 .hero-slider .slide {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
-/* Active slide */
 .hero-slider .slide.active {
   opacity: 1;
-  z-index: 1;
 }
 
-/* Overlay text alignment */
+/* Overlay */
 .hero-overlay {
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 6%;
+  padding-left: 80px;
   color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.35) 40%,
+    rgba(0,0,0,0) 70%
+  );
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .hero-slider {
-    height: 380px;
-  }
+.hero-overlay h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 64px;
+  line-height: 1.1;
+  margin-bottom: 12px;
 }
 
-/* Mobile */
+.hero-overlay p {
+  font-size: 18px;
+  margin-bottom: 22px;
+  max-width: 420px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 14px 34px;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  width: fit-content;
+}
+
+/* 📱 MOBILE */
 @media (max-width: 768px) {
   .hero-slider {
-    height: 300px;
+    height: 360px;
   }
 
   .hero-overlay {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 0 20px;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.65) 100%
+    );
   }
 
   .hero-overlay h1 {
-    font-size: 26px;
+    font-size: 36px;
   }
-}
-/* FORCE TEST — MUST CHANGE VISUALLY */
-.hero-slider {
-  height: 250px !important;
-  background: red !important;
+
+  .hero-overlay p {
+    font-size: 14px;
+  }
 }
