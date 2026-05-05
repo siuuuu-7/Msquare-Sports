@@ -329,3 +329,8 @@
     font-size: 26px;
   }
 }
+/* FORCE TEST — MUST CHANGE VISUALLY */
+.hero-slider {
+  height: 250px !important;
+  background: red !important;
+}
