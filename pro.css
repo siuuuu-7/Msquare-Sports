@@ -276,3 +276,202 @@
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
 }
+.main-nav {
+  background: var(--bg-black);
+  color: var(--text-white);
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo-text span {
+  font-family: var(--font-head);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo-white { color: #fff; }
+.logo-yellow { color: #f1c40f; }
+
+.nav-actions {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-icon i {
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-link {
+  font-size: 14px;
+  cursor: pointer;
+  color: white;
+}
+
+.nav-link.outline {
+  border: 1px solid white;
+  padding: 6px 14px;
+}
+.hero-video {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.2)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-overlay h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 52px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-overlay p {
+  font-size: 16px;
+  color: var(--text-grey);
+  margin-top: 10px;
+}
+
+.hero-btn {
+  margin-top: 25px;
+  background: white;
+  color: black;
+  padding: 14px 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.hero-text {
+  background: white;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-family: var(--font-head);
+  font-size: 42px;
+  margin-bottom: 30px;
+}
+
+.sports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.sports-grid span {
+  border: 1px solid var(--border-soft);
+  padding: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.sports-grid span:hover {
+  background: var(--bg-black);
+  color: white;
+}
+.product-card {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--accent-red);
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.product-title {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.product-price {
+  color: var(--accent-red);
+  font-weight: 600;
+}
+
+.product-old-price {
+  color: var(--text-muted);
+  text-decoration: line-through;
+  font-size: 13px;
+}
+.insta-footer {
+  background: var(--bg-dark);
+  color: white;
+  padding: 60px 40px;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+}
+
+.footer-col h5 {
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.footer-col a {
+  font-size: 13px;
+  color: var(--text-grey);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 34px;
+  }
+
+  .main-nav {
+    padding: 12px 16px;
+  }
+
+  .hero-text {
+    padding: 60px 20px;
+  }
+}
