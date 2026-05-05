@@ -247,3 +247,11 @@
 .bag-drawer.active {
   right: 0;
 }
+/* FORCE hero title to match "What's your sport?" */
+.hero-video .hero-overlay h1.hero-match {
+  font-family: 'Bebas Neue', 'Anton', sans-serif !important;
+  font-size: clamp(38px, 5.5vw, 58px) !important;
+  font-weight: 400 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+}
