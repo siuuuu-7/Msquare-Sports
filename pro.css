@@ -268,3 +268,64 @@
 .brand-wrapper.logo-text .logo-white {
   margin-right: 4px;
 }
+/* ================================
+   HERO SLIDER SIZE (PUMA STYLE)
+================================ */
+
+/* Slider container */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 460px;              /* DESKTOP HEIGHT */
+  overflow: hidden;
+}
+
+/* Individual slides */
+.hero-slider .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Active slide */
+.hero-slider .slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Overlay text alignment */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 6%;
+  color: #fff;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero-slider {
+    height: 380px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 300px;
+  }
+
+  .hero-overlay {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .hero-overlay h1 {
+    font-size: 26px;
+  }
+}
