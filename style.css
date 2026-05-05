@@ -3149,3 +3149,23 @@ header h1 {
   background: rgba(0,0,0,0.35);
   z-index: 2;
 }
+/* ===== FORCE MSQUARE SPORTS LOGO FONT ===== */
+.main-nav .logo-text {
+  font-family: 'Anton', sans-serif !important;
+  font-size: 26px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.main-nav .logo-white {
+  color: #ffffff !important;
+}
+
+.main-nav .logo-yellow {
+  color: #f5c400 !important;
+  letter-spacing: 1.8px;
+}
