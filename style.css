@@ -3018,3 +3018,15 @@ body.wishlist-open {
   font-weight: 900;
   letter-spacing: 1.5px;
 }
+/* ===== FORCE LOGO FONT CHANGE ===== */
+
+.logo-text,
+.logo-text span,
+.logo,
+.logo a,
+header h1 {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+}
