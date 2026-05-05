@@ -3149,3 +3149,10 @@ header h1 {
   background: rgba(0,0,0,0.35);
   z-index: 2;
 }
+/* FORCE GEOMETRIC SPORT FONT FOR HERO TAGLINE */
+.hero-match {
+  font-family: 'Sora', sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
