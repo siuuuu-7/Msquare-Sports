@@ -2896,11 +2896,12 @@ body.wishlist-open {
   text-align: center;
   border-top: 1px solid #eee;
 }
-/* Make "Play Like You Mean It" match "What's your sport?" exactly */
-.match-sport-font {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
+/* Force hero video title to look EXACTLY like "What's your sport?" */
+.hero-match {
+  font-family: 'Bebas Neue', 'Anton', sans-serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffffff;
 }
