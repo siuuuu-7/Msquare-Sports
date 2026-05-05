@@ -139,15 +139,15 @@
 <section class="hero-slider">
 
   <div class="slide active"
-    style="background-image:url('https://images.unsplash.com/photo-1600185365483-26d7a4cc7519');">
+    style="background-image:url('https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=1600&q=80');">
   </div>
 
   <div class="slide"
-    style="background-image:url('https://images.unsplash.com/photo-1517649763962-0c623066013b');">
+    style="background-image:url('https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1600&q=80');">
   </div>
 
   <div class="slide"
-    style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff');">
+    style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1600&q=80');">
   </div>
 
   <div class="hero-overlay">
@@ -670,5 +670,24 @@ function toggleBagFull() {
     });
   }
 }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".hero-slider .slide");
+
+  if (!slides.length) {
+    console.error("Hero slider: No slides found");
+    return;
+  }
+
+  let current = 0;
+  slides[0].classList.add("active");
+
+  setInterval(() => {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }, 4000);
+});
 </script>
 </body>
