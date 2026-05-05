@@ -3030,3 +3030,21 @@ header h1 {
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
 }
+.hero-slider {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero-slider .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slider .slide.active {
+  opacity: 1;
+}
