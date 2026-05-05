@@ -2896,3 +2896,11 @@ body.wishlist-open {
   text-align: center;
   border-top: 1px solid #eee;
 }
+/* Make "Play Like You Mean It" match "What's your sport?" exactly */
+.match-sport-font {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
