@@ -246,3 +246,13 @@ document.addEventListener("DOMContentLoaded", () => {
 function openWishlist() {
   window.location.href = "wishlist.html";
 }
+<script>
+const slides = document.querySelectorAll(".hero-slider .slide");
+let currentSlide = 0;
+
+setInterval(() => {
+  slides[currentSlide].classList.remove("active");
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add("active");
+}, 4000); // change every 4 seconds
+</script>

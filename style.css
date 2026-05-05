@@ -2905,3 +2905,69 @@ body.wishlist-open {
   text-transform: uppercase;
   color: #ffffff;
 }
+/* =========================
+   HERO IMAGE SLIDER
+========================= */
+
+.hero-slider {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+  background: black;
+}
+
+.hero-slider .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slider .slide.active {
+  opacity: 1;
+}
+
+/* overlay stays same premium look */
+.hero-slider .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.25)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  z-index: 5;
+}
+
+.hero-match {
+  font-family: 'Anton', sans-serif;
+  font-size: 52px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-btn {
+  margin-top: 24px;
+  padding: 14px 34px;
+  background: white;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 65vh;
+  }
+  .hero-match {
+    font-size: 34px;
+  }
+}
