@@ -2989,3 +2989,32 @@ body.wishlist-open {
 .hero-slider .slide.active {
   opacity: 1;
 }
+/* ===== LOGO FONT – GEOMETRIC BOLD ===== */
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* closer spacing between logo + text */
+}
+
+.logo-text .logo-white,
+.logo-text .logo-yellow {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;           /* bold geometric */
+  letter-spacing: 1px;        /* clean sporty spacing */
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.logo-text .logo-white {
+  color: #ffffff;
+}
+
+.logo-text .logo-yellow {
+  color: #f5c400; /* your brand yellow */
+}
+.logo-text .logo-white,
+.logo-text .logo-yellow {
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
