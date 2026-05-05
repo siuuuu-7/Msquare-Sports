@@ -3107,3 +3107,10 @@ header h1 {
   font-size: 30px;
   text-transform: uppercase;
 }
+.main-nav .logo-text {
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
