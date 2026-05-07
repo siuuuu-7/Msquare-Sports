@@ -3169,9 +3169,22 @@ header h1 {
   color: #f5c400 !important;
   letter-spacing: 1.8px;
 }
-body.theme-invert {
-  --bg-color: #000000;
-  --text-color: #ffffff;
-  --card-bg: #0f0f0f;
-  --border-color: #333333;
+body {
+  background: #000;
+  color: #fff;
+}
+
+header,
+nav,
+footer,
+section,
+div {
+  background-color: #000;
+}
+
+a,
+span,
+p,
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
 }
