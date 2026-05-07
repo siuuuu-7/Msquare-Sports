@@ -613,3 +613,48 @@
     font-size: 14px;
   }
 }
+/* ===== HERO SLIDER – NO CROP, ORIGINAL IMAGE ===== */
+
+.hero-slider{
+  position: relative;
+  width: 100%;
+  height: 380px;          /* reduce visible area */
+  overflow: hidden;
+  background: #000;       /* clean background for empty space */
+}
+
+/* Slides */
+.hero-slider .slide{
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;   /* 🔥 IMPORTANT: NO CROPPING */
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.hero-slider .slide.active{
+  opacity: 1;
+}
+
+/* Overlay text */
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Mobile */
+@media (max-width:768px){
+  .hero-slider{
+    height: 260px;        /* smaller but still clean */
+  }
+}
