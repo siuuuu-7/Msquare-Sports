@@ -1292,13 +1292,13 @@ body {
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .main-nav .logo-text {
-    font-size: 21px;
-    letter-spacing: 0.8px;
-    gap: 2px;   /* very tight & premium */
+    font-size: 21px;          /* Tight, premium mobile */
+    letter-spacing: 1px;
+    gap: 5px;
   }
 
   .main-nav .logo-yellow {
-    letter-spacing: 1px;
+    letter-spacing: 1.4px;
   }
 }
 /* ===== INSTASPORT LOGO HOVER EFFECT ===== */
@@ -3168,50 +3168,4 @@ header h1 {
 .main-nav .logo-yellow {
   color: #f5c400 !important;
   letter-spacing: 1.8px;
-}
-body {
-  background: #000;
-  color: #fff;
-}
-
-header,
-nav,
-footer,
-section,
-div {
-  background-color: #000;
-}
-
-a,
-span,
-p,
-h1, h2, h3, h4, h5, h6 {
-  color: #fff;
-}
-/* ============================
-   FORCE THEME INVERSION
-   ============================ */
-
-/* Backgrounds → BLACK */
-html, body,
-header, nav, footer,
-section, div,
-.main-nav, .navbar, .header,
-.menu, .dropdown, .drawer,
-.card, .product-card {
-  background-color: #000 !important;
-}
-
-/* Text → WHITE */
-*,
-p, span, a,
-h1, h2, h3, h4, h5, h6,
-.logo-text, .logo-white, .logo-yellow,
-.menu-item, .nav-link {
-  color: #fff !important;
-}
-
-/* Borders → DARK GRAY */
-* {
-  border-color: #333 !important;
 }
