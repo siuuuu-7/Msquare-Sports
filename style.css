@@ -3188,3 +3188,30 @@ p,
 h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
+/* ============================
+   FORCE THEME INVERSION
+   ============================ */
+
+/* Backgrounds → BLACK */
+html, body,
+header, nav, footer,
+section, div,
+.main-nav, .navbar, .header,
+.menu, .dropdown, .drawer,
+.card, .product-card {
+  background-color: #000 !important;
+}
+
+/* Text → WHITE */
+*,
+p, span, a,
+h1, h2, h3, h4, h5, h6,
+.logo-text, .logo-white, .logo-yellow,
+.menu-item, .nav-link {
+  color: #fff !important;
+}
+
+/* Borders → DARK GRAY */
+* {
+  border-color: #333 !important;
+}
