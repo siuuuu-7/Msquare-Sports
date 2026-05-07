@@ -1266,13 +1266,13 @@ body {
 /* ===== DESKTOP (Default) ===== */
 @media (min-width: 1024px) {
   .main-nav .logo-text {
-    font-size: 28px;          /* InstaSport desktop size */
-    letter-spacing: 1.3px;
-    gap: 7px;
+    font-size: 28px;
+    letter-spacing: 1px;   /* reduced */
+    gap: 3px;              /* ✅ tighter spacing */
   }
 
   .main-nav .logo-yellow {
-    letter-spacing: 1.7px;   /* Slightly wider second word */
+    letter-spacing: 1.2px; /* reduced */
   }
 }
 
@@ -1280,25 +1280,25 @@ body {
 @media (max-width: 1023px) and (min-width: 769px) {
   .main-nav .logo-text {
     font-size: 25px;
-    letter-spacing: 1.2px;
-    gap: 6px;
+    letter-spacing: 0.9px;
+    gap: 3px;
   }
 
   .main-nav .logo-yellow {
-    letter-spacing: 1.6px;
+    letter-spacing: 1.1px;
   }
 }
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .main-nav .logo-text {
-    font-size: 21px;          /* Tight, premium mobile */
-    letter-spacing: 1px;
-    gap: 5px;
+    font-size: 21px;
+    letter-spacing: 0.8px;
+    gap: 2px;   /* very tight & premium */
   }
 
   .main-nav .logo-yellow {
-    letter-spacing: 1.4px;
+    letter-spacing: 1px;
   }
 }
 /* ===== INSTASPORT LOGO HOVER EFFECT ===== */
