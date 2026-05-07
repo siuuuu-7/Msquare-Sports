@@ -658,3 +658,18 @@
     height: 260px;        /* smaller but still clean */
   }
 }
+/* ===============================
+   FIX LOGO TEXT SPACING
+   =============================== */
+
+.logo-white,
+.logo-yellow {
+  margin: 0 !important;          /* remove extra spacing */
+  padding: 0 !important;
+  letter-spacing: 0.5px;         /* tighter, premium look */
+}
+
+/* Reduce gap between MSQUARE & SPORTS */
+.logo-white {
+  margin-right: 4px !important;  /* adjust this if needed */
+}
