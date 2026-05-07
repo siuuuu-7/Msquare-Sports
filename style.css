@@ -3169,3 +3169,37 @@ header h1 {
   color: #f5c400 !important;
   letter-spacing: 1.8px;
 }
+/* ===============================
+   GLOBAL DARK THEME OVERRIDE
+   =============================== */
+
+/* Page base */
+html, body {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* Major layout sections */
+nav,
+.main-nav,
+.top-bar,
+.hero-slider,
+.hero-text,
+.trust,
+footer,
+.footer-main,
+.footer-bottom,
+.insta-footer,
+.sidebar,
+.modal,
+.wishlist-full,
+.bag-drawer {
+  background-color: #000 !important;
+}
+
+/* Cards, panels, drawers */
+div,
+section,
+article {
+  background-color: transparent !important;
+}
