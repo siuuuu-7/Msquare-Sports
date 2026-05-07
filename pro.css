@@ -525,62 +525,91 @@
     font-size: 34px;
   }
 }
-/* ===============================
-   PREMIUM FIT HERO (BALANCED)
-   =============================== */
+/* ===== PREMIUM FULL HERO ===== */
 
-/* Main hero size */
-.hero-slider {
+.hero-slider{
+  position: relative;
   width: 100%;
-  max-width: 1280px;     /* premium website width */
-  height: 460px;         /* balanced height */
-  margin: 24px auto;     /* space from navbar & next section */
-  border-radius: 12px;   /* subtle premium rounding */
+  height: 420px;
   overflow: hidden;
+  margin: 0;
+  border-radius: 0;
 }
 
-/* Slide images */
-.hero-slider .slide {
+/* Slides */
+.hero-slider .slide{
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
-/* Text overlay */
-.hero-overlay {
-  padding-left: 56px;
-  background: linear-gradient(
-    90deg,
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.15),
-    rgba(0,0,0,0)
-  );
+.hero-slider .slide.active{
+  opacity: 1;
 }
 
-/* Headline */
-.hero-overlay h1 {
-  font-size: 52px;
+/* Dark overlay */
+.hero-slider::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.30);
 }
 
-/* Mobile tuning */
-@media (max-width: 768px) {
-  .hero-slider {
-    max-width: 94%;
-    height: 320px;
-    margin: 16px auto;
-    border-radius: 10px;
+/* Text */
+.hero-overlay{
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-overlay h1{
+  font-size: 68px;
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.hero-overlay p{
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.hero-btn{
+  background: white;
+  color: black;
+  padding: 14px 34px;
+  border-radius: 40px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .hero-slider{
+    height: 300px;
   }
 
-  .hero-overlay {
-    padding: 0 20px 24px;
-    justify-content: flex-end;
-    background: linear-gradient(
-      180deg,
-      rgba(0,0,0,0),
-      rgba(0,0,0,0.6)
-    );
+  .hero-overlay h1{
+    font-size: 42px;
+    line-height: 1.1;
   }
 
-  .hero-overlay h1 {
-    font-size: 34px;
+  .hero-overlay p{
+    font-size: 14px;
+  }
+
+  .hero-btn{
+    padding: 12px 24px;
+    font-size: 14px;
   }
 }
