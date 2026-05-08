@@ -67,8 +67,6 @@ html {
   letter-spacing: 1px;
   text-transform: lowercase;
 }
-}
-
 .hero p {
   color: #ddd;
 }
@@ -345,7 +343,6 @@ button {
   color: #f5c400;
   margin: 20px 0;
 }
-}
 .featured {
   border: 2px solid gold;
 }
@@ -423,7 +420,6 @@ button {
   .hero p {
     font-size: 15px;
   }
-}
 h1, h2, h3, h4, h5, h6,
 .navbar h2,
 .hero h1 {
