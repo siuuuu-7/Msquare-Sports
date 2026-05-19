@@ -3199,3 +3199,13 @@ section,
 article {
   background-color: transparent !important;
 }
+.extra-sport {
+  display: none;
+}
+
+.more {
+  margin-top: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
