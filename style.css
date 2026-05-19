@@ -3296,3 +3296,50 @@ article {
   border-top: 1px solid #eee;
   text-align: center;
 }
+/* ===== WISHLIST PRODUCT CARDS ===== */
+#wishlistItems {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.wishlist-card {
+  display: flex;
+  gap: 14px;
+  border: 1px solid #eee;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.wishlist-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.wishlist-info {
+  flex: 1;
+}
+
+.wishlist-info h5 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+
+.wishlist-info p {
+  font-size: 13px;
+  color: #555;
+  margin: 0 0 8px;
+}
+
+.remove-wishlist {
+  font-size: 13px;
+  color: #777;
+  cursor: pointer;
+}
+
+.remove-wishlist:hover {
+  text-decoration: underline;
+}
