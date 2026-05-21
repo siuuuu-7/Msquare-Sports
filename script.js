@@ -231,8 +231,6 @@ function toggleWishlist() {
     heart.classList.add("fa-regular");
     localStorage.setItem("wishlist", "false");
   }
-}
-
 // LOAD STATE ON PAGE LOAD
 document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("wishlist");
