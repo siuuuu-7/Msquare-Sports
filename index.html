@@ -23,20 +23,15 @@
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <!-- PREMIUM FONTS -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;900&display=swap" rel="stylesheet">
 <link rel="canonical" href="https://siuuuu-7.github.io/Msquare-Sports/">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#000000">
 </head>
 <body>
 <div class="top-bar">
-  ⚡delivery available in select cities
+  ⚡ Delivery available in select cities
 </div>
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank" aria-label="WhatsApp Chat">
@@ -177,6 +172,7 @@
   <p class="more" id="toggleMoreSports">More Sports...</p>
 
   <input 
+  type="search"
   class="search" 
   id="searchInput"
   placeholder="⚡Search for shoes, rackets and more ..."
@@ -327,7 +323,8 @@ function detectDevice() {
 }
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
+  navigator.serviceWorker.register("service-worker.js")
+    .catch(err => console.error("SW failed", err));
 }
 </script>
 <!-- ===== JOIN CLUB MODAL ===== -->
@@ -391,7 +388,7 @@ const auth = firebase.auth();
 
     <div class="phone-row">
       <span>+91</span>
-      <input type="tel" placeholder="WhatsApp Number">
+      <input type="tel" id="phoneInput" placeholder="WhatsApp Number">
     </div>
 
     <button onclick="sendOTP()">Send Code</button>
@@ -414,7 +411,7 @@ const auth = firebase.auth();
 let generatedOTP = "";
 
 function sendOTP() {
-  const phone = document.querySelector(".phone-row input").value;
+  const phone = document.getElementById("phoneInput").value;
 
   if (!phone || phone.length < 10) {
     alert("Enter valid number");
@@ -438,9 +435,13 @@ function verifyOTP() {
 
   window.confirmationResult.confirm(code)
     .then((result) => {
-      alert("Login successful ✅");
-      document.getElementById("loginModal").style.display = "none";
-    })
+  document.getElementById("loginModal").style.display = "none";
+  document.getElementById("loginSuccess").style.display = "flex";
+
+  setTimeout(() => {
+    document.getElementById("loginSuccess").style.display = "none";
+  }, 2000);
+})
     .catch((error) => {
       alert("Invalid OTP ❌");
     });
