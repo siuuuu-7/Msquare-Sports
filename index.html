@@ -45,7 +45,7 @@
 
 <!-- SIDEBAR -->
 <div id="sidebar" class="sidebar">
-  <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">×</a>
+  <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()"></a>
   <h3>Categories</h3>
   <a href="#" onclick="filterProducts('all')">All Products</a>
   <a href="#" onclick="filterProducts('cricket')">Cricket</a>
@@ -127,19 +127,6 @@
   </div>
 
 </div>
-<!-- WISHLIST DRAWER -->
-<div id="wishlistDrawer" class="bag-drawer">
-
-  <div class="bag-header">
-    <span>Your Wishlist</span>
-    <span class="close" onclick="toggleWishlist()">×</span>
-  </div>
-
-  <div id="wishlistContent" class="bag-content">
-    <!-- Filled by JS -->
-  </div>
-
-</div>
 <section class="hero-slider">
 
   <div class="slide active"
@@ -180,11 +167,11 @@
     <span onclick="window.location.href='cricket.html'" style="cursor:pointer;">🏏Cricket</span>
     <span onclick="window.location.href='shoes.html'" style="cursor:pointer;">👟Shoes</span>
     <span onclick="window.location.href='tshirts.html'" style="cursor:pointer;">👕T-Shirts</span>
-    <span onclick="window.location.href='tshirts.html'" style="cursor:pointer;">🏸Badminton</span>
-    <span onclick="window.location.href='tshirts.html'" style="cursor:pointer;">🏓Padel</span>
-    <span onclick="window.location.href='tshirts.html'" style="cursor:pointer;">🏊Swimming</span>
-    <span onclick="window.location.href='tshirts.html'" style="cursor:pointer;">🎾Tennis</span>
-    <span onclick="window.location.href='tshirts.html'" style="cursor:pointer;">🕶️Eyewear</span>
+<span class="extra-sport" style="display:none" onclick="window.location.href='tshirts.html'">🏸Badminton</span>
+<span class="extra-sport" style="display:none" onclick="window.location.href='tshirts.html'">🏓Padel</span>
+<span class="extra-sport" style="display:none" onclick="window.location.href='tshirts.html'">🏊Swimming</span>
+<span class="extra-sport" style="display:none" onclick="window.location.href='tshirts.html'">🎾Tennis</span>
+<span class="extra-sport" style="display:none" onclick="window.location.href='tshirts.html'">🕶️Eyewear</span>
   </div>
 
   <p class="more" id="toggleMoreSports">More Sports...</p>
@@ -327,6 +314,12 @@ function closeInstallPopup() {
 
 function detectDevice() {
   const ua = navigator.userAgent.toLowerCase();
+  const pcStep = document.getElementById("pcStep");
+  const androidStep = document.getElementById("androidStep");
+  const iosStep = document.getElementById("iosStep");
+
+  if (!pcStep || !androidStep || !iosStep) return;
+
   pcStep.style.display = androidStep.style.display = iosStep.style.display = "none";
   if (/iphone|ipad/.test(ua)) iosStep.style.display = "block";
   else if (/android/.test(ua)) androidStep.style.display = "block";
@@ -360,6 +353,13 @@ function openClub() {
 function openLogin() {
   document.getElementById("clubModal").style.display = "none";
   document.getElementById("loginModal").style.display = "flex";
+
+  if (!window.recaptchaVerifier) {
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+      'recaptcha-container', { size: 'normal' }
+    );
+    window.recaptchaVerifier.render();
+  }
 }
 
 window.onclick = function(e) {
@@ -375,25 +375,10 @@ const firebaseConfig = {
   projectId: "msquare-sports",
   appId: "1:144814096708:web:8daff5c52f0c00d7a81711"
 };
-
-firebase.initializeApp(firebaseConfig);
-
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 const auth = firebase.auth();
-
-// IMPORTANT: attach recaptcha AFTER DOM loads
-window.onload = function () {
-  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-    'recaptcha-container',
-    {
-      size: 'normal',
-      callback: function(response) {
-        console.log("reCAPTCHA solved");
-      }
-    }
-  );
-
-  recaptchaVerifier.render();
-};
 </script>
 <div id="loginModal" class="modal">
   <div class="modal-box">
@@ -559,7 +544,7 @@ function openStoreLocation() {
     <section>
       <h4>Company</h4>
       <div class="wishlist-links">
-        <span>About InstaSport</span>
+        <span>About Msquare</span>
         <span>Membership</span>
         <span>Careers</span>
         <span>Blog</span>
