@@ -656,5 +656,28 @@ document.getElementById("toggleMoreSports").addEventListener("click", function (
 });
  
 </script>
+<!-- ===== CLUB ENTRY POPUP ===== -->
+<div id="clubEntryPopup" class="modal">
+  <div class="modal-box">
+    <h2>Wait — Don’t Miss Out!</h2>
+
+    <p style="margin:15px 0;">
+      Join the <b> Msquare Sports </b> for free and unlock exclusive member prices on every product.
+    </p>
+
+    <ul style="text-align:left; line-height:1.6; margin-bottom:20px;">
+      <li>🔥 Exclusive club pricing below MRP</li>
+      <li>🚚 Free 24-hour shipping on prepaid orders</li>
+      <li>✅ 100% authentic products with 7-day returns</li>
+    </ul>
+
+    <button onclick="joinFromPopup()">Browse Deals</button>
+
+    <p class="small" style="margin-top:12px; cursor:pointer;"
+       onclick="closeClubPopup()">
+      No thanks, I’ll continue browsing
+    </p>
+  </div>
+</div>
 </body>
 </html>
