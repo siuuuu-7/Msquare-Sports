@@ -3527,3 +3527,84 @@ article {
   color: #000;
   transform: scale(1.2);
 }
+/* ===============================
+   MOBILE OPTIMIZATION (PREMIUM)
+   =============================== */
+
+@media (max-width: 768px) {
+
+  /* HERO HEIGHT FIX */
+  .hero-slider {
+    height: 70vh;
+  }
+
+  /* SLIDE MOTION REDUCED */
+  .hero-slider .slide {
+    transform: scale(1.03);
+    transition:
+      opacity 1.2s ease,
+      transform 5s ease;
+  }
+
+  .hero-slider .slide.active {
+    transform: scale(1);
+  }
+
+  /* HERO TEXT ALIGNMENT */
+  .hero-overlay {
+    padding: 0 20px;
+    justify-content: flex-end;
+    padding-bottom: 60px;
+    text-align: left;
+  }
+
+  .hero-match {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .hero-sub {
+    font-size: 28px;
+    line-height: 1.2;
+    max-width: 100%;
+  }
+
+  .hero-btn {
+    padding: 12px 26px;
+    font-size: 14px;
+  }
+
+  /* NAV CLEANUP */
+  .brand-socials {
+    display: none;
+  }
+
+  .nav-actions .nav-link {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  /* SPORTS GRID FIX */
+  .sports-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* SEARCH INPUT */
+  .search {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  /* FOOTER STACKING */
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
