@@ -679,5 +679,28 @@ document.getElementById("toggleMoreSports").addEventListener("click", function (
     </p>
   </div>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Show popup after 1 second
+  setTimeout(() => {
+    const popup = document.getElementById("clubEntryPopup");
+
+    // show only once per session
+    if (!sessionStorage.getItem("clubPopupShown")) {
+      popup.style.display = "flex";
+      sessionStorage.setItem("clubPopupShown", "true");
+    }
+  }, 1000);
+});
+
+function closeClubPopup() {
+  document.getElementById("clubEntryPopup").style.display = "none";
+}
+
+function joinFromPopup() {
+  closeClubPopup();
+  openClub(); // your existing Join Club modal
+}
+</script>
 </body>
 </html>
