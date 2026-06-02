@@ -1,3 +1,27 @@
+/* ===== GLOBAL MOBILE FIX ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+/* Prevent any section from breaking mobile width */
+section,
+nav,
+footer,
+.hero-slider,
+.hero-text,
+.trust {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
 /* BREADCRUMB */
 .breadcrumb {
   padding: 14px 20px;
@@ -672,4 +696,105 @@
 /* Reduce gap between MSQUARE & SPORTS */
 .logo-white {
   margin-right: 4px !important;  /* adjust this if needed */
+}
+/* ============================
+   MOBILE PREMIUM LAYOUT FIX
+   ============================ */
+@media (max-width: 768px) {
+
+  /* REMOVE DESKTOP BORDERS */
+  * {
+    border-radius: 0 !important;
+  }
+
+  /* NAVBAR */
+  .main-nav {
+    padding: 10px 14px;
+  }
+
+  .brand-wrapper {
+    gap: 6px;
+  }
+
+  .brand-logo {
+    height: 32px;
+  }
+
+  /* HERO */
+  .hero-slider {
+    height: 68vh;
+  }
+
+  .hero-overlay {
+    padding: 0 16px 56px;
+    align-items: flex-start;
+  }
+
+  .hero-match {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .hero-sub {
+    font-size: 26px;
+    line-height: 1.15;
+    margin: 8px 0 14px;
+  }
+
+  .hero-btn {
+    padding: 12px 22px;
+    font-size: 13px;
+  }
+
+  /* HERO SLIDE IMAGE BEHAVIOR */
+  .hero-slider .slide {
+    background-position: center top;
+    background-size: cover;
+    transform: scale(1);
+  }
+
+  /* SPORTS GRID — NO UGLY BOXES */
+  .sports-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .sports-grid span {
+    padding: 14px 10px;
+    font-size: 13px;
+  }
+
+  /* SEARCH */
+  .search {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  /* TRUST BAR */
+  .trust {
+    font-size: 12px;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  /* FOOTER */
+  .footer-main {
+    grid-template-columns: 1fr;
+    padding: 30px 16px;
+  }
+
+  .footer-col h5 {
+    font-size: 14px;
+  }
+
+  .footer-col a {
+    font-size: 13px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 }
