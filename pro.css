@@ -798,3 +798,62 @@ footer,
     text-align: center;
   }
 }
+/* ===============================
+   MOBILE HEADER CLEANUP
+   =============================== */
+@media (max-width: 768px) {
+
+  /* NAV BAR LAYOUT */
+  .main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    height: 56px;
+  }
+
+  /* BRAND AREA */
+  .brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .brand-logo {
+    height: 30px;
+    width: auto;
+  }
+
+  /* LOGO TEXT STACK */
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .logo-white,
+  .logo-yellow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* ACTION BUTTONS (JOIN / LOGIN) */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .nav-actions .nav-link {
+    font-size: 12px;
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
+
+  .nav-actions .nav-link.outline {
+    padding: 6px 10px;
+  }
+}
