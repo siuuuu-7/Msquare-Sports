@@ -857,3 +857,43 @@ footer,
     padding: 6px 10px;
   }
 }
+/* ===============================
+   MOBILE BRAND SIZE REDUCTION
+   =============================== */
+@media (max-width: 768px) {
+
+  /* BRAND WRAPPER */
+  .brand-wrapper {
+    gap: 4px;
+  }
+
+  /* LOGO IMAGE */
+  .brand-logo {
+    height: 26px;
+  }
+
+  /* MSQUARE / SPORTS TEXT */
+  .logo-white,
+  .logo-yellow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    line-height: 1;
+    display: block;
+  }
+
+  /* STACK TEXT TIGHTLY */
+  .logo-text {
+    line-height: 1;
+  }
+
+  /* NAV ACTIONS */
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .nav-actions .nav-link {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+}
