@@ -798,3 +798,45 @@ footer,
     text-align: center;
   }
 }
+/* ===============================
+   MOBILE LOGO — PREMIUM FIX
+   =============================== */
+@media (max-width: 768px) {
+
+  .brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .brand-logo {
+    height: 30px;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  .logo-white,
+  .logo-yellow {
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  /* FORCE CENTER ALIGN */
+  .main-nav {
+    justify-content: space-between;
+  }
+
+  /* REMOVE SOCIALS COMPLETELY ON MOBILE */
+  .brand-socials {
+    display: none !important;
+  }
+}
