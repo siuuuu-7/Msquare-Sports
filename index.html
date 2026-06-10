@@ -352,10 +352,12 @@ if ("serviceWorker" in navigator) {
 </div>
 <script>
 function openClub() {
+  history.pushState({ modal: "club" }, "");
   document.getElementById("clubModal").style.display = "flex";
 }
 
 function openLogin() {
+  history.pushState({ modal: "login" }, "");
   document.getElementById("clubModal").style.display = "none";
   document.getElementById("loginModal").style.display = "flex";
 
@@ -586,21 +588,12 @@ window.toggleWishlist = function () {
   const isOpen = wishlist.classList.contains("active");
 
   if (isOpen) {
-    // CLOSE
-    wishlist.classList.remove("active");
-    document.body.style.overflow = "auto";
-
-    setTimeout(() => {
-      wishlist.style.display = "none";
-    }, 450);
+    history.back();
   } else {
-    // OPEN
+    history.pushState({ panel: "wishlist" }, "");
     wishlist.style.display = "flex";
     document.body.style.overflow = "hidden";
-
-    requestAnimationFrame(() => {
-      wishlist.classList.add("active");
-    });
+    requestAnimationFrame(() => wishlist.classList.add("active"));
   }
 };
 </script>
@@ -693,6 +686,31 @@ function joinFromPopup() {
   closeClubPopup();
   openClub(); // your existing Join Club modal
 }
+</script>
+<script>
+window.addEventListener("popstate", () => {
+
+  // Close Bag
+  const bag = document.getElementById("bagFull");
+  if (bag?.classList.contains("active")) {
+    bag.classList.remove("active");
+    bag.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+
+  // Close Wishlist
+  const wishlist = document.getElementById("wishlistFull");
+  if (wishlist?.classList.contains("active")) {
+    wishlist.classList.remove("active");
+    wishlist.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+
+  // Close all modals
+  document.querySelectorAll(".modal").forEach(m => {
+    m.style.display = "none";
+  });
+});
 </script>
 </body>
 </html>
