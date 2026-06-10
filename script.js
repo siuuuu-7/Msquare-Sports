@@ -100,15 +100,6 @@ window.logoutAdmin = async function () {
   await signOut(auth);
 };
 // ===== PREMIUM NAV MODALS =====
-function openClub() {
-  document.getElementById("clubModal").style.display = "flex";
-}
-
-function openLogin() {
-  document.getElementById("clubModal").style.display = "none";
-  document.getElementById("loginModal").style.display = "flex";
-}
-
 window.addEventListener("click", function (e) {
   if (e.target.classList.contains("modal")) {
     e.target.style.display = "none";
@@ -118,123 +109,10 @@ import { signInWithPhoneNumber, RecaptchaVerifier }
 from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 let confirmationResult;
-
-// 🔥 reCAPTCHA setup
-window.recaptchaVerifier = new RecaptchaVerifier(
-  "recaptcha-container",
-  { size: "invisible" },
-  auth
-);
-
-// 📲 SEND OTP
-window.sendOTP = function () {
-  const phone = document.querySelector(".phone-row input").value;
-
-  if (!phone) {
-    alert("Enter number");
-    return;
-  }
-
-  signInWithPhoneNumber(auth, "+91" + phone, window.recaptchaVerifier)
-    .then((result) => {
-  confirmationResult = result;
-
-  alert("OTP sent ✅");
-
-  // SHOW OTP BOX
-  document.getElementById("otpSection").style.display = "block";
-})
-    .catch((error) => {
-      console.log(error);
-      alert(error.message);
-    });
-};
-window.verifyOTP = function () {
-  const code = document.getElementById("otpInput").value;
-
-  if (!code) {
-    alert("Enter OTP");
-    return;
-  }
-
-  confirmationResult.confirm(code)
-    .then((result) => {
-      alert("Login Success 🎉");
-
-      // CLOSE MODAL
-      document.getElementById("loginModal").style.display = "none";
-
-      // RESET OTP UI
-      document.getElementById("otpSection").style.display = "none";
-
-    })
-    .catch((error) => {
-      console.log(error);
-      alert("Wrong OTP ❌");
-    });
-};
-// script.js
-
-function sendOTP() {
-  const phone = document.querySelector(".phone-row input").value;
-
-  if (!phone || phone.length < 10) {
-    alert("Enter valid number");
-    return;
-  }
-
-  const fullPhone = "+91" + phone;
-
-  auth.signInWithPhoneNumber(fullPhone, window.recaptchaVerifier)
-    .then((confirmationResult) => {
-      window.confirmationResult = confirmationResult;
-      alert("OTP sent 📲");
-      document.getElementById("otpSection").style.display = "block";
-    })
-    .catch((error) => {
-      console.error(error);
-      alert(error.message);
-    });
-}
-
-function verifyOTP() {
-  const code = document.getElementById("otpInput").value;
-
-  if (!window.confirmationResult) {
-    alert("OTP not sent yet");
-    return;
-  }
-
-  window.confirmationResult.confirm(code)
-    .then(() => {
-      alert("Login successful ✅");
-      document.getElementById("loginModal").style.display = "none";
-    })
-    .catch(() => {
-      alert("Wrong OTP ❌");
-    });
-}
-// WISHLIST TOGGLE
-function toggleWishlist() {
-  const panel = document.getElementById("wishlistFull");
-  panel.style.display = panel.style.display === "flex" ? "none" : "flex";
-}
-
-  heart.classList.toggle("active");
-
-  if (heart.classList.contains("active")) {
-    heart.classList.remove("fa-regular");
-    heart.classList.add("fa-solid");
-    localStorage.setItem("wishlist", "true");
-  } else {
-    heart.classList.remove("fa-solid");
-    heart.classList.add("fa-regular");
-    localStorage.setItem("wishlist", "false");
-  }
 // LOAD STATE ON PAGE LOAD
 document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("wishlist");
-  const heart = document.getElementById("wishlistHeart");
+  const heart = document.querySelector(".wishlist-wrapper i");
 
   if (saved === "true") {
     heart.classList.add("active", "fa-solid");
