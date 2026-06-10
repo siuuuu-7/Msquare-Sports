@@ -3,11 +3,9 @@ body {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background: #ffffff;
   color: #111;
-  letter-spacing: 0.2px;
-}
+  letter-spacing: 0.2px;}
 html {
-  scroll-behavior: smooth;
-}
+  scroll-behavior: smooth;}
 /* NAVBAR */
 .navbar {
   display: flex;
@@ -18,32 +16,23 @@ html {
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
-  z-index: 1000;
-}
+  z-index: 1000;}
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
+  gap: 10px;}
 .logo {
-  height: 40px;
-}
-
+  height: 40px;}
 .nav-right a {
   margin-left: 20px;
   text-decoration: none;
   color: #111;
-  font-weight: 500;
-}
-
+  font-weight: 500;}
 /* HERO */
 .hero {
   height: auto;
   padding: 120px 20px 80px;
-  background: #ffffff;
-}
-
+  background: #ffffff;}
 .hero-overlay {
   background: rgba(0,0,0,0.5);
   height: 100%;
@@ -52,47 +41,36 @@ html {
   justify-content: center;
   align-items: center;
   color: white;
-  text-align: center;
-}
+  text-align: center;}
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 56px;
   font-weight: 600;
   color: #f5c400;
-  margin: 20px 0;
-}
+  margin: 20px 0;}
 .hero .subtitle {
   font-size: 14px;
   color: #9a9a9a;
   letter-spacing: 1px;
-  text-transform: lowercase;
-}
+  text-transform: lowercase;}
 .hero p {
-  color: #ddd;
-}
-
+  color: #ddd;}
 .hero button {
   padding: 12px 25px;
   background: #007bff;
   border: none;
   color: white;
   border-radius: 5px;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 /* SECTION */
 section {
   padding: 40px 20px;
-  text-align: center;
-}
-
+  text-align: center;}
 /* GRID */
 .grid {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-}
-
+  flex-wrap: wrap;}
 /* PRODUCT CARD */
 .product {
   width: 250px;
@@ -102,35 +80,23 @@ section {
   margin: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: 0.3s;
-  text-align: center;
-}
-
+  text-align: center;}
 .product:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);}
 .product img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  background: #f5f5f5;
-}
-
+  background: #f5f5f5;}
 .product-info {
-  padding: 15px;
-}
-
+  padding: 15px;}
 .product h3 {
   font-size: 16px;
-  margin: 5px 0;
-}
-
+  margin: 5px 0;}
 .price {
   font-weight: bold;
-  margin: 5px 0;
-}
-
+  margin: 5px 0;}
 /* BUTTON */
 button {
   background: #007bff;
@@ -138,63 +104,43 @@ button {
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 .buy-btn {
-  width: 100%;
-}
-
+  width: 100%;}
 /* SERVICES */
 .section-title {
   text-align: center;
   font-size: 28px;
-  margin-bottom: 30px;
-}
-
+  margin-bottom: 30px;}
 .services-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  padding: 0 30px;
-}
-
+  padding: 0 30px;}
 .service-card {
   background: #fff;
   padding: 25px;
   border-radius: 12px;
   text-align: center;
   transition: 0.3s;
-  border: 1px solid #eee;
-}
-
+  border: 1px solid #eee;}
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);}
 .icon {
   font-size: 40px;
-  margin-bottom: 10px;
-}
-
+  margin-bottom: 10px;}
 .service-card h3 {
   margin: 10px 0;
-  font-size: 18px;
-}
-
+  font-size: 18px;}
 .service-card p {
   font-size: 14px;
-  color: #555;
-}
-
+  color: #555;}
 /* SIDEBAR */
 .menu-icon {
   font-size: 28px;
   cursor: pointer;
-  margin-right: 15px;
-}
-
+  margin-right: 15px;}
 .sidebar {
   height: 100%;
   width: 0;
@@ -206,42 +152,30 @@ button {
   transition: 0.3s;
   padding-top: 60px;
   z-index: 2000;
-  box-shadow: 5px 0 15px rgba(0,0,0,0.1);
-}
-
+  box-shadow: 5px 0 15px rgba(0,0,0,0.1);}
 .sidebar h3 {
   padding: 10px 25px;
   margin: 15px 0 5px;
   font-size: 14px;
   color: #777;
-  text-transform: uppercase;
-}
-
+  text-transform: uppercase;}
 .sidebar a {
   display: block;
   padding: 12px 25px;
   color: #111;
   text-decoration: none;
   font-size: 15px;
-  font-weight: 500;
-}
-
+  font-weight: 500;}
 .sidebar a:hover {
-  background: #f5f5f5;
-}
-
+  background: #f5f5f5;}
 .close-btn {
   position: absolute;
   top: 10px;
   right: 20px;
   font-size: 28px;
-  color: #111;
-}
-
+  color: #111;}
 body.menu-open {
-  overflow: hidden;
-}
-
+  overflow: hidden;}
 /* WHATSAPP FLOAT */
 .whatsapp-float {
   position: fixed;
@@ -253,53 +187,31 @@ body.menu-open {
   padding: 15px;
   border-radius: 50%;
   text-decoration: none;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);}
 /* FOOTER */
 footer {
   background: #f5f5f5;
   padding: 15px;
   text-align: center;
   font-size: 14px;
-  color: #555;
-}
-
+  color: #555;}
 /* MOBILE */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    text-align: center;
-  }
-
-  .grid {
+    text-align: center;}
+.grid {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 56px;
-  font-weight: 600;
-  color: #f5c400;
-  margin: 20px 0;
-}
-
-  .product img {
-    width: 90%;
-  }
-}
+    align-items: center;}
+.product img {
+    width: 90%;}
 .sidebar.active {
-  width: 250px;
-}
+  width: 250px;}
 button:hover {
   background: #0056b3;
-  transform: scale(1.05);
-}
-
+  transform: scale(1.05);}
 .nav-right a:hover {
-  color: #007bff;
-}
+  color: #007bff;}
 .offer-badge {
   position: absolute;
   top: 10px;
@@ -308,88 +220,52 @@ button:hover {
   color: white;
   padding: 5px 8px;
   font-size: 12px;
-  border-radius: 4px;
-}
-
+  border-radius: 4px;}
 .stock {
   color: red;
-  font-size: 13px;
-}
+  font-size: 13px;}
 .delete-btn {
   background: red;
   margin-top: 8px;
-  width: 100%;
-}
+  width: 100%;}
 .product {
-  position: relative;
-}
-
+  position: relative;}
 button {
-  transition: 0.3s ease;
-}
-
+  transition: 0.3s ease;}
 .buy-btn {
-  background: linear-gradient(135deg, #007bff, #0056b3);
-}
-
+  background: linear-gradient(135deg, #007bff, #0056b3);}
 .buy-btn:hover {
-  transform: scale(1.08);
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 56px;
-  font-weight: 600;
-  color: #f5c400;
-  margin: 20px 0;
-}
+  transform: scale(1.08);}
 .featured {
-  border: 2px solid gold;
-}
+  border: 2px solid gold;}
 /* ===== PREMIUM INSTALL BUTTON ===== */
 #installBtn {
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
+  transition: transform 0.25s ease, box-shadow 0.25s ease;}
 #installBtn:hover {
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
-}
-
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);}
 /* ===== INSTALL POPUP PREMIUM UI ===== */
 #installPopup {
-  backdrop-filter: blur(6px);
-}
-
+  backdrop-filter: blur(6px);}
 #installPopup > div {
-  animation: popupFade 0.3s ease;
-}
-
+  animation: popupFade 0.3s ease;}
 @keyframes popupFade {
   from {
     transform: scale(0.95);
-    opacity: 0;
-  }
-  to {
+    opacity: 0;}
+to {
     transform: scale(1);
-    opacity: 1;
-  }
-}
-
+    opacity: 1;}
 #installPopup h3 {
   text-align: center;
-  font-size: 20px;
-}
-
+  font-size: 20px;}
 #installPopup div div {
   padding: 10px;
   border-radius: 8px;
   background: #f7f7f7;
   margin-bottom: 8px;
-  font-size: 14px;
-}
-
+  font-size: 14px;}
 /* ===== MOBILE OPTIMIZATION ===== */
 @media (max-width: 600px) {
   #installBtn {
@@ -397,47 +273,26 @@ button {
     right: 15px;
     padding: 14px 18px;
     font-size: 15px;
-    border-radius: 30px;
-  }
-
-  #installPopup > div {
-    width: 92%;
-  }
-
-  nav .nav-right {
-    display: none;
-  }
-
-  .hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 56px;
-  font-weight: 600;
-  color: #f5c400;
-  margin: 20px 0;
-}
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
+    border-radius: 30px;}
+#installPopup > div {
+    width: 92%;}
+nav .nav-right {
+    display: none;}
+.hero p {
+    font-size: 15px;}
 h1, h2, h3, h4, h5, h6,
 .navbar h2,
 .hero h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  letter-spacing: 0.4px;
-}
-
+  letter-spacing: 0.4px;}
 button,
 .nav-right a {
   font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-}
-
+  font-weight: 500;}
 .price {
   font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-}
+  font-weight: 600;}
 /* =========================
    CULT.FIT STYLE NAVBAR
 ========================= */
@@ -445,26 +300,20 @@ button,
 .cult-navbar {
   background: #ffffff;
   padding: 14px 32px;
-  border-bottom: 1px solid #ededed;
-}
-
+  border-bottom: 1px solid #ededed;}
 .brand-text {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 18px;
   letter-spacing: 2px;
-  margin-left: 6px;
-}
-
+  margin-left: 6px;}
 .nav-right a {
   font-size: 14px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
   color: #111;
   padding-bottom: 4px;
-  position: relative;
-}
-
+  position: relative;}
 .nav-right a::after {
   content: "";
   position: absolute;
@@ -473,64 +322,44 @@ button,
   background: #000;
   left: 0;
   bottom: 0;
-  transition: 0.3s ease;
-}
-
+  transition: 0.3s ease;}
 .nav-right a:hover::after {
-  width: 100%;
-}
-
+  width: 100%;}
 .menu-icon {
-  font-size: 22px;
-}
-
+  font-size: 22px;}
 /* MOBILE CLEANUP */
 @media (max-width: 768px) {
   .brand-text {
-    font-size: 16px;
-  }
-}
+    font-size: 16px;}
 /* ===== PREMIUM INSTASPORT STYLE ===== */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap');
 
 body {
   background: radial-gradient(circle at top, #1b1b1b, #000);
-  color: #eaeaea;
-}
-
+  color: #eaeaea;}
 .premium-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px 40px;
   background: linear-gradient(to bottom, #111, #0a0a0a);
-  border-bottom: 1px solid #222;
-}
-
+  border-bottom: 1px solid #222;}
 .brand-name {
   font-family: 'Playfair Display', serif;
   font-size: 22px;
   color: #d4b25f;
-  letter-spacing: 1px;
-}
-
+  letter-spacing: 1px;}
 .nav-right {
   display: flex;
-  gap: 20px;
-}
-
+  gap: 20px;}
 .nav-link {
   font-family: 'Inter', sans-serif;
   font-size: 13px;
   color: #cfcfcf;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 .nav-link:hover {
-  color: #d4b25f;
-}
-
+  color: #d4b25f;}
 /* ===== MODAL BASE ===== */
 
 .modal {
@@ -540,29 +369,21 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 999;
-}
-
+  z-index: 999;}
 .modal-box {
   background: #0e0e0e;
   border: 1px solid #2a2a2a;
   padding: 30px;
   width: 340px;
   border-radius: 14px;
-  text-align: center;
-}
-
+  text-align: center;}
 .modal-box h2 {
   font-family: 'Playfair Display', serif;
   color: #d4b25f;
-  margin-bottom: 5px;
-}
-
+  margin-bottom: 5px;}
 .modal-box p {
   font-size: 13px;
-  color: #bcbcbc;
-}
-
+  color: #bcbcbc;}
 .modal-box input {
   width: 100%;
   padding: 12px;
@@ -570,9 +391,7 @@ body {
   border-radius: 8px;
   border: none;
   background: #1a1a1a;
-  color: #fff;
-}
-
+  color: #fff;}
 .modal-box button {
   width: 100%;
   margin-top: 18px;
@@ -581,8 +400,7 @@ body {
   border: none;
   background: #d4b25f;
   font-weight: 600;
-  cursor: pointer;
-}
+  cursor: pointer;}
 /* ===== MODAL BASE ===== */
 .modal {
   display: none;
@@ -592,9 +410,7 @@ body {
   backdrop-filter: blur(6px);
   z-index: 5000;
   align-items: center;
-  justify-content: center;
-}
-
+  justify-content: center;}
 .modal-box {
   background: #111;
   color: white;
@@ -603,25 +419,17 @@ body {
   padding: 30px;
   border-radius: 18px;
   text-align: center;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-}
-
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);}
 .modal-box h2 {
   font-size: 22px;
-  margin-bottom: 5px;
-}
-
+  margin-bottom: 5px;}
 .modal-box .sub {
   color: gold;
   font-size: 14px;
-  margin-bottom: 15px;
-}
-
+  margin-bottom: 15px;}
 .modal-box p {
   font-size: 14px;
-  color: #ccc;
-}
-
+  color: #ccc;}
 .modal-box button {
   width: 100%;
   margin-top: 18px;
@@ -629,133 +437,95 @@ body {
   border-radius: 30px;
   background: gold;
   color: black;
-  font-weight: bold;
-}
-
+  font-weight: bold;}
 .phone-row {
   display: flex;
   gap: 10px;
-  margin-top: 15px;
-}
-
+  margin-top: 15px;}
 .phone-row span {
   padding: 10px 14px;
   background: #222;
-  border-radius: 8px;
-}
-
+  border-radius: 8px;}
 .phone-row input {
   flex: 1;
   padding: 10px;
   border-radius: 8px;
-  border: none;
-}
+  border: none;}
 /* ===== INSTASPORT STYLE HERO ===== */
 .instasport-hero {
   text-align: center;
   max-width: 900px;
-  margin: auto;
-}
-
+  margin: auto;}
 .instasport-hero .micro {
   font-size: 13px;
   color: #777;
-  margin-bottom: 10px;
-}
-
+  margin-bottom: 10px;}
 .instasport-hero h1 {
   font-size: 42px;
   font-weight: 600;
-  margin-bottom: 30px;
-}
-
+  margin-bottom: 30px;}
 .sport-tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-}
-
+  gap: 10px;}
 .sport-tags span {
   padding: 8px 14px;
   border: 1px solid #ddd;
   border-radius: 20px;
   font-size: 14px;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 .more-sports {
   display: inline-block;
   margin: 20px 0;
   font-size: 14px;
   color: #111;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 .search-bar {
   max-width: 520px;
-  margin: 20px auto;
-}
-
+  margin: 20px auto;}
 .search-bar input {
   width: 100%;
   padding: 14px 18px;
   border-radius: 30px;
   border: 1px solid #ddd;
-  font-size: 15px;
-}
-
+  font-size: 15px;}
 .helper {
   font-size: 13px;
-  color: #777;
-}
+  color: #777;}
 .top-bar {
   background: #f7f7f7;
   font-size: 13px;
   text-align: center;
   padding: 6px;
-  color: #333;
-}
+  color: #333;}
 .main-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px 30px;
-  border-bottom: 1px solid #eee;
-}
-
+  border-bottom: 1px solid #eee;}
 .brand {
   font-size: 20px;
-  font-weight: 600;
-}
-
+  font-weight: 600;}
 .nav-actions span {
   margin-left: 20px;
   font-size: 14px;
-  cursor: pointer;
-}
+  cursor: pointer;}
 .hero-text {
   text-align: center;
-  padding: 90px 20px;
-}
-
+  padding: 90px 20px;}
 .tagline {
   font-size: 13px;
-  color: #777;
-}
-
+  color: #777;}
 .hero-text h1 {
   font-size: 42px;
-  margin: 25px 0;
-}
-
+  margin: 25px 0;}
 .sports-grid {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
-}
-
+  gap: 10px;}
 .sports-grid span {
   display: inline-flex;
   align-items: center;
@@ -767,15 +537,11 @@ body {
   font-size: 14px;
   color: #eaeaea;
   cursor: pointer;
-  transition: all 0.25s ease;
-}
-
+  transition: all 0.25s ease;}
 .sports-grid span:hover {
   background: #0a5cff;
   border-color: #0a5cff;
-  color: white;
-}
-
+  color: white;}
 .search {
   width: 100%;
   max-width: 520px;
@@ -785,21 +551,14 @@ body {
   border: 1px solid rgba(255,255,255,0.18);
   color: white;
   font-size: 15px;
-  outline: none;
-}
-
+  outline: none;}
 .search::placeholder {
-  color: #bcbcbc;
-}
-
+  color: #bcbcbc;}
 .search:focus {
-  border-color: #f5c400;
-}
-
+  border-color: #f5c400;}
 .hint {
   font-size: 13px;
-  color: #777;
-}
+  color: #777;}
 .trust {
   margin-top: 60px;
   display: flex;
@@ -807,26 +566,20 @@ body {
   gap: 40px;
   font-size: 13px;
   color: #cfcfcf;
-  opacity: 0.85;
-}
+  opacity: 0.85;}
 .mega-footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   padding: 50px;
   background: #f7f7f7;
-  font-size: 14px;
-}
-
+  font-size: 14px;}
 .mega-footer h4 {
-  margin-bottom: 10px;
-}
-
+  margin-bottom: 10px;}
 .footer-bottom {
   text-align: center;
   font-size: 13px;
   padding: 15px;
-  background: #eee;
-}
+  background: #eee;}
 /* ===== INSTASPORT-LIKE HERO BACKGROUND ===== */
 .hero {
   min-height: 90vh;
@@ -835,15 +588,12 @@ body {
     linear-gradient(to bottom, #0b0b0b, #000000);
   display: flex;
   align-items: center;
-  justify-content: center;
-}
+  justify-content: center;}
 /* ===== LOGO BEHIND BRAND TEXT ===== */
 
 .brand-wrapper {
   position: relative;
-  display: inline-block;
-}
-
+  display: inline-block;}
 .brand-bg-logo {
   position: absolute;
   inset: 0;
@@ -851,29 +601,22 @@ body {
   height: 100%;
   object-fit: contain;
   opacity: 0.18; /* logo faintness */
-  z-index: 0;
-}
-
+  z-index: 0;}
 .brand-text {
   position: relative;
   font-size: 20px; /* SAME size as before */
   font-weight: 600;
   color: #111; /* black text */
   z-index: 1;
-  letter-spacing: 0.5px;
-}
+  letter-spacing: 0.5px;}
 /* ===== FORCE LOGO BEHIND BRAND TEXT ===== */
 
 .main-nav {
-  position: relative;
-}
-
+  position: relative;}
 .brand-wrapper {
   position: relative;
   display: inline-block;
-  line-height: 1;
-}
-
+  line-height: 1;}
 .brand-bg-logo {
   position: absolute;
   top: 50%;
@@ -883,16 +626,13 @@ body {
   width: auto;
   opacity: 0.22;
   z-index: 0;
-  pointer-events: none;
-}
-
+  pointer-events: none;}
 .brand-text {
   position: relative;
   font-size: 20px;
   font-weight: 600;
   color: #111;
-  z-index: 1;
-}
+  z-index: 1;}
 /* =====================================================
    CLEAN INSTASPORT PREMIUM OVERRIDE (FINAL)
    Paste at END of style.css
@@ -908,184 +648,122 @@ body {
 
   --text-main: #f2f2f2;
   --text-muted: #9a9a9a;
-  --border-soft: rgba(255,255,255,0.12);
-}
-
+  --border-soft: rgba(255,255,255,0.12);}
 /* ===== GLOBAL RESET FIX ===== */
 body {
   background:
     radial-gradient(900px 450px at center top, #1a1a1a 0%, #0b0b0b 60%),
     linear-gradient(to bottom, #0b0b0b, #000);
   color: var(--text-main);
-  font-family: 'Inter', sans-serif;
-}
-
+  font-family: 'Inter', sans-serif;}
 /* ===== TOP BAR ===== */
 .top-bar {
   background: linear-gradient(to right, #0f0f0f, #151515);
   color: var(--gold-soft);
-  border-bottom: 1px solid var(--border-soft);
-}
-
+  border-bottom: 1px solid var(--border-soft);}
 /* ===== NAVBAR ===== */
 .main-nav {
   background: linear-gradient(to bottom, #111, #090909);
-  border-bottom: 1px solid var(--border-soft);
-}
-
+  border-bottom: 1px solid var(--border-soft);}
 .brand-wrapper img {
   height: 34px;
-  filter: brightness(1.15) contrast(1.15);
-}
-
+  filter: brightness(1.15) contrast(1.15);}
 .brand-text {
   color: var(--gold);
-  letter-spacing: 0.4px;
-}
-
+  letter-spacing: 0.4px;}
 /* ===== NAV ACTIONS ===== */
 .nav-actions span {
-  color: #e0e0e0;
-}
-
+  color: #e0e0e0;}
 .nav-actions span:hover {
-  color: var(--gold);
-}
-
+  color: var(--gold);}
 /* ===== HERO ===== */
 .hero-text {
   background:
-    radial-gradient(700px 350px at center top, rgba(255,255,255,0.07), transparent 60%);
-}
-
+    radial-gradient(700px 350px at center top, rgba(255,255,255,0.07), transparent 60%);}
 .hero-text h1 {
   font-family: 'Poppins', sans-serif;
   font-size: clamp(34px, 5vw, 52px);
-  color: var(--gold);
-}
-
+  color: var(--gold);}
 .subtitle,
 .tagline {
-  color: var(--text-muted);
-}
-
+  color: var(--text-muted);}
 /* ===== SPORT TAGS ===== */
 .sports-grid span {
   background: var(--glass);
   border: 1px solid var(--border-soft);
   color: #ededed;
-  backdrop-filter: blur(10px);
-}
-
+  backdrop-filter: blur(10px);}
 .sports-grid span:hover {
   border-color: var(--gold);
   color: var(--gold);
-  background: rgba(255,255,255,0.08);
-}
-
+  background: rgba(255,255,255,0.08);}
 /* ===== SEARCH ===== */
 .search {
   background: rgba(255,255,255,0.08);
   border: 1px solid var(--border-soft);
-  color: #fff;
-}
-
+  color: #fff;}
 .search::placeholder {
-  color: #b5b5b5;
-}
-
+  color: #b5b5b5;}
 .search:focus {
-  border-color: var(--gold);
-}
-
+  border-color: var(--gold);}
 /* ===== TRUST BAR ===== */
 .trust p {
-  color: #cfcfcf;
-}
-
+  color: #cfcfcf;}
 .trust p::before {
   content: "✓ ";
-  color: var(--gold);
-}
-
+  color: var(--gold);}
 /* ===== PRODUCT & SERVICE CARDS ===== */
 .product,
 .service-card {
   background: linear-gradient(180deg, #141414, #0d0d0d);
   border: 1px solid var(--border-soft);
-  box-shadow: none;
-}
-
+  box-shadow: none;}
 .product h3,
 .service-card {
-  color: #f1f1f1;
-}
-
+  color: #f1f1f1;}
 .price {
-  color: var(--gold);
-}
-
+  color: var(--gold);}
 /* ===== FOOTER ===== */
 .mega-footer {
   background: #080808;
-  border-top: 1px solid var(--border-soft);
-}
-
+  border-top: 1px solid var(--border-soft);}
 .mega-footer h4 {
-  color: var(--gold);
-}
-
+  color: var(--gold);}
 .mega-footer p {
-  color: #b3b3b3;
-}
-
+  color: #b3b3b3;}
 .footer-bottom {
   background: #050505;
-  color: #777;
-}
-
+  color: #777;}
 /* ===== WHATSAPP FLOAT FIX ===== */
 .whatsapp-float {
   background: #25d366;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-}
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);}
 .product-detail {
   padding: 20px;
   max-width: 500px;
-  margin: auto;
-}
-
+  margin: auto;}
 .product-full-img {
   width: 100%;
-  border-radius: 12px;
-}
-
+  border-radius: 12px;}
 .product-detail h1 {
-  margin: 15px 0 5px;
-}
-
+  margin: 15px 0 5px;}
 .product-actions {
   display: flex;
   gap: 12px;
-  margin-top: 20px;
-}
-
+  margin-top: 20px;}
 .add-cart {
   flex: 1;
   padding: 14px;
   border: 1px solid #000;
   background: #fff;
-  font-weight: 600;
-}
-
+  font-weight: 600;}
 .buy-now {
   flex: 1;
   padding: 14px;
   background: #000;
   color: #fff;
   font-weight: 600;
-  border: none;
-}
+  border: none;}
 /* LOGIN SUCCESS ANIMATION */
 .success-overlay {
   position: fixed;
@@ -1094,17 +772,13 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
-}
-
+  z-index: 9999;}
 .success-box {
   background: #fff;
   padding: 30px 40px;
   border-radius: 16px;
   text-align: center;
-  animation: scaleIn 0.4s ease;
-}
-
+  animation: scaleIn 0.4s ease;}
 .checkmark {
   width: 70px;
   height: 70px;
@@ -1114,46 +788,32 @@ body {
   border-radius: 50%;
   line-height: 70px;
   margin: 0 auto 15px;
-  animation: pop 0.5s ease;
-}
-
+  animation: pop 0.5s ease;}
 .success-box h2 {
   margin: 0;
-  font-family: Poppins, sans-serif;
-}
-
+  font-family: Poppins, sans-serif;}
 .success-box p {
   margin-top: 6px;
   font-size: 14px;
-  color: #555;
-}
-
+  color: #555;}
 @keyframes pop {
-  0% { transform: scale(0.5); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
+  0% { transform: scale(0.5); opacity: 0;}
+100% { transform: scale(1); opacity: 1;}
 @keyframes scaleIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
+  from { transform: scale(0.8); opacity: 0;}
+to { transform: scale(1); opacity: 1;}
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 18px;
-}
-
+  gap: 18px;}
 .nav-icon i {
   font-size: 18px;
   color: #d4af37; /* premium gold */
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
+  transition: transform 0.2s ease, opacity 0.2s ease;}
 .nav-icon i:hover {
   transform: scale(1.1);
-  opacity: 0.85;
-}
+  opacity: 0.85;}
 /* PREMIUM TEXT LOGO (INSTASPORT STYLE) */
 .logo-text {
   font-family: 'Poppins', sans-serif;
@@ -1162,16 +822,11 @@ body {
   font-size: 20px;
   display: flex;
   align-items: center;
-  gap: 4px;
-}
-
+  gap: 4px;}
 .logo-white {
-  color: #ffffff;
-}
-
+  color: #ffffff;}
 .logo-yellow {
-  color: #f5c542; /* premium yellow */
-}
+  color: #f5c542; /* premium yellow */}
 /* ===== INSTASPORT-STYLE LOGO ===== */
 
 .logo-text {
@@ -1181,19 +836,11 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  line-height: 1;
-}
-
-.logo-white {
-  color: #ffffff;
-}
-
+  line-height: 1;}
 .logo-yellow {
-  color: #ffcc00; /* Exact sporty yellow */
-}
+  color: #ffcc00; /* Exact sporty yellow */}
 .logo-text {
-  transform: scaleX(1.05); /* makes letters wider like InstaSport */
-}
+  transform: scaleX(1.05); /* makes letters wider like InstaSport */}
 /* FORCE INSTASPORT LOGO STYLE */
 .main-nav .logo-text {
   font-family: 'Anton', sans-serif !important;
@@ -1201,16 +848,11 @@ body {
   letter-spacing: 1.5px !important;
   display: flex !important;
   align-items: center !important;
-  gap: 6px !important;
-}
-
+  gap: 6px !important;}
 .main-nav .logo-white {
-  color: #ffffff !important;
-}
-
+  color: #ffffff !important;}
 .main-nav .logo-yellow {
-  color: #ffcc00 !important;
-}
+  color: #ffcc00 !important;}
 /* ===== INSTASPORT-STYLE LOGO ===== */
 .main-nav .logo-text {
   font-family: 'Anton', sans-serif;
@@ -1220,94 +862,59 @@ body {
   align-items: center;
   gap: 6px;                /* space between MSQUARE & SPORTS */
   text-transform: uppercase;
-  line-height: 1;
-}
-
+  line-height: 1;}
 .main-nav .logo-white {
-  color: #ffffff;
-}
-
+  color: #ffffff;}
 .main-nav .logo-yellow {
   color: #f5c400;          /* InstaSport-like gold */
-  letter-spacing: 1.6px;  /* slightly wider for second word */
-}
+  letter-spacing: 1.6px;  /* slightly wider for second word */}
 @media (max-width: 768px) {
   .main-nav .logo-text {
     font-size: 22px;
-    letter-spacing: 1px;
-  }
-
-  .main-nav .logo-yellow {
-    letter-spacing: 1.4px;
-  }
-}
+    letter-spacing: 1px;}
+.main-nav .logo-yellow {
+    letter-spacing: 1.4px;}
 /* ===== LOGO SIZE SYSTEM ===== */
 .main-nav .logo-text {
   font-family: 'Anton', sans-serif;
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  line-height: 1;
-}
-
+  line-height: 1;}
 /* WORD COLORS */
 .main-nav .logo-white {
-  color: #ffffff;
-}
-
+  color: #ffffff;}
 .main-nav .logo-yellow {
-  color: #f5c400;
-}
-
+  color: #f5c400;}
 /* ===== DESKTOP (Default) ===== */
 @media (min-width: 1024px) {
   .main-nav .logo-text {
     font-size: 28px;
     letter-spacing: 1px;   /* reduced */
-    gap: 3px;              /* ✅ tighter spacing */
-  }
-
-  .main-nav .logo-yellow {
-    letter-spacing: 1.2px; /* reduced */
-  }
-}
-
+    gap: 3px;              /* ✅ tighter spacing */}
+.main-nav .logo-yellow {
+    letter-spacing: 1.2px; /* reduced */}
 /* ===== TABLET ===== */
 @media (max-width: 1023px) and (min-width: 769px) {
   .main-nav .logo-text {
     font-size: 25px;
     letter-spacing: 0.9px;
-    gap: 3px;
-  }
-
-  .main-nav .logo-yellow {
-    letter-spacing: 1.1px;
-  }
-}
-
+    gap: 3px;}
+.main-nav .logo-yellow {
+    letter-spacing: 1.1px;}
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .main-nav .logo-text {
     font-size: 21px;          /* Tight, premium mobile */
     letter-spacing: 1px;
-    gap: 5px;
-  }
-
-  .main-nav .logo-yellow {
-    letter-spacing: 1.4px;
-  }
-}
+    gap: 5px;}
 /* ===== INSTASPORT LOGO HOVER EFFECT ===== */
 .main-nav .logo-text {
   position: relative;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 /* Soft glow on hover */
 .main-nav .logo-text:hover {
-  filter: drop-shadow(0 0 8px rgba(245, 196, 0, 0.35));
-}
-
+  filter: drop-shadow(0 0 8px rgba(245, 196, 0, 0.35));}
 /* Shine overlay */
 .main-nav .logo-text::after {
   content: "";
@@ -1322,40 +929,28 @@ body {
     rgba(255, 255, 255, 0.35) 50%,
     transparent 100%
   );
-  opacity: 0;
-}
-
+  opacity: 0;}
 /* Trigger shine on hover */
 .main-nav .logo-text:hover::after {
   opacity: 1;
-  animation: logoShine 0.9s ease-out forwards;
-}
-
+  animation: logoShine 0.9s ease-out forwards;}
 /* Shine animation */
 @keyframes logoShine {
   from {
-    left: -120%;
-  }
-  to {
-    left: 120%;
-  }
-}
+    left: -120%;}
+to {
+    left: 120%;}
 /* WISHLIST HEART */
 .wishlist-icon {
   margin-right: 14px;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 .wishlist-icon i {
   font-size: 18px;
   color: #d4af37; /* premium gold */
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
+  transition: transform 0.2s ease, color 0.2s ease;}
 .wishlist-icon i.active {
   color: #e11d48; /* premium red */
-  transform: scale(1.15);
-}
+  transform: scale(1.15);}
 /* BAG DRAWER */
 .bag-drawer {
   position: fixed;
@@ -1368,77 +963,55 @@ body {
   box-shadow: 0 20px 50px rgba(0,0,0,.6);
   display: none;
   z-index: 9999;
-  animation: slideDown .25s ease;
-}
-
+  animation: slideDown .25s ease;}
 @keyframes slideDown {
-  from { transform: translateY(-10px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
+  from { transform: translateY(-10px); opacity: 0;}
+to { transform: translateY(0); opacity: 1;}
 .bag-header {
   display: flex;
   justify-content: space-between;
   padding: 14px 16px;
   font-weight: 600;
-  border-bottom: 1px solid #222;
-}
-
+  border-bottom: 1px solid #222;}
 .bag-header .close {
   cursor: pointer;
-  font-size: 18px;
-}
-
+  font-size: 18px;}
 .bag-content {
   padding: 22px;
-  text-align: center;
-}
-
+  text-align: center;}
 .bag-content p {
   color: #aaa;
-  margin-bottom: 16px;
-}
-
+  margin-bottom: 16px;}
 .bag-content button {
   background: #e5c56e;
   border: none;
   padding: 10px 18px;
   border-radius: 999px;
   font-weight: 600;
-  cursor: pointer;
-}
+  cursor: pointer;}
 .wishlist-wrapper:hover i {
-  color: #e5c56e;
-}
+  color: #e5c56e;}
 /* NAVBAR RIGHT ACTIONS – PERFECT SPACING */
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 22px; /* 👈 THIS is the key (same spacing everywhere) */
-  font-family: Inter, sans-serif;
-}
-
+  font-family: Inter, sans-serif;}
 /* ICONS (Heart & Bag) */
 .nav-icon {
   font-size: 18px;
   cursor: pointer;
   display: flex;
-  align-items: center;
-}
-
+  align-items: center;}
 /* TEXT LINKS (Join club, Login) */
 .nav-actions span:not(.nav-icon) {
   font-size: 14px;
   cursor: pointer;
-  opacity: 0.9;
-}
-
+  opacity: 0.9;}
 .nav-actions span:hover {
-  opacity: 1;
-}
+  opacity: 1;}
 .nav-icon i {
-  line-height: 1;
-}
+  line-height: 1;}
 .hint {
   opacity: 0;
   transform: translateY(6px);
@@ -1446,61 +1019,44 @@ body {
     opacity 0.8s ease-in-out,
     transform 0.8s ease-in-out;
   color: #9ca3af; /* soft premium gray */
-  font-size: 14px;
-}
-
+  font-size: 14px;}
 .hint.show {
   opacity: 1;
-  transform: translateY(0);
-}
+  transform: translateY(0);}
 /* ===== EXACT INSTASPORT FOOTER ===== */
 
 .insta-footer {
   background: #0b0b0b;
   color: #9a9a9a;
   padding: 70px 8vw 30px;
-  font-family: Inter, sans-serif;
-}
-
+  font-family: Inter, sans-serif;}
 .footer-main {
   display: grid;
   grid-template-columns: 1.4fr repeat(4, 1fr);
-  gap: 60px;
-}
-
+  gap: 60px;}
 .footer-logo {
   font-family: Bebas Neue, sans-serif;
   font-size: 28px;
   letter-spacing: 2px;
-  color: #f5c451;
-}
-
+  color: #f5c451;}
 .footer-tagline {
   margin-top: 6px;
   font-size: 13px;
-  opacity: 0.8;
-}
-
+  opacity: 0.8;}
 .footer-col h5 {
   font-size: 13px;
   color: #ffffff;
   margin-bottom: 14px;
-  font-weight: 600;
-}
-
+  font-weight: 600;}
 .footer-col a {
   display: block;
   font-size: 13px;
   margin-bottom: 8px;
   cursor: pointer;
   color: #9a9a9a;
-  text-decoration: none;
-}
-
+  text-decoration: none;}
 .footer-col a:hover {
-  color: #f5c451;
-}
-
+  color: #f5c451;}
 .footer-bottom {
   margin-top: 60px;
   padding-top: 20px;
@@ -1510,27 +1066,19 @@ body {
   align-items: center;
   font-size: 12px;
   flex-wrap: wrap;
-  gap: 10px;
-}
-
+  gap: 10px;}
 .bottom-links a {
   margin-left: 18px;
   color: #9a9a9a;
   text-decoration: none;
-  font-size: 12px;
-}
-
+  font-size: 12px;}
 .bottom-links a:hover {
-  color: #f5c451;
-}
-
+  color: #f5c451;}
 /* MOBILE (matches InstaSport behavior) */
 @media (max-width: 900px) {
   .footer-main {
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-}
+    gap: 40px;}
 /* ==============================
    INSTA-STYLE FOOTER (DESKTOP)
 ================================ */
@@ -1539,9 +1087,7 @@ body {
   background: radial-gradient(1200px 500px at 50% -200px, #1a1a1a 0%, #0b0b0b 60%, #000 100%);
   padding: 70px 90px 30px;
   color: #9b9b9b;
-  font-family: 'Inter', sans-serif;
-}
-
+  font-family: 'Inter', sans-serif;}
 /* GRID LAYOUT */
 .footer-main {
   max-width: 1500px;
@@ -1549,28 +1095,20 @@ body {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
   gap: 70px;
-  text-align: left;
-}
-
+  text-align: left;}
 /* BRAND COLUMN */
 .footer-brand {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
+  gap: 10px;}
 .footer-logo {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 30px;
   letter-spacing: 2px;
-  color: #e6c15a;
-}
-
+  color: #e6c15a;}
 .footer-tagline {
   font-size: 14px;
-  color: #7d7d7d;
-}
-
+  color: #7d7d7d;}
 /* COLUMN HEADINGS */
 .footer-col h5 {
   font-size: 12px;
@@ -1578,9 +1116,7 @@ body {
   color: #cfcfcf;
   letter-spacing: 0.08em;
   margin-bottom: 18px;
-  text-transform: uppercase;
-}
-
+  text-transform: uppercase;}
 /* LINKS */
 .footer-col a {
   display: block;
@@ -1589,13 +1125,9 @@ body {
   color: #9a9a9a;
   text-decoration: none;
   cursor: pointer;
-  transition: color 0.2s ease;
-}
-
+  transition: color 0.2s ease;}
 .footer-col a:hover {
-  color: #e6c15a;
-}
-
+  color: #e6c15a;}
 /* BOTTOM BAR */
 .footer-bottom {
   max-width: 1500px;
@@ -1606,43 +1138,29 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
-  color: #777;
-}
-
+  color: #777;}
 /* BOTTOM LINKS */
 .bottom-links a {
   margin-left: 24px;
   color: #8a8a8a;
-  text-decoration: none;
-}
-
+  text-decoration: none;}
 .bottom-links a:hover {
-  color: #e6c15a;
-}
-
+  color: #e6c15a;}
 /* ==============================
    MOBILE FOOTER
 ================================ */
 @media (max-width: 900px) {
   .insta-footer {
-    padding: 50px 25px 30px;
-  }
-
-  .footer-main {
+    padding: 50px 25px 30px;}
+.footer-main {
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-
-  .footer-bottom {
+    gap: 40px;}
+.footer-bottom {
     flex-direction: column;
     gap: 12px;
-    text-align: center;
-  }
-
-  .bottom-links a {
-    margin: 0 10px;
-  }
-}
+    text-align: center;}
+.bottom-links a {
+    margin: 0 10px;}
 /* =========================
    MY STORE ICON (NAVBAR)
 ========================= */
@@ -1654,17 +1172,11 @@ body {
   cursor: pointer;
   color: #dcdcdc;
   font-size: 14px;
-  transition: color 0.2s ease;
-}
-
+  transition: color 0.2s ease;}
 .store-wrapper i {
-  font-size: 15px;
-}
-
+  font-size: 15px;}
 .store-wrapper:hover {
-  color: #e6c15a; /* InstaSport gold */
-}
-
+  color: #e6c15a; /* InstaSport gold */}
 /* STORE ICON */
 .store-wrapper {
   display: flex;
@@ -1674,100 +1186,66 @@ body {
   color: #dcdcdc;
   font-size: 16px;
   transition: color 0.2s ease, transform 0.2s ease;
-  text-decoration: none;
-}
-
+  text-decoration: none;}
 .store-wrapper:hover {
   color: #e6c15a; /* premium gold */
-  transform: scale(1.1);
-}
-
+  transform: scale(1.1);}
 /* MOBILE: hide text, keep icon */
 @media (max-width: 768px) {
   .store-text {
-    display: none;
-  }
-}
+    display: none;}
 /* PREMIUM BRAND SOCIAL ICONS */
 .brand-socials {
   display: flex;
   gap: 14px;
-  margin-top: 6px;
-}
-
+  margin-top: 6px;}
 .brand-socials a {
   font-size: 15px;
-  transition: transform 0.25s ease, filter 0.25s ease;
-}
-
+  transition: transform 0.25s ease, filter 0.25s ease;}
 /* OFFICIAL BRAND COLORS */
 .brand-socials a .fa-instagram {
-  color: #E4405F;
-}
-
+  color: #E4405F;}
 .brand-socials a .fa-facebook-f {
-  color: #1877F2;
-}
-
+  color: #1877F2;}
 .brand-socials a .fa-youtube {
-  color: #FF0000;
-}
-
+  color: #FF0000;}
 .brand-socials a .fa-whatsapp {
-  color: #25D366;
-}
-
+  color: #25D366;}
 .brand-socials a .fa-phone {
-  color: #f5c542; /* premium yellow */
-}
-
+  color: #f5c542; /* premium yellow */}
 /* HOVER EFFECT (INSTASPORT STYLE) */
 .brand-socials a:hover {
   transform: translateY(-2px) scale(1.05);
-  filter: brightness(1.1);
-}
+  filter: brightness(1.1);}
 /* PREMIUM FOOTER SOCIALS */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
-}
-
+  gap: 20px;}
 .footer-socials {
   display: flex;
-  gap: 18px;
-}
-
+  gap: 18px;}
 .footer-socials a {
   color: rgba(255, 215, 100, 0.75); /* luxury gold */
   font-size: 15px;
-  transition: color 0.25s ease, transform 0.25s ease;
-}
-
+  transition: color 0.25s ease, transform 0.25s ease;}
 .footer-socials a:hover {
   color: #ffd75e;
-  transform: translateY(-2px);
-}
-
+  transform: translateY(-2px);}
 /* MOBILE CLEANUP */
 @media (max-width: 768px) {
   .footer-bottom {
     flex-direction: column;
-    gap: 12px;
-  }
-}
+    gap: 12px;}
 .footer-col a {
   display: block;
   font-size: 14px;
   color: #ccc;
   margin-bottom: 8px;
-  text-decoration: none;
-}
-
+  text-decoration: none;}
 .footer-col a:hover {
-  color: #fff;
-}
+  color: #fff;}
 /* =========================
    INSTA-STYLE FOOTER LAYOUT
    ========================= */
@@ -1776,9 +1254,7 @@ body {
   background: #0b0b0b;
   color: #ccc;
   padding: 60px 80px 30px;
-  font-family: Inter, sans-serif;
-}
-
+  font-family: Inter, sans-serif;}
 /* MAIN ROW */
 .footer-main {
   display: grid;
@@ -1790,27 +1266,19 @@ body {
     0.9fr   /* Company */
     1fr;    /* Content */
   gap: 48px;
-  align-items: start;
-}
-
+  align-items: start;}
 /* BRAND */
 .footer-brand {
-  max-width: 260px;
-}
-
+  max-width: 260px;}
 .footer-logo {
   font-family: Anton, sans-serif;
   font-size: 26px;
   letter-spacing: 1px;
-  color: #f5c84c;
-}
-
+  color: #f5c84c;}
 .footer-tagline {
   margin-top: 10px;
   font-size: 14px;
-  color: #888;
-}
-
+  color: #888;}
 /* COLUMNS */
 .footer-col h5 {
   font-size: 14px;
@@ -1818,21 +1286,15 @@ body {
   color: #fff;
   margin-bottom: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
+  letter-spacing: 0.5px;}
 .footer-col a {
   display: block;
   font-size: 13px;
   color: #aaa;
   margin-bottom: 8px;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 .footer-col a:hover {
-  color: #f5c84c;
-}
-
+  color: #f5c84c;}
 /* BOTTOM BAR */
 .footer-bottom {
   margin-top: 40px;
@@ -1842,63 +1304,36 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
-  color: #777;
-}
-
+  color: #777;}
 .footer-bottom .bottom-links a {
   margin-left: 18px;
-  color: #777;
-}
-
+  color: #777;}
 .footer-bottom .bottom-links a:hover {
-  color: #f5c84c;
-}
-
+  color: #f5c84c;}
 /* SOCIALS */
 .footer-socials {
   margin-top: 24px;
   display: flex;
-  gap: 18px;
-}
-
+  gap: 18px;}
 .footer-socials a {
   color: #888;
-  font-size: 16px;
-}
-
+  font-size: 16px;}
 .footer-socials a:hover {
-  color: #f5c84c;
-}
-
+  color: #f5c84c;}
 /* =========================
    RESPONSIVE (STACK CLEAN)
    ========================= */
 @media (max-width: 1100px) {
   .footer-main {
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 40px;
-  }
-}
-
+    row-gap: 40px;}
 @media (max-width: 700px) {
   .insta-footer {
-    padding: 40px 24px;
-  }
-
-  .footer-main {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footer-brand {
-    grid-column: span 2;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
-}
+    padding: 40px 24px;}
+.footer-main {
+    grid-template-columns: 1fr 1fr;}
+.footer-brand {
+    grid-column: span 2;}
 /* =========================
    FINAL FOOTER – SINGLE ROW
 ========================= */
@@ -1907,9 +1342,7 @@ body {
   background: #0b0b0b;
   color: #ccc;
   padding: 60px 80px 30px;
-  font-family: Inter, sans-serif;
-}
-
+  font-family: Inter, sans-serif;}
 /* ONE ROW GRID */
 .footer-main {
   max-width: 1600px;
@@ -1922,109 +1355,31 @@ body {
     0.9fr  /* Help */
     0.9fr  /* Company */
     1fr;   /* Content */
-  gap: 50px;
-}
-
+  gap: 50px;}
 /* BRAND */
 .footer-logo {
   font-family: Anton, sans-serif;
   font-size: 26px;
-  color: #f5c84c;
-}
-
-.footer-tagline {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #888;
-}
-
+  color: #f5c84c;}
 /* COLUMNS */
 .footer-col h5 {
   font-size: 13px;
   font-weight: 600;
   color: #fff;
   margin-bottom: 14px;
-  text-transform: uppercase;
-}
-
-.footer-col a {
-  display: block;
-  font-size: 13px;
-  color: #aaa;
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-
-.footer-col a:hover {
-  color: #f5c84c;
-}
-
-/* BOTTOM BAR */
-.footer-bottom {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #222;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-  color: #777;
-}
-
+  text-transform: uppercase;}
 .bottom-links a {
   margin-left: 18px;
-  color: #777;
-}
-
+  color: #777;}
 .bottom-links a:hover {
-  color: #f5c84c;
-}
-
-/* SOCIALS */
-.footer-socials {
-  margin-top: 24px;
-  display: flex;
-  gap: 18px;
-}
-
-.footer-socials a {
-  color: #888;
-  font-size: 16px;
-}
-
-.footer-socials a:hover {
-  color: #f5c84c;
-}
-
+  color: #f5c84c;}
 /* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 1100px) {
   .footer-main {
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 40px;
-  }
-}
-
-@media (max-width: 700px) {
-  .insta-footer {
-    padding: 40px 24px;
-  }
-
-  .footer-main {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footer-brand {
-    grid-column: span 2;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
-}
+    row-gap: 40px;}
 /* ===============================
    HERO SPACING COMPRESSION
    (INSTASPORT STYLE)
@@ -2034,78 +1389,56 @@ body {
 .hero-text {
   min-height: auto !important;
   padding-top: 90px !important;
-  padding-bottom: 70px !important;
-}
-
+  padding-bottom: 70px !important;}
 /* Subtitle spacing */
 .hero-text .subtitle {
   margin-bottom: 6px !important;
-  letter-spacing: 0.4px;
-}
-
+  letter-spacing: 0.4px;}
 /* Main heading tighter */
 .hero-text h1 {
   margin: 10px 0 24px !important;
-  line-height: 1.1;
-}
-
+  line-height: 1.1;}
 /* Sports pills tighter like InstaSport */
 .sports-grid {
   gap: 12px !important;
-  margin-bottom: 22px !important;
-}
-
+  margin-bottom: 22px !important;}
 .sports-grid span {
   padding: 8px 16px !important;
   font-size: 13px !important;
-  border-radius: 999px;
-}
-
+  border-radius: 999px;}
 /* "More sports" spacing */
 .hero-text .more {
   margin: 8px 0 22px !important;
-  font-size: 13px;
-}
-
+  font-size: 13px;}
 /* Search bar closer to content */
 .hero-text .search {
   margin-top: 14px !important;
   margin-bottom: 8px !important;
-  height: 44px;
-}
-
+  height: 44px;}
 /* Rotating hint closer */
 .hero-text .hint {
   margin-top: 6px !important;
   font-size: 13px;
-  opacity: 0.75;
-}
-
+  opacity: 0.75;}
 /* Trust row pulled upward */
 .trust {
   margin-top: -10px !important;
   padding-top: 16px !important;
   padding-bottom: 16px !important;
-  gap: 26px;
-}
-
+  gap: 26px;}
 /* Trust text smaller like pro sites */
 .trust p {
   font-size: 12px;
-  line-height: 1.4;
-}
-
+  line-height: 1.4;}
 /* Global tightening (safe) */
 body {
-  line-height: 1.45;
-}
+  line-height: 1.45;}
 /* ===============================
    REMOVE HEADER SOCIAL ICONS
 =============================== */
 
 .main-nav .brand-socials {
-  display: none !important;
-}
+  display: none !important;}
 /* ===============================
    BRAND LOGO = TEXT HEIGHT
 =============================== */
@@ -2113,18 +1446,14 @@ body {
 .brand-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
+  gap: 10px;}
 .brand-logo {
   height: 1em;          /* SAME height as text */
   width: auto;
   object-fit: contain;
-  transform: translateY(2px); /* optical alignment */
-}
+  transform: translateY(2px); /* optical alignment */}
 .brand-logo {
-  height: 2.05em;   /* slightly bigger */
-}
+  height: 2.05em;   /* slightly bigger */}
 /* ===============================
    PERFECT BRAND ALIGNMENT
 =============================== */
@@ -2132,31 +1461,24 @@ body {
 .brand-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
+  gap: 10px;}
 /* Force text to have predictable height */
 .logo-text {
   display: flex;
   align-items: center;
-  line-height: 1; /* IMPORTANT */
-}
-
+  line-height: 1; /* IMPORTANT */}
 /* MSQUARE + SPORTS text */
 .logo-white,
 .logo-yellow {
   font-size: 28px;      /* your visible text size */
   line-height: 1;       /* remove extra font space */
   display: inline-flex;
-  align-items: center;
-}
-
+  align-items: center;}
 /* LOGO IMAGE */
 .brand-logo {
   height: 28px;         /* EXACT match to text size */
   width: auto;
-  object-fit: contain;
-}
+  object-fit: contain;}
 /* ===============================
    PERFECT LOGO ↔ TEXT MATCH
 =============================== */
@@ -2164,33 +1486,24 @@ body {
 .brand-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
+  gap: 10px;}
 .logo-white,
 .logo-yellow {
   font-size: 26px;      /* keep your visual size */
   line-height: 1;      /* 🔥 THIS IS THE KEY */
   display: inline-flex;
-  align-items: center;
-}
-
+  align-items: center;}
 .brand-logo {
   height: 26px;         /* EXACT SAME AS FONT SIZE */
   width: auto;
-  object-fit: contain;
-}
+  object-fit: contain;}
 .logo-white,
 .logo-yellow {
-  font-size: 28px;
-}
-
+  font-size: 28px;}
 .brand-logo {
-  height: 28px;
-}
+  height: 28px;}
 .whatsapp-float {
-  display: none !important;
-}
+  display: none !important;}
 /* ===============================
    FORCE PREMIUM TIGHT NAV SPACING
    =============================== */
@@ -2198,9 +1511,7 @@ body {
 .main-nav .nav-actions {
   display: flex !important;
   align-items: center !important;
-  gap: 6px !important;              /* 👈 VERY TIGHT */
-}
-
+  gap: 6px !important;              /* 👈 VERY TIGHT */}
 /* ICON WRAPPERS */
 .main-nav .nav-actions .nav-icon {
   width: 30px !important;
@@ -2210,96 +1521,71 @@ body {
   justify-content: center !important;
   padding: 0 !important;
   margin: 0 !important;
-  border-radius: 50%;
-}
-
+  border-radius: 50%;}
 /* ICON SIZE */
 .main-nav .nav-actions .nav-icon i {
   font-size: 15px !important;
-  line-height: 1 !important;
-}
-
+  line-height: 1 !important;}
 /* JOIN CLUB */
 .main-nav .nav-actions .nav-link {
   margin: 0 !important;
   padding: 4px 8px !important;      /* 👈 MUCH SMALLER */
   font-size: 13px !important;
-  font-weight: 500;
-}
-
+  font-weight: 500;}
 /* LOGIN BUTTON */
 .main-nav .nav-actions .nav-link.outline {
   padding: 4px 10px !important;
-  border-width: 1px !important;
-}
-
+  border-width: 1px !important;}
 /* REMOVE ANY EXTRA SPACING */
 .main-nav .nav-actions span,
 .main-nav .nav-actions a {
   margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+  margin-right: 0 !important;}
 .logo-text {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
   font-size: 28px;
   letter-spacing: -0.5px;
-  text-transform: uppercase;
-}
+  text-transform: uppercase;}
 .logo-white {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
-  letter-spacing: -0.6px;
-}
-
+  letter-spacing: -0.6px;}
 .logo-yellow {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
-  letter-spacing: 0.5px;
-}
+  letter-spacing: 0.5px;}
 .logo-white {
   font-family: 'Cormorant Garamond', serif;
-  font-weight: 700;
-}
-
+  font-weight: 700;}
 .logo-yellow {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  letter-spacing: 1px;
-}
+  letter-spacing: 1px;}
 /* FORCE CORMORANT GARAMOND ON BOTH */
 .logo-white,
 .logo-yellow {
   font-family: 'Cormorant Garamond', serif !important;
-  text-transform: uppercase;
-}
-
+  text-transform: uppercase;}
 /* MSQUARE – stronger */
 .logo-white {
   font-weight: 700;
-  letter-spacing: -0.6px;
-}
-
+  letter-spacing: -0.6px;}
 /* SPORTS – slightly lighter but same font */
 .logo-yellow {
   font-weight: 600;
-  letter-spacing: 0.4px;
-}
+  letter-spacing: 0.4px;}
 /* BRAND WRAPPER */
 .brand-wrapper {
   display: flex;
   align-items: center; /* vertical alignment */
-  gap: 10px; /* space between logo & text */
-}
-
+  gap: 10px; /* space between logo & text */}
 /* LOGO IMAGE — MATCH TEXT HEIGHT */
 .brand-logo {
   height: 1em;              /* KEY: matches font height */
   width: auto;
   object-fit: contain;
-  transform: scale(1.15);   /* slightly bolder presence */
-}
-
+  transform: scale(1.15);   /* slightly bolder presence */}
 /* BRAND TEXT */
 .logo-text {
   display: flex;
@@ -2307,88 +1593,62 @@ body {
   font-family: 'Anton', sans-serif;
   font-size: 28px;          /* adjust if needed */
   letter-spacing: 1px;
-  line-height: 1;
-}
-
+  line-height: 1;}
 /* COLORS */
 .logo-white {
-  color: #fff;
-}
-
+  color: #fff;}
 .logo-yellow {
   color: #ffcc00;
-  margin-left: 4px;
-}
+  margin-left: 4px;}
 .brand-logo {
   height: 1em;
-  transform: scale(1.25);
-}
+  transform: scale(1.25);}
 /* ===============================
    PREMIUM MOBILE (INSTASPORT STYLE)
 ================================ */
 @media (max-width: 768px) {
 
   body {
-    background: radial-gradient(circle at top, #1a1a1a, #000) !important;
-  }
-
-  /* TOP BAR */
+    background: radial-gradient(circle at top, #1a1a1a, #000) !important;}
+/* TOP BAR */
   .top-bar {
     font-size: 12px;
     padding: 6px;
-    opacity: 0.85;
-  }
-
-  /* NAVBAR */
+    opacity: 0.85;}
+/* NAVBAR */
   .main-nav {
     flex-direction: row !important;
     align-items: center;
-    padding: 10px 14px;
-  }
-
-  .brand-wrapper {
+    padding: 10px 14px;}
+.brand-wrapper {
     flex-direction: row;
     align-items: center;
-    gap: 6px;
-  }
-
-  .brand-socials {
-    display: none !important;
-  }
-
-  .nav-link {
-    font-size: 13px;
-  }
-
-  /* HERO */
+    gap: 6px;}
+.brand-socials {
+    display: none !important;}
+.nav-link {
+    font-size: 13px;}
+/* HERO */
   .hero-text {
     padding: 40px 18px 20px;
-    text-align: center;
-  }
-
-  .hero-text .subtitle {
+    text-align: center;}
+.hero-text .subtitle {
     font-size: 13px;
     opacity: 0.6;
-    margin-bottom: 6px;
-  }
-
-  .hero-text h1 {
+    margin-bottom: 6px;}
+.hero-text h1 {
     font-size: 34px;
     font-weight: 700;
     color: #f5c400;
-    margin-bottom: 22px;
-  }
-
-  /* SPORTS GRID */
+    margin-bottom: 22px;}
+/* SPORTS GRID */
   .sports-grid {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
     max-width: 360px;
-    margin: 0 auto;
-  }
-
-  .sports-grid span {
+    margin: 0 auto;}
+.sports-grid span {
     background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
     padding: 12px 14px;
     border-radius: 999px;
@@ -2398,18 +1658,14 @@ body {
     align-items: center;
     justify-content: center;
     gap: 6px;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
-  }
-
-  /* MORE SPORTS */
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);}
+/* MORE SPORTS */
   .more {
     margin: 18px 0 24px;
     font-size: 14px;
     color: #f5c400;
-    font-weight: 500;
-  }
-
-  /* SEARCH */
+    font-weight: 500;}
+/* SEARCH */
   .search {
     width: 100%;
     max-width: 360px;
@@ -2421,101 +1677,71 @@ body {
     font-size: 14px;
     border: none;
     color: #ccc;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-  }
-
-  /* HINT TEXT */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);}
+/* HINT TEXT */
   .hint {
     font-size: 12px;
     opacity: 0.45;
-    margin-top: 12px;
-  }
-
-  /* TRUST SECTION */
+    margin-top: 12px;}
+/* TRUST SECTION */
   .trust {
     display: flex;
     justify-content: space-around;
     padding: 18px 10px;
     font-size: 11px;
-    opacity: 0.55;
-  }
-
-  .trust p {
+    opacity: 0.55;}
+.trust p {
     max-width: 70px;
-    line-height: 1.3;
-  }
-
-  /* FOOTER CLEANUP */
+    line-height: 1.3;}
+/* FOOTER CLEANUP */
   .footer-main {
-    padding-top: 30px;
-  }
-}
+    padding-top: 30px;}
 /* ===== MOBILE HERO FIX ===== */
 .mobile-hero {
-  display: none;
-}
-
+  display: none;}
 @media (max-width: 768px) {
   .desktop-hero {
-    display: none !important;
-  }
-
-  .mobile-hero {
+    display: none !important;}
+.mobile-hero {
     display: block;
     text-align: center;
-    padding: 40px 18px;
-  }
-
-  .mobile-sub {
+    padding: 40px 18px;}
+.mobile-sub {
     font-size: 13px;
     opacity: 0.5;
-    margin-bottom: 6px;
-  }
-
-  .mobile-title {
+    margin-bottom: 6px;}
+.mobile-title {
     font-size: 34px;
     color: #f5c400;
-    margin-bottom: 24px;
-  }
-
-  .mobile-sports {
+    margin-bottom: 24px;}
+.mobile-sports {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
     max-width: 360px;
-    margin: 0 auto 20px;
-  }
-
-  .mobile-sports div {
+    margin: 0 auto 20px;}
+.mobile-sports div {
     background: #1a1a1a;
     padding: 12px;
     border-radius: 999px;
-    font-size: 14px;
-  }
-
-  .mobile-more {
+    font-size: 14px;}
+.mobile-more {
     display: inline-block;
     margin: 16px 0 24px;
     color: #f5c400;
-    font-size: 14px;
-  }
-
-  .mobile-search {
+    font-size: 14px;}
+.mobile-search {
     width: 100%;
     max-width: 360px;
     padding: 14px 18px;
     border-radius: 999px;
     background: #1b1b1b;
     border: none;
-    color: #ccc;
-  }
-
-  .mobile-hint {
+    color: #ccc;}
+.mobile-hint {
     font-size: 12px;
     opacity: 0.4;
-    margin-top: 12px;
-  }
-}
+    margin-top: 12px;}
 /* HERO VIDEO CONTAINER */
 .hero-video {
   position: relative;
@@ -2523,16 +1749,12 @@ body {
   height: 70vh;              /* Controls video height */
   max-height: 650px;         /* Prevents huge screens issue */
   overflow: hidden;
-  background: #000;
-}
-
+  background: #000;}
 /* VIDEO ITSELF */
 .hero-video video {
   width: 100%;
   height: 100%;
-  object-fit: cover;         /* Crops nicely without stretching */
-}
-
+  object-fit: cover;         /* Crops nicely without stretching */}
 /* TEXT OVERLAY */
 .hero-overlay {
   position: absolute;
@@ -2544,115 +1766,79 @@ body {
   text-align: center;
   color: #fff;
   background: rgba(0,0,0,0.35);
-  padding: 20px;
-}
-
+  padding: 20px;}
 .hero-overlay h1 {
   font-size: clamp(2rem, 4vw, 3.5rem);
-  font-family: 'Anton', sans-serif;
-}
-
+  font-family: 'Anton', sans-serif;}
 .hero-overlay p {
   margin: 10px 0 20px;
-  font-size: 1.1rem;
-}
-
+  font-size: 1.1rem;}
 .hero-btn {
   padding: 12px 26px;
   background: #ffd400;
   color: #000;
   font-weight: 600;
   border-radius: 30px;
-  text-decoration: none;
-}
+  text-decoration: none;}
 @media (max-width: 768px) {
   .hero-video {
-    height: 45vh;   /* Smaller on phones */
-  }
-
-  .hero-overlay h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-overlay p {
-    font-size: 0.95rem;
-  }
-}
+    height: 45vh;   /* Smaller on phones */}
+.hero-overlay h1 {
+    font-size: 1.8rem;}
+.hero-overlay p {
+    font-size: 0.95rem;}
 .brand-wrapper {
   display: flex;
   align-items: center;
-  gap: 6px; /* reduce spacing */
-}
-
+  gap: 6px; /* reduce spacing */}
 .brand-logo {
-  margin-right: 4px;
-}
-
+  margin-right: 4px;}
 .logo-white,
 .logo-yellow {
-  line-height: 1;
-}
+  line-height: 1;}
 .sport-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  margin: 20px 0;
-}
-
+  margin: 20px 0;}
 .sport-list span {
   padding: 12px;
   border-radius: 10px;
   background: #111;
   color: #fff;
   text-align: center;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 .next-btn {
   width: 100%;
   padding: 12px;
   border-radius: 10px;
   background: gold;
   border: none;
-  font-weight: 600;
-}
+  font-weight: 600;}
 /* FORCE InstaSport footer layout */
 footer.insta-footer .footer-main {
   display: grid !important;
   grid-template-columns: 1.3fr repeat(5, 1fr) !important;
   gap: 36px !important;
   align-items: flex-start !important;
-  width: 100%;
-}
-
+  width: 100%;}
 /* Stop columns from wrapping */
 footer.insta-footer .footer-main > div {
-  white-space: nowrap;
-}
-
+  white-space: nowrap;}
 /* Mobile fallback */
 @media (max-width: 1100px) {
   footer.insta-footer .footer-main {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
+    grid-template-columns: repeat(2, 1fr) !important;}
 @media (max-width: 600px) {
   footer.insta-footer .footer-main {
-    grid-template-columns: 1fr !important;
-  }
-}
+    grid-template-columns: 1fr !important;}
 .brand-wrapper.logo-text {
-  gap: 4px !important;
-}
-
+  gap: 4px !important;}
 .brand-logo {
-  margin-right: 2px !important;
-}
-
+  margin-right: 2px !important;}
 .logo-white,
 .logo-yellow {
-  letter-spacing: 0.5px;
-}
+  letter-spacing: 0.5px;}
 /* FULLSCREEN WISHLIST */
 .wishlist-full {
   position: fixed;
@@ -2662,77 +1848,51 @@ footer.insta-footer .footer-main > div {
   display: none;
   flex-direction: column;
   z-index: 99999;
-  overflow-y: auto;
-}
-
+  overflow-y: auto;}
 .wishlist-header {
   display: flex;
   justify-content: space-between;
   padding: 18px 24px;
-  border-bottom: 1px solid #222;
-}
-
+  border-bottom: 1px solid #222;}
 .wishlist-brand {
   font-weight: 700;
-  letter-spacing: 1px;
-}
-
+  letter-spacing: 1px;}
 .wishlist-auth span {
   margin-left: 16px;
   cursor: pointer;
-  color: #d4af37;
-}
-
+  color: #d4af37;}
 .wishlist-body {
-  padding: 30px 24px;
-}
-
+  padding: 30px 24px;}
 .wishlist-body h2 {
-  font-size: 26px;
-}
-
+  font-size: 26px;}
 .empty {
   opacity: 0.7;
-  margin-bottom: 20px;
-}
-
+  margin-bottom: 20px;}
 .explore-btn {
   padding: 10px 18px;
   background: #d4af37;
   border: none;
   border-radius: 20px;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 section {
-  margin-top: 30px;
-}
-
+  margin-top: 30px;}
 section h4 {
   margin-bottom: 10px;
-  opacity: 0.8;
-}
-
+  opacity: 0.8;}
 .wishlist-links {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 10px;
-}
-
+  gap: 10px;}
 .wishlist-links span {
   cursor: pointer;
-  opacity: 0.85;
-}
-
+  opacity: 0.85;}
 .wishlist-footer {
   padding: 20px;
   font-size: 12px;
   opacity: 0.6;
-  border-top: 1px solid #222;
-}
+  border-top: 1px solid #222;}
 .wishlist-full {
-  display: none;
-}
+  display: none;}
 /* FULLSCREEN WISHLIST OVERLAY */
 .wishlist-full {
   position: fixed;
@@ -2746,11 +1906,9 @@ section h4 {
   display: none;
   flex-direction: column;
 
-  overflow-y: auto;
-}
+  overflow-y: auto;}
 body.wishlist-open {
-  overflow: hidden;
-}
+  overflow: hidden;}
 /* Wishlist screen */
 .wishlist-full {
   position: fixed;
@@ -2759,51 +1917,35 @@ body.wishlist-open {
   z-index: 100000;
   display: none;
   flex-direction: column;
-  font-family: "Inter", sans-serif;
-}
-
+  font-family: "Inter", sans-serif;}
 /* Header */
 .wishlist-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 20px;
-  border-bottom: 1px solid #eee;
-}
-
+  border-bottom: 1px solid #eee;}
 .wishlist-brand {
   font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
+  letter-spacing: 0.5px;}
 .wishlist-auth span {
   margin-left: 16px;
   cursor: pointer;
-  font-weight: 500;
-}
-
+  font-weight: 500;}
 .wishlist-auth .close {
-  font-size: 22px;
-}
-
+  font-size: 22px;}
 /* Body */
 .wishlist-body {
   padding: 40px 20px;
   text-align: center;
-  flex: 1;
-}
-
+  flex: 1;}
 .wishlist-body h2 {
   font-size: 22px;
-  margin-bottom: 8px;
-}
-
+  margin-bottom: 8px;}
 .wishlist-body .empty {
   color: #666;
-  margin-bottom: 20px;
-}
-
+  margin-bottom: 20px;}
 .explore-btn {
   background: #000;
   color: #fff;
@@ -2811,17 +1953,14 @@ body.wishlist-open {
   padding: 12px 26px;
   border-radius: 6px;
   font-weight: 600;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 /* Footer */
 .wishlist-footer {
   padding: 12px;
   font-size: 12px;
   text-align: center;
   color: #888;
-  border-top: 1px solid #eee;
-}
+  border-top: 1px solid #eee;}
 /* ===== FULLSCREEN BAG ===== */
 .bag-full {
   position: fixed;
@@ -2831,67 +1970,46 @@ body.wishlist-open {
   display: none;
   flex-direction: column;
   transform: translateY(100%);
-  transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
-}
-
+  transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);}
 .bag-full.active {
-  transform: translateY(0);
-}
-
+  transform: translateY(0);}
 .bag-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 20px;
   border-bottom: 1px solid #eee;
-  font-weight: 600;
-}
-
+  font-weight: 600;}
 .bag-brand {
   font-size: 18px;
-  font-weight: 700;
-}
-
+  font-weight: 700;}
 .bag-auth span {
   margin-left: 14px;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 .bag-body {
   padding: 30px 20px;
-  flex: 1;
-}
-
+  flex: 1;}
 .bag-body h2 {
-  margin-bottom: 10px;
-}
-
+  margin-bottom: 10px;}
 .bag-body .empty {
   color: #777;
-  margin-bottom: 20px;
-}
-
+  margin-bottom: 20px;}
 .explore-btn {
   padding: 12px 18px;
   background: #000;
   color: #fff;
   border-radius: 6px;
-  margin-bottom: 30px;
-}
-
+  margin-bottom: 30px;}
 .bag-links span {
   display: inline-block;
   margin: 6px 10px 6px 0;
   font-size: 14px;
-  color: #444;
-}
-
+  color: #444;}
 .bag-footer {
   padding: 14px;
   font-size: 12px;
   text-align: center;
-  border-top: 1px solid #eee;
-}
+  border-top: 1px solid #eee;}
 /* Force hero video title to look EXACTLY like "What's your sport?" */
 .hero-match {
   font-family: 'Bebas Neue', 'Anton', sans-serif;
@@ -2899,8 +2017,7 @@ body.wishlist-open {
   font-weight: 400;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #ffffff;
-}
+  color: #ffffff;}
 /* =========================
    HERO IMAGE SLIDER
 ========================= */
@@ -2909,22 +2026,16 @@ body.wishlist-open {
   position: relative;
   height: 80vh;
   overflow: hidden;
-  background: black;
-}
-
+  background: black;}
 .hero-slider .slide {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1.2s ease-in-out;
-}
-
+  transition: opacity 1.2s ease-in-out;}
 .hero-slider .slide.active {
-  opacity: 1;
-}
-
+  opacity: 1;}
 /* overlay stays same premium look */
 .hero-slider .hero-overlay {
   position: absolute;
@@ -2939,81 +2050,50 @@ body.wishlist-open {
   justify-content: center;
   text-align: center;
   color: white;
-  z-index: 5;
-}
-
+  z-index: 5;}
 .hero-match {
   font-family: 'Anton', sans-serif;
   font-size: 52px;
   letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
+  text-transform: uppercase;}
 .hero-btn {
   margin-top: 24px;
   padding: 14px 34px;
   background: white;
   color: black;
   text-decoration: none;
-  font-weight: 600;
-}
-
+  font-weight: 600;}
 /* mobile */
 @media (max-width: 768px) {
   .hero-slider {
-    height: 65vh;
-  }
-  .hero-match {
-    font-size: 34px;
-  }
-}
+    height: 65vh;}
+.hero-match {
+    font-size: 34px;}
 .hero-slider {
   position: relative;
   height: 80vh;
-  overflow: hidden;
-}
-
-.hero-slider .slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.2s ease-in-out;
-}
-
-.hero-slider .slide.active {
-  opacity: 1;
-}
+  overflow: hidden;}
 /* ===== LOGO FONT – GEOMETRIC BOLD ===== */
 
 .logo-text {
   display: flex;
   align-items: center;
-  gap: 6px; /* closer spacing between logo + text */
-}
-
+  gap: 6px; /* closer spacing between logo + text */}
 .logo-text .logo-white,
 .logo-text .logo-yellow {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;           /* bold geometric */
   letter-spacing: 1px;        /* clean sporty spacing */
   font-size: 22px;
-  text-transform: uppercase;
-}
-
+  text-transform: uppercase;}
 .logo-text .logo-white {
-  color: #ffffff;
-}
-
+  color: #ffffff;}
 .logo-text .logo-yellow {
-  color: #f5c400; /* your brand yellow */
-}
+  color: #f5c400; /* your brand yellow */}
 .logo-text .logo-white,
 .logo-text .logo-yellow {
   font-weight: 900;
-  letter-spacing: 1.5px;
-}
+  letter-spacing: 1.5px;}
 /* ===== FORCE LOGO FONT CHANGE ===== */
 
 .logo-text,
@@ -3024,26 +2104,7 @@ header h1 {
   font-family: 'Poppins', sans-serif !important;
   font-weight: 900 !important;
   letter-spacing: 1.5px !important;
-  text-transform: uppercase !important;
-}
-.hero-slider {
-  position: relative;
-  height: 80vh;
-  overflow: hidden;
-}
-
-.hero-slider .slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.2s ease-in-out;
-}
-
-.hero-slider .slide.active {
-  opacity: 1;
-}
+  text-transform: uppercase !important;}
 /* ===============================
    HERO IMAGE SLIDER (FORCE FIX)
 =============================== */
@@ -3052,9 +2113,7 @@ header h1 {
   position: relative;
   width: 100%;
   height: 90vh;
-  overflow: hidden;
-}
-
+  overflow: hidden;}
 /* Each slide */
 .hero-slider .slide {
   position: absolute;
@@ -3063,15 +2122,11 @@ header h1 {
   background-position: center;
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
-  z-index: 1;
-}
-
+  z-index: 1;}
 /* Active slide */
 .hero-slider .slide.active {
   opacity: 1;
-  z-index: 2;
-}
-
+  z-index: 2;}
 /* Overlay content */
 .hero-slider .hero-overlay {
   position: relative;
@@ -3082,56 +2137,44 @@ header h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-}
-
+  text-align: center;}
 /* REMOVE static hero background */
 .hero {
-  background: none !important;
-}
+  background: none !important;}
 .main-nav .logo-text {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   letter-spacing: 1.5px;
   font-size: 28px;
-  text-transform: uppercase;
-}
+  text-transform: uppercase;}
 .main-nav .logo-text {
   font-family: 'Red Hat Display', sans-serif;
   font-weight: 900;
   letter-spacing: 1.6px;
   font-size: 30px;
-  text-transform: uppercase;
-}
+  text-transform: uppercase;}
 .main-nav .logo-text {
   font-family: 'Sora', sans-serif;
   font-weight: 900;
   letter-spacing: 1.4px;
   font-size: 30px;
-  text-transform: uppercase;
-}
+  text-transform: uppercase;}
 /* ===== HERO IMAGE SLIDER ===== */
 .hero-slider {
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
-}
-
+  overflow: hidden;}
 .hero-slider .slide {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
+  transition: opacity 1s ease-in-out;}
 .hero-slider .slide.active {
   opacity: 1;
-  z-index: 1;
-}
-
+  z-index: 1;}
 /* Overlay content */
 .hero-overlay {
   position: absolute;
@@ -3143,8 +2186,7 @@ header h1 {
   text-align: center;
   color: #fff;
   background: rgba(0,0,0,0.35);
-  z-index: 2;
-}
+  z-index: 2;}
 /* ===== FORCE MSQUARE SPORTS LOGO FONT ===== */
 .main-nav .logo-text {
   font-family: 'Anton', sans-serif !important;
@@ -3154,17 +2196,10 @@ header h1 {
   display: flex;
   align-items: center;
   gap: 6px;
-  line-height: 1;
-}
-
-.main-nav .logo-white {
-  color: #ffffff !important;
-}
-
+  line-height: 1;}
 .main-nav .logo-yellow {
   color: #f5c400 !important;
-  letter-spacing: 1.8px;
-}
+  letter-spacing: 1.8px;}
 /* ===============================
    GLOBAL DARK THEME OVERRIDE
    =============================== */
@@ -3172,9 +2207,7 @@ header h1 {
 /* Page base */
 html, body {
   background-color: #000 !important;
-  color: #fff !important;
-}
-
+  color: #fff !important;}
 /* Major layout sections */
 nav,
 .main-nav,
@@ -3190,68 +2223,48 @@ footer,
 .modal,
 .wishlist-full,
 .bag-drawer {
-  background-color: #000 !important;
-}
-
+  background-color: #000 !important;}
 /* Cards, panels, drawers */
 div,
 section,
 article {
-  background-color: transparent !important;
-}
+  background-color: transparent !important;}
 .extra-sport {
-  display: none;
-}
-
+  display: none;}
 .more {
   margin-top: 14px;
   font-weight: 600;
   cursor: pointer;
-  user-select: none;
-}
+  user-select: none;}
 /* ===== SIMPLE WISHLIST ===== */
 .wishlist-full {
   background: #fff;
   color: #111;
-  font-family: 'Inter', sans-serif;
-}
-
+  font-family: 'Inter', sans-serif;}
 .wishlist-header {
   padding: 18px 20px;
   border-bottom: 1px solid #eee;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-
+  align-items: center;}
 .wishlist-brand {
   font-weight: 600;
-  font-size: 16px;
-}
-
+  font-size: 16px;}
 .wishlist-auth span {
   margin-left: 14px;
   font-size: 14px;
   color: #555;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 .wishlist-body {
-  padding: 24px 20px;
-}
-
+  padding: 24px 20px;}
 .wishlist-body h2 {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 6px;
-}
-
+  margin-bottom: 6px;}
 .wishlist-body .empty {
   font-size: 14px;
   color: #777;
-  margin-bottom: 20px;
-}
-
+  margin-bottom: 20px;}
 .explore-btn {
   background: #111;
   color: #fff;
@@ -3259,90 +2272,62 @@ article {
   border-radius: 6px;
   font-size: 14px;
   border: none;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 .wishlist-body section {
-  margin-top: 28px;
-}
-
+  margin-top: 28px;}
 .wishlist-body h4 {
   font-size: 13px;
   font-weight: 600;
   color: #555;
-  margin-bottom: 10px;
-}
-
+  margin-bottom: 10px;}
 .wishlist-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 16px;
-}
-
+  gap: 10px 16px;}
 .wishlist-links span {
   font-size: 14px;
   color: #111;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 .wishlist-links span:hover {
-  text-decoration: underline;
-}
-
+  text-decoration: underline;}
 .wishlist-footer {
   padding: 16px 20px;
   font-size: 12px;
   color: #888;
   border-top: 1px solid #eee;
-  text-align: center;
-}
+  text-align: center;}
 /* ===== WISHLIST PRODUCT CARDS ===== */
 #wishlistItems {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
-}
-
+  gap: 16px;}
 .wishlist-card {
   display: flex;
   gap: 14px;
   border: 1px solid #eee;
   padding: 12px;
-  border-radius: 8px;
-}
-
+  border-radius: 8px;}
 .wishlist-card img {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: 6px;
-}
-
+  border-radius: 6px;}
 .wishlist-info {
-  flex: 1;
-}
-
+  flex: 1;}
 .wishlist-info h5 {
   font-size: 14px;
   font-weight: 500;
-  margin: 0 0 4px;
-}
-
+  margin: 0 0 4px;}
 .wishlist-info p {
   font-size: 13px;
   color: #555;
-  margin: 0 0 8px;
-}
-
+  margin: 0 0 8px;}
 .remove-wishlist {
   font-size: 13px;
   color: #777;
-  cursor: pointer;
-}
-
+  cursor: pointer;}
 .remove-wishlist:hover {
-  text-decoration: underline;
-}
+  text-decoration: underline;}
 /* ===== PREMIUM CLUB ENTRY POPUP ===== */
 #clubEntryPopup {
   display: none;
@@ -3352,9 +2337,7 @@ article {
   backdrop-filter: blur(6px);
   z-index: 9999;
   align-items: center;
-  justify-content: center;
-}
-
+  justify-content: center;}
 #clubEntryPopup .modal-box {
   background: linear-gradient(180deg, #0b0b0b, #121212);
   color: #fff;
@@ -3366,35 +2349,25 @@ article {
   box-shadow: 0 25px 60px rgba(0,0,0,0.6);
   animation: popupFadeUp 0.5s ease forwards;
   transform: translateY(30px);
-  opacity: 0;
-}
-
+  opacity: 0;}
 #clubEntryPopup h2 {
   font-family: 'Poppins', sans-serif;
   font-size: 22px;
-  margin-bottom: 12px;
-}
-
+  margin-bottom: 12px;}
 #clubEntryPopup p {
   font-size: 14.5px;
-  color: #dcdcdc;
-}
-
+  color: #dcdcdc;}
 #clubEntryPopup ul {
   list-style: none;
   padding: 0;
   margin: 20px 0;
-  text-align: left;
-}
-
+  text-align: left;}
 #clubEntryPopup ul li {
   font-size: 14px;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
-  gap: 8px;
-}
-
+  gap: 8px;}
 #clubEntryPopup button {
   width: 100%;
   background: linear-gradient(135deg, #ffd000, #ffb700);
@@ -3405,39 +2378,27 @@ article {
   border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
+  transition: transform .2s ease, box-shadow .2s ease;}
 #clubEntryPopup button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(255,208,0,0.35);
-}
-
+  box-shadow: 0 8px 20px rgba(255,208,0,0.35);}
 #clubEntryPopup .small {
   color: #aaa;
-  font-size: 13px;
-}
-
+  font-size: 13px;}
 #clubEntryPopup .small:hover {
   color: #fff;
-  text-decoration: underline;
-}
-
+  text-decoration: underline;}
 @keyframes popupFadeUp {
   to {
     transform: translateY(0);
-    opacity: 1;
-  }
-}
+    opacity: 1;}
 /* ===== PREMIUM HERO SLIDER (NIKE / PUMA STYLE) ===== */
 
 .hero-slider {
   position: relative;
   height: 88vh;
   overflow: hidden;
-  background: #000;
-}
-
+  background: #000;}
 .hero-slider .slide {
   position: absolute;
   inset: 0;
@@ -3447,15 +2408,12 @@ article {
   transform: scale(1.08);
   transition:
     opacity 1.6s ease,
-    transform 7s ease;
-}
-
+    transform 7s ease;}
 /* ACTIVE SLIDE */
 .hero-slider .slide.active {
   opacity: 1;
   transform: scale(1);
-  z-index: 1;
-}
+  z-index: 1;}
 /* TEXT ABOVE EVERYTHING */
 .hero-overlay {
   position: absolute;
@@ -3465,26 +2423,20 @@ article {
   flex-direction: column;
   justify-content: center;
   padding-left: 7%;
-  color: #fff;
-}
-
+  color: #fff;}
 /* PREMIUM TEXT FEEL */
 .hero-match {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  opacity: 0.9;
-}
-
+  opacity: 0.9;}
 .hero-sub {
   font-family: 'Poppins', sans-serif;
   font-size: 48px;
   font-weight: 700;
   max-width: 520px;
-  margin: 10px 0 20px;
-}
-
+  margin: 10px 0 20px;}
 .hero-btn {
   display: inline-block;
   background: #fff;
@@ -3493,25 +2445,17 @@ article {
   border-radius: 999px;
   font-weight: 600;
   width: fit-content;
-  transition: all .3s ease;
-}
-
+  transition: all .3s ease;}
 .hero-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,.4);
-}
+  box-shadow: 0 10px 25px rgba(0,0,0,.4);}
 .hero-slider .slide.active {
-  animation: premiumMotion 6.5s linear forwards;
-}
-
+  animation: premiumMotion 6.5s linear forwards;}
 @keyframes premiumMotion {
   from {
-    transform: scale(1.12);
-  }
-  to {
-    transform: scale(1);
-  }
-}
+    transform: scale(1.12);}
+to {
+    transform: scale(1);}
 /* Club popup close icon */
 .popup-close {
   position: absolute;
@@ -3520,13 +2464,10 @@ article {
   font-size: 20px;
   cursor: pointer;
   color: #555;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
+  transition: transform 0.2s ease, color 0.2s ease;}
 .popup-close:hover {
   color: #000;
-  transform: scale(1.2);
-}
+  transform: scale(1.2);}
 /* ===============================
    MOBILE OPTIMIZATION (PREMIUM)
    =============================== */
@@ -3535,76 +2476,50 @@ article {
 
   /* HERO HEIGHT FIX */
   .hero-slider {
-    height: 70vh;
-  }
-
-  /* SLIDE MOTION REDUCED */
+    height: 70vh;}
+/* SLIDE MOTION REDUCED */
   .hero-slider .slide {
     transform: scale(1.03);
     transition:
       opacity 1.2s ease,
-      transform 5s ease;
-  }
-
-  .hero-slider .slide.active {
-    transform: scale(1);
-  }
-
-  /* HERO TEXT ALIGNMENT */
+      transform 5s ease;}
+.hero-slider .slide.active {
+    transform: scale(1);}
+/* HERO TEXT ALIGNMENT */
   .hero-overlay {
     padding: 0 20px;
     justify-content: flex-end;
     padding-bottom: 60px;
-    text-align: left;
-  }
-
-  .hero-match {
+    text-align: left;}
+.hero-match {
     font-size: 11px;
-    letter-spacing: 2px;
-  }
-
-  .hero-sub {
+    letter-spacing: 2px;}
+.hero-sub {
     font-size: 28px;
     line-height: 1.2;
-    max-width: 100%;
-  }
-
-  .hero-btn {
+    max-width: 100%;}
+.hero-btn {
     padding: 12px 26px;
-    font-size: 14px;
-  }
-
-  /* NAV CLEANUP */
+    font-size: 14px;}
+/* NAV CLEANUP */
   .brand-socials {
-    display: none;
-  }
-
-  .nav-actions .nav-link {
+    display: none;}
+.nav-actions .nav-link {
     font-size: 13px;
-    padding: 6px 10px;
-  }
-
-  /* SPORTS GRID FIX */
+    padding: 6px 10px;}
+/* SPORTS GRID FIX */
   .sports-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  /* SEARCH INPUT */
+    gap: 12px;}
+/* SEARCH INPUT */
   .search {
     font-size: 14px;
-    padding: 12px;
-  }
-
-  /* FOOTER STACKING */
+    padding: 12px;}
+/* FOOTER STACKING */
   .footer-main {
     grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .footer-bottom {
+    gap: 25px;}
+.footer-bottom {
     flex-direction: column;
     text-align: center;
-    gap: 10px;
-  }
-}
+    gap: 10px;}
