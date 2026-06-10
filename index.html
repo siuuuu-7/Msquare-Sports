@@ -607,7 +607,9 @@ window.toggleBag = function () {
   const isOpen = bag.classList.contains("active");
 
   if (isOpen) {
-    history.back();
+    bag.classList.remove("active");
+    bag.style.display = "none";
+    document.body.style.overflow = "";
   } else {
     history.pushState({ panel: "bag" }, "");
     bag.style.display = "flex";
