@@ -937,3 +937,125 @@ footer,
     white-space: nowrap !important;
   }
 }
+/* ===============================
+   NIKE STYLE THEME (WHITE / BLACK)
+   =============================== */
+
+body {
+  background: #ffffff;
+  color: #000000;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* NAVBAR */
+.main-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.logo-white,
+.logo-yellow {
+  color: #000000 !important;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+  background: #ffffff;
+  color: #000000;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.breadcrumb a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* CATEGORY HEADER */
+.category-header {
+  background: #ffffff;
+  color: #000000;
+}
+
+.category-header h1 {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+/* HELP BOX */
+.help-box {
+  background: #f7f7f7;
+  border: 1px solid #e5e5e5;
+}
+
+.help-box button {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.help-box button:hover {
+  opacity: 0.9;
+}
+/* FILTER BAR */
+.filter-bar {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid #000000;
+  color: #000000;
+  font-weight: 700;
+  padding: 8px 18px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #000000;
+  color: #ffffff;
+}
+/* PRODUCT CARD */
+.product-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  padding: 16px;
+  text-align: left;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 10px 0 5px;
+}
+
+.product-card .price {
+  font-weight: 800;
+  font-size: 15px;
+  color: #000000;
+}
+
+.product-card .rating {
+  color: #000000;
+}
+
+/* PRODUCT IMAGE */
+.product-card img {
+  width: 100%;
+  background: #f5f5f5;
+}
+.logo-yellow {
+  color: #000000;
+}
