@@ -1,6 +1,4 @@
 console.log("🔥 firebase.js loaded");
-import { signInWithPhoneNumber, RecaptchaVerifier } 
-from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 // Firebase imports
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
@@ -35,8 +33,7 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 
-let isAdmin = false;
-
+window.isAdmin = false;
 /* ---------------- LOGIN ---------------- */
 window.loginAdmin = async function () {
   console.log("LOGIN CLICKED");
@@ -55,7 +52,7 @@ window.loginAdmin = async function () {
 
 /* ---------------- AUTH STATE ---------------- */
 onAuthStateChanged(auth, (user) => {
-  isAdmin = !!user;
+  window.isAdmin = !!user;
 
   const adminPanel = document.getElementById("adminPanel");
   const loginPanel = document.getElementById("loginPanel");
@@ -65,46 +62,10 @@ onAuthStateChanged(auth, (user) => {
     loginPanel.style.display = user ? "none" : "block";
   }
 
-  loadProducts();
+  if (typeof window.loadProducts === "function") {
+    window.loadProducts();
+  }
 });
-
-/* ---------------- LOAD PRODUCTS ---------------- */
-async function loadProducts() {
-  const grid = document.querySelector(".grid");
-  if (!grid) return;
-
-  grid.querySelectorAll(".firebase-item").forEach(el => el.remove());
-
-  const snapshot = await getDocs(collection(db, "products"));
-
-  snapshot.forEach((docItem) => {
-    const p = docItem.data();
-    const id = docItem.id;
-
-    const adminBtns = isAdmin
-      ? `<button onclick="deleteProduct('${id}')" style="background:red;margin-top:5px;">Delete</button>`
-      : "";
-
-    const div = document.createElement("div");
-    div.className = "product firebase-item";
-
-    div.innerHTML = `
-      <img src="${p.img}">
-      <div class="product-info">
-        <h3>${p.name}</h3>
-        <p class="price">${p.price}</p>
-
-        <a href="https://wa.me/9035202055?text=I want ${p.name}" target="_blank">
-          <button class="buy-btn">Order</button>
-        </a>
-
-        ${adminBtns}
-      </div>
-    `;
-
-    grid.appendChild(div);
-  });
-}
 
 /* ---------------- ADD PRODUCT ---------------- */
 window.addNewProduct = async function () {
