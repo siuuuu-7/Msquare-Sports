@@ -47,10 +47,10 @@
 <div id="sidebar" class="sidebar">
   <button type="button" class="close-btn" onclick="toggleMenu()"></button>
   <h3>Categories</h3>
-  <a href="#" onclick="filterProducts('all')">All Products</a>
-  <a href="#" onclick="filterProducts('cricket')">Cricket</a>
-  <a href="#" onclick="filterProducts('shoes')">Shoes</a>
-  <a href="#" onclick="filterProducts('tshirt')">T-Shirts</a>
+  <a href="javascript:void(0)"> onclick="filterProducts('all')">All Products</a>
+  <a href="javascript:void(0)"> onclick="filterProducts('cricket')">Cricket</a>
+  <a href="javascript:void(0)"> onclick="filterProducts('shoes')">Shoes</a>
+  <a href="javascript:void(0)"> onclick="filterProducts('tshirt')">T-Shirts</a>
 </div>
 
 <!-- NAVBAR -->
@@ -612,19 +612,13 @@ window.toggleBag = function () {
   const isOpen = bag.classList.contains("active");
 
   if (isOpen) {
-    bag.classList.remove("active");
-    document.body.style.overflow = "auto";
-
-    setTimeout(() => {
-      bag.style.display = "none";
-    }, 450);
+    history.back();
   } else {
-  bag.style.display = "flex";
-  document.body.style.overflow = "hidden";
-  requestAnimationFrame(() => {
-    bag.classList.add("active");
-  });
-}
+    history.pushState({ panel: "bag" }, "");
+    bag.style.display = "flex";
+    document.body.style.overflow = "hidden";
+    requestAnimationFrame(() => bag.classList.add("active"));
+  }
 };
 </script>
 <script>
