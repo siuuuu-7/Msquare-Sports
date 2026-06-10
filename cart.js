@@ -1,3 +1,8 @@
+// Prevent back button from exiting site
+history.pushState(null, null, location.href);
+window.addEventListener("popstate", function () {
+  history.pushState(null, null, location.href);
+});
 function addToCart(name, price) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -13,7 +18,12 @@ function addToCart(name, price) {
 
 function toggleBag() {
   const bag = document.getElementById("bagDrawer");
-  bag.classList.toggle("open");
+  if (!bag.classList.contains("open")) {
+  history.pushState({ bag: true }, "");
+  bag.classList.add("open");
+} else {
+  bag.classList.remove("open");
+}
   renderBag();
 }
 
@@ -24,8 +34,8 @@ function renderBag() {
   if (cart.length === 0) {
     content.innerHTML = `
       <p>Your bag is empty</p>
-      <button onclick="window.location.href='index.html'">
-        Start shopping
+      <button onclick="goHome()">
+      Start shopping
       </button>
     `;
   } else {
@@ -57,7 +67,12 @@ function toggleWishlist() {
   const drawer = document.getElementById("wishlistDrawer");
   const heart = document.getElementById("wishlistHeart");
 
-  drawer.classList.toggle("open");
+  if (!drawer.classList.contains("open")) {
+  history.pushState({ wishlist: true }, "");
+  drawer.classList.add("open");
+} else {
+  drawer.classList.remove("open");
+}
   heart.classList.toggle("fa-solid");
   heart.classList.toggle("fa-regular");
 }
@@ -70,6 +85,17 @@ document.addEventListener("click", function (e) {
   if (!drawer || !icon) return;
 
   if (!drawer.contains(e.target) && !icon.contains(e.target)) {
-    drawer.style.display = "none";
+    drawer.classList.remove("open");
   }
+});
+function goHome() {
+  history.pushState({}, "", "index.html");
+  window.location.reload();
+}
+window.addEventListener("popstate", function () {
+  const bag = document.getElementById("bagDrawer");
+  const wishlist = document.getElementById("wishlistDrawer");
+
+  if (bag) bag.classList.remove("open");
+  if (wishlist) wishlist.classList.remove("open");
 });
