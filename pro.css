@@ -897,3 +897,43 @@ footer,
     padding: 5px 8px;
   }
 }
+@media (max-width: 768px) {
+
+  nav.main-nav {
+    padding: 8px 10px !important;
+    height: 54px !important;
+  }
+
+  nav .brand-wrapper {
+    gap: 3px !important;
+  }
+
+  nav .brand-wrapper img.brand-logo {
+    height: 24px !important;
+    width: auto !important;
+  }
+
+  nav .logo-white,
+  nav .logo-yellow {
+    font-size: 9px !important;
+    line-height: 1 !important;
+    letter-spacing: 0.3px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  nav .logo-text {
+    line-height: 1 !important;
+  }
+
+  nav .nav-actions {
+    gap: 4px !important;
+  }
+
+  nav .nav-actions .nav-link {
+    font-size: 10px !important;
+    padding: 4px 6px !important;
+    white-space: nowrap !important;
+  }
+}
