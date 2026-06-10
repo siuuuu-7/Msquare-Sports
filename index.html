@@ -588,7 +588,9 @@ window.toggleWishlist = function () {
   const isOpen = wishlist.classList.contains("active");
 
   if (isOpen) {
-    history.back();
+    wishlist.classList.remove("active");
+    wishlist.style.display = "none";
+    document.body.style.overflow = "";
   } else {
     history.pushState({ panel: "wishlist" }, "");
     wishlist.style.display = "flex";
