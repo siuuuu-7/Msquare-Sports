@@ -3680,7 +3680,9 @@ article {
     width: 36px;
     height: auto;
   }
-
+.logo-text {
+  white-space: nowrap;
+}
   .logo-text,
   .brand-name,
   .site-title {
