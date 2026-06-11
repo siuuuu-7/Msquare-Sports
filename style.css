@@ -3741,20 +3741,3 @@ article {
     display: none;
   }
 }
-@media (max-width: 768px) {
-
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .nav-link {
-    font-size: 12px;
-    padding: 5px 8px;
-  }
-
-  .nav-link.outline {
-    padding: 5px 10px;
-  }
-}
