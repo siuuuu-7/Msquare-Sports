@@ -3656,3 +3656,51 @@ article {
     font-size: 14px;
   }
 }
+/* ===== MOBILE HEADER FIX ===== */
+@media (max-width: 768px) {
+
+  header {
+    padding: 8px 12px;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Logo + Brand */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .logo img {
+    width: 36px;
+    height: auto;
+  }
+
+  .logo-text,
+  .brand-name,
+  .site-title {
+    font-size: 14px;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  /* Navigation / Buttons */
+  nav,
+  .nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  nav a,
+  .nav-buttons a,
+  .nav-buttons button {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+}
