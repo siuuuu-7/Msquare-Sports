@@ -3662,9 +3662,6 @@ article {
   header {
     padding: 8px 12px;
   }
-header * {
-  max-width: 100%;
-}
   .header-container {
     display: flex;
     align-items: center;
@@ -3682,9 +3679,6 @@ header * {
     width: 36px;
     height: auto;
   }
-.logo-text {
-  white-space: nowrap;
-}
   .logo-text,
   .brand-name,
   .site-title {
@@ -3707,4 +3701,18 @@ header * {
     font-size: 12px;
     padding: 5px 8px;
   }
+}
+/* ===== BRAND FIX ===== */
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.logo-white,
+.logo-yellow {
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1;
 }
