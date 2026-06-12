@@ -31,16 +31,17 @@ html {
 }
 
 .nav-right a {
-  margin-left: 16px;
+  margin-left: 20px;
   text-decoration: none;
   color: #111;
   font-weight: 500;
-  white-space: nowrap;
 }
 
 /* HERO */
 .hero {
-  padding: 80px 20px 60px;
+  height: auto;
+  padding: 120px 20px 80px;
+  background: #ffffff;
 }
 
 .hero-overlay {
@@ -54,17 +55,31 @@ html {
   text-align: center;
 }
 .hero h1 {
-  font-size: clamp(32px, 6vw, 56px);
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 600;
+  color: #f5c400;
+  margin: 20px 0;
 }
 .hero .subtitle {
   font-size: 14px;
   color: #9a9a9a;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 .hero p {
   color: #ddd;
 }
+
+.hero button {
+  padding: 12px 25px;
+  background: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 /* SECTION */
 section {
   padding: 40px 20px;
@@ -76,13 +91,11 @@ section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
 }
 
 /* PRODUCT CARD */
 .product {
-  width: 100%;
-  max-width: 280px;
+  width: 250px;
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -99,8 +112,9 @@ section {
 
 .product img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
+  background: #f5f5f5;
 }
 
 .product-info {
@@ -125,7 +139,6 @@ button {
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s ease;
 }
 
 .buy-btn {
@@ -253,10 +266,29 @@ footer {
 }
 
 /* MOBILE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .grid {
     flex-direction: column;
     align-items: center;
   }
+
+  .hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 600;
+  color: #f5c400;
+  margin: 20px 0;
+}
+
+  .product img {
+    width: 90%;
+  }
+}
 .sidebar.active {
   width: 250px;
 }
@@ -291,6 +323,11 @@ button:hover {
 .product {
   position: relative;
 }
+
+button {
+  transition: 0.3s ease;
+}
+
 .buy-btn {
   background: linear-gradient(135deg, #007bff, #0056b3);
 }
@@ -298,10 +335,71 @@ button:hover {
 .buy-btn:hover {
   transform: scale(1.08);
 }
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 600;
+  color: #f5c400;
+  margin: 20px 0;
+}
 .featured {
   border: 2px solid gold;
 }
+/* ===== PREMIUM INSTALL BUTTON ===== */
+#installBtn {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#installBtn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+/* ===== INSTALL POPUP PREMIUM UI ===== */
+#installPopup {
+  backdrop-filter: blur(6px);
+}
+
+#installPopup > div {
+  animation: popupFade 0.3s ease;
+}
+
+@keyframes popupFade {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#installPopup h3 {
+  text-align: center;
+  font-size: 20px;
+}
+
+#installPopup div div {
+  padding: 10px;
+  border-radius: 8px;
+  background: #f7f7f7;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
 /* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 600px) {
+  #installBtn {
+    bottom: 15px;
+    right: 15px;
+    padding: 14px 18px;
+    font-size: 15px;
+    border-radius: 30px;
+  }
+
   #installPopup > div {
     width: 92%;
   }
@@ -309,14 +407,25 @@ button:hover {
   nav .nav-right {
     display: none;
   }
+
+  .hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 600;
+  color: #f5c400;
+  margin: 20px 0;
+}
+  }
+
   .hero p {
     font-size: 15px;
   }
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-}
+h1, h2, h3, h4, h5, h6,
+.navbar h2,
 .hero h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.4px;
 }
 
 button,
@@ -328,6 +437,151 @@ button,
 .price {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
+}
+/* =========================
+   CULT.FIT STYLE NAVBAR
+========================= */
+
+.cult-navbar {
+  background: #ffffff;
+  padding: 14px 32px;
+  border-bottom: 1px solid #ededed;
+}
+
+.brand-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-left: 6px;
+}
+
+.nav-right a {
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #111;
+  padding-bottom: 4px;
+  position: relative;
+}
+
+.nav-right a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #000;
+  left: 0;
+  bottom: 0;
+  transition: 0.3s ease;
+}
+
+.nav-right a:hover::after {
+  width: 100%;
+}
+
+.menu-icon {
+  font-size: 22px;
+}
+
+/* MOBILE CLEANUP */
+@media (max-width: 768px) {
+  .brand-text {
+    font-size: 16px;
+  }
+}
+/* ===== PREMIUM INSTASPORT STYLE ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap');
+
+body {
+  background: radial-gradient(circle at top, #1b1b1b, #000);
+  color: #eaeaea;
+}
+
+.premium-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: linear-gradient(to bottom, #111, #0a0a0a);
+  border-bottom: 1px solid #222;
+}
+
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #d4b25f;
+  letter-spacing: 1px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #cfcfcf;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #d4b25f;
+}
+
+/* ===== MODAL BASE ===== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-box {
+  background: #0e0e0e;
+  border: 1px solid #2a2a2a;
+  padding: 30px;
+  width: 340px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.modal-box h2 {
+  font-family: 'Playfair Display', serif;
+  color: #d4b25f;
+  margin-bottom: 5px;
+}
+
+.modal-box p {
+  font-size: 13px;
+  color: #bcbcbc;
+}
+
+.modal-box input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 14px;
+  border-radius: 8px;
+  border: none;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.modal-box button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #d4b25f;
+  font-weight: 600;
+  cursor: pointer;
 }
 /* ===== MODAL BASE ===== */
 .modal {
@@ -396,15 +650,596 @@ button,
   border-radius: 8px;
   border: none;
 }
+/* ===== INSTASPORT STYLE HERO ===== */
+.instasport-hero {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.instasport-hero .micro {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.instasport-hero h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.sport-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sport-tags span {
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.more-sports {
+  display: inline-block;
+  margin: 20px 0;
+  font-size: 14px;
+  color: #111;
+  cursor: pointer;
+}
+
+.search-bar {
+  max-width: 520px;
+  margin: 20px auto;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.helper {
+  font-size: 13px;
+  color: #777;
+}
+.top-bar {
+  background: #f7f7f7;
+  font-size: 13px;
+  text-align: center;
+  padding: 6px;
+  color: #333;
+}
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav-actions span {
+  margin-left: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.hero-text {
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.tagline {
+  font-size: 13px;
+  color: #777;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  margin: 25px 0;
+}
+
+.sports-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sports-grid span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  color: #eaeaea;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.sports-grid span:hover {
+  background: #0a5cff;
+  border-color: #0a5cff;
+  color: white;
+}
+
+.search {
+  width: 100%;
+  max-width: 520px;
+  padding: 14px 22px;
+  border-radius: 40px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+.search::placeholder {
+  color: #bcbcbc;
+}
+
+.search:focus {
+  border-color: #f5c400;
+}
+
+.hint {
+  font-size: 13px;
+  color: #777;
+}
+.trust {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 13px;
+  color: #cfcfcf;
+  opacity: 0.85;
+}
+.mega-footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 50px;
+  background: #f7f7f7;
+  font-size: 14px;
+}
+
+.mega-footer h4 {
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  padding: 15px;
+  background: #eee;
+}
+/* ===== INSTASPORT-LIKE HERO BACKGROUND ===== */
+.hero {
+  min-height: 90vh;
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 60%),
+    linear-gradient(to bottom, #0b0b0b, #000000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ===== LOGO BEHIND BRAND TEXT ===== */
+
+.brand-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.brand-bg-logo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.18; /* logo faintness */
+  z-index: 0;
+}
+
+.brand-text {
+  position: relative;
+  font-size: 20px; /* SAME size as before */
+  font-weight: 600;
+  color: #111; /* black text */
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
 /* ===== FORCE LOGO BEHIND BRAND TEXT ===== */
 
 .main-nav {
   position: relative;
 }
+
+.brand-wrapper {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+}
+
+.brand-bg-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 1.2em;     /* SAME as text height */
+  width: auto;
+  opacity: 0.22;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.brand-text {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+  z-index: 1;
+}
+/* =====================================================
+   CLEAN INSTASPORT PREMIUM OVERRIDE (FINAL)
+   Paste at END of style.css
+===================================================== */
+
+:root {
+  --bg-main: #0b0b0b;
+  --bg-deep: #000000;
+  --glass: rgba(255,255,255,0.06);
+
+  --gold: #c9a44c;
+  --gold-soft: #e0c77a;
+
+  --text-main: #f2f2f2;
+  --text-muted: #9a9a9a;
+  --border-soft: rgba(255,255,255,0.12);
+}
+
+/* ===== GLOBAL RESET FIX ===== */
+body {
+  background:
+    radial-gradient(900px 450px at center top, #1a1a1a 0%, #0b0b0b 60%),
+    linear-gradient(to bottom, #0b0b0b, #000);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  background: linear-gradient(to right, #0f0f0f, #151515);
+  color: var(--gold-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* ===== NAVBAR ===== */
+.main-nav {
+  background: linear-gradient(to bottom, #111, #090909);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.brand-wrapper img {
+  height: 34px;
+  filter: brightness(1.15) contrast(1.15);
+}
+
+.brand-text {
+  color: var(--gold);
+  letter-spacing: 0.4px;
+}
+
+/* ===== NAV ACTIONS ===== */
+.nav-actions span {
+  color: #e0e0e0;
+}
+
+.nav-actions span:hover {
+  color: var(--gold);
+}
+
+/* ===== HERO ===== */
+.hero-text {
+  background:
+    radial-gradient(700px 350px at center top, rgba(255,255,255,0.07), transparent 60%);
+}
+
+.hero-text h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(34px, 5vw, 52px);
+  color: var(--gold);
+}
+
+.subtitle,
+.tagline {
+  color: var(--text-muted);
+}
+
+/* ===== SPORT TAGS ===== */
+.sports-grid span {
+  background: var(--glass);
+  border: 1px solid var(--border-soft);
+  color: #ededed;
+  backdrop-filter: blur(10px);
+}
+
+.sports-grid span:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(255,255,255,0.08);
+}
+
+/* ===== SEARCH ===== */
+.search {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--border-soft);
+  color: #fff;
+}
+
+.search::placeholder {
+  color: #b5b5b5;
+}
+
+.search:focus {
+  border-color: var(--gold);
+}
+
+/* ===== TRUST BAR ===== */
+.trust p {
+  color: #cfcfcf;
+}
+
+.trust p::before {
+  content: "✓ ";
+  color: var(--gold);
+}
+
+/* ===== PRODUCT & SERVICE CARDS ===== */
+.product,
+.service-card {
+  background: linear-gradient(180deg, #141414, #0d0d0d);
+  border: 1px solid var(--border-soft);
+  box-shadow: none;
+}
+
+.product h3,
+.service-card {
+  color: #f1f1f1;
+}
+
+.price {
+  color: var(--gold);
+}
+
+/* ===== FOOTER ===== */
+.mega-footer {
+  background: #080808;
+  border-top: 1px solid var(--border-soft);
+}
+
+.mega-footer h4 {
+  color: var(--gold);
+}
+
+.mega-footer p {
+  color: #b3b3b3;
+}
+
+.footer-bottom {
+  background: #050505;
+  color: #777;
+}
+
 /* ===== WHATSAPP FLOAT FIX ===== */
 .whatsapp-float {
   background: #25d366;
   box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+.product-detail {
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.product-full-img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.product-detail h1 {
+  margin: 15px 0 5px;
+}
+
+.product-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.add-cart {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #000;
+  background: #fff;
+  font-weight: 600;
+}
+
+.buy-now {
+  flex: 1;
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+}
+/* LOGIN SUCCESS ANIMATION */
+.success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.success-box {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  text-align: center;
+  animation: scaleIn 0.4s ease;
+}
+
+.checkmark {
+  width: 70px;
+  height: 70px;
+  background: #22c55e;
+  color: #fff;
+  font-size: 42px;
+  border-radius: 50%;
+  line-height: 70px;
+  margin: 0 auto 15px;
+  animation: pop 0.5s ease;
+}
+
+.success-box h2 {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+}
+
+.success-box p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-icon i {
+  font-size: 18px;
+  color: #d4af37; /* premium gold */
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-icon i:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+/* PREMIUM TEXT LOGO (INSTASPORT STYLE) */
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.logo-white {
+  color: #ffffff;
+}
+
+.logo-yellow {
+  color: #f5c542; /* premium yellow */
+}
+/* ===== INSTASPORT-STYLE LOGO ===== */
+
+.logo-text {
+  font-family: 'Anton', sans-serif;
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.logo-white {
+  color: #ffffff;
+}
+
+.logo-yellow {
+  color: #ffcc00; /* Exact sporty yellow */
+}
+.logo-text {
+  transform: scaleX(1.05); /* makes letters wider like InstaSport */
+}
+/* FORCE INSTASPORT LOGO STYLE */
+.main-nav .logo-text {
+  font-family: 'Anton', sans-serif !important;
+  font-size: 24px !important;
+  letter-spacing: 1.5px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.main-nav .logo-white {
+  color: #ffffff !important;
+}
+
+.main-nav .logo-yellow {
+  color: #ffcc00 !important;
+}
+/* ===== INSTASPORT-STYLE LOGO ===== */
+.main-nav .logo-text {
+  font-family: 'Anton', sans-serif;
+  font-size: 26px;
+  letter-spacing: 1.2px;   /* KEY: exact premium spacing */
+  display: flex;
+  align-items: center;
+  gap: 6px;                /* space between MSQUARE & SPORTS */
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.main-nav .logo-white {
+  color: #ffffff;
+}
+
+.main-nav .logo-yellow {
+  color: #f5c400;          /* InstaSport-like gold */
+  letter-spacing: 1.6px;  /* slightly wider for second word */
+}
+@media (max-width: 768px) {
+  .main-nav .logo-text {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  .main-nav .logo-yellow {
+    letter-spacing: 1.4px;
+  }
 }
 /* ===== LOGO SIZE SYSTEM ===== */
 .main-nav .logo-text {
@@ -424,6 +1259,44 @@ button,
   color: #f5c400;
 }
 
+/* ===== DESKTOP (Default) ===== */
+@media (min-width: 1024px) {
+  .main-nav .logo-text {
+    font-size: 28px;
+    letter-spacing: 1px;   /* reduced */
+    gap: 3px;              /* ✅ tighter spacing */
+  }
+
+  .main-nav .logo-yellow {
+    letter-spacing: 1.2px; /* reduced */
+  }
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1023px) and (min-width: 769px) {
+  .main-nav .logo-text {
+    font-size: 25px;
+    letter-spacing: 0.9px;
+    gap: 3px;
+  }
+
+  .main-nav .logo-yellow {
+    letter-spacing: 1.1px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .main-nav .logo-text {
+    font-size: 21px;          /* Tight, premium mobile */
+    letter-spacing: 1px;
+    gap: 5px;
+  }
+
+  .main-nav .logo-yellow {
+    letter-spacing: 1.4px;
+  }
+}
 /* ===== INSTASPORT LOGO HOVER EFFECT ===== */
 .main-nav .logo-text {
   position: relative;
@@ -651,6 +1524,381 @@ button,
   color: #f5c451;
 }
 
+/* MOBILE (matches InstaSport behavior) */
+@media (max-width: 900px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+/* ==============================
+   INSTA-STYLE FOOTER (DESKTOP)
+================================ */
+
+.insta-footer {
+  background: radial-gradient(1200px 500px at 50% -200px, #1a1a1a 0%, #0b0b0b 60%, #000 100%);
+  padding: 70px 90px 30px;
+  color: #9b9b9b;
+  font-family: 'Inter', sans-serif;
+}
+
+/* GRID LAYOUT */
+.footer-main {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: 70px;
+  text-align: left;
+}
+
+/* BRAND COLUMN */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: #e6c15a;
+}
+
+.footer-tagline {
+  font-size: 14px;
+  color: #7d7d7d;
+}
+
+/* COLUMN HEADINGS */
+.footer-col h5 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #cfcfcf;
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+/* LINKS */
+.footer-col a {
+  display: block;
+  font-size: 14px;
+  line-height: 2;
+  color: #9a9a9a;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+  color: #e6c15a;
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  max-width: 1500px;
+  margin: 45px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #777;
+}
+
+/* BOTTOM LINKS */
+.bottom-links a {
+  margin-left: 24px;
+  color: #8a8a8a;
+  text-decoration: none;
+}
+
+.bottom-links a:hover {
+  color: #e6c15a;
+}
+
+/* ==============================
+   MOBILE FOOTER
+================================ */
+@media (max-width: 900px) {
+  .insta-footer {
+    padding: 50px 25px 30px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .bottom-links a {
+    margin: 0 10px;
+  }
+}
+/* =========================
+   MY STORE ICON (NAVBAR)
+========================= */
+
+.store-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: #dcdcdc;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.store-wrapper i {
+  font-size: 15px;
+}
+
+.store-wrapper:hover {
+  color: #e6c15a; /* InstaSport gold */
+}
+
+/* STORE ICON */
+.store-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #dcdcdc;
+  font-size: 16px;
+  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.store-wrapper:hover {
+  color: #e6c15a; /* premium gold */
+  transform: scale(1.1);
+}
+
+/* MOBILE: hide text, keep icon */
+@media (max-width: 768px) {
+  .store-text {
+    display: none;
+  }
+}
+/* PREMIUM BRAND SOCIAL ICONS */
+.brand-socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.brand-socials a {
+  font-size: 15px;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* OFFICIAL BRAND COLORS */
+.brand-socials a .fa-instagram {
+  color: #E4405F;
+}
+
+.brand-socials a .fa-facebook-f {
+  color: #1877F2;
+}
+
+.brand-socials a .fa-youtube {
+  color: #FF0000;
+}
+
+.brand-socials a .fa-whatsapp {
+  color: #25D366;
+}
+
+.brand-socials a .fa-phone {
+  color: #f5c542; /* premium yellow */
+}
+
+/* HOVER EFFECT (INSTASPORT STYLE) */
+.brand-socials a:hover {
+  transform: translateY(-2px) scale(1.05);
+  filter: brightness(1.1);
+}
+/* PREMIUM FOOTER SOCIALS */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-socials a {
+  color: rgba(255, 215, 100, 0.75); /* luxury gold */
+  font-size: 15px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-socials a:hover {
+  color: #ffd75e;
+  transform: translateY(-2px);
+}
+
+/* MOBILE CLEANUP */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+.footer-col a {
+  display: block;
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
+/* =========================
+   INSTA-STYLE FOOTER LAYOUT
+   ========================= */
+
+.insta-footer {
+  background: #0b0b0b;
+  color: #ccc;
+  padding: 60px 80px 30px;
+  font-family: Inter, sans-serif;
+}
+
+/* MAIN ROW */
+.footer-main {
+  display: grid;
+  grid-template-columns: 
+    1.3fr   /* Brand */
+    1fr     /* Services */
+    1.4fr   /* Shop */
+    0.8fr   /* Help */
+    0.9fr   /* Company */
+    1fr;    /* Content */
+  gap: 48px;
+  align-items: start;
+}
+
+/* BRAND */
+.footer-brand {
+  max-width: 260px;
+}
+
+.footer-logo {
+  font-family: Anton, sans-serif;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #f5c84c;
+}
+
+.footer-tagline {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* COLUMNS */
+.footer-col h5 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.footer-col a:hover {
+  color: #f5c84c;
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #777;
+}
+
+.footer-bottom .bottom-links a {
+  margin-left: 18px;
+  color: #777;
+}
+
+.footer-bottom .bottom-links a:hover {
+  color: #f5c84c;
+}
+
+/* SOCIALS */
+.footer-socials {
+  margin-top: 24px;
+  display: flex;
+  gap: 18px;
+}
+
+.footer-socials a {
+  color: #888;
+  font-size: 16px;
+}
+
+.footer-socials a:hover {
+  color: #f5c84c;
+}
+
+/* =========================
+   RESPONSIVE (STACK CLEAN)
+   ========================= */
+@media (max-width: 1100px) {
+  .footer-main {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .insta-footer {
+    padding: 40px 24px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
 /* =========================
    FINAL FOOTER – SINGLE ROW
 ========================= */
@@ -751,6 +1999,18 @@ button,
 /* =========================
    RESPONSIVE
 ========================= */
+@media (max-width: 1100px) {
+  .footer-main {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .insta-footer {
+    padding: 40px 24px;
+  }
+
   .footer-main {
     grid-template-columns: 1fr 1fr;
   }
@@ -764,6 +2024,7 @@ button,
     gap: 12px;
     text-align: center;
   }
+}
 /* ===============================
    HERO SPACING COMPRESSION
    (INSTASPORT STYLE)
@@ -861,6 +2122,72 @@ body {
   object-fit: contain;
   transform: translateY(2px); /* optical alignment */
 }
+.brand-logo {
+  height: 2.05em;   /* slightly bigger */
+}
+/* ===============================
+   PERFECT BRAND ALIGNMENT
+=============================== */
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Force text to have predictable height */
+.logo-text {
+  display: flex;
+  align-items: center;
+  line-height: 1; /* IMPORTANT */
+}
+
+/* MSQUARE + SPORTS text */
+.logo-white,
+.logo-yellow {
+  font-size: 28px;      /* your visible text size */
+  line-height: 1;       /* remove extra font space */
+  display: inline-flex;
+  align-items: center;
+}
+
+/* LOGO IMAGE */
+.brand-logo {
+  height: 28px;         /* EXACT match to text size */
+  width: auto;
+  object-fit: contain;
+}
+/* ===============================
+   PERFECT LOGO ↔ TEXT MATCH
+=============================== */
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-white,
+.logo-yellow {
+  font-size: 26px;      /* keep your visual size */
+  line-height: 1;      /* 🔥 THIS IS THE KEY */
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-logo {
+  height: 26px;         /* EXACT SAME AS FONT SIZE */
+  width: auto;
+  object-fit: contain;
+}
+.logo-white,
+.logo-yellow {
+  font-size: 28px;
+}
+
+.brand-logo {
+  height: 28px;
+}
 .whatsapp-float {
   display: none !important;
 }
@@ -912,7 +2239,34 @@ body {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
+.logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+.logo-white {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+}
 
+.logo-yellow {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.logo-white {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+}
+
+.logo-yellow {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
 /* FORCE CORMORANT GARAMOND ON BOTH */
 .logo-white,
 .logo-yellow {
@@ -965,9 +2319,19 @@ body {
   color: #ffcc00;
   margin-left: 4px;
 }
+.brand-logo {
+  height: 1em;
+  transform: scale(1.25);
+}
 /* ===============================
    PREMIUM MOBILE (INSTASPORT STYLE)
 ================================ */
+@media (max-width: 768px) {
+
+  body {
+    background: radial-gradient(circle at top, #1a1a1a, #000) !important;
+  }
+
   /* TOP BAR */
   .top-bar {
     font-size: 12px;
@@ -1085,6 +2449,73 @@ body {
   .footer-main {
     padding-top: 30px;
   }
+}
+/* ===== MOBILE HERO FIX ===== */
+.mobile-hero {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-hero {
+    display: none !important;
+  }
+
+  .mobile-hero {
+    display: block;
+    text-align: center;
+    padding: 40px 18px;
+  }
+
+  .mobile-sub {
+    font-size: 13px;
+    opacity: 0.5;
+    margin-bottom: 6px;
+  }
+
+  .mobile-title {
+    font-size: 34px;
+    color: #f5c400;
+    margin-bottom: 24px;
+  }
+
+  .mobile-sports {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 360px;
+    margin: 0 auto 20px;
+  }
+
+  .mobile-sports div {
+    background: #1a1a1a;
+    padding: 12px;
+    border-radius: 999px;
+    font-size: 14px;
+  }
+
+  .mobile-more {
+    display: inline-block;
+    margin: 16px 0 24px;
+    color: #f5c400;
+    font-size: 14px;
+  }
+
+  .mobile-search {
+    width: 100%;
+    max-width: 360px;
+    padding: 14px 18px;
+    border-radius: 999px;
+    background: #1b1b1b;
+    border: none;
+    color: #ccc;
+  }
+
+  .mobile-hint {
+    font-size: 12px;
+    opacity: 0.4;
+    margin-top: 12px;
+  }
+}
 /* HERO VIDEO CONTAINER */
 .hero-video {
   position: relative;
@@ -1134,6 +2565,11 @@ body {
   border-radius: 30px;
   text-decoration: none;
 }
+@media (max-width: 768px) {
+  .hero-video {
+    height: 45vh;   /* Smaller on phones */
+  }
+
   .hero-overlay h1 {
     font-size: 1.8rem;
   }
@@ -1141,6 +2577,21 @@ body {
   .hero-overlay p {
     font-size: 0.95rem;
   }
+}
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* reduce spacing */
+}
+
+.brand-logo {
+  margin-right: 4px;
+}
+
+.logo-white,
+.logo-yellow {
+  line-height: 1;
+}
 .sport-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1167,11 +2618,9 @@ body {
 }
 /* FORCE InstaSport footer layout */
 footer.insta-footer .footer-main {
-  display: grid;
-  grid-template-columns: 1.3fr repeat(5, 1fr);
-  gap: 36px;
-}
-footer.insta-footer .footer-main {
+  display: grid !important;
+  grid-template-columns: 1.3fr repeat(5, 1fr) !important;
+  gap: 36px !important;
   align-items: flex-start !important;
   width: 100%;
 }
@@ -1191,6 +2640,18 @@ footer.insta-footer .footer-main > div {
   footer.insta-footer .footer-main {
     grid-template-columns: 1fr !important;
   }
+}
+.brand-wrapper.logo-text {
+  gap: 4px !important;
+}
+
+.brand-logo {
+  margin-right: 2px !important;
+}
+
+.logo-white,
+.logo-yellow {
+  letter-spacing: 0.5px;
 }
 /* FULLSCREEN WISHLIST */
 .wishlist-full {
@@ -1263,6 +2724,104 @@ section h4 {
   opacity: 0.85;
 }
 
+.wishlist-footer {
+  padding: 20px;
+  font-size: 12px;
+  opacity: 0.6;
+  border-top: 1px solid #222;
+}
+.wishlist-full {
+  display: none;
+}
+/* FULLSCREEN WISHLIST OVERLAY */
+.wishlist-full {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: #fff;
+  z-index: 99999;
+
+  display: none;
+  flex-direction: column;
+
+  overflow-y: auto;
+}
+body.wishlist-open {
+  overflow: hidden;
+}
+/* Wishlist screen */
+.wishlist-full {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 100000;
+  display: none;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+}
+
+/* Header */
+.wishlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.wishlist-brand {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.wishlist-auth span {
+  margin-left: 16px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.wishlist-auth .close {
+  font-size: 22px;
+}
+
+/* Body */
+.wishlist-body {
+  padding: 40px 20px;
+  text-align: center;
+  flex: 1;
+}
+
+.wishlist-body h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.wishlist-body .empty {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.explore-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Footer */
+.wishlist-footer {
+  padding: 12px;
+  font-size: 12px;
+  text-align: center;
+  color: #888;
+  border-top: 1px solid #eee;
+}
 /* ===== FULLSCREEN BAG ===== */
 .bag-full {
   position: fixed;
@@ -1383,6 +2942,13 @@ section h4 {
   z-index: 5;
 }
 
+.hero-match {
+  font-family: 'Anton', sans-serif;
+  font-size: 52px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 .hero-btn {
   margin-top: 24px;
   padding: 14px 34px;
@@ -1393,6 +2959,246 @@ section h4 {
 }
 
 /* mobile */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 65vh;
+  }
+  .hero-match {
+    font-size: 34px;
+  }
+}
+.hero-slider {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero-slider .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slider .slide.active {
+  opacity: 1;
+}
+/* ===== LOGO FONT – GEOMETRIC BOLD ===== */
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* closer spacing between logo + text */
+}
+
+.logo-text .logo-white,
+.logo-text .logo-yellow {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;           /* bold geometric */
+  letter-spacing: 1px;        /* clean sporty spacing */
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.logo-text .logo-white {
+  color: #ffffff;
+}
+
+.logo-text .logo-yellow {
+  color: #f5c400; /* your brand yellow */
+}
+.logo-text .logo-white,
+.logo-text .logo-yellow {
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+/* ===== FORCE LOGO FONT CHANGE ===== */
+
+.logo-text,
+.logo-text span,
+.logo,
+.logo a,
+header h1 {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+}
+.hero-slider {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero-slider .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-slider .slide.active {
+  opacity: 1;
+}
+/* ===============================
+   HERO IMAGE SLIDER (FORCE FIX)
+=============================== */
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+/* Each slide */
+.hero-slider .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  z-index: 1;
+}
+
+/* Active slide */
+.hero-slider .slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Overlay content */
+.hero-slider .hero-overlay {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* REMOVE static hero background */
+.hero {
+  background: none !important;
+}
+.main-nav .logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+.main-nav .logo-text {
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: 900;
+  letter-spacing: 1.6px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.main-nav .logo-text {
+  font-family: 'Sora', sans-serif;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+/* ===== HERO IMAGE SLIDER ===== */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-slider .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slider .slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Overlay content */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.35);
+  z-index: 2;
+}
+/* ===== FORCE MSQUARE SPORTS LOGO FONT ===== */
+.main-nav .logo-text {
+  font-family: 'Anton', sans-serif !important;
+  font-size: 26px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.main-nav .logo-white {
+  color: #ffffff !important;
+}
+
+.main-nav .logo-yellow {
+  color: #f5c400 !important;
+  letter-spacing: 1.8px;
+}
+/* ===============================
+   GLOBAL DARK THEME OVERRIDE
+   =============================== */
+
+/* Page base */
+html, body {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* Major layout sections */
+nav,
+.main-nav,
+.top-bar,
+.hero-slider,
+.hero-text,
+.trust,
+footer,
+.footer-main,
+.footer-bottom,
+.insta-footer,
+.sidebar,
+.modal,
+.wishlist-full,
+.bag-drawer {
+  background-color: #000 !important;
+}
+
+/* Cards, panels, drawers */
+div,
+section,
+article {
+  background-color: transparent !important;
+}
 .extra-sport {
   display: none;
 }
@@ -1403,7 +3209,140 @@ section h4 {
   cursor: pointer;
   user-select: none;
 }
+/* ===== SIMPLE WISHLIST ===== */
+.wishlist-full {
+  background: #fff;
+  color: #111;
+  font-family: 'Inter', sans-serif;
+}
 
+.wishlist-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wishlist-brand {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.wishlist-auth span {
+  margin-left: 14px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+}
+
+.wishlist-body {
+  padding: 24px 20px;
+}
+
+.wishlist-body h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.wishlist-body .empty {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.explore-btn {
+  background: #111;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.wishlist-body section {
+  margin-top: 28px;
+}
+
+.wishlist-body h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.wishlist-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+}
+
+.wishlist-links span {
+  font-size: 14px;
+  color: #111;
+  cursor: pointer;
+}
+
+.wishlist-links span:hover {
+  text-decoration: underline;
+}
+
+.wishlist-footer {
+  padding: 16px 20px;
+  font-size: 12px;
+  color: #888;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+/* ===== WISHLIST PRODUCT CARDS ===== */
+#wishlistItems {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.wishlist-card {
+  display: flex;
+  gap: 14px;
+  border: 1px solid #eee;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.wishlist-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.wishlist-info {
+  flex: 1;
+}
+
+.wishlist-info h5 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+
+.wishlist-info p {
+  font-size: 13px;
+  color: #555;
+  margin: 0 0 8px;
+}
+
+.remove-wishlist {
+  font-size: 13px;
+  color: #777;
+  cursor: pointer;
+}
+
+.remove-wishlist:hover {
+  text-decoration: underline;
+}
 /* ===== PREMIUM CLUB ENTRY POPUP ===== */
 #clubEntryPopup {
   display: none;
@@ -1490,6 +3429,89 @@ section h4 {
     opacity: 1;
   }
 }
+/* ===== PREMIUM HERO SLIDER (NIKE / PUMA STYLE) ===== */
+
+.hero-slider {
+  position: relative;
+  height: 88vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero-slider .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.08);
+  transition:
+    opacity 1.6s ease,
+    transform 7s ease;
+}
+
+/* ACTIVE SLIDE */
+.hero-slider .slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+/* TEXT ABOVE EVERYTHING */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 7%;
+  color: #fff;
+}
+
+/* PREMIUM TEXT FEEL */
+.hero-match {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.hero-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  max-width: 520px;
+  margin: 10px 0 20px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-weight: 600;
+  width: fit-content;
+  transition: all .3s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.4);
+}
+.hero-slider .slide.active {
+  animation: premiumMotion 6.5s linear forwards;
+}
+
+@keyframes premiumMotion {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 /* Club popup close icon */
 .popup-close {
   position: absolute;
@@ -1508,6 +3530,55 @@ section h4 {
 /* ===============================
    MOBILE OPTIMIZATION (PREMIUM)
    =============================== */
+
+@media (max-width: 768px) {
+
+  /* HERO HEIGHT FIX */
+  .hero-slider {
+    height: 70vh;
+  }
+
+  /* SLIDE MOTION REDUCED */
+  .hero-slider .slide {
+    transform: scale(1.03);
+    transition:
+      opacity 1.2s ease,
+      transform 5s ease;
+  }
+
+  .hero-slider .slide.active {
+    transform: scale(1);
+  }
+
+  /* HERO TEXT ALIGNMENT */
+  .hero-overlay {
+    padding: 0 20px;
+    justify-content: flex-end;
+    padding-bottom: 60px;
+    text-align: left;
+  }
+
+  .hero-match {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .hero-sub {
+    font-size: 28px;
+    line-height: 1.2;
+    max-width: 100%;
+  }
+
+  .hero-btn {
+    padding: 12px 26px;
+    font-size: 14px;
+  }
+
+  /* NAV CLEANUP */
+  .brand-socials {
+    display: none;
+  }
+
   .nav-actions .nav-link {
     font-size: 13px;
     padding: 6px 10px;
@@ -1536,6 +3607,101 @@ section h4 {
     text-align: center;
     gap: 10px;
   }
+}
+/* ===== MOBILE NAV FIX ===== */
+@media (max-width: 768px) {
+  .brand-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+  }
+
+  .brand-logo {
+    width: 48px;
+    height: auto;
+  }
+
+  .logo-white,
+  .logo-yellow {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .brand-socials {
+    display: none; /* hide socials on mobile navbar */
+  }
+
+  .nav-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-overlay {
+    padding: 20px;
+  }
+
+  .hero-match {
+    font-size: 14px;
+  }
+
+  .hero-sub {
+    font-size: 20px;
+  }
+
+  .hero-btn {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
+/* ===== MOBILE HEADER FIX ===== */
+@media (max-width: 768px) {
+
+  header {
+    padding: 8px 12px;
+  }
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Logo + Brand */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .logo img {
+    width: 36px;
+    height: auto;
+  }
+  .logo-text,
+  .brand-name,
+  .site-title {
+    font-size: 14px;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  /* Navigation / Buttons */
+  nav,
+  .nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  nav a,
+  .nav-buttons a,
+  .nav-buttons button {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+}
 /* ===== BRAND FIX ===== */
 .brand-wrapper {
   display: flex;
