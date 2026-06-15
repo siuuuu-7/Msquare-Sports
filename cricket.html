@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Cricket Equipment | Msquare Sports</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Cricket | Msquare Sports</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- STYLES -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="pro.css">
-
-  <!-- ICONS -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- FONTS -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="pro.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAVBAR (UNCHANGED) -->
 <nav class="main-nav">
-  <div class="brand-wrapper logo-text">
+  <a href="index.html" class="brand-wrapper logo-text">
     <span class="logo-white">MSQUARE</span>
     <span class="logo-yellow">SPORTS</span>
-  </div>
-
+  </a>
   <div class="nav-actions">
     <span class="nav-icon">
       <i class="fa-solid fa-bag-shopping"></i>
@@ -33,184 +25,108 @@
   </div>
 </nav>
 
-<!-- RESULT BAR -->
+<!-- RESULT HEADER -->
 <div class="result-bar">
   <div>
-    <p class="crumb">Home › Sports › Cricket</p>
-    <p>Showing <b>1 – 40</b> of <b>16,853</b> results for "<b>cricket</b>"</p>
+    <div class="crumb">Home › Sports › Cricket</div>
+    <div class="count">Showing 1 – 40 of 16,853 results for <b>“cricket”</b></div>
   </div>
-
-  <div>
-    <select>
-      <option>Relevance</option>
-      <option>Popularity</option>
-      <option>Price -- Low to High</option>
-      <option>Price -- High to Low</option>
-      <option>Newest First</option>
-    </select>
-  </div>
+  <select>
+    <option>Relevance</option>
+    <option>Popularity</option>
+    <option>Price -- Low to High</option>
+    <option>Price -- High to Low</option>
+  </select>
 </div>
 
-<!-- PRODUCT GRID -->
-<section class="product-grid">
+<!-- PRODUCT LIST -->
+<section class="fk-list">
 
-  <!-- PRODUCT 1 -->
-  <div class="product-card">
+<!-- PRODUCT -->
+<div class="fk-item">
 
-    <button class="wishlist-btn" onclick="toggleWishlist('bat1', this)">
-      <i class="fa-regular fa-heart"></i>
-    </button>
+  <img src="https://i.imgur.com/QOnK57n.png">
 
-    <img src="https://i.imgur.com/QOnK57n.png" alt="Cricket Bat">
-
+  <div class="fk-info">
     <h3>English Willow Cricket Bat</h3>
 
-    <div class="rating" data-id="bat1"></div>
+    <div class="fk-rating" data-id="bat1">
+      <span class="rate-box">4.2 ★</span>
+      <span class="rate-count">(12,174)</span>
+    </div>
 
-    <p class="price">
+    <div class="fk-price">
       ₹6,999 <span class="old">₹8,499</span> <span class="off">18% off</span>
-    </p>
+    </div>
 
-    <button onclick="addToBag({
+    <div class="fk-badges">
+      <span class="badge hot">Hot Deal</span>
+      <span class="badge few">Only few left</span>
+    </div>
+  </div>
+
+  <div class="fk-actions">
+    <button onclick="addToCart({
       id:'bat1',
       name:'English Willow Cricket Bat',
       price:6999,
       img:'https://i.imgur.com/QOnK57n.png'
-    })">Add to Bag</button>
+    })">ADD TO BAG</button>
+
+    <i class="fa-regular fa-heart"
+       onclick="toggleWishlist('bat1', this)"></i>
   </div>
 
-  <!-- PRODUCT 2 -->
-  <div class="product-card">
-
-    <button class="wishlist-btn" onclick="toggleWishlist('shoe1', this)">
-      <i class="fa-regular fa-heart"></i>
-    </button>
-
-    <img src="https://i.imgur.com/QOnK57n.png" alt="Cricket Shoes">
-
-    <h3>Professional Cricket Shoes</h3>
-
-    <div class="rating" data-id="shoe1"></div>
-
-    <p class="price">
-      ₹3,499 <span class="old">₹4,299</span> <span class="off">19% off</span>
-    </p>
-
-    <button onclick="addToBag({
-      id:'shoe1',
-      name:'Professional Cricket Shoes',
-      price:3499,
-      img:'https://i.imgur.com/QOnK57n.png'
-    })">Add to Bag</button>
-  </div>
-
-  <!-- PRODUCT 3 -->
-  <div class="product-card">
-
-    <button class="wishlist-btn" onclick="toggleWishlist('helmet1', this)">
-      <i class="fa-regular fa-heart"></i>
-    </button>
-
-    <img src="https://i.imgur.com/QOnK57n.png" alt="Helmet">
-
-    <h3>Cricket Safety Helmet</h3>
-
-    <div class="rating" data-id="helmet1"></div>
-
-    <p class="price">
-      ₹1,899 <span class="old">₹2,499</span> <span class="off">24% off</span>
-    </p>
-
-    <button onclick="addToBag({
-      id:'helmet1',
-      name:'Cricket Safety Helmet',
-      price:1899,
-      img:'https://i.imgur.com/QOnK57n.png'
-    })">Add to Bag</button>
-  </div>
+</div>
 
 </section>
 
-<!-- FOOTER -->
-<footer class="insta-footer">
-  <div class="footer-bottom">
-    © 2026 Msquare Sports Club
-  </div>
-</footer>
-
-<!-- ================= SCRIPT ================= -->
+<!-- ================= LOGIC ================= -->
 
 <script>
-/* STORAGE HELPERS */
-const get = k => JSON.parse(localStorage.getItem(k)) || [];
-const set = (k,v) => localStorage.setItem(k, JSON.stringify(v));
+/* USE SAME STORAGE KEY AS cart.js */
+const CART_KEY = "cart";
 
-/* ADD TO BAG */
-function addToBag(product){
-  let bag = get("bag");
-  const item = bag.find(i => i.id === product.id);
-  item ? item.qty++ : bag.push({...product, qty:1});
-  set("bag", bag);
-  updateBagCount();
+/* ADD TO CART (COMPATIBLE) */
+function addToCart(product){
+  let cart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+  const item = cart.find(i => i.id === product.id);
+
+  if(item){
+    item.qty += 1;
+  } else {
+    cart.push({...product, qty:1});
+  }
+
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
   alert("Added to Bag ✔");
 }
 
-/* BAG COUNT */
-function updateBagCount(){
-  const count = get("bag").reduce((t,i)=>t+i.qty,0);
-  document.querySelector(".fa-bag-shopping").dataset.count = count;
-}
-updateBagCount();
-
 /* WISHLIST */
-function toggleWishlist(id, btn){
-  let wl = get("wishlist");
+function toggleWishlist(id, icon){
+  let wl = JSON.parse(localStorage.getItem("wishlist")) || [];
   if(wl.includes(id)){
-    wl = wl.filter(x=>x!==id);
-    btn.innerHTML = '<i class="fa-regular fa-heart"></i>';
+    wl = wl.filter(x => x !== id);
+    icon.className = "fa-regular fa-heart";
   } else {
     wl.push(id);
-    btn.innerHTML = '<i class="fa-solid fa-heart"></i>';
+    icon.className = "fa-solid fa-heart";
   }
-  set("wishlist", wl);
+  localStorage.setItem("wishlist", JSON.stringify(wl));
 }
 
-/* RATING (ONLY AFTER PURCHASE) */
-function initRatings(){
-  const ratings = JSON.parse(localStorage.getItem("ratings")) || {};
-  const orders = get("orders");
-
-  document.querySelectorAll(".rating").forEach(box=>{
+/* CUSTOMER RATING – ONLY AFTER PURCHASE */
+document.querySelectorAll(".fk-rating").forEach(box=>{
+  box.onclick = ()=>{
     const id = box.dataset.id;
-    box.innerHTML = "";
-
-    for(let i=1;i<=5;i++){
-      const star = document.createElement("i");
-      star.className = ratings[id]>=i ? "fa-solid fa-star" : "fa-regular fa-star";
-      star.onclick = ()=>{
-        if(!orders.includes(id)){
-          alert("Only customers who bought this product can rate ⭐");
-          return;
-        }
-        ratings[id]=i;
-        localStorage.setItem("ratings",JSON.stringify(ratings));
-        initRatings();
-      };
-      box.appendChild(star);
+    const orders = JSON.parse(localStorage.getItem("orders")) || [];
+    if(!orders.includes(id)){
+      alert("Only customers who purchased this item can rate");
+      return;
     }
-  });
-}
-initRatings();
-
-/* SIMULATE PURCHASE (call after checkout) */
-function markAsPurchased(){
-  const bag = get("bag");
-  const orders = get("orders");
-  bag.forEach(p=>!orders.includes(p.id)&&orders.push(p.id));
-  set("orders",orders);
-  localStorage.removeItem("bag");
-  updateBagCount();
-}
+    alert("Rating UI opens here ✔");
+  };
+});
 </script>
 
 </body>
