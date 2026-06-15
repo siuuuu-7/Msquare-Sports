@@ -1,113 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Cricket Equipment | Msquare Sports</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SAME CSS -->
+  <!-- SAME STYLES AS INDEX -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="pro.css">
 
   <!-- ICONS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preload"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </noscript>
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- NAVBAR (reuse from index.html) -->
-<nav class="main-nav">
-  <a href="index.html" class="brand-wrapper logo-text">
-  <span class="logo-white">MSQUARE</span>
-  <span class="logo-yellow">SPORTS</span>
+<!-- TOP BAR -->
+<div class="top-bar">
+  ⚡ Delivery available in select cities
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
 </a>
+
+<!-- NAVBAR (EXACT SAME AS INDEX) -->
+<nav class="main-nav">
+  <div class="brand-wrapper logo-text">
+    <img src="https://i.imgur.com/tDdr7cD.png" class="brand-logo">
+    <span class="logo-white">MSQUARE</span>
+    <span class="logo-yellow">SPORTS</span>
+  </div>
+
+  <div class="nav-actions">
+    <span class="nav-icon" onclick="toggleWishlist()">
+      <i class="fa-regular fa-heart"></i>
+    </span>
+    <span class="nav-icon" onclick="toggleBag()">
+      <i class="fa-solid fa-bag-shopping"></i>
+    </span>
+    <span class="nav-link" onclick="openClub()">Join Club</span>
+    <span class="nav-link outline" onclick="openLogin()">Login</span>
+  </div>
 </nav>
 
-<!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <a href="index.html">Home</a> <span>›</span> Cricket
-</div>
-
-<!-- PAGE HEADER -->
-<section class="category-header cricket-hero">
-  <h1>Cricket Gear Built for Match Winners</h1>
-  <p>Premium bats, shoes & protection trusted by serious players</p>
-  <a href="#products" class="hero-cta">Shop Cricket Gear</a>
+<!-- CATEGORY HERO -->
+<section class="category-hero">
+  <h1>Cricket Essentials</h1>
+  <p>Match-ready gear trusted by serious players</p>
 </section>
+
 <!-- PRODUCT GRID -->
-<section class="product-section">
-  <div class="product-card" data-category="bat">
-  <span class="badge">Best Seller</span>
+<section class="product-grid-section">
+  <div class="product-grid">
 
-  <img src="https://i.imgur.com/QOnK57n.png" alt="English Willow Bat">
+    <!-- PRODUCT 1 -->
+    <div class="product-card">
+      <img src="https://i.imgur.com/QOnK57n.png" alt="English Willow Bat">
 
-  <h3>English Willow Bat</h3>
-  <p class="desc">Perfect balance • Powerful stroke play</p>
+      <div class="product-info">
+        <h3>English Willow Cricket Bat</h3>
 
-  <div class="rating">⭐⭐⭐⭐☆ <span>(124)</span></div>
+        <div class="rating" data-product="bat1">
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
 
-  <p class="price">
-    ₹6,999 <span class="old-price">₹8,499</span>
-  </p>
+        <div class="price-row">
+          <span class="price">₹6,999</span>
+          <button onclick="addToBag('English Willow Bat', 6999, 'https://i.imgur.com/QOnK57n.png')">
+            Add to Bag
+          </button>
+        </div>
+      </div>
+    </div>
 
-  <button onclick="addToBag({
-    id: 'bat-1',
-    name: 'English Willow Bat',
-    price: 6999,
-    img: 'https://i.imgur.com/QOnK57n.png'
-  })">
-    Add to Bag
-  </button>
-</div>
+    <!-- PRODUCT 2 -->
+    <div class="product-card">
+      <img src="https://i.imgur.com/QOnK57n.png" alt="Cricket Shoes">
 
-   <div class="product-card" data-category="shoes">
-  <img src="https://i.imgur.com/QOnK57n.png" alt="Cricket Shoes">
-  <h3>Cricket Shoes</h3>
-  <div class="rating">⭐⭐⭐⭐⭐</div>
-  <p class="price">₹3,499</p>
-  <button onclick="addToBag({
-  id: 'shoes-1',
-  name: 'Cricket Shoes',
-  price: 3499,
-  img: 'https://i.imgur.com/QOnK57n.png'
-})">Add to Bag</button>
-</div>
-    <div class="product-card" data-category="helmet">
-  <img src="https://i.imgur.com/QOnK57n.png" alt="Helmet">
-  <h3>Cricket Helmet</h3>
-  <div class="rating">⭐⭐⭐⭐☆</div>
-  <p class="price">₹1,899</p>
-  <button onclick="addToBag({
-  id: 'helmet-1',
-  name: 'Cricket Helmet',
-  price: 1899,
-  img: 'https://i.imgur.com/QOnK57n.png'
-})">Add to Bag</button>
-</div>
+      <div class="product-info">
+        <h3>Professional Cricket Shoes</h3>
+
+        <div class="rating" data-product="shoe1">
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+
+        <div class="price-row">
+          <span class="price">₹3,499</span>
+          <button onclick="addToBag('Cricket Shoes', 3499, 'https://i.imgur.com/QOnK57n.png')">
+            Add to Bag
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT 3 -->
+    <div class="product-card">
+      <img src="https://i.imgur.com/QOnK57n.png" alt="Cricket Helmet">
+
+      <div class="product-info">
+        <h3>Cricket Safety Helmet</h3>
+
+        <div class="rating" data-product="helmet1">
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+
+        <div class="price-row">
+          <span class="price">₹1,899</span>
+          <button onclick="addToBag('Cricket Helmet', 1899, 'https://i.imgur.com/QOnK57n.png')">
+            Add to Bag
+          </button>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
-<section class="trust-bar">
-  <div>🏏 Match-Grade Quality</div>
-  <div>🚚 Fast Delivery Across India</div>
-  <div>🔒 Secure Payments</div>
-  <div>⭐ Rated by Players</div>
+
+<!-- TRUST STRIP -->
+<section class="trust">
+  <p>🏏 Match-grade quality</p>
+  <p>🚚 Fast delivery across India</p>
+  <p>🔒 Secure payments</p>
+  <p>⭐ Trusted by players</p>
 </section>
+
+<!-- FOOTER (REUSE SAME FOOTER FROM INDEX.HTML) -->
+<footer class="insta-footer">
+  <div class="footer-bottom">
+    © 2026 Msquare Sports Club. All rights reserved.
+  </div>
+</footer>
+
+<!-- CART -->
+<script src="cart.js"></script>
+
+<!-- MANUAL STAR RATING -->
 <script>
-if (typeof addToBag !== "function") {
-  window.addToBag = function () {
-    alert("Please open bag from homepage");
-  };
-}
+document.querySelectorAll(".rating").forEach(rating => {
+  const stars = rating.querySelectorAll("i");
+  const key = "rating-" + rating.dataset.product;
+
+  const saved = localStorage.getItem(key);
+  if (saved) highlight(saved);
+
+  stars.forEach((star, i) => {
+    star.addEventListener("click", () => {
+      localStorage.setItem(key, i + 1);
+      highlight(i + 1);
+    });
+  });
+
+  function highlight(count) {
+    stars.forEach((s, i) => {
+      s.className = i < count
+        ? "fa-solid fa-star"
+        : "fa-regular fa-star";
+    });
+  }
+});
 </script>
-<section class="why-us">
-  <h2>Why Players Choose MSQUARE SPORTS</h2>
-  <div class="why-grid">
-    <div>✔ Hand-picked cricket gear</div>
-    <div>✔ Designed for Indian pitches</div>
-    <div>✔ Affordable premium quality</div>
-    <div>✔ Trusted by local clubs</div>
-  </div>
-</section>
+
 </body>
 </html>
