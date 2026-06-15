@@ -29,25 +29,35 @@
 </div>
 
 <!-- PAGE HEADER -->
-<section class="category-header">
-  <h1>Cricket</h1>
+<section class="category-header cricket-hero">
+  <h1>Cricket Gear Built for Match Winners</h1>
+  <p>Premium bats, shoes & protection trusted by serious players</p>
+  <a href="#products" class="hero-cta">Shop Cricket Gear</a>
 </section>
 <!-- PRODUCT GRID -->
 <section class="product-section">
-  <div class="product-grid">
+  <div class="product-card" data-category="bat">
+  <span class="badge">Best Seller</span>
 
-    <!-- PRODUCT CARD -->
-    <div class="product-card" data-category="bat">
-  <img src="https://i.imgur.com/QOnK57n.png" alt="Cricket Bat">
+  <img src="https://i.imgur.com/QOnK57n.png" alt="English Willow Bat">
+
   <h3>English Willow Bat</h3>
-  <div class="rating">⭐⭐⭐⭐☆</div>
-  <p class="price">₹6,999</p>
+  <p class="desc">Perfect balance • Powerful stroke play</p>
+
+  <div class="rating">⭐⭐⭐⭐☆ <span>(124)</span></div>
+
+  <p class="price">
+    ₹6,999 <span class="old-price">₹8,499</span>
+  </p>
+
   <button onclick="addToBag({
-  id: 'bat-1',
-  name: 'English Willow Bat',
-  price: 6999,
-  img: 'https://i.imgur.com/QOnK57n.png'
-})">Add to Bag</button>
+    id: 'bat-1',
+    name: 'English Willow Bat',
+    price: 6999,
+    img: 'https://i.imgur.com/QOnK57n.png'
+  })">
+    Add to Bag
+  </button>
 </div>
 
    <div class="product-card" data-category="shoes">
@@ -77,6 +87,12 @@
 
   </div>
 </section>
+<section class="trust-bar">
+  <div>🏏 Match-Grade Quality</div>
+  <div>🚚 Fast Delivery Across India</div>
+  <div>🔒 Secure Payments</div>
+  <div>⭐ Rated by Players</div>
+</section>
 <script>
 if (typeof addToBag !== "function") {
   window.addToBag = function () {
@@ -84,5 +100,14 @@ if (typeof addToBag !== "function") {
   };
 }
 </script>
+<section class="why-us">
+  <h2>Why Players Choose MSQUARE SPORTS</h2>
+  <div class="why-grid">
+    <div>✔ Hand-picked cricket gear</div>
+    <div>✔ Designed for Indian pitches</div>
+    <div>✔ Affordable premium quality</div>
+    <div>✔ Trusted by local clubs</div>
+  </div>
+</section>
 </body>
 </html>
