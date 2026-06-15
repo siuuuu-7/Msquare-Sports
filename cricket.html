@@ -1,132 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Cricket | Msquare Sports</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Cricket Equipment | MSQUARE SPORTS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="pro.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Existing CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pro.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ===== MARKETPLACE STYLE ===== */
+    .category-header {
+      padding: 20px;
+      background: #f5f7fa;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .product-list {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .product-row {
+      display: grid;
+      grid-template-columns: 120px 1fr auto;
+      gap: 15px;
+      padding: 15px;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      align-items: center;
+    }
+
+    .product-row img {
+      width: 100%;
+      max-height: 120px;
+      object-fit: contain;
+    }
+
+    .product-info h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .rating {
+      font-size: 14px;
+      color: #388e3c;
+      margin-bottom: 6px;
+    }
+
+    .rating span {
+      color: #777;
+      font-size: 13px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ff5722;
+      color: #fff;
+      font-size: 11px;
+      padding: 3px 6px;
+      border-radius: 3px;
+      margin-bottom: 6px;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .old-price {
+      font-size: 13px;
+      text-decoration: line-through;
+      color: #777;
+      margin-left: 6px;
+    }
+
+    .action-area button {
+      background: #ff9f00;
+      border: none;
+      padding: 10px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .action-area button:hover {
+      background: #fb8c00;
+    }
+
+    @media(max-width: 768px) {
+      .product-row {
+        grid-template-columns: 100px 1fr;
+      }
+      .action-area {
+        grid-column: span 2;
+        text-align: right;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVBAR (UNCHANGED) -->
+<!-- NAV -->
 <nav class="main-nav">
   <a href="index.html" class="brand-wrapper logo-text">
     <span class="logo-white">MSQUARE</span>
     <span class="logo-yellow">SPORTS</span>
   </a>
-  <div class="nav-actions">
-    <span class="nav-icon">
-      <i class="fa-solid fa-bag-shopping"></i>
-    </span>
-  </div>
 </nav>
 
-<!-- RESULT HEADER -->
-<div class="result-bar">
-  <div>
-    <div class="crumb">Home › Sports › Cricket</div>
-    <div class="count">Showing 1 – 40 of 16,853 results for <b>“cricket”</b></div>
-  </div>
-  <select>
-    <option>Relevance</option>
-    <option>Popularity</option>
-    <option>Price -- Low to High</option>
-    <option>Price -- High to Low</option>
-  </select>
-</div>
+<!-- HEADER -->
+<section class="category-header">
+  <h1>Cricket Equipment</h1>
+  <p>Top quality gear trusted by players</p>
+</section>
 
 <!-- PRODUCT LIST -->
-<section class="fk-list">
+<section class="product-list">
 
-<!-- PRODUCT -->
-<div class="fk-item">
+  <!-- PRODUCT 1 -->
+  <div class="product-row">
+    <img src="https://i.imgur.com/QOnK57n.png" alt="English Willow Bat">
 
-  <img src="https://i.imgur.com/QOnK57n.png">
-
-  <div class="fk-info">
-    <h3>English Willow Cricket Bat</h3>
-
-    <div class="fk-rating" data-id="bat1">
-      <span class="rate-box">4.2 ★</span>
-      <span class="rate-count">(12,174)</span>
+    <div class="product-info">
+      <span class="badge">BESTSELLER</span>
+      <h3>English Willow Cricket Bat</h3>
+      <div class="rating">
+        ★★★★☆ <span>(1,248 ratings)</span>
+      </div>
+      <div class="price">
+        ₹6,999 <span class="old-price">₹8,499</span>
+      </div>
     </div>
 
-    <div class="fk-price">
-      ₹6,999 <span class="old">₹8,499</span> <span class="off">18% off</span>
-    </div>
-
-    <div class="fk-badges">
-      <span class="badge hot">Hot Deal</span>
-      <span class="badge few">Only few left</span>
+    <div class="action-area">
+      <button onclick="addToBag('bat-1','English Willow Bat',6999,'https://i.imgur.com/QOnK57n.png')">
+        ADD TO BAG
+      </button>
     </div>
   </div>
 
-  <div class="fk-actions">
-    <button onclick="addToCart({
-      id:'bat1',
-      name:'English Willow Cricket Bat',
-      price:6999,
-      img:'https://i.imgur.com/QOnK57n.png'
-    })">ADD TO BAG</button>
+  <!-- PRODUCT 2 -->
+  <div class="product-row">
+    <img src="https://i.imgur.com/QOnK57n.png" alt="Cricket Shoes">
 
-    <i class="fa-regular fa-heart"
-       onclick="toggleWishlist('bat1', this)"></i>
+    <div class="product-info">
+      <span class="badge">OFFER</span>
+      <h3>Professional Cricket Shoes</h3>
+      <div class="rating">
+        ★★★★★ <span>(862 ratings)</span>
+      </div>
+      <div class="price">
+        ₹3,499 <span class="old-price">₹4,299</span>
+      </div>
+    </div>
+
+    <div class="action-area">
+      <button onclick="addToBag('shoes-1','Cricket Shoes',3499,'https://i.imgur.com/QOnK57n.png')">
+        ADD TO BAG
+      </button>
+    </div>
   </div>
 
-</div>
+  <!-- PRODUCT 3 -->
+  <div class="product-row">
+    <img src="https://i.imgur.com/QOnK57n.png" alt="Cricket Helmet">
+
+    <div class="product-info">
+      <h3>Protective Cricket Helmet</h3>
+      <div class="rating">
+        ★★★★☆ <span>(514 ratings)</span>
+      </div>
+      <div class="price">
+        ₹1,899 <span class="old-price">₹2,499</span>
+      </div>
+    </div>
+
+    <div class="action-area">
+      <button onclick="addToBag('helmet-1','Cricket Helmet',1899,'https://i.imgur.com/QOnK57n.png')">
+        ADD TO BAG
+      </button>
+    </div>
+  </div>
 
 </section>
 
-<!-- ================= LOGIC ================= -->
-
+<!-- ===== WORKING CART SYSTEM ===== -->
 <script>
-/* USE SAME STORAGE KEY AS cart.js */
-const CART_KEY = "cart";
+function addToBag(id, name, price, img) {
+  let bag = JSON.parse(localStorage.getItem("bagItems")) || [];
 
-/* ADD TO CART (COMPATIBLE) */
-function addToCart(product){
-  let cart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
-  const item = cart.find(i => i.id === product.id);
+  const existing = bag.find(item => item.id === id);
 
-  if(item){
-    item.qty += 1;
+  if (existing) {
+    existing.qty += 1;
   } else {
-    cart.push({...product, qty:1});
+    bag.push({
+      id,
+      name,
+      price,
+      img,
+      qty: 1
+    });
   }
 
-  localStorage.setItem(CART_KEY, JSON.stringify(cart));
-  alert("Added to Bag ✔");
+  localStorage.setItem("bagItems", JSON.stringify(bag));
+  alert("Added to bag");
 }
-
-/* WISHLIST */
-function toggleWishlist(id, icon){
-  let wl = JSON.parse(localStorage.getItem("wishlist")) || [];
-  if(wl.includes(id)){
-    wl = wl.filter(x => x !== id);
-    icon.className = "fa-regular fa-heart";
-  } else {
-    wl.push(id);
-    icon.className = "fa-solid fa-heart";
-  }
-  localStorage.setItem("wishlist", JSON.stringify(wl));
-}
-
-/* CUSTOMER RATING – ONLY AFTER PURCHASE */
-document.querySelectorAll(".fk-rating").forEach(box=>{
-  box.onclick = ()=>{
-    const id = box.dataset.id;
-    const orders = JSON.parse(localStorage.getItem("orders")) || [];
-    if(!orders.includes(id)){
-      alert("Only customers who purchased this item can rate");
-      return;
-    }
-    alert("Rating UI opens here ✔");
-  };
-});
 </script>
 
 </body>
