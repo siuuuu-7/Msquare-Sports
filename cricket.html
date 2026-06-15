@@ -78,31 +78,6 @@
   </div>
 </section>
 <script>
-function filterProducts(category, btn) {
-  const cards = document.querySelectorAll(".product-card");
-  const buttons = document.querySelectorAll(".filter-btn");
-
-  buttons.forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
-
-  cards.forEach(card => {
-    if (category === "all") {
-      card.style.display = "flex";
-    } else {
-      card.style.display =
-        card.dataset.category === category ? "flex" : "none";
-    }
-  });
-}
-</script>
-<script>
-/* Handle browser back safely */
-window.addEventListener("popstate", () => {
-  // No overlays on this page, so just allow normal navigation
-  // This prevents Chrome mobile from exiting site unexpectedly
-});
-</script>
-<script>
 if (typeof addToBag !== "function") {
   window.addToBag = function () {
     alert("Please open bag from homepage");
