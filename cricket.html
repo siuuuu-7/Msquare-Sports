@@ -5,201 +5,212 @@
   <title>Cricket Equipment | Msquare Sports</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SAME STYLES AS INDEX -->
+  <!-- STYLES -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="pro.css">
 
   <!-- ICONS -->
-  <link rel="preload"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    as="style"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  </noscript>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- FONTS -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-  ⚡ Delivery available in select cities
-</div>
-
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/9035202055" class="whatsapp-float" target="_blank">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<!-- NAVBAR (EXACT SAME AS INDEX) -->
+<!-- NAVBAR -->
 <nav class="main-nav">
   <div class="brand-wrapper logo-text">
-    <img src="https://i.imgur.com/tDdr7cD.png" class="brand-logo">
     <span class="logo-white">MSQUARE</span>
     <span class="logo-yellow">SPORTS</span>
   </div>
 
   <div class="nav-actions">
-    <span class="nav-icon" onclick="toggleWishlist()">
-      <i class="fa-regular fa-heart"></i>
-    </span>
-    <span class="nav-icon" onclick="toggleBag()">
+    <span class="nav-icon">
       <i class="fa-solid fa-bag-shopping"></i>
     </span>
-    <span class="nav-link" onclick="openClub()">Join Club</span>
-    <span class="nav-link outline" onclick="openLogin()">Login</span>
   </div>
 </nav>
 
-<!-- CATEGORY HERO -->
-<section class="category-hero">
-  <h1>Cricket Essentials</h1>
-  <p>Match-ready gear trusted by serious players</p>
-</section>
+<!-- RESULT BAR -->
+<div class="result-bar">
+  <div>
+    <p class="crumb">Home › Sports › Cricket</p>
+    <p>Showing <b>1 – 40</b> of <b>16,853</b> results for "<b>cricket</b>"</p>
+  </div>
+
+  <div>
+    <select>
+      <option>Relevance</option>
+      <option>Popularity</option>
+      <option>Price -- Low to High</option>
+      <option>Price -- High to Low</option>
+      <option>Newest First</option>
+    </select>
+  </div>
+</div>
 
 <!-- PRODUCT GRID -->
-<section class="product-grid-section">
-  <div class="product-grid">
+<section class="product-grid">
 
-    <!-- PRODUCT 1 -->
-    <div class="product-card">
-      <button class="wishlist-btn" aria-label="Add to wishlist">
-  <i class="fa-regular fa-heart"></i>
-</button>
-      <img src="https://i.imgur.com/QOnK57n.png" alt="English Willow Bat">
+  <!-- PRODUCT 1 -->
+  <div class="product-card">
 
-      <div class="product-info">
-        <h3>English Willow Cricket Bat</h3>
+    <button class="wishlist-btn" onclick="toggleWishlist('bat1', this)">
+      <i class="fa-regular fa-heart"></i>
+    </button>
 
-        <div class="rating" data-product="bat1">
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-        </div>
+    <img src="https://i.imgur.com/QOnK57n.png" alt="Cricket Bat">
 
-        <div class="price-row">
-          <span class="price">₹6,999</span>
-          <button class="wishlist-btn" aria-label="Add to wishlist">
-  <i class="fa-regular fa-heart"></i>
-</button>
-          <button onclick="addToBag('English Willow Bat', 6999, 'https://i.imgur.com/QOnK57n.png')">
-            Add to Bag
-          </button>
-        </div>
-      </div>
-    </div>
+    <h3>English Willow Cricket Bat</h3>
 
-    <!-- PRODUCT 2 -->
-    <div class="product-card">
-      <button class="wishlist-btn" aria-label="Add to wishlist">
-  <i class="fa-regular fa-heart"></i>
-</button>
-      <img src="https://i.imgur.com/QOnK57n.png" alt="Cricket Shoes">
+    <div class="rating" data-id="bat1"></div>
 
-      <div class="product-info">
-        <h3>Professional Cricket Shoes</h3>
+    <p class="price">
+      ₹6,999 <span class="old">₹8,499</span> <span class="off">18% off</span>
+    </p>
 
-        <div class="rating" data-product="shoe1">
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-        </div>
-
-        <div class="price-row">
-          <span class="price">₹3,499</span>
-          <button class="wishlist-btn" aria-label="Add to wishlist">
-  <i class="fa-regular fa-heart"></i>
-</button>
-          <button onclick="addToBag('Cricket Shoes', 3499, 'https://i.imgur.com/QOnK57n.png')">
-            Add to Bag
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRODUCT 3 -->
-    <div class="product-card">
-      <button class="wishlist-btn" aria-label="Add to wishlist">
-  <i class="fa-regular fa-heart"></i>
-</button>
-      <img src="https://i.imgur.com/QOnK57n.png" alt="Cricket Helmet">
-
-      <div class="product-info">
-        <h3>Cricket Safety Helmet</h3>
-
-        <div class="rating" data-product="helmet1">
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-        </div>
-
-        <div class="price-row">
-          <span class="price">₹1,899</span>
-          <button class="wishlist-btn" aria-label="Add to wishlist">
-  <i class="fa-regular fa-heart"></i>
-</button>
-          <button onclick="addToBag('Cricket Helmet', 1899, 'https://i.imgur.com/QOnK57n.png')">
-            Add to Bag
-          </button>
-        </div>
-      </div>
-    </div>
-
+    <button onclick="addToBag({
+      id:'bat1',
+      name:'English Willow Cricket Bat',
+      price:6999,
+      img:'https://i.imgur.com/QOnK57n.png'
+    })">Add to Bag</button>
   </div>
+
+  <!-- PRODUCT 2 -->
+  <div class="product-card">
+
+    <button class="wishlist-btn" onclick="toggleWishlist('shoe1', this)">
+      <i class="fa-regular fa-heart"></i>
+    </button>
+
+    <img src="https://i.imgur.com/QOnK57n.png" alt="Cricket Shoes">
+
+    <h3>Professional Cricket Shoes</h3>
+
+    <div class="rating" data-id="shoe1"></div>
+
+    <p class="price">
+      ₹3,499 <span class="old">₹4,299</span> <span class="off">19% off</span>
+    </p>
+
+    <button onclick="addToBag({
+      id:'shoe1',
+      name:'Professional Cricket Shoes',
+      price:3499,
+      img:'https://i.imgur.com/QOnK57n.png'
+    })">Add to Bag</button>
+  </div>
+
+  <!-- PRODUCT 3 -->
+  <div class="product-card">
+
+    <button class="wishlist-btn" onclick="toggleWishlist('helmet1', this)">
+      <i class="fa-regular fa-heart"></i>
+    </button>
+
+    <img src="https://i.imgur.com/QOnK57n.png" alt="Helmet">
+
+    <h3>Cricket Safety Helmet</h3>
+
+    <div class="rating" data-id="helmet1"></div>
+
+    <p class="price">
+      ₹1,899 <span class="old">₹2,499</span> <span class="off">24% off</span>
+    </p>
+
+    <button onclick="addToBag({
+      id:'helmet1',
+      name:'Cricket Safety Helmet',
+      price:1899,
+      img:'https://i.imgur.com/QOnK57n.png'
+    })">Add to Bag</button>
+  </div>
+
 </section>
 
-<!-- TRUST STRIP -->
-<section class="trust">
-  <p>🏏 Match-grade quality</p>
-  <p>🚚 Fast delivery across India</p>
-  <p>🔒 Secure payments</p>
-  <p>⭐ Trusted by players</p>
-</section>
-
-<!-- FOOTER (REUSE SAME FOOTER FROM INDEX.HTML) -->
+<!-- FOOTER -->
 <footer class="insta-footer">
   <div class="footer-bottom">
-    © 2026 Msquare Sports Club. All rights reserved.
+    © 2026 Msquare Sports Club
   </div>
 </footer>
 
-<!-- CART -->
-<script src="cart.js"></script>
+<!-- ================= SCRIPT ================= -->
 
-<!-- MANUAL STAR RATING -->
 <script>
-document.querySelectorAll(".rating").forEach(rating => {
-  const stars = rating.querySelectorAll("i");
-  const key = "rating-" + rating.dataset.product;
+/* STORAGE HELPERS */
+const get = k => JSON.parse(localStorage.getItem(k)) || [];
+const set = (k,v) => localStorage.setItem(k, JSON.stringify(v));
 
-  const saved = localStorage.getItem(key);
-  if (saved) highlight(saved);
+/* ADD TO BAG */
+function addToBag(product){
+  let bag = get("bag");
+  const item = bag.find(i => i.id === product.id);
+  item ? item.qty++ : bag.push({...product, qty:1});
+  set("bag", bag);
+  updateBagCount();
+  alert("Added to Bag ✔");
+}
 
-  stars.forEach((star, i) => {
-    star.addEventListener("click", () => {
-      localStorage.setItem(key, i + 1);
-      highlight(i + 1);
-    });
-  });
+/* BAG COUNT */
+function updateBagCount(){
+  const count = get("bag").reduce((t,i)=>t+i.qty,0);
+  document.querySelector(".fa-bag-shopping").dataset.count = count;
+}
+updateBagCount();
 
-  function highlight(count) {
-    stars.forEach((s, i) => {
-      s.className = i < count
-        ? "fa-solid fa-star"
-        : "fa-regular fa-star";
-    });
+/* WISHLIST */
+function toggleWishlist(id, btn){
+  let wl = get("wishlist");
+  if(wl.includes(id)){
+    wl = wl.filter(x=>x!==id);
+    btn.innerHTML = '<i class="fa-regular fa-heart"></i>';
+  } else {
+    wl.push(id);
+    btn.innerHTML = '<i class="fa-solid fa-heart"></i>';
   }
-});
+  set("wishlist", wl);
+}
+
+/* RATING (ONLY AFTER PURCHASE) */
+function initRatings(){
+  const ratings = JSON.parse(localStorage.getItem("ratings")) || {};
+  const orders = get("orders");
+
+  document.querySelectorAll(".rating").forEach(box=>{
+    const id = box.dataset.id;
+    box.innerHTML = "";
+
+    for(let i=1;i<=5;i++){
+      const star = document.createElement("i");
+      star.className = ratings[id]>=i ? "fa-solid fa-star" : "fa-regular fa-star";
+      star.onclick = ()=>{
+        if(!orders.includes(id)){
+          alert("Only customers who bought this product can rate ⭐");
+          return;
+        }
+        ratings[id]=i;
+        localStorage.setItem("ratings",JSON.stringify(ratings));
+        initRatings();
+      };
+      box.appendChild(star);
+    }
+  });
+}
+initRatings();
+
+/* SIMULATE PURCHASE (call after checkout) */
+function markAsPurchased(){
+  const bag = get("bag");
+  const orders = get("orders");
+  bag.forEach(p=>!orders.includes(p.id)&&orders.push(p.id));
+  set("orders",orders);
+  localStorage.removeItem("bag");
+  updateBagCount();
+}
 </script>
 
 </body>
