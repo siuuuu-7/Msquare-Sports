@@ -19,7 +19,13 @@
       background: #f5f7fa;
       border-bottom: 1px solid #ddd;
     }
-
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
+  <button class="filter-btn" onclick="filterProducts('bat', this)">Bats</button>
+  <button class="filter-btn" onclick="filterProducts('shoes', this)">Shoes</button>
+  <button class="filter-btn" onclick="filterProducts('helmet', this)">Helmets</button>
+</div>
     .product-list {
       max-width: 1200px;
       margin: 20px auto;
@@ -131,7 +137,7 @@
 <section class="product-list">
 
   <!-- PRODUCT 1 -->
-  <div class="product-row">
+  <div class="product-row" data-category="bat">
     <img src="https://i.imgur.com/QOnK57n.png" alt="English Willow Bat">
 
     <div class="product-info">
@@ -153,7 +159,7 @@
   </div>
 
   <!-- PRODUCT 2 -->
-  <div class="product-row">
+  <div class="product-row" data-category="shoes">
     <img src="https://i.imgur.com/QOnK57n.png" alt="Cricket Shoes">
 
     <div class="product-info">
@@ -175,7 +181,7 @@
   </div>
 
   <!-- PRODUCT 3 -->
-  <div class="product-row">
+  <div class="product-row" data-category="helmet">
     <img src="https://i.imgur.com/QOnK57n.png" alt="Cricket Helmet">
 
     <div class="product-info">
