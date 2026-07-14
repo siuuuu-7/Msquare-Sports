@@ -13,4 +13,4 @@ Live ecommerce-style website for a local sports shop.
 HTML | CSS | JavaScript | Firebase
 
 ## Live Demo
-🔗 https://YOUR-LIVE-URL.web.app
+🔗 https://msquare-sports.web.app
